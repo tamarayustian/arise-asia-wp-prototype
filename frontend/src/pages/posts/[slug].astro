@@ -1,0 +1,21 @@
+---
+import { getPost } from '../../lib/wordpress';
+
+const { slug } = Astro.params;
+const post = await getPost(slug);
+---
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{post.title.rendered}</title>
+	</head>
+	<body>
+		<a href="/">&larr; Back</a>
+		<article>
+			<h1>{post.title.rendered}</h1>
+			<div set:html={post.content.rendered} />
+		</article>
+	</body>
+</html>
