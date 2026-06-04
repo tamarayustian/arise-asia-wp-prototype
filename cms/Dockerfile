@@ -8,4 +8,5 @@ RUN set -eux; \
 COPY ./wp-content /var/www/html/wp-content
 COPY run.sh /usr/local/bin/run.sh
 RUN chmod +x /usr/local/bin/run.sh
-CMD ["/usr/local/bin/run.sh"]
+ENTRYPOINT ["/usr/local/bin/run.sh"]
+CMD ["apache2-foreground"]
