@@ -3,6 +3,7 @@ import { getPost } from '../../lib/wordpress';
 
 const { slug } = Astro.params;
 const post = await getPost(slug);
+const acf = post.acf || {};
 ---
 <html lang="en">
 	<head>
@@ -15,6 +16,7 @@ const post = await getPost(slug);
 		<a href="/">&larr; Back</a>
 		<article>
 			<h1>{post.title.rendered}</h1>
+			{acf.subtitle && <p><strong>{acf.subtitle as string}</strong></p>}
 			<div set:html={post.content.rendered} />
 		</article>
 	</body>

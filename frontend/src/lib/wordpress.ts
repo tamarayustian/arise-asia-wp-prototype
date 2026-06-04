@@ -8,6 +8,7 @@ export interface WPPost {
   excerpt: { rendered: string };
   content: { rendered: string };
   date: string;
+  acf?: Record<string, unknown>;
 }
 
 export async function getPosts(): Promise<WPPost[]> {
