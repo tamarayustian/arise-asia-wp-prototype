@@ -6,12 +6,8 @@ Description: Redirects frontend visitors to the Astro site and rewires the WordP
 
 add_action('template_redirect', function() {
     if (is_user_logged_in()) return;
-    if (isset($_SERVER['HTTP_HOST']) && strpos($_SERVER['HTTP_HOST'], 'localhost:8080') !== false) {
-        $scheme = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') ? 'https://' : 'http://';
-        $host = $_SERVER['HTTP_HOST'];
-        if ($host === 'localhost:8080') {
-            wp_redirect('http://localhost:4321', 302);
-            exit;
-        }
+    $frontend_url = getenv('FRONTEND_URL') ?: 'http://localhost:4321';
+    if (wp_redirect($frontend_url, 302)) {
+        exit;
     }
 });

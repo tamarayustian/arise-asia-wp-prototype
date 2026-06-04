@@ -1,4 +1,4 @@
-const WP_BASE = 'http://localhost:8080';
+const WP_BASE = process.env.WP_API_URL || 'http://localhost:8080';
 const WP_API = `${WP_BASE}/?rest_route=/wp/v2`;
 
 export interface WPPost {
