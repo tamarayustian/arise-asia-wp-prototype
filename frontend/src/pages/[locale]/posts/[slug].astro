@@ -1,0 +1,17 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getPost } from '../../../lib/wordpress';
+
+const { locale, slug } = Astro.params;
+const post = await getPost(slug!, locale);
+const acf = post.acf || {};
+---
+
+<Layout title={post.title.rendered} locale={locale!}>
+  <a href={`/${locale}/`}>&larr; Back</a>
+  <article>
+    <h1>{post.title.rendered}</h1>
+    {acf.subtitle && <p><strong>{acf.subtitle as string}</strong></p>}
+    <div set:html={post.content.rendered} />
+  </article>
+</Layout>

@@ -28,7 +28,24 @@ Wait 30 seconds for MySQL to initialize. Visit http://localhost:8080 and complet
 2. In **Custom Fields** → create a field group → add fields (e.g. `subtitle`) → set **Show in REST API** → **Yes**
 3. Create 2–3 sample posts with titles and content, fill in any ACF fields
 
-### 3. Start the frontend
+### 3. Configure Polylang (i18n / multilingual)
+
+1. Go to **Plugins** → activate **Polylang**
+2. Go to **Settings** → **Languages**
+3. Add the following languages:
+
+   | Language | Locale | Slug |
+   |---|---|---|
+   | English | `en_US` | `en` |
+   | Indonesian | `id_ID` | `id` |
+   | Chinese (Traditional) | `zh_TW` | `zh_tw` |
+
+4. **Do not enable URL modifications** — leave Polylang's URL settings on the default "The language is set from the content" (no pretty permalinks). The frontend handles routing.
+5. Go to **Posts** → edit a post → use the language meta box to set its language → publish
+6. To create a translation, hover a post → click the **+** icon under the desired language → write the translated version
+7. Repeat for all locales
+
+### 4. Start the frontend
 
 ```bash
 cd frontend && pnpm install   # first time only
@@ -36,6 +53,13 @@ cd frontend && pnpm dev
 ```
 
 Visit http://localhost:4321 — your WordPress posts will be listed. Click any post to read it.
+
+**Locale URLs:**
+- `/en/` — English
+- `/id/` — Indonesian
+- `/zh-TW/` — Traditional Chinese
+
+A language switcher appears at the top of every page.
 
 ## Railway Deployment
 
@@ -89,19 +113,24 @@ cms/
 
 frontend/
 ├── Dockerfile                  # Railway image (builds Astro SSR)
-├── astro.config.mjs            # SSR with @astrojs/node
+├── astro.config.mjs            # SSR + i18n with @astrojs/node
 ├── package.json
 └── src/
+    ├── components/
+    │   └── LanguageSwitcher.astro  # Language nav (en / id / zh-TW)
+    ├── layouts/
+    │   └── Layout.astro        # Common HTML shell
     ├── lib/
-    │   └── wordpress.ts        # WP REST API client
+    │   └── wordpress.ts        # WP REST API client (locale-aware)
     └── pages/
-        ├── index.astro         # Post list
-        └── posts/[slug].astro  # Single post (supports ACF fields)
+        └── [locale]/
+            ├── index.astro         # Post list (locale-aware)
+            └── posts/[slug].astro  # Single post (locale + ACF)
 ```
 
 ## ACF (Advanced Custom Fields)
 
-ACF fields are exposed via the WordPress REST API as a top-level `acf` object on each post. Add new fields to `[slug].astro` by referencing them as `acf.your_field_name`.
+ACF fields are exposed via the WordPress REST API as a top-level `acf` object on each post. Add new fields to `[locale]/posts/[slug].astro` by referencing them as `acf.your_field_name`.
 
 ## Stopping
 

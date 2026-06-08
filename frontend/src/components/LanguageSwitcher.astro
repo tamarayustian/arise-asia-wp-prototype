@@ -1,0 +1,21 @@
+---
+export interface Props {
+  currentLocale: string;
+}
+
+const { currentLocale } = Astro.props;
+
+const locales: Record<string, string> = {
+  en: 'English',
+  id: 'Bahasa Indonesia',
+  'zh-TW': '繁體中文',
+};
+---
+
+<nav>
+  {Object.entries(locales).map(([code, label]) => (
+    code === currentLocale
+      ? <strong>{label}</strong>
+      : <a href={`/${code}/`}>{label}</a>
+  ))}
+</nav>
