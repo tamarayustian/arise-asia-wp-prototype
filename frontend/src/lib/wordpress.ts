@@ -4,7 +4,7 @@ const WP_API = `${WP_BASE}/?rest_route=/wp/v2`;
 const localeToPolylang: Record<string, string> = {
   en: 'en',
   id: 'id',
-  'zh-TW': 'zh_tw',
+  'zh-TW': 'zh',
 };
 
 export interface WPPost {

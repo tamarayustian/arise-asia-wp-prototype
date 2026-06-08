@@ -38,7 +38,7 @@ Wait 30 seconds for MySQL to initialize. Visit http://localhost:8080 and complet
    |---|---|---|
    | English | `en_US` | `en` |
    | Indonesian | `id_ID` | `id` |
-   | Chinese (Traditional) | `zh_TW` | `zh_tw` |
+   | Chinese (Traditional) | `zh_TW` | `zh` |
 
 4. **Do not enable URL modifications** — leave Polylang's URL settings on the default "The language is set from the content" (no pretty permalinks). The frontend handles routing.
 5. Go to **Posts** → edit a post → use the language meta box to set its language → publish
