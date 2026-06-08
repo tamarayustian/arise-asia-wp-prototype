@@ -9,7 +9,12 @@ RUN set -eux; \
     unzip /tmp/polylang.zip -d /tmp/polylang; \
     mkdir -p /var/www/html/wp-content/plugins/polylang; \
     cp -r /tmp/polylang/polylang/* /var/www/html/wp-content/plugins/polylang/; \
-    rm -rf /tmp/polylang.zip /tmp/polylang
+    rm -rf /tmp/polylang.zip /tmp/polylang; \
+    wget -O /tmp/acf.zip https://downloads.wordpress.org/plugin/advanced-custom-fields.latest-stable.zip; \
+    unzip /tmp/acf.zip -d /tmp/acf; \
+    mkdir -p /var/www/html/wp-content/plugins/advanced-custom-fields; \
+    cp -r /tmp/acf/advanced-custom-fields/* /var/www/html/wp-content/plugins/advanced-custom-fields/; \
+    rm -rf /tmp/acf.zip /tmp/acf
 
 COPY ./wp-content /var/www/html/wp-content
 COPY run.sh /usr/local/bin/run.sh
