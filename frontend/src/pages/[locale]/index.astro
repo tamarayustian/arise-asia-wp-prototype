@@ -1,4 +1,5 @@
 ---
+import { Icon } from "astro-icon/components";
 import PostCard from "@/components/shared/PostCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { SITE_NAME } from "@/lib/constants";
@@ -90,6 +91,22 @@ const posts = await getPosts(locale);
               </p>
             </div>
           </div>
+                <a
+            href="/arise26"
+            class="mx-auto mt-8 w-fit rounded-full bg-[linear-gradient(100deg,#2781FF_-8.62%,#6BA7FF_48.41%,#FFA456_76.92%,#FE4C5A_105.43%)] p-0.5"
+          >
+            <div class="rounded-full px-8 py-4 group uppercase hover:bg-white text-white">
+              <p
+                class="font-heading flex items-center gap-x-2 text-xs font-semibold group-hover:bg-[linear-gradient(100deg,#2781FF_-8.62%,#6BA7FF_48.41%,#FFA456_76.92%,#FE4C5A_105.43%)] group-hover:bg-clip-text group-hover:text-transparent sm:text-base"
+              >
+                Learn more now
+                <Icon
+                  name="lucide:arrow-right"
+                  class="size-3 group-hover:text-[#FE4C5A]"
+                />
+              </p>
+            </div>
+          </a>
         </div>
       </div>
     </header>
@@ -109,16 +126,16 @@ const posts = await getPosts(locale);
   function updateCountdown() {
     const diff = Math.max(0, Math.floor((target - Date.now()) / 1000));
 
-    document.getElementById("countdown-days").textContent = String(
+    document.getElementById("countdown-days")!.textContent = String(
       Math.floor(diff / 86400),
     ).padStart(2, "0");
-    document.getElementById("countdown-hours").textContent = String(
+    document.getElementById("countdown-hours")!.textContent = String(
       Math.floor((diff % 86400) / 3600),
     ).padStart(2, "0");
-    document.getElementById("countdown-minutes").textContent = String(
+    document.getElementById("countdown-minutes")!.textContent = String(
       Math.floor((diff % 3600) / 60),
     ).padStart(2, "0");
-    document.getElementById("countdown-seconds").textContent = String(
+    document.getElementById("countdown-seconds")!.textContent = String(
       diff % 60,
     ).padStart(2, "0");
 
