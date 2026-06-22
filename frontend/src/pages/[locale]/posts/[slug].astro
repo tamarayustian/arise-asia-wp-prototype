@@ -1,6 +1,6 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import { getPost } from '@/lib/services/posts';
+import Layout from "@/layouts/Layout.astro";
+import { getPost } from "@/lib/services/posts";
 
 const { locale, slug } = Astro.params;
 const post = await getPost(slug!, locale);
@@ -11,7 +11,13 @@ const acf = post.acf || {};
   <a href={`/${locale}/`}>&larr; Back</a>
   <article>
     <h1>{post.title.rendered}</h1>
-    {acf.subtitle && <p><strong>{acf.subtitle as string}</strong></p>}
+    {
+      acf.subtitle && (
+        <p>
+          <strong>{acf.subtitle as string}</strong>
+        </p>
+      )
+    }
     <div set:html={post.content.rendered} />
   </article>
 </Layout>

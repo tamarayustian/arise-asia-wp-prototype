@@ -1,6 +1,6 @@
 ---
-import Layout from '@/layouts/Layout.astro';
-import { getPage } from '@/lib/services/pages';
+import Layout from "@/layouts/Layout.astro";
+import { getPage } from "@/lib/services/pages";
 
 const { locale, slug } = Astro.params;
 const page = await getPage(slug!, locale);

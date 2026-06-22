@@ -1,8 +1,8 @@
-import type { WPPost } from '../types';
-import { wpFetch } from '../wordpress';
+import type { WPPost } from "../types";
+import { wpFetch } from "../wordpress";
 
 export async function getPosts(locale?: string): Promise<WPPost[]> {
-  return wpFetch<WPPost[]>('/posts', locale);
+  return wpFetch<WPPost[]>("/posts", locale);
 }
 
 export async function getPost(slug: string, locale?: string): Promise<WPPost> {

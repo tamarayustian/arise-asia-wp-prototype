@@ -1,8 +1,8 @@
 ---
-import Footer from '@/components/layout/Footer.astro';
-import LanguageSwitcher from '@/components/layout/LanguageSwitcher.astro';
-import Navbar from '@/components/layout/Navbar.astro';
-import '@/styles/global.css';
+import Footer from "@/components/layout/Footer.astro";
+import LanguageSwitcher from "@/components/layout/LanguageSwitcher.astro";
+import Navbar from "@/components/layout/Navbar.astro";
+import "@/styles/global.css";
 
 export interface Props {
   title: string;
@@ -21,7 +21,7 @@ const { title, locale } = Astro.props;
   </head>
   <body>
     <Navbar locale={locale} />
-    <div class="fixed z-10 top-48 right-4">
+    <div class="fixed right-4 z-10">
       <LanguageSwitcher currentLocale={locale} />
     </div>
     <main>

@@ -1,5 +1,5 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
 
 export interface Props {
   locale: string;
@@ -8,41 +8,87 @@ export interface Props {
 const { locale } = Astro.props;
 ---
 
-<footer class="bg-blue-50 relative overflow-visible">
-  <p class="absolute inset-0 flex items-center justify-center text-blue-600 font-heading font-semibold
-            uppercase opacity-[0.07] select-none pointer-events-none" aria-hidden="true">
-    <span class="md:whitespace-nowrap text-center text-[clamp(160px,20vw,262px)] leading-[0.75] tracking-[-0.09em]">
+<footer class="relative overflow-visible bg-blue-50">
+  <p
+    class="font-heading pointer-events-none absolute inset-0 flex items-center justify-center font-semibold text-blue-600 uppercase opacity-[0.07] select-none"
+    aria-hidden="true"
+  >
+    <span
+      class="text-center text-[clamp(160px,20vw,262px)] leading-[0.75] tracking-[-0.09em] md:whitespace-nowrap"
+    >
       <span class="block md:inline">Arise</span>
       <span class="block md:inline">Asia</span>
     </span>
   </p>
-  <div class="container p-12 sm:px-20 relative z-10">
-    <div class="flex flex-col md:flex-row md:items-center justify-between">
+  <div class="relative z-10 container p-12 sm:px-20">
+    <div class="flex flex-col justify-between md:flex-row md:items-center">
       <div class="flex flex-col gap-3 md:gap-5">
-        <h2 class="text-blue-600 text-h4 uppercase">Arise Asia</h2>
+        <h2 class="text-h4 text-blue-600 uppercase">Arise Asia</h2>
 
-        <div class="flex gap-x-4 mb-6 justify-start">
-          <a href="https://www.instagram.com/ariseasia.movement" rel="noopener noreferrer" target="_blank">
-            <Icon name="fa6-brands:instagram" class="text-neutral-700 hover:text-yellow-500" size={28} />
+        <div class="mb-6 flex justify-start gap-x-4">
+          <a
+            href="https://www.instagram.com/ariseasia.movement"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Icon
+              name="fa6-brands:instagram"
+              class="text-neutral-700 hover:text-yellow-500"
+              size={28}
+            />
           </a>
-          <a href="https://www.youtube.com/@AriseAsiaMovement" rel="noopener noreferrer" target="_blank">
-            <Icon name="fa6-brands:youtube" class="text-neutral-700 hover:text-red-500" size={28} />
+          <a
+            href="https://www.youtube.com/@AriseAsiaMovement"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Icon
+              name="fa6-brands:youtube"
+              class="text-neutral-700 hover:text-red-500"
+              size={28}
+            />
           </a>
-          <a href="https://www.facebook.com/ariseasia2023" rel="noopener noreferrer" target="_blank">
-            <Icon name="fa6-brands:facebook" class="text-neutral-700 hover:text-blue-500" size={28} />
+          <a
+            href="https://www.facebook.com/ariseasia2023"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <Icon
+              name="fa6-brands:facebook"
+              class="text-neutral-700 hover:text-blue-500"
+              size={28}
+            />
           </a>
         </div>
       </div>
 
       <div class="flex flex-col gap-5">
-        <div class="flex text-p justify-center ml-auto gap-5 md:gap-10 px-3 md:px-0">
-          <a href={`/${locale}/`} class="uppercase font-semibold hover:text-blue-600">Home</a>
-          <a href={`/${locale}/about`} class="uppercase font-semibold hover:text-blue-600">About Us</a>
-          <a href={`/${locale}/movements`} class="uppercase font-semibold hover:text-blue-600">Movements</a>
-          <a class="uppercase font-semibold hover:text-blue-600" href="https://www.totalideas.org/projects" rel="noopener noreferrer" target="_blank">Giving</a>
+        <div
+          class="text-p ml-auto flex justify-center gap-5 px-3 md:gap-10 md:px-0"
+        >
+          <a
+            href={`/${locale}/`}
+            class="font-semibold uppercase hover:text-blue-600">Home</a
+          >
+          <a
+            href={`/${locale}/about`}
+            class="font-semibold uppercase hover:text-blue-600">About Us</a
+          >
+          <a
+            href={`/${locale}/movements`}
+            class="font-semibold uppercase hover:text-blue-600">Movements</a
+          >
+          <a
+            class="font-semibold uppercase hover:text-blue-600"
+            href="https://www.totalideas.org/projects"
+            rel="noopener noreferrer"
+            target="_blank">Giving</a
+          >
         </div>
 
-        <p class="italic text-p md:text-right text-neutral-400">Copyright &copy;2022-2026 Arise Asia. All rights reserved.</p>
+        <p class="text-p text-neutral-400 italic md:text-right">
+          Copyright &copy;2022-2026 Arise Asia. All rights reserved.
+        </p>
       </div>
     </div>
   </div>

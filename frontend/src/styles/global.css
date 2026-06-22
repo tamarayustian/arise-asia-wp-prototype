@@ -7,27 +7,27 @@
 }
 
 @utility text-h1 {
-  @apply mb-4 text-4xl font-bold sm:mb-6 sm:text-5xl md:text-7xl font-heading;
+  @apply font-heading mb-4 text-4xl font-bold sm:mb-6 sm:text-5xl md:text-7xl;
 }
 
 @utility text-h2 {
-  @apply mb-2 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl font-heading;
+  @apply font-heading mb-2 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl;
 }
 
 @utility text-h3 {
-  @apply mb-1 text-xl font-bold sm:mb-2 sm:text-3xl md:text-4xl font-heading;
+  @apply font-heading mb-1 text-xl font-bold sm:mb-2 sm:text-3xl md:text-4xl;
 }
 
 @utility text-h4 {
-  @apply mb-0.5 text-lg font-bold sm:mb-1 sm:text-xl md:text-2xl font-heading;
+  @apply font-heading mb-0.5 text-lg font-bold sm:mb-1 sm:text-xl md:text-2xl;
 }
 
 @utility text-h5 {
-  @apply font-bold sm:mb-0.5 sm:text-lg md:text-xl font-heading;
+  @apply font-heading font-bold sm:mb-0.5 sm:text-lg md:text-xl;
 }
 
 @utility text-h6 {
-  @apply font-bold md:text-lg font-heading;
+  @apply font-heading font-bold md:text-lg;
 }
 
 @utility text-p {
@@ -38,4 +38,43 @@
   body {
     @apply text-black;
   }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(160deg);
+  }
+  to {
+    transform: rotate(520deg);
+  }
+}
+
+@keyframes spin-reverse {
+  from {
+    transform: rotate(170deg);
+  }
+  to {
+    transform: rotate(-190deg);
+  }
+}
+
+@keyframes spin-very-slow {
+  from {
+    transform: rotate(70deg);
+  }
+  to {
+    transform: rotate(430deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 10s linear infinite;
+}
+
+.animate-spin-reverse {
+  animation: spin-reverse 10s linear infinite;
+}
+
+.animate-spin-very-slow {
+  animation: spin-very-slow 20s linear infinite;
 }

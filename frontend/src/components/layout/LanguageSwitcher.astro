@@ -1,5 +1,5 @@
 ---
-import { LOCALES } from '@/lib/constants';
+import { LOCALES } from "@/lib/constants";
 
 export interface Props {
   currentLocale: string;
@@ -9,9 +9,13 @@ const { currentLocale } = Astro.props;
 ---
 
 <nav>
-  {Object.entries(LOCALES).map(([code, label]) => (
-    code === currentLocale
-      ? <strong>{label}</strong>
-      : <a href={`/${code}/`}>{label}</a>
-  ))}
+  {
+    Object.entries(LOCALES).map(([code, label]) =>
+      code === currentLocale ? (
+        <strong>{label}</strong>
+      ) : (
+        <a href={`/${code}/`}>{label}</a>
+      ),
+    )
+  }
 </nav>

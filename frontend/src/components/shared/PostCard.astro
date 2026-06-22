@@ -1,5 +1,5 @@
 ---
-import type { WPPost } from '@/lib/types';
+import type { WPPost } from "@/lib/types";
 
 export interface Props {
   post: WPPost;
@@ -12,9 +12,13 @@ const { post, locale } = Astro.props;
 <li>
   <a href={`/${locale}/posts/${post.slug}`}>
     <h2>{post.title.rendered}</h2>
-    {post.excerpt?.rendered && (
-      <p set:html={post.excerpt.rendered} />
-    )}
-    {post.acf?.subtitle && <p><strong>{post.acf.subtitle as string}</strong></p>}
+    {post.excerpt?.rendered && <p set:html={post.excerpt.rendered} />}
+    {
+      post.acf?.subtitle && (
+        <p>
+          <strong>{post.acf.subtitle as string}</strong>
+        </p>
+      )
+    }
   </a>
 </li>
