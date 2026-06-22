@@ -1,0 +1,15 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import { getPage } from '@/lib/services/pages';
+
+const { locale, slug } = Astro.params;
+const page = await getPage(slug!, locale);
+---
+
+<Layout title={page.title.rendered} locale={locale!}>
+  <a href={`/${locale}/`}>&larr; Back</a>
+  <article>
+    <h1>{page.title.rendered}</h1>
+    <div set:html={page.content.rendered} />
+  </article>
+</Layout>

@@ -1,16 +1,27 @@
 ---
-import Layout from '../../layouts/Layout.astro';
-import { getPosts } from '../../lib/wordpress';
+import PostCard from '@/components/shared/PostCard.astro';
+import Layout from '@/layouts/Layout.astro';
+import { SITE_NAME } from '@/lib/constants';
+import { getPosts } from '@/lib/services/posts';
 
 const { locale } = Astro.params;
 const posts = await getPosts(locale);
 ---
 
-<Layout title="My Blog" locale={locale!}>
-  <h1>Latest Posts</h1>
-  <ul>
-    {posts.map(post => (
-      <li><a href={`/${locale}/posts/${post.slug}`}>{post.title.rendered}</a></li>
-    ))}
-  </ul>
+<Layout title={SITE_NAME} locale={locale!}>
+  <div>
+  <header>
+    <h2>Welcome</h2>
+    <p>A headless WordPress site built with Astro.</p>
+  </header>
+
+  <section>
+    <h2>Latest Posts</h2>
+    <ul>
+      {posts.map(post => (
+        <PostCard post={post} locale={locale!} />
+      ))}
+    </ul>
+  </section>
+  </div>
 </Layout>

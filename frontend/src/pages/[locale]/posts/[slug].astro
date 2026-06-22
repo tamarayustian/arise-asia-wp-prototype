@@ -1,6 +1,6 @@
 ---
-import Layout from '../../../layouts/Layout.astro';
-import { getPost } from '../../../lib/wordpress';
+import Layout from '@/layouts/Layout.astro';
+import { getPost } from '@/lib/services/posts';
 
 const { locale, slug } = Astro.params;
 const post = await getPost(slug!, locale);
