@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,700&family=Unbounded:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-family-sans: "DM Sans", sans-serif;
+  --font-heading: "Unbounded", sans-serif;
+}
+
+@utility text-h1 {
+  @apply mb-4 text-4xl font-bold sm:mb-6 sm:text-5xl md:text-7xl font-heading;
+}
+
+@utility text-h2 {
+  @apply mb-2 text-2xl font-bold sm:mb-4 sm:text-4xl md:text-5xl font-heading;
+}
+
+@utility text-h3 {
+  @apply mb-1 text-xl font-bold sm:mb-2 sm:text-3xl md:text-4xl font-heading;
+}
+
+@utility text-h4 {
+  @apply mb-0.5 text-lg font-bold sm:mb-1 sm:text-xl md:text-2xl font-heading;
+}
+
+@utility text-h5 {
+  @apply font-bold sm:mb-0.5 sm:text-lg md:text-xl font-heading;
+}
+
+@utility text-h6 {
+  @apply font-bold md:text-lg font-heading;
+}
+
+@utility text-p {
+  @apply mb-0.5 text-sm sm:mb-1 sm:text-base;
+}
+
+@layer base {
+  body {
+    @apply text-black;
+  }
+}
