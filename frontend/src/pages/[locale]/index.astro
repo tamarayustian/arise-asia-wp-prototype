@@ -1,9 +1,9 @@
 ---
-import { Icon } from "astro-icon/components";
 import PostCard from "@/components/shared/PostCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { SITE_NAME } from "@/lib/constants";
 import { getPosts } from "@/lib/services/posts";
+import ActionButton from "@/components/shared/ActionButton.astro";
 import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
 
 const { locale } = Astro.params;
@@ -95,24 +95,7 @@ const commitments = 7890;
             </p>
           </div>
         </div>
-        <a
-          href="/arise26"
-          class="mx-auto mt-8 w-fit rounded-full bg-[linear-gradient(100deg,#2781FF_-8.62%,#6BA7FF_48.41%,#FFA456_76.92%,#FE4C5A_105.43%)] p-0.5"
-        >
-          <div
-            class="group rounded-full px-8 py-4 text-white uppercase hover:bg-white"
-          >
-            <p
-              class="font-heading flex items-center gap-x-2 text-xs font-semibold group-hover:bg-[linear-gradient(100deg,#2781FF_-8.62%,#6BA7FF_48.41%,#FFA456_76.92%,#FE4C5A_105.43%)] group-hover:bg-clip-text group-hover:text-transparent sm:text-base"
-            >
-              Learn more now
-              <Icon
-                name="lucide:arrow-right"
-                class="size-5 group-hover:text-[#FE4C5A]"
-              />
-            </p>
-          </div>
-        </a>
+          <ActionButton class="mt-8" href="/arise26">Learn more now</ActionButton>
       </div>
     </div>
   </header>
@@ -204,24 +187,7 @@ const commitments = 7890;
           </p>
         </div>
       </div>
-      <a
-        href="/arise26"
-        class="bg-accent-red-dark mx-auto w-fit rounded-full p-0.5"
-      >
-        <div
-          class="group rounded-full px-8 py-4 text-white uppercase hover:bg-white"
-        >
-          <p
-            class="font-heading group-hover:bg-accent-red-dark flex items-center gap-x-2 text-xs font-semibold group-hover:bg-clip-text group-hover:text-transparent sm:text-base"
-          >
-            Learn more about our impact
-            <Icon
-              name="lucide:arrow-right"
-              class="group-hover:text-accent-red-dark size-5"
-            />
-          </p>
-        </div>
-      </a>
+      <ActionButton href="/arise26" bg="bg-accent-red-dark" hover="group-hover:text-accent-red-dark" iconHover="group-hover:text-accent-red-dark">Learn more about our impact</ActionButton>
     </section>
 
     <section id="where-is-arise" class="flex flex-col items-center pt-20">
