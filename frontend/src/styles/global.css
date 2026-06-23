@@ -4,6 +4,72 @@
 @theme {
   --font-family-sans: "DM Sans", sans-serif;
   --font-heading: "Unbounded", sans-serif;
+
+  /* Primary */
+  --color-primary-blue: #0062ff;
+  --color-primary-blue-lighter: #2c80ff;
+  --color-primary-orange: #ffa45a;
+  --color-primary-red: #ff5f5a;
+
+  /* Neutral families */
+  --color-neutral-cream-lightest: #fffefe;
+  --color-neutral-cream-lighter: #fffdfb;
+  --color-neutral-cream-light: #fffbf7;
+  --color-neutral-cream-primary: #fff9f4;
+  --color-neutral-cream-dark: #b3aeab;
+  --color-neutral-cream-darker: #807d7a;
+
+  --color-neutral-tan-lightest: #fefdfc;
+  --color-neutral-tan-lighter: #fcf7f2;
+  --color-neutral-tan-light: #faf0e9;
+  --color-neutral-tan-primary: #f8eadf;
+  --color-neutral-tan-dark: #aea49c;
+  --color-neutral-tan-darker: #7c7570;
+
+  --color-neutral-cool-lightest: #fafafb;
+  --color-neutral-cool-lighter: #eaeaef;
+  --color-neutral-cool-light: #dadae4;
+  --color-neutral-cool-primary: #cacad8;
+  --color-neutral-cool-dark: #8d8d97;
+  --color-neutral-cool-darker: #65656c;
+
+  --color-neutral-gray-lightest: #e8e8e8;
+  --color-neutral-gray-lighter: #999999;
+  --color-neutral-gray-light: #4d4d4d;
+  --color-neutral-gray-primary: #000;
+
+  /* Accent families */
+  --color-accent-blue-lightest: #eaf2ff;
+  --color-accent-blue-lighter: #abccff;
+  --color-accent-blue-light: #6ba6ff;
+  --color-accent-blue-dark: #1f5ab3;
+  --color-accent-blue-darker: #164080;
+
+  --color-accent-orange-lightest: #fff6ef;
+  --color-accent-orange-lighter: #ffdbbd;
+  --color-accent-orange-light: #ffbf8c;
+  --color-accent-orange-dark: #b3733f;
+  --color-accent-orange-darker: #80522d;
+
+  --color-accent-red-lightest: #ffefef;
+  --color-accent-red-lighter: #ffbfbd;
+  --color-accent-red-light: #ff8f8c;
+  --color-accent-red-dark: #b3433f;
+  --color-accent-red-darker: #80302d;
+
+  --color-accent-rose-lightest: #fff8f7;
+  --color-accent-rose-lighter: #fff1f0;
+  --color-accent-rose-light: #ffe8e6;
+  --color-accent-rose-primary: #ffdcda;
+  --color-accent-rose-dark: #e6c6c4;
+  --color-accent-rose-darker: #b39593;
+
+  --color-accent-purple-lightest: #f5f3fd;
+  --color-accent-purple-lighter: #d8d0f5;
+  --color-accent-purple-light: #baadee;
+  --color-accent-purple-primary: #9d8ae6;
+  --color-accent-purple-dark: #6e61a1;
+  --color-accent-purple-darker: #4f4573;
 }
 
 @utility text-h1 {
@@ -38,43 +104,4 @@
   body {
     @apply text-black;
   }
-}
-
-@keyframes spin-slow {
-  from {
-    transform: rotate(160deg);
-  }
-  to {
-    transform: rotate(520deg);
-  }
-}
-
-@keyframes spin-reverse {
-  from {
-    transform: rotate(170deg);
-  }
-  to {
-    transform: rotate(-190deg);
-  }
-}
-
-@keyframes spin-very-slow {
-  from {
-    transform: rotate(70deg);
-  }
-  to {
-    transform: rotate(430deg);
-  }
-}
-
-.animate-spin-slow {
-  animation: spin-slow 10s linear infinite;
-}
-
-.animate-spin-reverse {
-  animation: spin-reverse 10s linear infinite;
-}
-
-.animate-spin-very-slow {
-  animation: spin-very-slow 20s linear infinite;
 }
