@@ -151,7 +151,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-r border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-lg font-medium text-accent-red-dark md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
           >
             <AnimatedCounter target={countries} />
           </p>
@@ -165,7 +165,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-x border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-lg font-medium text-accent-red-dark md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
           >
             <AnimatedCounter target={cities} />
           </p>
@@ -179,7 +179,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-x border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-lg font-medium text-accent-red-dark md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
           >
             <AnimatedCounter target={participants} />
           </p>
@@ -193,7 +193,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-l border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-lg font-medium text-accent-red-dark md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
           >
             <AnimatedCounter target={commitments} />
           </p>
@@ -206,30 +206,40 @@ const commitments = 7890;
       </div>
       <a
         href="/arise26"
-        class="mx-auto w-fit rounded-full bg-accent-red-dark p-0.5"
+        class="bg-accent-red-dark mx-auto w-fit rounded-full p-0.5"
       >
         <div
           class="group rounded-full px-8 py-4 text-white uppercase hover:bg-white"
         >
           <p
-            class="font-heading flex items-center gap-x-2 text-xs font-semibold group-hover:bg-accent-red-dark group-hover:bg-clip-text group-hover:text-transparent sm:text-base"
+            class="font-heading group-hover:bg-accent-red-dark flex items-center gap-x-2 text-xs font-semibold group-hover:bg-clip-text group-hover:text-transparent sm:text-base"
           >
             Learn more about our impact
             <Icon
               name="lucide:arrow-right"
-              class="size-5 group-hover:text-accent-red-dark"
+              class="group-hover:text-accent-red-dark size-5"
             />
           </p>
         </div>
       </a>
     </section>
-    <section>
+
+    <section id="where-is-arise" class="flex flex-col items-center pt-20">
+    </section>
+
+    <section id="upcoming-events" class="flex flex-col items-center pt-20">
+    </section>
+
+    <!-- <section>
       <h2>Latest Posts</h2>
       <ul>
         {posts.map((post) => <PostCard post={post} locale={locale!} />)}
       </ul>
-    </section>
+    </section> -->
   </div>
+
+  <section id="impact-stories" class="flex flex-col items-center pt-20">
+  </section>
 </Layout>
 
 <script>
