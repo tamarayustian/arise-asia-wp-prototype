@@ -12,11 +12,19 @@ export interface Props {
 const { href, bg, hover, iconHover, class: className } = Astro.props;
 ---
 
-<a {href} class={`mx-auto w-fit rounded-full p-0.5 ${bg || 'bg-gradient-accent'} ${className || ''}`}>
+<a
+  {href}
+  class={`mx-auto w-fit rounded-full p-0.5 ${bg || "bg-gradient-accent"} ${className || ""}`}
+>
   <div class="group rounded-full px-8 py-4 text-white uppercase hover:bg-white">
-    <p class={`font-heading flex items-center gap-x-2 text-xs font-semibold ${hover || 'group-hover:text-gradient-accent'} sm:text-base`}>
+    <p
+      class={`font-heading flex items-center gap-x-2 text-xs font-semibold ${hover || "group-hover:text-gradient-accent"} sm:text-base`}
+    >
       <slot />
-      <Icon name="lucide:arrow-right" class={`size-5 ${iconHover || 'group-hover:text-accent-red'}`} />
+      <Icon
+        name="lucide:arrow-right"
+        class={`size-5 ${iconHover || "group-hover:text-accent-red"}`}
+      />
     </p>
   </div>
 </a>

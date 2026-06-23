@@ -101,18 +101,30 @@
 }
 
 @utility bg-gradient-accent {
-  background-image: linear-gradient(100deg, #2781FF -8.62%, #6BA7FF 48.41%, #FFA456 76.92%, #FE4C5A 105.43%);
+  background-image: linear-gradient(
+    100deg,
+    #2781ff -8.62%,
+    #6ba7ff 48.41%,
+    #ffa456 76.92%,
+    #fe4c5a 105.43%
+  );
 }
 
 @utility text-gradient-accent {
-  background-image: linear-gradient(100deg, #2781FF -8.62%, #6BA7FF 48.41%, #FFA456 76.92%, #FE4C5A 105.43%);
+  background-image: linear-gradient(
+    100deg,
+    #2781ff -8.62%,
+    #6ba7ff 48.41%,
+    #ffa456 76.92%,
+    #fe4c5a 105.43%
+  );
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
 }
 
 @utility text-accent-red {
-  color: #FE4C5A;
+  color: #fe4c5a;
 }
 
 @layer base {
