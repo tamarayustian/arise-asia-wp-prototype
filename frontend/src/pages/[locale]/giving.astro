@@ -1,9 +1,74 @@
 ---
-import { CampaignCarousel } from "@/components/giving/CampaignCarousel";
+import { FeaturedCampaignCarousel } from "@/components/giving/FeaturedCampaignCarousel";
+import { UpcomingCampaignCarousel } from "@/components/giving/UpcomingCampaignCarousel";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
 const { locale } = Astro.params;
+const featuredCampaignData = [
+  {
+    image: "https://placehold.co/800x500/f8eadf/b3433f?text=Arise+Asia+Summit",
+    title: "Arise Asia Summit 2026",
+    description:
+      "A gathering of thousands of young people from across Asia to be challenged and equipped to take the Gospel to the unreached.",
+    tags: ["Summit", "Featured"],
+    progress: 72,
+    progressLabel: "$72K of $100K raised",
+    donationUrl: "https://totalideas.org/summit",
+  },
+  {
+    image:
+      "https://placehold.co/800x500/fff6ef/b3733f?text=Leadership+Training",
+    title: "Leadership Training Fund",
+    description:
+      "Equipping a generation of mission-minded leaders through conferences, discipleship resources, and mentorship across Asia.",
+    tags: ["Training"],
+    progress: 45,
+    progressLabel: "$22.5K of $50K raised",
+    donationUrl: "https://totalideas.org/training",
+  },
+  {
+    image: "https://placehold.co/800x500/ffefef/b3433f?text=Scholarships",
+    title: "Delegate Scholarships",
+    description:
+      "Help bring delegates from across Asia to Arise Asia summits — covering travel, accommodation, and materials for those who cannot afford it.",
+    tags: ["Scholarships", "Urgent"],
+    progress: 30,
+    progressLabel: "$15K of $50K raised",
+    donationUrl: "https://totalideas.org/scholarships",
+  },
+];
+const upcomingCampaignData = [
+  {
+    image:
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
+    title: "Clean Water Initiative",
+    description:
+      "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
+    tags: ["Water", "Health"],
+    donationUrl: "https://give.example.com/water",
+    learnUrl: "https://example.com/water",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80",
+    title: "Education for All",
+    description:
+      "Support scholarships and school supplies for underprivileged children around the world.",
+    tags: ["Education", "Children"],
+    donationUrl: "https://give.example.com/education",
+    learnUrl: "https://example.com/education",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
+    title: "Disaster Relief Fund",
+    description:
+      "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
+    tags: ["Emergency", "Relief"],
+    donationUrl: "https://give.example.com/disaster",
+  },
+];
 ---
 
 <Layout title="Giving — Arise Asia" locale={locale!}>
@@ -38,44 +103,7 @@ const { locale } = Astro.params;
     </div>
     <div class="bg-accent-orange-lightest pt-12">
       <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
-        <CampaignCarousel
-          client:load
-          slides={[
-            {
-              image:
-                "https://placehold.co/800x500/f8eadf/b3433f?text=Arise+Asia+Summit",
-              title: "Arise Asia Summit 2026",
-              description:
-                "A gathering of thousands of young people from across Asia to be challenged and equipped to take the Gospel to the unreached.",
-              tags: ["Summit", "Featured"],
-              progress: 72,
-              progressLabel: "$72K of $100K raised",
-              donationUrl: "https://totalideas.org/summit",
-            },
-            {
-              image:
-                "https://placehold.co/800x500/fff6ef/b3733f?text=Leadership+Training",
-              title: "Leadership Training Fund",
-              description:
-                "Equipping a generation of mission-minded leaders through conferences, discipleship resources, and mentorship across Asia.",
-              tags: ["Training"],
-              progress: 45,
-              progressLabel: "$22.5K of $50K raised",
-              donationUrl: "https://totalideas.org/training",
-            },
-            {
-              image:
-                "https://placehold.co/800x500/ffefef/b3433f?text=Scholarships",
-              title: "Delegate Scholarships",
-              description:
-                "Help bring delegates from across Asia to Arise Asia summits — covering travel, accommodation, and materials for those who cannot afford it.",
-              tags: ["Scholarships", "Urgent"],
-              progress: 30,
-              progressLabel: "$15K of $50K raised",
-              donationUrl: "https://totalideas.org/scholarships",
-            },
-          ]}
-        />
+        <FeaturedCampaignCarousel client:load data={featuredCampaignData} />
       </div>
     </div>
   </section>
@@ -88,6 +116,7 @@ const { locale } = Astro.params;
     >
       Upcoming Campaign
     </h2>
+    <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
   </section>
   <section
     id="giving-options"

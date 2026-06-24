@@ -36,11 +36,11 @@ function getSlideStyle(
   return { transform: "translateX(110%) scale(0.7)", zIndex: 0, opacity: 0 };
 }
 
-export function CampaignCarousel({ slides }: { slides: Slide[] }) {
+export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
   const [current, setCurrent] = React.useState(0);
-  const total = slides.length;
+  const total = data.length;
   const last = total - 1;
-  const slide = slides[current];
+  const slide = data[current];
 
   function goPrev() {
     setCurrent((c) => Math.max(0, c - 1));
@@ -66,7 +66,7 @@ export function CampaignCarousel({ slides }: { slides: Slide[] }) {
           href={slide.donationUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading flex w-fit items-center gap-2 rounded-full border-2 border-accent-orange-dark px-6 py-3 text-sm font-semibold text-accent-orange-dark uppercase transition hover:bg-accent-orange-dark hover:text-white"
+          className="font-heading border-accent-orange-dark text-accent-orange-dark hover:bg-accent-orange-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 text-sm font-semibold uppercase transition hover:text-white"
         >
           Give Now
           <ArrowUpRight className="size-4" />
@@ -87,7 +87,7 @@ export function CampaignCarousel({ slides }: { slides: Slide[] }) {
           </button>
 
           <div className="flex gap-2">
-            {slides.map((_, i) => (
+            {data.map((_, i) => (
               <button
                 key={i}
                 onClick={() => setCurrent(i)}
@@ -121,10 +121,10 @@ export function CampaignCarousel({ slides }: { slides: Slide[] }) {
         className="relative w-full overflow-hidden pb-12 md:w-3/5 lg:w-2/3"
         style={{ minHeight: "28rem" }}
       >
-        {slides.map((slide, i) => (
+        {data.map((slide, i) => (
           <div
             key={i}
-            className="absolute left-0 right-0 top-0 transition-all duration-300 ease-out"
+            className="absolute top-0 right-0 left-0 transition-all duration-300 ease-out"
             style={{ ...getSlideStyle(i, current, total), bottom: "3rem" }}
             role="group"
             aria-roledescription="slide"
