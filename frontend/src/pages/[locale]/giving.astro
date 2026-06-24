@@ -1,0 +1,102 @@
+---
+import { CampaignCarousel } from "@/components/giving/CampaignCarousel";
+import Layout from "@/layouts/Layout.astro";
+import { Icon } from "astro-icon/components";
+
+const { locale } = Astro.params;
+---
+
+<Layout title="Giving — Arise Asia" locale={locale!}>
+  <section
+    class="container mx-auto flex flex-col px-4 pt-40 sm:px-10 sm:pt-48 md:px-20 lg:px-48"
+  >
+    <h1 class="text-h1 uppercase">Giving</h1>
+    <p class="font-heading">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+  </section>
+  <section class="bg-accent-blue-dark mt-10 py-2">
+    <p
+      class="text-h2 mb-0 flex items-center gap-x-2 px-4 text-white uppercase sm:px-16 md:px-28 lg:px-60 lg:whitespace-nowrap"
+    >
+      <span class="text-primary-orange">Join us!</span> You can make an impact <Icon
+        name="lucide:arrow-down"
+        class="size-12"
+      />
+    </p>
+  </section>
+  <section id="featured-campaign" class="pt-20">
+    <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+      <h2
+        class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+      >
+        Featured Campaign
+      </h2>
+    </div>
+    <div class="bg-accent-orange-lightest pt-12">
+      <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+        <CampaignCarousel
+          client:load
+          slides={[
+            {
+              image:
+                "https://placehold.co/800x500/f8eadf/b3433f?text=Arise+Asia+Summit",
+              title: "Arise Asia Summit 2026",
+              description:
+                "A gathering of thousands of young people from across Asia to be challenged and equipped to take the Gospel to the unreached.",
+              tags: ["Summit", "Featured"],
+              progress: 72,
+              progressLabel: "$72K of $100K raised",
+              donationUrl: "https://totalideas.org/summit",
+            },
+            {
+              image:
+                "https://placehold.co/800x500/fff6ef/b3733f?text=Leadership+Training",
+              title: "Leadership Training Fund",
+              description:
+                "Equipping a generation of mission-minded leaders through conferences, discipleship resources, and mentorship across Asia.",
+              tags: ["Training"],
+              progress: 45,
+              progressLabel: "$22.5K of $50K raised",
+              donationUrl: "https://totalideas.org/training",
+            },
+            {
+              image:
+                "https://placehold.co/800x500/ffefef/b3433f?text=Scholarships",
+              title: "Delegate Scholarships",
+              description:
+                "Help bring delegates from across Asia to Arise Asia summits — covering travel, accommodation, and materials for those who cannot afford it.",
+              tags: ["Scholarships", "Urgent"],
+              progress: 30,
+              progressLabel: "$15K of $50K raised",
+              donationUrl: "https://totalideas.org/scholarships",
+            },
+          ]}
+        />
+      </div>
+    </div>
+  </section>
+  <section
+    id="upcoming-campaign"
+    class="container mx-auto px-4 pt-20 sm:px-10 md:px-20 lg:px-48"
+  >
+    <h2
+      class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+    >
+      Upcoming Campaign
+    </h2>
+  </section>
+  <section
+    id="giving-options"
+    class="container mx-auto px-4 pt-20 sm:px-10 md:px-20 lg:px-48"
+  >
+    <h2
+      class="font-heading mb-3 text-lg font-semibold uppercase md:mb-5 md:text-2xl"
+    >
+      Giving Options
+    </h2>
+  </section>
+</Layout>

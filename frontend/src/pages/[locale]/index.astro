@@ -95,7 +95,7 @@ const commitments = 7890;
             </p>
           </div>
         </div>
-          <ActionButton class="mt-8" href="/arise26">Learn more now</ActionButton>
+        <ActionButton class="mt-8" href="/arise26">Learn more now</ActionButton>
       </div>
     </div>
   </header>
@@ -126,15 +126,15 @@ const commitments = 7890;
     </section>
 
     <section id="impact" class="flex flex-col items-center pt-20">
-      <p class="text-h3 font-heading font-normal uppercase">
+      <h2 class="text-h3 font-heading font-normal uppercase">
         Our Impact To-Date
-      </p>
+      </h2>
       <div class="grid w-full grid-cols-4 py-4 uppercase sm:py-8">
         <div
           class="relative flex flex-1 flex-col items-center justify-center border-r border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:mb-5 lg:text-5xl"
           >
             <AnimatedCounter target={countries} />
           </p>
@@ -148,7 +148,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-x border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:mb-5 lg:text-5xl"
           >
             <AnimatedCounter target={cities} />
           </p>
@@ -162,7 +162,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-x border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:mb-5 lg:text-5xl"
           >
             <AnimatedCounter target={participants} />
           </p>
@@ -176,7 +176,7 @@ const commitments = 7890;
           class="relative flex flex-1 flex-col items-center justify-center border-l border-neutral-300 text-center"
         >
           <p
-            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:text-5xl"
+            class="font-heading text-accent-red-dark text-lg font-medium md:text-3xl lg:mb-5 lg:text-5xl"
           >
             <AnimatedCounter target={commitments} />
           </p>
@@ -187,10 +187,20 @@ const commitments = 7890;
           </p>
         </div>
       </div>
-      <ActionButton href="/arise26" bg="bg-accent-red-dark" hover="group-hover:text-accent-red-dark" iconHover="group-hover:text-accent-red-dark">Learn more about our impact</ActionButton>
+      <ActionButton
+        href="/arise26"
+        bg="bg-accent-red-dark"
+        hover="group-hover:text-accent-red-dark"
+        iconHover="group-hover:text-accent-red-dark"
+        >Learn more about our impact</ActionButton
+      >
     </section>
 
-    <section id="where-is-arise" class="flex flex-col items-center pt-20">
+    <section id="where-is-arise" class="flex flex-col pt-20">
+      <h2 class="font-heading text-h4 uppercase">Where is Arise Now?</h2>
+      <p class="text-p">
+        Click to find out more about what is happening in a specific country
+      </p>
     </section>
 
     <section id="upcoming-events" class="flex flex-col items-center pt-20">
