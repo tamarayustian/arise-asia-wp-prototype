@@ -1,4 +1,4 @@
-import { ActionButton } from "@/components/shared/ActionButton";
+import { OutlineButton } from "@/components/shared/OutlineButton";
 import {
   Carousel,
   CarouselContent,
@@ -64,13 +64,13 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                     {card.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-3 pt-2">
-                    <ActionButton href={card.donationUrl} className="">
+                    <OutlineButton href={card.donationUrl}>
                       Give Now
-                    </ActionButton>
+                    </OutlineButton>
                     {card.learnUrl && (
-                      <ActionButton href={card.learnUrl} className="">
+                      <OutlineButton href={card.learnUrl}>
                         Learn More
-                      </ActionButton>
+                      </OutlineButton>
                     )}
                   </div>
                 </div>

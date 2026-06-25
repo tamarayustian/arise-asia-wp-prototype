@@ -1,3 +1,4 @@
+import { OutlineButton } from "@/components/shared/OutlineButton";
 import { cn } from "@/lib/utils";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
@@ -139,14 +140,9 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
         <p className="text-lg font-light text-blue-900 md:text-2xl">
           {slide.description}
         </p>
-        <a
-          href={slide.donationUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-heading border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition hover:text-white"
-        >
+        <OutlineButton href={slide.donationUrl}>
           Give Now
-        </a>
+        </OutlineButton>
         <div className="hidden items-center gap-3 md:flex">
           <button
             onClick={goPrev}
