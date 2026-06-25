@@ -68,6 +68,35 @@ const upcomingCampaignData = [
     tags: ["Emergency", "Relief"],
     donationUrl: "https://give.example.com/disaster",
   },
+  {
+    image:
+      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
+    title: "Clean Water Initiative",
+    description:
+      "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
+    tags: ["Water", "Health"],
+    donationUrl: "https://give.example.com/water",
+    learnUrl: "https://example.com/water",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80",
+    title: "Education for All",
+    description:
+      "Support scholarships and school supplies for underprivileged children around the world.",
+    tags: ["Education", "Children"],
+    donationUrl: "https://give.example.com/education",
+    learnUrl: "https://example.com/education",
+  },
+  {
+    image:
+      "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
+    title: "Disaster Relief Fund",
+    description:
+      "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
+    tags: ["Emergency", "Relief"],
+    donationUrl: "https://give.example.com/disaster",
+  },
 ];
 ---
 
@@ -107,16 +136,17 @@ const upcomingCampaignData = [
       </div>
     </div>
   </section>
-  <section
-    id="upcoming-campaign"
-    class="container mx-auto px-4 pt-20 sm:px-10 md:px-20 lg:px-48"
-  >
-    <h2
-      class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
-    >
-      Upcoming Campaign
-    </h2>
-    <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
+  <section id="upcoming-campaign" class="pt-20">
+    <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+      <h2
+        class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+      >
+        Upcoming Campaign
+      </h2>
+    </div>
+    <div class="pl-4 sm:pl-16 md:pl-28 lg:pl-60">
+      <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
+    </div>
   </section>
   <section
     id="giving-options"
