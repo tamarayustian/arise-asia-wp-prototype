@@ -36,7 +36,10 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
       <Carousel opts={{ align: "start" }} setApi={setApi} className="w-full">
         <CarouselContent className="-ml-3 pb-12 md:-ml-4">
           {data.map((card, i) => (
-            <CarouselItem key={i} className="basis-[77%] pl-3 md:basis-[30%] lg:basis-[23%] md:pl-4">
+            <CarouselItem
+              key={i}
+              className="basis-[77%] pl-3 md:basis-[30%] md:pl-4 lg:basis-[23%]"
+            >
               <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
                 <img
                   src={card.image}
