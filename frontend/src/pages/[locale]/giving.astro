@@ -1,5 +1,6 @@
 ---
 import { FeaturedCampaignCarousel } from "@/components/giving/FeaturedCampaignCarousel";
+import { GivingAccordion } from "@/components/giving/GivingAccordion";
 import { UpcomingCampaignCarousel } from "@/components/giving/UpcomingCampaignCarousel";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
@@ -89,6 +90,7 @@ const upcomingCampaignData = [
     learnUrl: "https://example.com/education",
   },
   {
+    id: "3",
     image:
       "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
     title: "Disaster Relief Fund",
@@ -96,6 +98,39 @@ const upcomingCampaignData = [
       "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
     tags: ["Emergency", "Relief"],
     donationUrl: "https://give.example.com/disaster",
+  },
+];
+
+const givingOptionsData = [
+  {
+    id: "1",
+    question: "How do I make a donation?",
+    answer:
+      "You can donate online via credit card, PayPal, or bank transfer. Choose the option that works best for you from the methods above.",
+  },
+  {
+    id: "2",
+    question: "Can I donate anonymously?",
+    answer:
+      "Yes, you can choose to remain anonymous. Your donation will still be processed, but your name will not appear in any public materials.",
+  },
+  {
+    id: "3",
+    question: "Is my donation tax-deductible?",
+    answer:
+      "Donations are tax-deductible in the countries where we are registered as a nonprofit. A receipt will be emailed to you after your donation.",
+  },
+  {
+    id: "4",
+    question: "Can I set up a recurring donation?",
+    answer:
+      "Absolutely. You can choose monthly, quarterly, or annual recurring donations. You can cancel or change the amount at any time.",
+  },
+  {
+    id: "5",
+    question: "How is my donation used?",
+    answer:
+      "Your donation goes directly toward funding our campaigns and programs. Administrative costs are kept to a minimum to maximize impact.",
   },
 ];
 ---
@@ -150,12 +185,13 @@ const upcomingCampaignData = [
   </section>
   <section
     id="giving-options"
-    class="container mx-auto px-4 pt-20 sm:px-10 md:px-20 lg:px-48"
+    class="container mx-auto px-4 pt-20 pb-10 sm:px-10 md:px-20 lg:px-48 lg:pb-16"
   >
     <h2
       class="font-heading mb-3 text-lg font-semibold uppercase md:mb-5 md:text-2xl"
     >
       Giving Options
     </h2>
+    <GivingAccordion client:load items={givingOptionsData} />
   </section>
 </Layout>
