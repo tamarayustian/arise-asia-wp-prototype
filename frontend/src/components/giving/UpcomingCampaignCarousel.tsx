@@ -1,3 +1,4 @@
+import { ActionButton } from "@/components/shared/ActionButton";
 import {
   Carousel,
   CarouselContent,
@@ -6,8 +7,6 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import { cn } from "@/lib/utils";
-import { ArrowUpRight } from "lucide-react";
 import React from "react";
 
 interface Card {
@@ -58,40 +57,20 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                       </span>
                     ))}
                   </div>
-                  <h3 className="font-heading text-lg font-bold">
+                  <h3 className="font-heading text-lg font-bold text-blue-900 uppercase">
                     {card.title}
                   </h3>
                   <p className="text-sm text-neutral-600 sm:text-base">
                     {card.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-3 pt-2">
-                    <a
-                      href={card.donationUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        "font-heading border-accent-orange-dark flex items-center gap-2 rounded-full border-2",
-                        "text-accent-orange-dark px-5 py-2 text-xs font-semibold uppercase",
-                        "hover:bg-accent-orange-dark transition hover:text-white",
-                      )}
-                    >
+                    <ActionButton href={card.donationUrl} className="">
                       Give Now
-                      <ArrowUpRight className="size-3.5" />
-                    </a>
+                    </ActionButton>
                     {card.learnUrl && (
-                      <a
-                        href={card.learnUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          "font-heading flex items-center gap-2 rounded-full border-2 border-neutral-300",
-                          "px-5 py-2 text-xs font-semibold text-neutral-600 uppercase",
-                          "transition hover:border-neutral-500 hover:text-neutral-800",
-                        )}
-                      >
+                      <ActionButton href={card.learnUrl} className="">
                         Learn More
-                        <ArrowUpRight className="size-3.5" />
-                      </a>
+                      </ActionButton>
                     )}
                   </div>
                 </div>
