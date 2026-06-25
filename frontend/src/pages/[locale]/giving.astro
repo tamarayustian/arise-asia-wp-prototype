@@ -9,12 +9,12 @@ const { locale } = Astro.params;
 const featuredCampaignData = [
   {
     image: "https://placehold.co/800x500/f8eadf/b3433f?text=Arise+Asia+Summit",
-    title: "Arise Asia Summit 2026",
+    title: "For the Joy: Arise Asia 2026",
     description:
-      "A gathering of thousands of young people from across Asia to be challenged and equipped to take the Gospel to the unreached.",
-    tags: ["Summit", "Featured"],
+      "July 27-31, 2026",
+    tags: ["Upcoming", "Asia"],
     progress: 72,
-    progressLabel: "$72K of $100K raised",
+    progressLabel: "**72%** of **$100,000** raised",
     donationUrl: "https://totalideas.org/summit",
   },
   {
@@ -25,7 +25,7 @@ const featuredCampaignData = [
       "Equipping a generation of mission-minded leaders through conferences, discipleship resources, and mentorship across Asia.",
     tags: ["Training"],
     progress: 45,
-    progressLabel: "$22.5K of $50K raised",
+    progressLabel: "**45%** of **$50,000** raised",
     donationUrl: "https://totalideas.org/training",
   },
   {
@@ -35,7 +35,7 @@ const featuredCampaignData = [
       "Help bring delegates from across Asia to Arise Asia summits — covering travel, accommodation, and materials for those who cannot afford it.",
     tags: ["Scholarships", "Urgent"],
     progress: 30,
-    progressLabel: "$15K of $50K raised",
+    progressLabel: "**30%** of **$60,000** raised",
     donationUrl: "https://totalideas.org/scholarships",
   },
 ];
@@ -100,7 +100,6 @@ const upcomingCampaignData = [
     donationUrl: "https://give.example.com/disaster",
   },
 ];
-
 const givingOptionsData = [
   {
     id: "1",
@@ -160,7 +159,7 @@ const givingOptionsData = [
   <section id="featured-campaign" class="pt-20">
     <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
       <h2
-        class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+        class="font-heading text-accent-blue-darker mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
       >
         Featured Campaign
       </h2>
@@ -174,7 +173,7 @@ const givingOptionsData = [
   <section id="upcoming-campaign" class="pt-20">
     <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
       <h2
-        class="font-heading mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+        class="font-heading text-accent-blue-darker mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
       >
         Upcoming Campaign
       </h2>
@@ -188,7 +187,7 @@ const givingOptionsData = [
     class="container mx-auto px-4 pt-20 pb-10 sm:px-10 md:px-20 md:pb-16 lg:px-48 lg:pb-24"
   >
     <h2
-      class="font-heading mb-3 text-lg font-semibold uppercase md:mb-5 md:text-2xl"
+      class="font-heading text-accent-blue-darker mb-3 text-lg font-semibold uppercase md:mb-5 md:text-2xl"
     >
       Giving Options
     </h2>

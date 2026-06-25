@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import React from "react";
 
 interface Slide {
@@ -36,6 +36,19 @@ function getSlideStyle(
   return { transform: "translateX(110%) scale(0.7)", zIndex: 0, opacity: 0 };
 }
 
+function renderLabel(label: string) {
+  const parts = label.split(/(\*\*[^*]+\*\*)/);
+  return parts.map((part, i) =>
+    part.startsWith("**") && part.endsWith("**") ? (
+      <span key={i} className="font-bold">
+        {part.slice(2, -2)}
+      </span>
+    ) : (
+      <span key={i}>{part}</span>
+    ),
+  );
+}
+
 export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
   const [current, setCurrent] = React.useState(0);
   const total = data.length;
@@ -58,18 +71,19 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
       aria-label="Featured campaigns"
     >
       <div className="flex flex-col gap-4 md:w-2/5 lg:w-1/3">
-        <h3 className="font-heading text-2xl font-bold md:text-3xl">
+        <h3 className="font-heading -mr-4 text-2xl font-bold text-blue-900 uppercase md:-mr-8 md:text-3xl lg:-mr-16 lg:text-5xl">
           {slide.title}
         </h3>
-        <p className="text-p text-neutral-600">{slide.description}</p>
+        <p className="text-lg font-light text-blue-900 md:text-2xl">
+          {slide.description}
+        </p>
         <a
           href={slide.donationUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="font-heading border-accent-orange-dark text-accent-orange-dark hover:bg-accent-orange-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 text-sm font-semibold uppercase transition hover:text-white"
+          className="font-heading border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition hover:text-white"
         >
           Give Now
-          <ArrowUpRight className="size-4" />
         </a>
         <div className="flex items-center gap-3">
           <button
@@ -93,7 +107,7 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
                 onClick={() => setCurrent(i)}
                 className={cn(
                   "size-2.5 rounded-full transition",
-                  i === current ? "bg-accent-orange-dark" : "bg-neutral-300",
+                  i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
                 )}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={i === current ? "true" : "false"}
@@ -148,18 +162,15 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
                     </span>
                   ))}
                 </div>
-                <h3 className="font-heading text-lg font-bold">
-                  {slide.title}
-                </h3>
                 <div className="mt-auto flex flex-col gap-1">
-                  <div className="h-2 w-full overflow-hidden rounded-full bg-neutral-300">
+                  <div className="h-10 w-full overflow-hidden rounded-sm bg-neutral-300">
                     <div
-                      className="bg-accent-orange-dark h-full rounded-full transition-[width] duration-500"
+                      className="bg-accent-blue-darker h-full rounded-sm transition-[width] duration-500"
                       style={{ width: `${slide.progress}%` }}
                     />
                   </div>
-                  <p className="text-xs font-medium text-neutral-500">
-                    {slide.progressLabel}
+                  <p className="text-accent-blue-dark text-right text-sm">
+                    {renderLabel(slide.progressLabel)}
                   </p>
                 </div>
               </div>
