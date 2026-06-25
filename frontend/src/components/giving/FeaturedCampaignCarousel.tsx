@@ -71,69 +71,8 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
       aria-roledescription="carousel"
       aria-label="Featured campaigns"
     >
-      <div className="flex flex-col gap-4 md:w-2/5 lg:w-1/3">
-        <h3 className="font-heading -mr-4 text-2xl font-bold text-blue-900 uppercase md:-mr-8 md:text-3xl lg:-mr-16 lg:text-5xl">
-          {slide.title}
-        </h3>
-        <p className="text-lg font-light text-blue-900 md:text-2xl">
-          {slide.description}
-        </p>
-        <a
-          href={slide.donationUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="font-heading border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition hover:text-white"
-        >
-          Give Now
-        </a>
-        <div className="flex items-center gap-3">
-          <button
-            onClick={goPrev}
-            disabled={current === 0}
-            className={cn(
-              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
-              current === 0
-                ? "cursor-not-allowed opacity-40"
-                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
-            )}
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="size-5" />
-          </button>
-
-          <div className="flex gap-2">
-            {data.map((_, i) => (
-              <button
-                key={i}
-                onClick={() => setCurrent(i)}
-                className={cn(
-                  "size-2.5 rounded-full transition",
-                  i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
-                )}
-                aria-label={`Go to slide ${i + 1}`}
-                aria-current={i === current ? "true" : "false"}
-              />
-            ))}
-          </div>
-
-          <button
-            onClick={goNext}
-            disabled={current === last}
-            className={cn(
-              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
-              current === last
-                ? "cursor-not-allowed opacity-40"
-                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
-            )}
-            aria-label="Next slide"
-          >
-            <ChevronRight className="size-5" />
-          </button>
-        </div>
-      </div>
-
       <div
-        className="relative w-full overflow-hidden pb-12 md:w-3/5 lg:w-2/3"
+        className="relative order-1 w-full overflow-hidden pb-12 md:order-2 md:w-3/5 lg:w-2/3"
         style={{ minHeight: "28rem" }}
       >
         {data.map((slide, i) => (
@@ -149,7 +88,7 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
               <img
                 src={slide.image}
                 alt={slide.title}
-                className="h-48 w-full object-cover sm:h-64"
+                className="h-64 w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}
               />
               <div className="flex flex-1 flex-col gap-3 p-4 sm:p-6">
@@ -161,7 +100,7 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
                     {slide.region}
                   </span>
                 </div>
-                <div className="mt-auto flex flex-col gap-1">
+                <div className="flex flex-col gap-1">
                   <div className="h-10 w-full overflow-hidden rounded-sm bg-neutral-300">
                     <div
                       className="bg-accent-blue-darker h-full rounded-sm transition-[width] duration-500"
@@ -176,6 +115,80 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
             </div>
           </div>
         ))}
+      </div>
+
+      <div className="order-2 flex justify-center gap-2 md:hidden">
+        {data.map((_, i) => (
+          <button
+            key={i}
+            onClick={() => setCurrent(i)}
+            className={cn(
+              "size-2.5 rounded-full transition",
+              i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
+            )}
+            aria-label={`Go to slide ${i + 1}`}
+            aria-current={i === current ? "true" : "false"}
+          />
+        ))}
+      </div>
+
+      <div className="order-3 flex flex-col gap-4 md:order-1 md:w-2/5 lg:w-1/3">
+        <h3 className="font-heading -mr-4 text-2xl font-bold text-blue-900 uppercase md:-mr-8 md:text-3xl lg:-mr-16 lg:text-5xl">
+          {slide.title}
+        </h3>
+        <p className="text-lg font-light text-blue-900 md:text-2xl">
+          {slide.description}
+        </p>
+        <a
+          href={slide.donationUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="font-heading border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark flex w-fit items-center gap-2 rounded-full border-2 px-6 py-3 font-semibold transition hover:text-white"
+        >
+          Give Now
+        </a>
+        <div className="hidden items-center gap-3 md:flex">
+          <button
+            onClick={goPrev}
+            disabled={current === 0}
+            className={cn(
+              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
+              current === 0
+                ? "cursor-not-allowed opacity-40"
+                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
+            )}
+            aria-label="Previous slide"
+          >
+            <ChevronLeft className="size-5" />
+          </button>
+
+          {data.map((_, i) => (
+            <button
+              key={i}
+              onClick={() => setCurrent(i)}
+              className={cn(
+                "flex size-2.5 rounded-full transition md:hidden",
+                i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
+              )}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-current={i === current ? "true" : "false"}
+            />
+          ))}
+
+          <button
+            onClick={goNext}
+            disabled={current === last}
+            className={cn(
+              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
+              current === last
+                ? "cursor-not-allowed opacity-40"
+                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
+            )}
+            aria-label="Next slide"
+          >
+            <ChevronRight className="size-5" />
+          </button>
+        </div>
       </div>
     </div>
   );
