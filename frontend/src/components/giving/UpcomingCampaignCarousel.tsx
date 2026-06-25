@@ -4,8 +4,6 @@ import {
   CarouselContent,
   CarouselDots,
   CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
 } from "@/components/ui/carousel";
 import React from "react";
 
@@ -37,7 +35,7 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
           {data.map((card, i) => (
             <CarouselItem
               key={i}
-              className="basis-[77%] pl-3 md:basis-[30%] md:pl-4 lg:basis-[23%]"
+              className="basis-[77%] pl-3 md:basis-[30%] md:pl-4"
             >
               <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
                 <img
@@ -63,7 +61,7 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                   <p className="text-sm text-neutral-600 sm:text-base">
                     {card.description}
                   </p>
-                  <div className="mt-auto flex flex-wrap gap-3 pt-2">
+                  <div className="mt-auto flex flex-wrap gap-2 pt-2">
                     <OutlineButton href={card.donationUrl}>
                       Give Now
                     </OutlineButton>
@@ -78,8 +76,6 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
       </Carousel>
       <CarouselDots
         count={total}
