@@ -6,7 +6,8 @@ interface Slide {
   image: string;
   title: string;
   description: string;
-  tags: string[];
+  status: string;
+  region: string;
   progress: number;
   progressLabel: string;
   donationUrl: string;
@@ -153,14 +154,12 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
               />
               <div className="flex flex-1 flex-col gap-3 p-4 sm:p-6">
                 <div className="flex flex-wrap gap-2">
-                  {slide.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="bg-accent-orange-lightest font-heading text-accent-orange-dark rounded-full px-3 py-1 text-xs font-medium tracking-wider uppercase"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                  <span className="bg-gradient-accent rounded-md border-2 border-black px-3 py-2 text-sm leading-none font-medium text-white">
+                    {slide.status}
+                  </span>
+                  <span className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase">
+                    {slide.region}
+                  </span>
                 </div>
                 <div className="mt-auto flex flex-col gap-1">
                   <div className="h-10 w-full overflow-hidden rounded-sm bg-neutral-300">
