@@ -138,7 +138,7 @@ const givingOptionsData = [
 
 <Layout title="Giving — Arise Asia" locale={locale!}>
   <section
-    class="container mx-auto flex flex-col px-4 pt-40 sm:px-10 sm:pt-48 md:px-20 lg:px-48"
+    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-48 lg:pt-48"
   >
     <h1 class="text-h1 uppercase">Giving</h1>
     <p class="font-heading">
@@ -148,15 +148,18 @@ const givingOptionsData = [
       commodo consequat.
     </p>
   </section>
-  <section class="bg-accent-blue-dark mt-10 py-2">
-    <p
-      class="text-h2 mb-0 flex items-center gap-x-2 px-4 text-white uppercase sm:px-16 md:px-28 lg:px-60 lg:whitespace-nowrap"
-    >
-      <span class="text-primary-orange">Join us!</span> You can make an impact <Icon
-        name="lucide:arrow-down"
-        class="size-12"
-      />
-    </p>
+  <section class="bg-accent-blue-darker mt-10 py-2">
+    <div class="container mx-auto px-8 md:px-16 lg:px-48">
+      <p class="text-h2 mb-0 text-white uppercase">
+        <span class="text-primary-orange">Join us!</span> You can <span
+          class="whitespace-nowrap md:whitespace-normal"
+          >make an impact <Icon
+            name="lucide:arrow-down"
+            class="inline size-5 sm:size-6 md:size-8 lg:size-12"
+          /></span
+        >
+      </p>
+    </div>
   </section>
   <section id="featured-campaign" class="pt-20">
     <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
