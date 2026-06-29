@@ -1,7 +1,7 @@
 ---
-import { FeaturedCampaignCarousel } from "@/components/giving/FeaturedCampaignCarousel";
-import { GivingAccordion } from "@/components/giving/GivingAccordion";
-import { UpcomingCampaignCarousel } from "@/components/giving/UpcomingCampaignCarousel";
+import { FeaturedCampaignCarousel } from "@/components/give/FeaturedCampaignCarousel";
+import { GivingOptionsAccordion } from "@/components/give/GivingOptionsAccordion";
+import { UpcomingCampaignCarousel } from "@/components/give/UpcomingCampaignCarousel";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -132,7 +132,7 @@ const givingOptionsData = [
 ];
 ---
 
-<Layout title="Giving — Arise Asia" locale={locale!}>
+<Layout title="Give — Arise Asia" locale={locale!}>
   <section
     class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-48 lg:pt-48"
   >
@@ -192,6 +192,6 @@ const givingOptionsData = [
     >
       Giving Options
     </h2>
-    <GivingAccordion client:load items={givingOptionsData} />
+    <GivingOptionsAccordion client:load items={givingOptionsData} />
   </section>
 </Layout>

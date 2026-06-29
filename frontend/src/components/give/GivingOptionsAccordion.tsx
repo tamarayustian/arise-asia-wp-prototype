@@ -11,7 +11,7 @@ interface Item {
   answer: string;
 }
 
-export function GivingAccordion({ items }: { items: Item[] }) {
+export function GivingOptionsAccordion({ items }: { items: Item[] }) {
   return (
     <Accordion allowMultiple>
       {items.map((item) => (
