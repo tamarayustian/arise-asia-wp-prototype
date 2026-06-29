@@ -1,9 +1,8 @@
 import { OutlineButton } from "@/components/shared/OutlineButton";
-import { cn } from "@/lib/utils";
-import { ChevronLeft, ChevronRight } from "lucide-react";
-import React from "react";
+import { ArrowRight } from "lucide-react";
+import { useCallback, useState } from "react";
 
-interface Slide {
+interface Card {
   image: string;
   title: string;
   description: string;
@@ -14,25 +13,17 @@ interface Slide {
   donationUrl: string;
 }
 
-function getSlideStyle(
-  index: number,
-  current: number,
-  total: number,
-): React.CSSProperties {
-  const diff = index - current;
-  if (diff < 0) {
-    return { transform: "translateX(-110%) scale(0.8)", zIndex: 0, opacity: 0 };
-  }
-  if (diff === 0) {
+function getCardStyle(index: number, total: number): React.CSSProperties {
+  if (index === 0) {
     return { transform: "translateX(0) scale(1)", zIndex: total };
   }
-  if (diff === 1) {
+  if (index === 1) {
     return { transform: "translateX(8%) scale(0.92)", zIndex: total - 1 };
   }
-  if (diff === 2) {
+  if (index === 2) {
     return { transform: "translateX(15%) scale(0.85)", zIndex: total - 2 };
   }
-  if (diff === 3) {
+  if (index === 3) {
     return { transform: "translateX(20%) scale(0.79)", zIndex: total - 3 };
   }
   return { transform: "translateX(110%) scale(0.7)", zIndex: 0, opacity: 0 };
@@ -51,23 +42,21 @@ function renderLabel(label: string) {
   );
 }
 
-export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
-  const [current, setCurrent] = React.useState(0);
-  const total = data.length;
-  const last = total - 1;
-  const slide = data[current];
+export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
+  const [cards, setCards] = useState(data);
+  const total = cards.length;
+  const card = cards[0];
 
-  function goPrev() {
-    setCurrent((c) => Math.max(0, c - 1));
-  }
-
-  function goNext() {
-    setCurrent((c) => Math.min(last, c + 1));
-  }
+  const goNext = useCallback(() => {
+    setCards((prev) => {
+      const [first, ...rest] = prev;
+      return [...rest, first];
+    });
+  }, []);
 
   return (
     <div
-      className="mx-auto flex w-full flex-col gap-6 md:flex-row md:items-center md:gap-8 lg:gap-16"
+      className="mx-auto flex w-full flex-col md:flex-row md:items-center md:gap-4 lg:gap-8"
       role="region"
       aria-roledescription="carousel"
       aria-label="Featured campaigns"
@@ -76,40 +65,40 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
         className="relative order-1 w-full overflow-hidden pb-12 md:order-2 md:w-3/5 lg:w-2/3"
         style={{ minHeight: "28rem" }}
       >
-        {data.map((slide, i) => (
+        {cards.map((card, i) => (
           <div
             key={i}
             className="absolute top-0 right-0 left-0 transition-all duration-300 ease-out"
-            style={{ ...getSlideStyle(i, current, total), bottom: "3rem" }}
+            style={{ ...getCardStyle(i, total), bottom: "3rem" }}
             role="group"
-            aria-roledescription="slide"
-            aria-label={`Slide ${i + 1} of ${total}`}
+            aria-roledescription="card"
+            aria-label={`Card ${i + 1} of ${total}`}
           >
             <div className="mx-auto flex h-full max-w-lg flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
               <img
-                src={slide.image}
-                alt={slide.title}
+                src={card.image}
+                alt={card.title}
                 className="h-64 w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}
               />
               <div className="flex flex-1 flex-col gap-3 p-4 sm:p-6">
                 <div className="flex flex-wrap gap-2">
                   <span className="bg-gradient-accent rounded-md border-2 border-black px-3 py-2 text-sm leading-none font-medium text-white">
-                    {slide.status}
+                    {card.status}
                   </span>
                   <span className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase">
-                    {slide.region}
+                    {card.region}
                   </span>
                 </div>
                 <div className="flex flex-col gap-1">
                   <div className="h-10 w-full overflow-hidden rounded-sm bg-neutral-300">
                     <div
                       className="bg-accent-blue-darker h-full rounded-sm transition-[width] duration-500"
-                      style={{ width: `${slide.progress}%` }}
+                      style={{ width: `${card.progress}%` }}
                     />
                   </div>
                   <p className="text-accent-blue-dark text-right text-sm">
-                    {renderLabel(slide.progressLabel)}
+                    {renderLabel(card.progressLabel)}
                   </p>
                 </div>
               </div>
@@ -118,73 +107,24 @@ export function FeaturedCampaignCarousel({ data }: { data: Slide[] }) {
         ))}
       </div>
 
-      <div className="order-2 flex justify-center gap-2 md:hidden">
-        {data.map((_, i) => (
-          <button
-            key={i}
-            onClick={() => setCurrent(i)}
-            className={cn(
-              "size-2.5 rounded-full transition",
-              i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
-            )}
-            aria-label={`Go to slide ${i + 1}`}
-            aria-current={i === current ? "true" : "false"}
-          />
-        ))}
+      <div className="order-2 hidden md:order-3 md:flex">
+        <button
+          onClick={goNext}
+          className="hover:border-accent-orange-dark hover:text-accent-orange-dark flex size-10 items-center justify-center rounded-full border-2 transition"
+          aria-label="Next card"
+        >
+          <ArrowRight className="size-5" />
+        </button>
       </div>
 
       <div className="order-3 flex flex-col gap-4 md:order-1 md:w-2/5 lg:w-1/3">
         <h3 className="font-heading -mr-4 text-2xl font-bold text-blue-900 uppercase md:-mr-8 md:text-3xl lg:-mr-16 lg:text-5xl">
-          {slide.title}
+          {card.title}
         </h3>
         <p className="text-lg font-light text-blue-900 md:text-2xl">
-          {slide.description}
+          {card.description}
         </p>
-        <OutlineButton href={slide.donationUrl}>
-          Give Now
-        </OutlineButton>
-        <div className="hidden items-center gap-3 md:flex">
-          <button
-            onClick={goPrev}
-            disabled={current === 0}
-            className={cn(
-              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
-              current === 0
-                ? "cursor-not-allowed opacity-40"
-                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
-            )}
-            aria-label="Previous slide"
-          >
-            <ChevronLeft className="size-5" />
-          </button>
-
-          {data.map((_, i) => (
-            <button
-              key={i}
-              onClick={() => setCurrent(i)}
-              className={cn(
-                "flex size-2.5 rounded-full transition md:hidden",
-                i === current ? "bg-accent-blue-dark" : "bg-neutral-300",
-              )}
-              aria-label={`Go to slide ${i + 1}`}
-              aria-current={i === current ? "true" : "false"}
-            />
-          ))}
-
-          <button
-            onClick={goNext}
-            disabled={current === last}
-            className={cn(
-              "flex size-10 items-center justify-center rounded-full border border-neutral-300 transition",
-              current === last
-                ? "cursor-not-allowed opacity-40"
-                : "hover:border-accent-orange-dark hover:text-accent-orange-dark",
-            )}
-            aria-label="Next slide"
-          >
-            <ChevronRight className="size-5" />
-          </button>
-        </div>
+        <OutlineButton href={card.donationUrl}>Give Now</OutlineButton>
       </div>
     </div>
   );
