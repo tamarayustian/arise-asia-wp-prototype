@@ -49,8 +49,7 @@ const upcomingCampaignData = [
     description:
       "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
     tags: ["Water", "Health"],
-    donationUrl: "https://give.example.com/water",
-    learnUrl: "https://example.com/water",
+    donationUrl1: "https://give.example.com/water",
   },
   {
     image:
@@ -59,8 +58,7 @@ const upcomingCampaignData = [
     description:
       "Support scholarships and school supplies for underprivileged children around the world.",
     tags: ["Education", "Children"],
-    donationUrl: "https://give.example.com/education",
-    learnUrl: "https://example.com/education",
+    donationUrl1: "https://give.example.com/education",
   },
   {
     image:
@@ -69,7 +67,7 @@ const upcomingCampaignData = [
     description:
       "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
     tags: ["Emergency", "Relief"],
-    donationUrl: "https://give.example.com/disaster",
+    donationUrl1: "https://give.example.com/disaster",
   },
   {
     image:
@@ -78,8 +76,7 @@ const upcomingCampaignData = [
     description:
       "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
     tags: ["Water", "Health"],
-    donationUrl: "https://give.example.com/water",
-    learnUrl: "https://example.com/water",
+    donationUrl1: "https://give.example.com/water",
   },
   {
     image:
@@ -88,8 +85,7 @@ const upcomingCampaignData = [
     description:
       "Support scholarships and school supplies for underprivileged children around the world.",
     tags: ["Education", "Children"],
-    donationUrl: "https://give.example.com/education",
-    learnUrl: "https://example.com/education",
+    donationUrl1: "https://give.example.com/education",
   },
   {
     id: "3",
@@ -99,7 +95,7 @@ const upcomingCampaignData = [
     description:
       "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
     tags: ["Emergency", "Relief"],
-    donationUrl: "https://give.example.com/disaster",
+    donationUrl1: "https://give.example.com/disaster",
   },
 ];
 const givingOptionsData = [
@@ -162,37 +158,37 @@ const givingOptionsData = [
     </div>
   </section>
   <section id="featured-campaign" class="pt-20">
-    <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+    <div class="container mx-auto px-8 md:px-16 lg:px-48">
       <h2
-        class="font-heading text-accent-blue-darker mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+        class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
       >
         Featured Campaign
       </h2>
     </div>
     <div class="bg-accent-orange-lightest pt-12">
-      <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+      <div class="container mx-auto px-8 lg:px-28">
         <FeaturedCampaignCarousel client:load data={featuredCampaignData} />
       </div>
     </div>
   </section>
   <section id="upcoming-campaign" class="pt-20">
-    <div class="container mx-auto px-4 sm:px-10 md:px-20 lg:px-48">
+    <div class="container mx-auto px-8 md:px-16 lg:px-48">
       <h2
-        class="font-heading text-accent-blue-darker mb-3 text-lg font-medium uppercase md:mb-5 md:text-2xl"
+        class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
       >
         Upcoming Campaign
       </h2>
     </div>
-    <div class="pl-4 sm:pl-16 md:pl-28 lg:pl-60">
+    <div class="pl-8 sm:pl-16 md:pl-28 lg:pl-60">
       <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
     </div>
   </section>
   <section
     id="giving-options"
-    class="container mx-auto px-4 pt-20 pb-10 sm:px-10 md:px-20 md:pb-16 lg:px-48 lg:pb-24"
+    class="container mx-auto px-8 pt-20 pb-10 md:px-16 md:pb-16 lg:px-48 lg:pb-24"
   >
     <h2
-      class="font-heading text-accent-blue-darker mb-3 text-lg font-semibold uppercase md:mb-5 md:text-2xl"
+      class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
     >
       Giving Options
     </h2>
