@@ -12,8 +12,8 @@ interface Card {
   title: string;
   description: string;
   tags: string[];
-  donationUrl: string;
-  learnUrl?: string;
+  donationUrl1: string;
+  donationUrl2?: string;
 }
 
 export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
@@ -62,11 +62,11 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                     {card.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-2">
-                    <OutlineButton href={card.donationUrl}>
+                    <OutlineButton href={card.donationUrl1}>
                       Give Now
                     </OutlineButton>
-                    {card.learnUrl && (
-                      <OutlineButton href={card.learnUrl}>
+                    {card.donationUrl2 && (
+                      <OutlineButton href={card.donationUrl2}>
                         Learn More
                       </OutlineButton>
                     )}
