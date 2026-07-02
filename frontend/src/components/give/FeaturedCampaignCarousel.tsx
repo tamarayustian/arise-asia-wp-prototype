@@ -6,7 +6,6 @@ interface Card {
   image: string;
   title: string;
   description: string;
-  status: string;
   region: string;
   progress: number;
   progressLabel: string;
@@ -131,11 +130,11 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
 
   return (
     <div
-      className="mx-auto flex w-full flex-col gap-5 lg:flex-row lg:items-center lg:gap-10"
+      className="mx-auto flex w-full flex-col gap-4 lg:flex-row lg:items-center lg:gap-x-16 xl:gap-x-10"
       aria-label="Featured campaigns"
     >
       <div
-        className="relative order-1 min-h-[28rem] w-full lg:order-2 lg:min-h-[32rem] lg:w-1/2 lg:max-w-200"
+        className="relative order-1 min-h-112 w-full lg:order-2 lg:min-h-128 lg:w-1/2 lg:max-w-200"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -161,9 +160,6 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
               />
               <div className="flex flex-1 flex-col gap-3 p-4 sm:p-6">
                 <div className="flex flex-wrap gap-2">
-                  <span className="bg-gradient-accent rounded-md border-2 border-black px-3 py-2 text-sm leading-none font-medium text-white">
-                    {card.status}
-                  </span>
                   <span className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase">
                     {card.region}
                   </span>
