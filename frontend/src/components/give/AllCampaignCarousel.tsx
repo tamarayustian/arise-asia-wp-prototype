@@ -2,10 +2,8 @@ import { OutlineButton } from "@/components/shared/OutlineButton";
 import {
   Carousel,
   CarouselContent,
-  CarouselDots,
   CarouselItem,
 } from "@/components/ui/carousel";
-import React from "react";
 
 interface Card {
   image: string;
@@ -17,27 +15,16 @@ interface Card {
 }
 
 export function AllCampaignCarousel({ data }: { data: Card[] }) {
-  const [api, setApi] =
-    React.useState<ReturnType<typeof Carousel>["api"]>(null);
-  const [current, setCurrent] = React.useState(0);
-  const total = data.length;
-
-  React.useEffect(() => {
-    if (!api) return;
-    setCurrent(api.selectedScrollSnap());
-    api.on("select", () => setCurrent(api.selectedScrollSnap()));
-  }, [api]);
-
   return (
     <div className="relative">
-      <Carousel opts={{ align: "start" }} setApi={setApi} className="w-full">
+      <Carousel opts={{ align: "start" }} className="w-full">
         <CarouselContent className="-ml-3 pb-12 md:-ml-4">
           {data.map((card, i) => (
             <CarouselItem
               key={i}
               className="basis-[77%] pl-3 md:basis-[30%] md:pl-4"
             >
-              <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-2xl">
+              <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-xl">
                 <img
                   src={card.image}
                   alt={card.title}
@@ -77,12 +64,6 @@ export function AllCampaignCarousel({ data }: { data: Card[] }) {
           ))}
         </CarouselContent>
       </Carousel>
-      <CarouselDots
-        count={total}
-        current={current}
-        onSelect={(i) => api?.scrollTo(i)}
-        className="mt-4"
-      />
     </div>
   );
 }

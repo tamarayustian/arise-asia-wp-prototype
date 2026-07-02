@@ -1,7 +1,7 @@
 ---
+import { AllCampaignCarousel } from "@/components/give/AllCampaignCarousel";
 import { FeaturedCampaignCarousel } from "@/components/give/FeaturedCampaignCarousel";
 import { GivingOptionsAccordion } from "@/components/give/GivingOptionsAccordion";
-import { AllCampaignCarousel } from "@/components/give/AllCampaignCarousel";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -121,7 +121,7 @@ const givingOptionsData = [
 
 <Layout title="Give — Arise Asia" locale={locale!}>
   <section
-    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-32 xl:px-48 lg:pt-48"
+    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-32 lg:pt-48 xl:px-48"
   >
     <h1 class="text-h1 uppercase">Giving</h1>
     <p class="font-heading">
@@ -153,7 +153,9 @@ const givingOptionsData = [
       </h2>
     </div>
     <div class="bg-accent-orange-lightest overflow-visible py-10 lg:py-20">
-      <div class="container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pl-32 xl:pl-48 lg:pr-0">
+      <div
+        class="container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pr-0 lg:pl-32 xl:pl-48"
+      >
         <FeaturedCampaignCarousel client:load data={featuredCampaignData} />
       </div>
     </div>
@@ -172,7 +174,7 @@ const givingOptionsData = [
   </section>
   <section
     id="giving-options"
-    class="container mx-auto px-8 pt-20 pb-10 md:px-16 md:pb-16 lg:px-32 xl:px-48 lg:pb-24"
+    class="container mx-auto px-8 pt-10 pb-10 md:px-16 md:pb-16 lg:px-32 lg:pb-24 xl:px-48"
   >
     <h2
       class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
