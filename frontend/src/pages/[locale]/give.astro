@@ -29,17 +29,6 @@ const featuredCampaignData = [
     progressLabel: "**45%** of **$50,000** raised",
     donationUrl: "https://totalideas.org/training",
   },
-  {
-    image: "https://placehold.co/800x500/ffefef/b3433f?text=Scholarships",
-    title: "Delegate Scholarships",
-    description:
-      "Help bring delegates from across Asia to Arise Asia summits — covering travel, accommodation, and materials for those who cannot afford it.",
-    status: "Urgent",
-    region: "Asia",
-    progress: 30,
-    progressLabel: "**30%** of **$60,000** raised",
-    donationUrl: "https://totalideas.org/scholarships",
-  },
 ];
 const upcomingCampaignData = [
   {
@@ -134,7 +123,7 @@ const givingOptionsData = [
 
 <Layout title="Give — Arise Asia" locale={locale!}>
   <section
-    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-48 lg:pt-48"
+    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-32 xl:px-48 lg:pt-48"
   >
     <h1 class="text-h1 uppercase">Giving</h1>
     <p class="font-heading">
@@ -145,7 +134,7 @@ const givingOptionsData = [
     </p>
   </section>
   <section class="bg-accent-blue-darker mt-10 py-2">
-    <div class="container mx-auto px-8 md:px-16 lg:px-48">
+    <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
       <p class="text-h2 mb-0 text-white uppercase">
         <span class="text-primary-orange">Join us!</span> You can <span
           class="whitespace-nowrap md:whitespace-normal"
@@ -158,34 +147,34 @@ const givingOptionsData = [
     </div>
   </section>
   <section id="featured-campaign" class="pt-20">
-    <div class="container mx-auto px-8 md:px-16 lg:px-48">
+    <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
       <h2
-        class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
+        class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl xl:text-4xl"
       >
         Featured Campaign
       </h2>
     </div>
-    <div class="bg-accent-orange-lightest pt-12">
-      <div class="container mx-auto px-8 lg:px-28">
+    <div class="bg-accent-orange-lightest overflow-visible py-10 lg:py-20">
+      <div class="container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pl-32 xl:pl-48 lg:pr-0">
         <FeaturedCampaignCarousel client:load data={featuredCampaignData} />
       </div>
     </div>
   </section>
   <section id="upcoming-campaign" class="pt-20">
-    <div class="container mx-auto px-8 md:px-16 lg:px-48">
+    <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
       <h2
         class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
       >
         Upcoming Campaign
       </h2>
     </div>
-    <div class="pl-8 sm:pl-16 md:pl-28 lg:pl-60">
+    <div class="pl-8 sm:pl-16 md:pl-28 lg:pl-48 xl:pl-60">
       <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
     </div>
   </section>
   <section
     id="giving-options"
-    class="container mx-auto px-8 pt-20 pb-10 md:px-16 md:pb-16 lg:px-48 lg:pb-24"
+    class="container mx-auto px-8 pt-20 pb-10 md:px-16 md:pb-16 lg:px-32 xl:px-48 lg:pb-24"
   >
     <h2
       class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
