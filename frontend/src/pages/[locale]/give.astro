@@ -1,7 +1,7 @@
 ---
 import { FeaturedCampaignCarousel } from "@/components/give/FeaturedCampaignCarousel";
 import { GivingOptionsAccordion } from "@/components/give/GivingOptionsAccordion";
-import { UpcomingCampaignCarousel } from "@/components/give/UpcomingCampaignCarousel";
+import { AllCampaignCarousel } from "@/components/give/AllCampaignCarousel";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
 
@@ -163,11 +163,11 @@ const givingOptionsData = [
       <h2
         class="font-heading text-accent-blue-darker mb-3 text-2xl font-medium uppercase md:mb-5 md:text-3xl lg:text-4xl"
       >
-        Upcoming Campaign
+        Campaigns
       </h2>
     </div>
     <div class="pl-8 sm:pl-16 md:pl-28 lg:pl-48 xl:pl-60">
-      <UpcomingCampaignCarousel client:load data={upcomingCampaignData} />
+      <AllCampaignCarousel client:load data={upcomingCampaignData} />
     </div>
   </section>
   <section

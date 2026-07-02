@@ -16,7 +16,7 @@ interface Card {
   donationUrl2?: string;
 }
 
-export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
+export function AllCampaignCarousel({ data }: { data: Card[] }) {
   const [api, setApi] =
     React.useState<ReturnType<typeof Carousel>["api"]>(null);
   const [current, setCurrent] = React.useState(0);
@@ -49,7 +49,7 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                     {card.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="bg-accent-orange-lightest font-heading text-accent-orange-dark rounded-full px-3 py-1 text-xs font-medium tracking-wider uppercase"
+                        className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase"
                       >
                         {tag}
                       </span>
@@ -58,7 +58,7 @@ export function UpcomingCampaignCarousel({ data }: { data: Card[] }) {
                   <h3 className="font-heading text-lg font-bold text-blue-900 uppercase">
                     {card.title}
                   </h3>
-                  <p className="text-sm text-neutral-600 sm:text-base">
+                  <p className="text-sm font-light text-blue-900 sm:text-base">
                     {card.description}
                   </p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-2">
