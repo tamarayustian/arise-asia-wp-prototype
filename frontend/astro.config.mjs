@@ -1,5 +1,4 @@
 import { defineConfig } from 'astro/config';
-import node from '@astrojs/node';
 import react from '@astrojs/react';
 import tailwindcss from '@tailwindcss/vite';
 import icon from 'astro-icon';
@@ -8,9 +7,13 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
+const adapter = process.env.VERCEL
+  ? (await import('@astrojs/vercel')).default()
+  : (await import('@astrojs/node')).default({ mode: 'standalone' });
+
 export default defineConfig({
   output: 'server',
-  adapter: node({ mode: 'standalone' }),
+  adapter,
   integrations: [icon(), react()],
   vite: {
     plugins: [tailwindcss()],
