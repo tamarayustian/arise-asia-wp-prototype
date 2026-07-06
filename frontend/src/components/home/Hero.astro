@@ -1,5 +1,7 @@
 ---
 import { ActionButton } from "@/components/shared/ActionButton";
+
+const { videoUrl } = Astro.props;
 ---
 
 <div class="relative z-10 container mx-auto px-8 pt-56 sm:pt-64">
@@ -119,7 +121,7 @@ import { ActionButton } from "@/components/shared/ActionButton";
       <div class="aspect-video overflow-hidden rounded-2xl">
         <iframe
           class="h-full w-full"
-          src="https://www.youtube.com/embed/fMiN5u9qELM?si=I2_J9Pxj40rDROHM"
+          src={videoUrl}
           title="YouTube video"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen

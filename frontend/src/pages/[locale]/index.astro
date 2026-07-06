@@ -9,18 +9,16 @@ import { ActionButton } from "@/components/shared/ActionButton";
 import SimpleButton from "@/components/shared/SimpleButton.astro";
 import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
 import { ArrowRight } from "lucide-react";
+import homeData from "@/data/home.json";
 
 const { locale } = Astro.params;
 const posts = await getPosts(locale);
-const countries = 12;
-const cities = 40;
-const participants = 12345;
-const commitments = 7890;
+const { countries, cities, participants, commitments, videoUrl } = homeData;
 ---
 
 <Layout title={SITE_NAME} locale={locale!}>
   <header class="relative overflow-hidden">
-    <Hero />
+    <Hero videoUrl={videoUrl} />
     <DecorativeIcons />
   </header>
 
