@@ -17,8 +17,8 @@ const commitments = 7890;
 ---
 
 <Layout title={SITE_NAME} locale={locale!}>
-  <header>
-    <div class="container mx-auto px-8 pt-40 sm:pt-48">
+  <header class="relative overflow-hidden">
+    <div class="container relative z-10 mx-auto px-8 pt-40 sm:pt-48">
       <!-- Mobile layout (below md) -->
       <div class="flex flex-col md:hidden">
         <p
@@ -155,6 +155,86 @@ const commitments = 7890;
           </div>
         </div>
       </div>
+    </div>
+    <!-- Decorative icons (md+) -->
+    <div
+      class="pointer-events-none hidden md:block"
+      aria-hidden="true"
+    >
+      <!-- Left side -->
+      <div
+        class="bg-gradient-accent animate-float absolute top-8 md:left-4 xl:left-20 md:size-24 lg:size-36 -rotate-8"
+        style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-48 md:left-18 xl:left-34 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:150ms] -rotate-15"
+        style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-80 md:left-6 xl:left-22 md:size-24 lg:size-32 [animation-delay:300ms] -rotate-96"
+        style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-116 md:left-20 xl:left-36 md:size-14 lg:size-20 opacity-50 blur-sm [animation-delay:450ms] rotate-16"
+        style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-152 md:left-8 xl:left-24 md:size-20 lg:size-28 [animation-delay:600ms] rotate-24"
+        style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-188 md:left-14 xl:left-30 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:750ms] -rotate-12"
+        style="-webkit-mask: url('/icons/altar.svg') no-repeat center / contain; mask: url('/icons/altar.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-224 md:left-4 xl:left-20 md:size-28 lg:size-40 [animation-delay:900ms] rotate-8"
+        style="-webkit-mask: url('/icons/path.svg') no-repeat center / contain; mask: url('/icons/path.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-270 md:left-18 xl:left-34 md:size-12 lg:size-16 opacity-50 blur-sm [animation-delay:1050ms] rotate-20"
+        style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-296 md:left-8 xl:left-24 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:1200ms] -rotate-10"
+        style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+      />
+      <!-- Right side -->
+      <div
+        class="bg-gradient-accent animate-float absolute top-8 md:right-8 xl:right-24 md:size-24 lg:size-32 rotate-12"
+        style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-44 md:right-20 xl:right-36 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:150ms] -rotate-8"
+        style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-80 md:right-4 xl:right-20 md:size-20 lg:size-28 [animation-delay:300ms] rotate-24"
+        style="-webkit-mask: url('/icons/path.svg') no-repeat center / contain; mask: url('/icons/path.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-116 md:right-18 xl:right-34 md:size-28 lg:size-40 [animation-delay:450ms] -rotate-15"
+        style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-164 md:right-8 xl:right-24 md:size-14 lg:size-20 opacity-50 blur-sm [animation-delay:600ms] rotate-96"
+        style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-188 md:right-20 xl:right-36 md:size-24 lg:size-36 [animation-delay:750ms] -rotate-20"
+        style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-228 md:right-6 xl:right-22 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:900ms] rotate-8"
+        style="-webkit-mask: url('/icons/altar.svg') no-repeat center / contain; mask: url('/icons/altar.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-260 md:right-18 xl:right-34 md:size-12 lg:size-16 opacity-50 blur-sm [animation-delay:1050ms] -rotate-16"
+        style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+      />
+      <div
+        class="bg-gradient-accent animate-float absolute top-296 md:right-10 xl:right-26 md:size-16 lg:size-24 opacity-50 blur-sm [animation-delay:1200ms] rotate-30"
+        style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+      />
     </div>
   </header>
 
