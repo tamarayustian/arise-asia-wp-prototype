@@ -2,14 +2,12 @@
 import { AllCampaignCarousel } from "@/components/give/AllCampaignCarousel";
 import { FeaturedCampaignCarousel } from "@/components/give/FeaturedCampaignCarousel";
 import { GivingOptionsAccordion } from "@/components/give/GivingOptionsAccordion";
+import data from "@/data/give.json";
 import Layout from "@/layouts/Layout.astro";
 import { Icon } from "astro-icon/components";
-import data from "@/data/give.json";
 
 const { locale } = Astro.params;
-const featuredCampaignData = data.featuredCampaigns;
-const upcomingCampaignData = data.upcomingCampaigns;
-const givingOptionsData = data.givingOptions;
+const {featuredCampaigns, allCampaigns, givingOptions} = data
 ---
 
 <Layout title="Give — Arise Asia" locale={locale!}>
@@ -49,7 +47,7 @@ const givingOptionsData = data.givingOptions;
       <div
         class="container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pr-0 lg:pl-32 xl:pl-48"
       >
-        <FeaturedCampaignCarousel client:load data={featuredCampaignData} />
+        <FeaturedCampaignCarousel client:load data={featuredCampaigns} />
       </div>
     </div>
   </section>
@@ -62,7 +60,7 @@ const givingOptionsData = data.givingOptions;
       </h2>
     </div>
     <div class="pl-8 sm:pl-16 md:pl-28 lg:pl-48 xl:pl-60">
-      <AllCampaignCarousel client:load data={upcomingCampaignData} />
+      <AllCampaignCarousel client:load data={allCampaigns} />
     </div>
   </section>
   <section
@@ -74,6 +72,6 @@ const givingOptionsData = data.givingOptions;
     >
       Giving Options
     </h2>
-    <GivingOptionsAccordion client:load items={givingOptionsData} />
+    <GivingOptionsAccordion client:load items={givingOptions} />
   </section>
 </Layout>

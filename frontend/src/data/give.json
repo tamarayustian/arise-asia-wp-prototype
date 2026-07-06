@@ -19,39 +19,39 @@
       "donationUrl": "https://totalideas.org/training"
     }
   ],
-  "upcomingCampaigns": [
+  "allCampaigns": [
     {
       "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
       "title": "Clean Water Initiative",
-      "description": "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
+      "description": "July 27-31, 2026",
       "tags": ["Water", "Health"],
       "donationUrl1": "https://give.example.com/water"
     },
     {
       "image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80",
       "title": "Education for All",
-      "description": "Support scholarships and school supplies for underprivileged children around the world.",
+      "description": "July 27-31, 2026",
       "tags": ["Education", "Children"],
       "donationUrl1": "https://give.example.com/education"
     },
     {
       "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
       "title": "Disaster Relief Fund",
-      "description": "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
+      "description": "July 27-31, 2026",
       "tags": ["Emergency", "Relief"],
       "donationUrl1": "https://give.example.com/disaster"
     },
     {
       "image": "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=600&q=80",
       "title": "Clean Water Initiative",
-      "description": "Help bring clean drinking water to communities in need. Every donation builds wells and water filtration systems.",
+      "description": "July 27-31, 2026",
       "tags": ["Water", "Health"],
       "donationUrl1": "https://give.example.com/water"
     },
     {
       "image": "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=600&q=80",
       "title": "Education for All",
-      "description": "Support scholarships and school supplies for underprivileged children around the world.",
+      "description": "July 27-31, 2026",
       "tags": ["Education", "Children"],
       "donationUrl1": "https://give.example.com/education"
     },
@@ -59,7 +59,7 @@
       "id": "3",
       "image": "https://images.unsplash.com/photo-1559027615-cd4628902d4a?w=600&q=80",
       "title": "Disaster Relief Fund",
-      "description": "Provide emergency aid — food, shelter, and medical care — to families affected by natural disasters.",
+      "description": "July 27-31, 2026",
       "tags": ["Emergency", "Relief"],
       "donationUrl1": "https://give.example.com/disaster"
     }
