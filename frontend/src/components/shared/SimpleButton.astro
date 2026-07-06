@@ -1,0 +1,27 @@
+---
+interface Props {
+  href: string;
+  size?: keyof typeof sizeMap;
+  className?: string;
+}
+
+const sizeMap = {
+  sm: {
+    inner: "px-4 py-2 text-xs sm:px-6 sm:py-3 sm:text-sm",
+  },
+  md: {
+    inner: "px-6 py-3 text-xs sm:px-8 sm:py-4 sm:text-sm",
+  },
+  lg: {
+    inner: "px-8 py-4 text-sm sm:px-10 sm:py-5 sm:text-base",
+  },
+};
+
+const { href, className = "", size = "md" } = Astro.props;
+---
+
+<a href={href} class={`group rounded-full ${className}`}>
+  <div class={`rounded-full font-semibold uppercase ${sizeMap[size].inner}`}>
+    <p class="font-heading"><slot /></p>
+  </div>
+</a>
