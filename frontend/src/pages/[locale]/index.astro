@@ -299,9 +299,57 @@ const commitments = 7890;
     id="take-action"
     class="container mx-auto mt-4 mb-5 grid grid-cols-1 gap-4 px-4 md:mt-8 md:mb-10 md:grid-cols-3 md:px-2"
   >
-    <!-- Take Action — full width -->
+    <!-- Take Action — mobile (icons as background) -->
     <div
-      class="from-accent-purple-dark to-accent-purple-primary flex flex-row items-center gap-x-10 rounded-xl bg-linear-to-r p-3.5 md:col-span-3 md:p-7"
+      class="from-accent-purple-dark to-accent-purple-primary relative flex min-h-[24rem] flex-col items-center justify-center overflow-hidden rounded-xl bg-linear-to-r p-7 text-center md:hidden"
+    >
+      <div class="absolute inset-0">
+        <div
+          class="bg-accent-purple-dark absolute bottom-4 left-8 size-48 -rotate-8"
+          style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-10 left-72 size-24 -rotate-15"
+          style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute bottom-8 left-64 size-12 -rotate-96"
+          style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-4 left-52 size-12 rotate-24"
+          style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-5 size-16 rotate-16"
+          style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+        >
+        </div>
+      </div>
+      <div class="relative z-10 max-w-lg space-y-4">
+        <h2
+          class="font-heading text-4xl font-semibold text-white uppercase md:text-5xl lg:text-6xl"
+        >
+          Take Action
+        </h2>
+        <p class="text-white">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis
+          aliquam leo id faucibus. Nullam vestibulum justo eu sem imperdiet
+          fermentum. Sed vitae tristique ex. Lorem ipsum dolor sit amet,
+          consectetur adipiscing elit. Proin mattis aliquam leo id faucibus.
+          Nullam vestibulum justo eu sem imperdiet fermentum. Sed vitae
+          tristique ex.
+        </p>
+      </div>
+    </div>
+
+    <!-- Take Action — desktop/md (icons side by side) -->
+    <div
+      class="from-accent-purple-dark to-accent-purple-primary hidden flex-row items-center gap-x-10 rounded-xl bg-linear-to-r p-3.5 md:col-span-3 md:flex md:p-7"
     >
       <div class="max-w-5xl space-y-5">
         <h2
@@ -404,7 +452,7 @@ const commitments = 7890;
     </div>
 
     <!-- More ways to take action (⅓ width) -->
-    <div class="flex flex-col gap-4 rounded-xl md:col-span-1">
+    <div class="flex flex-col gap-2 rounded-xl md:col-span-1">
       <p
         class="font-heading text-accent-purple-darker text-lg font-medium uppercase md:text-xl"
       >
@@ -413,31 +461,31 @@ const commitments = 7890;
       <SimpleButton
         size="sm"
         href="/1"
-        className="text-accent-purple-dark border-accent-purple-dark hover:bg-accent-purple-dark border-2 bg-transparent font-medium hover:text-white"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Represent Arise Asia</SimpleButton
       >
       <SimpleButton
         size="sm"
         href="/1"
-        className="text-accent-purple-dark border-accent-purple-dark hover:bg-accent-purple-dark border-2 bg-transparent font-medium hover:text-white"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Prayer Movement</SimpleButton
       >
       <SimpleButton
         size="sm"
         href="/1"
-        className="text-accent-purple-dark border-accent-purple-dark hover:bg-accent-purple-dark border-2 bg-transparent font-medium hover:text-white"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Become a Mentor</SimpleButton
       >
       <SimpleButton
         size="sm"
         href="/1"
-        className="text-accent-purple-dark border-accent-purple-dark hover:bg-accent-purple-dark border-2 bg-transparent font-medium hover:text-white"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Become a Sending Partner</SimpleButton
       >
       <SimpleButton
         size="sm"
         href="/1"
-        className="text-accent-purple-dark border-accent-purple-dark hover:bg-accent-purple-dark border-2 bg-transparent font-medium hover:text-white"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Bring Arise Asia to Your Country</SimpleButton
       >
     </div>
