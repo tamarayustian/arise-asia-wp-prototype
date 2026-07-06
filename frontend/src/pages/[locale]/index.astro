@@ -227,9 +227,9 @@ const commitments = 7890;
       </div>
       <ActionButton
         href="/arise26"
-        bg="bg-accent-red-dark"
-        hover="group-hover:text-accent-red-dark"
-        iconHover="group-hover:text-accent-red-dark"
+        outerBg="bg-accent-red-dark"
+        textHover="group-hover:text-accent-red-dark"
+        hoverIcon="group-hover:text-accent-red-dark"
         >Learn more about our impact</ActionButton
       >
     </section>
@@ -278,18 +278,20 @@ const commitments = 7890;
       >
         <ActionButton
           href="/about-us"
-          bg="bg-black"
+          outerBg="bg-black"
           textColor="text-black"
-          innerBg="bg-white"
-          innerHover="hover:bg-black"
-          hover="group-hover:text-white"
-          iconHover="group-hover:text-white">Learn About Us</ActionButton
+          bg="bg-white"
+          hoverBg="hover:bg-black"
+          textHover="group-hover:text-white"
+          hoverIcon="group-hover:text-white"
+          iconComponent={ArrowRight}>Learn About Us</ActionButton
         >
         <ActionButton
           href="/about-us"
-          bg="bg-transparent"
-          hover="group-hover:text-black"
-          iconHover="group-hover:text-black">Our Partners</ActionButton
+          outerBg="bg-transparent"
+          textHover="group-hover:text-black"
+          hoverIcon="group-hover:text-black"
+          iconComponent={ArrowRight}>Our Partners</ActionButton
         >
       </div>
     </div>
