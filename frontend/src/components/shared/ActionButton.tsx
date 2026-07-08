@@ -37,7 +37,7 @@ export function ActionButton({
         className={`group rounded-full px-8 py-2.5 uppercase lg:px-7 lg:py-3.5 ${textColor} ${bg} ${hoverBg}`}
       >
         <p
-          className={`font-heading flex items-center gap-x-2 text-xs font-semibold ${textHover} sm:text-base`}
+          className={`font-heading flex items-center gap-x-2 text-xs font-semibold ${textHover} md:text-base`}
         >
           {children}
           <Icon className={`size-5 ${hoverIcon}`} />
