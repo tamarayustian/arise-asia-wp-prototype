@@ -31,10 +31,10 @@ export function ActionButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`w-fit rounded-full p-0.5 ${outerBg} ${className}`}
+      className={`w-fit rounded-full ${outerBg} ${className}`}
     >
       <div
-        className={`group rounded-full px-8 py-4 uppercase ${textColor} ${bg} ${hoverBg}`}
+        className={`group rounded-full px-8 py-2.5 uppercase lg:px-7 lg:py-3.5 ${textColor} ${bg} ${hoverBg}`}
       >
         <p
           className={`font-heading flex items-center gap-x-2 text-xs font-semibold ${textHover} sm:text-base`}
