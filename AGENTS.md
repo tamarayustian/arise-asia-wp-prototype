@@ -83,12 +83,59 @@ Two deployment targets with conditional adapter in `astro.config.mjs`:
 ## Decorative Icons (`src/components/home/DecorativeIcons.astro`)
 
 - Used in `<header>` for homepage visual flair: CSS-masked gradient icons (`bg-gradient-accent`), `pointer-events-none`, `aria-hidden="true"`
-- **18 desktop icons** (visible `md:`+): positioned with absolute coordinates, responsive sizes/positions (`md:` smaller + edge, `lg:` larger, `xl:` shifted inward by 16px)
+- **18 desktop icons** (visible `md:`+): 9 left, 9 right, arranged in a zigzag pattern (alternating shallow/deep from center)
 - **7 mobile icons** (visible below `md:`): scattered across full width/height, some with `opacity-50 blur-sm`, `sm:` variants for larger sizes
 - Icons smaller than `size-28` get `opacity-50 blur-sm`
 - Use CSS mask pattern: `<div class="bg-gradient-accent absolute ..." style="mask: url('/icons/NAME.svg') no-repeat center / contain;" />`
 - `overflow-hidden` on parent `<header>` prevents scrollbar from absolute icons
 - `animate-float` utility (`@keyframes float` with random-ish delay classes) for gentle vertical drift
+
+### xl is the base truth
+
+The user sets `xl:left-*` / `xl:right-*` and `xl:size-*` directly to avoid overlap with center content. **Never change xl values** — they are the user's preferred shape.
+
+### Deriving md and lg from xl
+
+When xl values change (e.g., to fix overlap), derive md/lg positions and sizes using these scale factors:
+
+| Breakpoint | Position factor | Size factor |
+|------------|----------------|-------------|
+| lg (1024px) | × 0.75 | × 0.75 |
+| md (768px)  | × 0.4  | × 0.57 |
+
+- Round to nearest standard Tailwind spacing value (list: 0, 0.5, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96)
+- **Always add an explicit `xl:size-*`** — `lg:size-*` cascades upward to xl, so without `xl:size-*` the lg size would bleed into xl
+- The cascade order: `md:left-* md:size-* lg:left-* lg:size-* xl:size-* xl:left-*`
+
+### Current xl shape (reference — dotted icons use `opacity-50 blur-sm`)
+
+**Left side:**
+
+| # | Icon | top | xl:left | xl:size | Blur? |
+|---|------|-----|---------|---------|-------|
+| 1 | fire | 8 | 52 | 36 | |
+| 2 | cross | 48 | 16 | 24 | • |
+| 3 | stone | 80 | 18 | 28 | |
+| 4 | spark | 128 | 26 | 20 | • |
+| 5 | wave | 152 | 48 | 28 | |
+| 6 | altar | 188 | 30 | 24 | • |
+| 7 | path | 224 | 52 | 40 | |
+| 8 | fire² | 270 | 50 | 20 | • |
+| 9 | cross² | 296 | 80 | 24 | • |
+
+**Right side:**
+
+| # | Icon | top | xl:right | xl:size | Blur? |
+|---|------|-----|----------|---------|-------|
+| 1 | spark | 8 | 64 | 32 | |
+| 2 | wave | 44 | 36 | 24 | • |
+| 3 | path | 80 | 12 | 28 | |
+| 4 | cross | 116 | 20 | 40 | |
+| 5 | stone | 164 | 70 | 20 | • |
+| 6 | fire | 188 | 32 | 36 | |
+| 7 | altar | 228 | 56 | 24 | • |
+| 8 | spark² | 260 | 72 | 30 | |
+| 9 | wave² | 296 | 64 | 24 | • |
 
 ## Countdown timer (`index.astro`)
 
