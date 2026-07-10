@@ -1,6 +1,7 @@
 ---
 import { AllCampaignCarousel } from "@/components/give/AllCampaignCarousel";
 import { FeaturedCampaignCarousel } from "@/components/give/FeaturedCampaignCarousel";
+import GiveDecorativeIcons from "@/components/give/GiveDecorativeIcons.astro";
 import { GivingOptionsAccordion } from "@/components/give/GivingOptionsAccordion";
 import data from "@/data/give.json";
 import Layout from "@/layouts/Layout.astro";
@@ -11,30 +12,35 @@ const { featuredCampaigns, allCampaigns, givingOptions } = data;
 ---
 
 <Layout title="Give — Arise Asia" locale={locale!}>
-  <section
-    class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-32 lg:pt-48 xl:px-48"
-  >
-    <h1 class="text-h1 uppercase">Giving</h1>
-    <p class="font-heading">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
-    </p>
-  </section>
-  <section class="bg-accent-blue-darker mt-10 py-2">
-    <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
-      <p class="text-h2 mb-0 text-white uppercase">
-        <span class="text-primary-orange">Join us!</span> You can <span
-          class="whitespace-nowrap md:whitespace-normal"
-          >make an impact <Icon
-            name="lucide:arrow-down"
-            class="inline size-5 sm:size-6 md:size-8 lg:size-12"
-          /></span
-        >
+  <div class="relative overflow-hidden">
+    <section
+      class="container mx-auto flex flex-col px-8 pt-40 md:px-16 lg:px-32 lg:pt-48 xl:px-48"
+    >
+      <h1 class="text-h1 uppercase">Giving</h1>
+      <p class="font-heading">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
       </p>
-    </div>
-  </section>
+    </section>
+    <section class="bg-accent-blue-darker mt-10 py-2">
+      <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
+        <p
+          class="font-heading text-2xl font-bold text-white uppercase md:text-3xl lg:text-4xl"
+        >
+          <span class="text-primary-orange">Join us!</span> You can <span
+            class="whitespace-nowrap md:whitespace-normal"
+            >make an impact <Icon
+              name="lucide:arrow-down"
+              class="inline size-5 sm:size-6 md:size-8 lg:size-12"
+            /></span
+          >
+        </p>
+      </div>
+    </section>
+    <GiveDecorativeIcons />
+  </div>
   <section id="featured-campaign" class="pt-20">
     <div class="container mx-auto px-8 md:px-16 lg:px-32 xl:px-48">
       <h2
