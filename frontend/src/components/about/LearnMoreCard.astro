@@ -1,0 +1,48 @@
+---
+import { ArrowRight } from "lucide-react";
+
+export interface Props {
+  href: string;
+  title: string;
+  description: string;
+  bgImage: string;
+  icon: string;
+  iconRotate?: string;
+}
+
+const {
+  href,
+  title,
+  description,
+  bgImage,
+  icon,
+  iconRotate = "-rotate-12",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-cover bg-center px-5 py-6 transition-all duration-300 md:px-7"
+  style={`background-image: url('${bgImage}')`}
+>
+  <div
+    class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-80"
+  >
+  </div>
+  <div class="relative z-10 flex flex-col gap-y-2">
+    <p class="text-accent-purple-light font-heading text-xl uppercase md:text-2xl">
+      {title}
+    </p>
+    <p class="text-neutral-cool-lightest max-w-xl text-sm tracking-wide md:text-base">
+      {description}
+    </p>
+  </div>
+  <div
+    class={`bg-accent-purple-dark absolute right-6 hidden size-16 shrink-0 opacity-40 sm:block md:size-20 ${iconRotate}`}
+    style={`-webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
+  >
+  </div>
+  <ArrowRight
+    className="text-accent-purple-light relative z-10 size-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:size-10"
+  />
+</a>

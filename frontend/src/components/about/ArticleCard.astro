@@ -1,0 +1,29 @@
+---
+import { ArrowUpRight } from "lucide-react";
+
+export interface Props {
+  title: string;
+  source: string;
+  href: string;
+}
+
+const { title, source, href } = Astro.props;
+---
+
+<div
+  class="bg-accent-orange-lighter flex h-full flex-col items-start justify-between gap-5 rounded-xl px-4 py-5"
+>
+  <div class="flex flex-col justify-between gap-2">
+    <p class="font-heading text-base uppercase">{title}</p>
+    <p class="text-xs">{source}</p>
+  </div>
+  <a
+    href={href}
+    target="_blank"
+    rel="noopener noreferrer"
+    class="text-accent-orange-darker font-heading flex items-center gap-1.5 text-xs font-semibold uppercase"
+  >
+    Read More
+    <ArrowUpRight className="size-3.5" />
+  </a>
+</div>

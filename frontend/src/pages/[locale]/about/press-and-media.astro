@@ -1,0 +1,88 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import ArticleCard from "@/components/about/ArticleCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+
+const filters = ["All", "News", "Press Releases", "Media Coverage", "Events"];
+
+const articles = [
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+  { title: "Article Title", source: "Source", href: "#" },
+];
+---
+
+<Layout title="Press and Media — Arise Asia" locale={locale!}>
+  <section id="hero">
+    <AboutHero breadcrumb="ABOUT US/" title="Press and Media">
+      <p
+        class="font-heading bg-linear-to-r from-[#ff5f5a] to-[#ffa45a] bg-clip-text text-2xl font-semibold text-transparent uppercase sm:text-3xl md:text-4xl"
+      >
+        Articles about Arise Asia
+      </p>
+      <p class="font-heading mt-4 max-w-3xl text-sm md:text-base">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+    </AboutHero>
+  </section>
+
+  <section
+    id="articles"
+    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div class="flex flex-wrap gap-3" id="press-filters">
+      {
+        filters.map((filter, index) => (
+          <button
+            type="button"
+            class="font-heading cursor-pointer rounded-full border px-5 py-2 text-xs font-semibold uppercase transition-colors data-[active=true]:border-transparent data-[active=true]:bg-primary-orange data-[active=true]:text-white data-[active=false]:border-neutral-cool-primary data-[active=false]:text-neutral-gray-light"
+            data-active={index === 0 ? "true" : "false"}
+            aria-pressed={index === 0 ? "true" : "false"}
+          >
+            {filter}
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="mt-8 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
+      {
+        articles.map((article) => (
+          <ArticleCard
+            title={article.title}
+            source={article.source}
+            href={article.href}
+          />
+        ))
+      }
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const filterButtons = document.querySelectorAll<HTMLButtonElement>(
+    "#press-filters button",
+  );
+
+  filterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      filterButtons.forEach((other) => {
+        other.dataset.active = "false";
+        other.setAttribute("aria-pressed", "false");
+      });
+      button.dataset.active = "true";
+      button.setAttribute("aria-pressed", "true");
+    });
+  });
+</script>

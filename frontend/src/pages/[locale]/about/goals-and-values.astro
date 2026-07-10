@@ -1,0 +1,105 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import OurGoalSection from "@/components/about/OurGoalSection.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+
+const values = [
+  {
+    letter: "A",
+    title: "Acquiring the Heart of God",
+    color: "border-accent-blue-light text-accent-blue-dark",
+  },
+  {
+    letter: "R",
+    title: "Relinquish our Rights",
+    color: "border-primary-orange text-primary-orange",
+  },
+  {
+    letter: "I",
+    title: "Intimacy with God",
+    color: "border-accent-red-light text-primary-red",
+  },
+  {
+    letter: "S",
+    title: "Sacrificial Living",
+    color: "border-accent-purple-light text-accent-purple-primary",
+  },
+  {
+    letter: "E",
+    title: "Empowering to Boldly Go",
+    color: "border-primary-blue text-primary-blue",
+  },
+];
+---
+
+<Layout title="Our Goal & Values — Arise Asia" locale={locale!}>
+  <AboutHero breadcrumb="ABOUT US/" title="Our Goal & Values" />
+
+  <section
+    id="our-goal"
+    class="container mx-auto flex flex-col gap-6 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <h2
+      class="font-heading from-accent-orange-dark to-primary-orange bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+    >
+      Our Goal
+    </h2>
+    <OurGoalSection variant="card" showHeading={false} />
+    <p class="font-heading text-base md:text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+  </section>
+
+  <section
+    id="values"
+    class="container mx-auto flex flex-col gap-6 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <h2
+      class="font-heading from-accent-orange-dark to-primary-orange bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+    >
+      The Values
+    </h2>
+    <p class="font-heading text-base md:text-lg">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+      commodo consequat.
+    </p>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      {
+        values.map((value) => (
+          <div
+            class={`flex flex-col items-center justify-between gap-3 rounded-xl border-2 p-5 text-center ${value.color}`}
+          >
+            <p class="font-heading text-5xl font-medium uppercase">
+              {value.letter}
+            </p>
+            <p class="font-heading text-lg font-medium">{value.title}</p>
+            <p class="font-heading text-sm text-black">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <div class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+      {
+        Array.from({ length: 5 }).map(() => (
+          <div class="aspect-square overflow-hidden rounded-xl">
+            <img
+              alt="Arise Asia community"
+              class="size-full object-cover"
+              src="/about-us-bg.png"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

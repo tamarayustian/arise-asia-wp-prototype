@@ -1,0 +1,437 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import OurGoalSection from "@/components/about/OurGoalSection.astro";
+import ArticleCard from "@/components/about/ArticleCard.astro";
+import LearnMoreCard from "@/components/about/LearnMoreCard.astro";
+import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
+import { ActionButton } from "@/components/shared/ActionButton";
+import { ArrowRight, Play } from "lucide-react";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+
+const articles = [
+  {
+    title: "Article Title",
+    source: "Source",
+    href: "#",
+  },
+  {
+    title: "Article Title",
+    source: "Source",
+    href: "#",
+  },
+  {
+    title: "Article Title",
+    source: "Source",
+    href: "#",
+  },
+  {
+    title: "Article Title",
+    source: "Source",
+    href: "#",
+  },
+];
+
+const learnMoreCards = [
+  {
+    title: "Where is Arise",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis aliquam leo id faucibus.",
+    href: `/${locale}/arise26`,
+    bgImage: "/give-bg.png",
+    icon: "/icons/cross.svg",
+    iconRotate: "-rotate-8",
+  },
+  {
+    title: "Our Partners",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis aliquam leo id faucibus.",
+    href: `/${locale}/about/our-partners`,
+    bgImage: "/about-us-bg.png",
+    icon: "/icons/path.svg",
+    iconRotate: "rotate-12",
+  },
+  {
+    title: "Financials",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis aliquam leo id faucibus.",
+    href: `/${locale}/give`,
+    bgImage: "/give-bg.png",
+    icon: "/icons/spark.svg",
+    iconRotate: "rotate-6",
+  },
+  {
+    title: "Get Involved",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin mattis aliquam leo id faucibus.",
+    href: `/${locale}/volunteer`,
+    bgImage: "/about-us-bg.png",
+    icon: "/icons/wave.svg",
+    iconRotate: "-rotate-6",
+  },
+];
+---
+
+<Layout title="About — Arise Asia" locale={locale!}>
+  <div class="relative overflow-hidden bg-[url('/about-us-bg.png')] bg-cover bg-center">
+    <div
+      class="from-accent-orange-lightest via-accent-orange-lightest/95 absolute inset-0 bg-linear-to-b to-white"
+    >
+    </div>
+    <div
+      class="container relative mx-auto flex flex-col items-center px-8 pt-40 text-center md:px-16 lg:px-32 lg:pt-48 xl:px-48"
+    >
+      <h1 class="text-h1 uppercase">About</h1>
+      <p
+        class="font-heading bg-linear-to-r from-[#ff5f5a] to-[#ffa45a] bg-clip-text text-3xl font-semibold text-transparent uppercase sm:text-4xl md:text-5xl"
+      >
+        Go where there is no gospel
+      </p>
+      <p class="font-heading mt-6 max-w-4xl text-base md:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+      <ActionButton
+        className="mt-8"
+        href="#our-story"
+        outerBg="bg-linear-to-r from-[#ff7a6d] to-[#ffb179]"
+        iconComponent={ArrowRight}
+        textHover=""
+        hoverIcon=""
+      >
+        Our Story
+      </ActionButton>
+    </div>
+    <section
+      id="our-story"
+      class="relative container mx-auto flex justify-center px-8 pt-16 pb-20 md:px-16 lg:px-32 xl:px-48"
+    >
+      <div
+        class="group relative aspect-video w-full max-w-2xl overflow-hidden rounded-2xl bg-[url('/about-us-bg.png')] bg-cover bg-center shadow-xl"
+      >
+        <div class="absolute inset-0 bg-black/30"></div>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div
+            class="flex size-16 items-center justify-center rounded-full bg-white/90 transition group-hover:scale-110 md:size-20"
+          >
+            <Play className="ml-1 size-6 text-black md:size-8" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <section id="our-goal">
+    <OurGoalSection learnMoreHref={`/${locale}/about/goals-and-values`} />
+  </section>
+
+  <section
+    id="what-we-do"
+    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div
+      class="bg-accent-blue-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
+    >
+      <div
+        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <h2
+          class="font-heading from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+        >
+          What We Do
+        </h2>
+        <ActionButton
+          href={`/${locale}/about/what-we-do`}
+          outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
+          iconComponent={ArrowRight}
+          textHover=""
+          hoverIcon=""
+        >
+          Learn more
+        </ActionButton>
+      </div>
+      <p class="font-heading text-base md:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+    </div>
+  </section>
+
+  <section
+    id="our-impact"
+    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div
+      class="bg-accent-rose-lightest flex flex-col items-center gap-5 rounded-2xl p-6 text-center md:p-10"
+    >
+      <h2
+        class="font-heading from-accent-red-darker to-primary-red bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+      >
+        Our Impact
+      </h2>
+      <p class="font-heading max-w-3xl text-base md:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+      <p class="font-heading text-neutral-gray-light text-sm uppercase md:text-base">
+        up to June 2026
+      </p>
+      <div class="flex justify-center">
+        <div
+          class="grid grid-cols-2 gap-y-5 py-2 uppercase sm:grid-cols-4 sm:gap-x-6"
+        >
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-neutral-300 px-5 text-center sm:border-r-2 lg:px-8"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:text-4xl"
+            >
+              <AnimatedCounter target={12} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              countries
+            </p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-neutral-300 px-5 text-center lg:border-r-2 lg:px-8"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:text-4xl"
+            >
+              <AnimatedCounter target={40} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              cities
+            </p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-neutral-300 px-5 text-center sm:border-r-2 lg:px-8"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:text-4xl"
+            >
+              <AnimatedCounter target={14518} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              participants
+            </p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center px-5 text-center lg:px-8"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:text-4xl"
+            >
+              <AnimatedCounter target={1865} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              commitments
+            </p>
+          </div>
+        </div>
+      </div>
+      <ActionButton
+        href={`/${locale}/about`}
+        outerBg="from-accent-red-darker to-primary-red bg-linear-to-r"
+        iconComponent={ArrowRight}
+        textHover=""
+        hoverIcon=""
+      >
+        Learn more
+      </ActionButton>
+    </div>
+  </section>
+
+  <section
+    id="leadership"
+    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div
+      class="bg-accent-blue-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
+    >
+      <div
+        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <h2
+          class="font-heading from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+        >
+          Leadership
+        </h2>
+        <ActionButton
+          href={`/${locale}/about/our-leadership`}
+          outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
+          iconComponent={ArrowRight}
+          textHover=""
+          hoverIcon=""
+        >
+          Learn more
+        </ActionButton>
+      </div>
+      <p class="font-heading text-base md:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+      <div
+        class="font-heading text-accent-blue-light flex flex-wrap items-center gap-x-2 gap-y-1 text-base uppercase md:text-xl"
+      >
+        <span>Global Leadership</span>
+        <span>•</span>
+        <span>National Leadership</span>
+        <span>•</span>
+        <span>Leadership for For The Joy Arise Asia 26</span>
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="press-and-media"
+    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div
+      class="bg-accent-orange-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
+    >
+      <div
+        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <h2
+          class="font-heading from-primary-orange to-accent-orange-dark bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+        >
+          Press and Media
+        </h2>
+        <ActionButton
+          href={`/${locale}/about/press-and-media`}
+          outerBg="from-accent-orange-dark to-primary-orange bg-linear-to-r"
+          iconComponent={ArrowRight}
+          textHover=""
+          hoverIcon=""
+        >
+          View all
+        </ActionButton>
+      </div>
+      <p class="font-heading text-base md:text-lg">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+        aliquip ex ea commodo consequat.
+      </p>
+      <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+        {
+          articles.map((article) => (
+            <ArticleCard
+              title={article.title}
+              source={article.source}
+              href={article.href}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="learn-more"
+    class="relative overflow-hidden bg-[url('/about-us-bg.png')] bg-cover bg-center py-16 md:py-20"
+  >
+    <div
+      class="from-accent-purple-darker/90 via-accent-purple-dark/85 absolute inset-0 bg-linear-to-b to-black/80"
+    >
+    </div>
+    <div
+      class="relative container mx-auto flex flex-col gap-6 px-8 md:px-16 lg:px-32 xl:px-48"
+    >
+      <h2 class="font-heading text-accent-purple-light text-3xl uppercase md:text-4xl">
+        Learn More
+      </h2>
+      <div class="flex flex-col gap-4">
+        {
+          learnMoreCards.map((card) => (
+            <LearnMoreCard
+              href={card.href}
+              title={card.title}
+              description={card.description}
+              bgImage={card.bgImage}
+              icon={card.icon}
+              iconRotate={card.iconRotate}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="subscribe"
+    class="bg-accent-blue-lightest relative overflow-hidden px-8 py-16 md:px-16 lg:px-32 xl:px-48"
+  >
+    <div class="relative container mx-auto flex flex-col gap-8">
+      <h2
+        class="font-heading from-accent-blue-darker to-primary-blue-lighter bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+      >
+        Stay up to date with Arise!
+      </h2>
+      <form class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-8">
+        <div class="flex flex-col gap-1">
+          <label for="first-name" class="text-sm font-medium">First Name</label>
+          <input
+            id="first-name"
+            type="text"
+            placeholder="Enter your first name"
+            class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="last-name" class="text-sm font-medium">Last Name</label>
+          <input
+            id="last-name"
+            type="text"
+            placeholder="Enter your last name"
+            class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
+          />
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="country" class="text-sm font-medium">Country</label>
+          <select
+            id="country"
+            class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
+          >
+            <option value="">Select your country</option>
+          </select>
+        </div>
+        <div class="flex flex-col gap-1">
+          <label for="email" class="text-sm font-medium">Email</label>
+          <input
+            id="email"
+            type="email"
+            placeholder="Enter your email"
+            class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
+          />
+        </div>
+        <div class="flex flex-col gap-4 sm:flex-row md:col-span-2">
+          <button
+            type="submit"
+            class="bg-primary-blue font-heading rounded-full px-6 py-3 text-xs font-bold text-white uppercase"
+          >
+            Subscribe to our newsletter
+          </button>
+          <a
+            href="https://wa.me/"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="border-primary-blue text-primary-blue font-heading rounded-full border-2 px-6 py-3 text-center text-xs font-bold uppercase"
+          >
+            Join on Whatsapp
+          </a>
+        </div>
+      </form>
+    </div>
+  </section>
+</Layout>

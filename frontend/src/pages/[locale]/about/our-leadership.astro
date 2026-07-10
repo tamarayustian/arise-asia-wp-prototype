@@ -1,0 +1,87 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import LeaderCard from "@/components/about/LeaderCard.astro";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+
+const categories = [
+  {
+    name: "Arise Global Board of Directors",
+    leaders: Array.from({ length: 6 }, (_, i) => ({
+      name: `Leader Name ${i + 1}`,
+      role: "Board Member",
+    })),
+  },
+  {
+    name: "Arise Asia 2026 Steering Committee and Staff",
+    leaders: Array.from({ length: 16 }, (_, i) => ({
+      name: `Leader Name ${i + 1}`,
+      role: "Steering Committee Member",
+    })),
+  },
+  {
+    name: "Arise National Leaders",
+    leaders: Array.from({ length: 16 }, (_, i) => ({
+      name: `Leader Name ${i + 1}`,
+      role: "National Leader",
+    })),
+  },
+  {
+    name: "Arise Philippines | Arise Asia Board",
+    leaders: Array.from({ length: 6 }, (_, i) => ({
+      name: `Leader Name ${i + 1}`,
+      role: "Board Member",
+    })),
+  },
+];
+---
+
+<Layout title="Our Leadership — Arise Asia" locale={locale!}>
+  <section id="hero">
+    <AboutHero breadcrumb="ABOUT US/" title="Leadership">
+      <div class="flex flex-col gap-8 md:flex-row md:items-start">
+        <div
+          class="border-accent-blue-lighter aspect-square w-full max-w-56 shrink-0 overflow-hidden rounded-full border-2 bg-[url('/about-us-bg.png')] bg-cover bg-center"
+        >
+        </div>
+        <div class="flex flex-col gap-2">
+          <p class="font-heading text-xl font-bold uppercase md:text-2xl">
+            David Ro
+          </p>
+          <p
+            class="font-heading text-accent-blue-dark text-xs font-semibold uppercase md:text-sm"
+          >
+            Executive Director
+          </p>
+          <p class="font-heading mt-2 text-base md:text-lg">
+            My challenge to this generation: You have one life. The one
+            challenge, find a people "where Christ is not known" and boldly go
+            to "where there is no gospel" and lay down your life for another
+            people in the footsteps of our Lord Jesus Christ.
+          </p>
+        </div>
+      </div>
+    </AboutHero>
+  </section>
+
+  <section
+    id="leaders"
+    class="container mx-auto flex flex-col gap-16 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+  >
+    {
+      categories.map((category) => (
+        <div class="flex flex-col gap-6">
+          <h2 class="font-heading from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r bg-clip-text text-2xl font-semibold text-transparent uppercase md:text-4xl">
+            {category.name}
+          </h2>
+          <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+            {category.leaders.map((leader) => (
+              <LeaderCard name={leader.name} role={leader.role} />
+            ))}
+          </div>
+        </div>
+      ))
+    }
+  </section>
+</Layout>

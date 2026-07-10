@@ -1,0 +1,35 @@
+---
+export interface Props {
+  name: string;
+  role: string;
+  photo?: string;
+}
+
+const { name, role, photo = "/about-us-bg.png" } = Astro.props;
+
+const initials = name
+  .split(" ")
+  .map((part) => part[0])
+  .join("")
+  .slice(0, 2)
+  .toUpperCase();
+---
+
+<div class="flex flex-col items-center gap-3 text-center">
+  <div
+    class="border-accent-blue-lighter aspect-square w-full max-w-40 overflow-hidden rounded-full border-2 bg-cover bg-center"
+    style={`background-image: url(${photo})`}
+  >
+    <div
+      class="text-accent-blue-dark bg-accent-blue-lightest/60 font-heading flex size-full items-center justify-center text-2xl font-semibold uppercase md:text-3xl"
+    >
+      {initials}
+    </div>
+  </div>
+  <div class="flex flex-col gap-0.5">
+    <p class="font-heading text-sm font-bold uppercase md:text-base">
+      {name}
+    </p>
+    <p class="text-neutral-gray-light text-xs md:text-sm">{role}</p>
+  </div>
+</div>
