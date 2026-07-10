@@ -52,7 +52,7 @@ cd cms && docker compose down -v  # stop + delete DB
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
 - **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`
 - **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
-- **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `SimpleButton.astro`, `AnimatedCounter.astro`
+- **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`
 - **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
 - **lib**: `wordpress.ts` — locale-aware WP REST API client using `?rest_route=/wp/v2` format
 - **`@/` path alias** → `src/`

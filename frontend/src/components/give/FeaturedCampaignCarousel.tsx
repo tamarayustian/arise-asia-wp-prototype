@@ -1,4 +1,4 @@
-import { OutlineButton } from "@/components/shared/OutlineButton";
+import { LinkButton } from "@/components/shared/LinkButton";
 import { ArrowRight } from "lucide-react";
 import { useCallback, useRef, useState } from "react";
 
@@ -211,7 +211,12 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
         <p className="text-lg font-light text-blue-900 md:text-xl lg:text-2xl">
           {card.description}
         </p>
-        <OutlineButton href={card.donationUrl}>Give Now</OutlineButton>
+        <LinkButton
+          href={card.donationUrl}
+          className="border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark border-2 uppercase hover:text-white"
+        >
+          Give Now
+        </LinkButton>
       </div>
     </div>
   );
