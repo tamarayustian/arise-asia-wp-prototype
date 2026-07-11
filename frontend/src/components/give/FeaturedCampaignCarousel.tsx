@@ -108,9 +108,40 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
 
   function handleTouchMove(e: React.TouchEvent) {
     if (!isDraggingRef.current) return;
+    e.preventDefault();
     const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
     const diff = e.touches[0].clientX - touchStartX.current;
     setDragOffset((diff / rect.width) * 100);
+  }
+
+  function handleMouseDown(e: React.MouseEvent) {
+    touchStartX.current = e.clientX;
+    isDraggingRef.current = true;
+    setIsDragging(true);
+    setDragOffset(0);
+  }
+
+  function handleMouseMove(e: React.MouseEvent) {
+    if (!isDraggingRef.current) return;
+    e.preventDefault();
+    const rect = (e.currentTarget as HTMLElement).getBoundingClientRect();
+    const diff = e.clientX - touchStartX.current;
+    setDragOffset((diff / rect.width) * 100);
+  }
+
+  function handleMouseUp(e: React.MouseEvent) {
+    if (!isDraggingRef.current) return;
+    isDraggingRef.current = false;
+    const diff = touchStartX.current - e.clientX;
+    setIsDragging(false);
+    setDragOffset(0);
+    if (Math.abs(diff) > 80) {
+      if (diff > 0) {
+        goNext();
+      } else {
+        goPrev();
+      }
+    }
   }
 
   function handleTouchEnd(e: React.TouchEvent) {
@@ -135,9 +166,13 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
     >
       <div
         className="relative order-1 min-h-112 w-full lg:order-2 lg:min-h-128 lg:w-1/2 lg:max-w-200"
+        style={{ touchAction: "none" }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
+        onMouseDown={handleMouseDown}
+        onMouseMove={handleMouseMove}
+        onMouseUp={handleMouseUp}
       >
         {cards.map((card, i) => (
           <div
