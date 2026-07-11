@@ -1,0 +1,58 @@
+<div id="font-size-adjuster" class="fixed right-4 bottom-4 z-50 hidden">
+  <div
+    class="border-neutral-gray-lightest flex items-center gap-2 rounded-lg border bg-white p-2 shadow-lg"
+  >
+    <button
+      id="font-size-minus"
+      class="border-neutral-gray-lightest hover:bg-neutral-gray-lightest active:bg-neutral-cool-lighter flex size-8 items-center justify-center rounded-md border font-mono text-lg font-bold transition"
+    >
+      −
+    </button>
+    <span
+      id="font-size-value"
+      class="min-w-[3ch] text-center font-mono text-sm font-medium">10</span
+    >
+    <button
+      id="font-size-plus"
+      class="border-neutral-gray-lightest hover:bg-neutral-gray-lightest active:bg-neutral-cool-lighter flex size-8 items-center justify-center rounded-md border font-mono text-lg font-bold transition"
+    >
+      +
+    </button>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = "arise-base-font-size";
+  const DEFAULT_SIZE = 16;
+  const MIN_SIZE = 8;
+  const MAX_SIZE = 20;
+  const STEP = 1;
+
+  const container = document.getElementById("font-size-adjuster");
+  const valueDisplay = document.getElementById("font-size-value");
+  const minusBtn = document.getElementById("font-size-minus");
+  const plusBtn = document.getElementById("font-size-plus");
+
+  function getSize() {
+    return parseInt(localStorage.getItem(STORAGE_KEY)) || DEFAULT_SIZE;
+  }
+
+  function setSize(size) {
+    const clamped = Math.max(MIN_SIZE, Math.min(MAX_SIZE, size));
+    document.documentElement.style.fontSize = clamped + "px";
+    localStorage.setItem(STORAGE_KEY, String(clamped));
+    if (valueDisplay) valueDisplay.textContent = String(clamped);
+  }
+
+  setSize(getSize());
+
+  minusBtn?.addEventListener("click", () => setSize(getSize() - STEP));
+  plusBtn?.addEventListener("click", () => setSize(getSize() + STEP));
+
+  document.addEventListener("keydown", (e) => {
+    if (e.ctrlKey && e.key === "F") {
+      e.preventDefault();
+      container?.classList.toggle("hidden");
+    }
+  });
+</script>
