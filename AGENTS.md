@@ -32,7 +32,10 @@ cd cms && docker compose down -v  # stop + delete DB
 - Must-use plugin `mu-plugins/headless-redirect.php` redirects non-logged-in visitors to Astro frontend
 - Dockerfile bakes in Polylang and ACF plugins
 
-## ActionButton props (`src/components/shared/ActionButton.tsx`)
+## ActionButton (`src/components/shared/ActionButton.tsx`)
+
+- Icon uses `inline size-5 align-middle ml-1` — flows inline with text and wraps naturally on mobile (not flex-separated)
+- Inner `<p>` has no flex; icon is a true inline element after `{children}`
 
 | Prop | Default | Layer it controls |
 |------|---------|-------------------|
@@ -45,12 +48,25 @@ cd cms && docker compose down -v  # stop + delete DB
 | `iconComponent` | `ArrowUpRight` | Lucide icon component to render |
 | `className` | `""` | Additional classes on outer `<a>` |
 
+## LinkButton props (`src/components/shared/LinkButton.tsx`)
+
+React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`). Pass visual styling via `className` — no hardcoded colors.
+
+| Prop | Default | Notes |
+|------|---------|-------|
+| `href` | required | Link URL |
+| `size` | `"md"` | `sm` / `md` / `lg` — matches SimpleButton sizing |
+| `target` | `"_blank"` | Pass `"_self"` for internal links |
+| `rel` | `"noopener noreferrer"` | |
+| `className` | `""` | All visual styling (border, color, hover) |
+| `children` | required | |
+
 ## Architecture
 
 - **Two top-level directories**: `cms/` (WordPress) and `frontend/` (Astro)
 - **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page)
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
-- **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`
+- **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`, `GiveDecorativeIcons.astro`
 - **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
 - **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`
 - **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
@@ -136,6 +152,16 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 | 7 | altar | 228 | 56 | 24 | • |
 | 8 | spark² | 260 | 72 | 30 | |
 | 9 | wave² | 296 | 64 | 24 | • |
+
+## Give Decorative Icons (`src/components/give/GiveDecorativeIcons.astro`)
+
+- Used on the give page, spanning the description + join us banner sections
+- Both sections wrapped in a single `relative overflow-hidden` div; component is the only child with `absolute inset-0`
+- **md+ (6 icons)**: fire, stone, wave sharp — path, cross, altar blurred — all on the right side with varied `right-*` depths (18–80) and heights (top-40–95)
+- **<md (4 icons)**: fire, wave sharp — cross, altar blurred — right-side with compact positions
+- Follows same CSS mask pattern as `DecorativeIcons.astro`
+- Same `animate-float` + `opacity-50 blur-sm` rules for readability
+- Text containers in each section get `relative z-10` so opaque icons don't overlap letters
 
 ## Countdown timer (`index.astro`)
 
