@@ -20,7 +20,7 @@ const sizeMap = {
 const { href, className = "", size = "md" } = Astro.props;
 ---
 
-<a href={href} class={`group rounded-full ${className}`}>
+<a href={href} class={`group flex items-center rounded-full ${className}`}>
   <div class={`rounded-full font-semibold uppercase ${sizeMap[size].inner}`}>
     <p class="font-heading"><slot /></p>
   </div>
