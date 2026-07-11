@@ -37,10 +37,10 @@ export function ActionButton({
         className={`group rounded-full px-8 py-2.5 uppercase lg:px-7 lg:py-3.5 ${textColor} ${bg} ${hoverBg}`}
       >
         <p
-          className={`font-heading flex items-center gap-x-2 text-xs font-semibold ${textHover} md:text-base`}
+          className={`font-heading text-center text-xs font-semibold ${textHover} md:text-base`}
         >
           {children}
-          <Icon className={`size-5 ${hoverIcon}`} />
+          <Icon className={`inline size-5 align-middle ml-1 ${hoverIcon}`} />
         </p>
       </div>
     </a>
