@@ -74,6 +74,7 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 - **`@/` path alias** → `src/`
 - **`cn()`** utility from `clsx` + `tailwind-merge` (in `src/lib/utils.ts`)
 - **Formatted with**: Prettier + `prettier-plugin-astro` + `prettier-plugin-tailwindcss`
+- **Prettier quirk**: `prettier-plugin-astro` does not support the `htmlSelfClosing` option — empty non-void elements like `<div />` are always expanded to `<div></div>` on format. No config workaround.
 - **ACF**: Custom fields exposed as top-level `acf` object on WP REST post responses
 
 ## Deployment
@@ -157,8 +158,8 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 
 - Used on the give page, spanning the description + join us banner sections
 - Both sections wrapped in a single `relative overflow-hidden` div; component is the only child with `absolute inset-0`
-- **md+ (6 icons)**: fire, stone, wave sharp — path, cross, altar blurred — all on the right side with varied `right-*` depths (18–80) and heights (top-40–95)
-- **<md (4 icons)**: fire, wave sharp — cross, altar blurred — right-side with compact positions
+- **lg+ (6 icons)**: fire, stone, wave sharp — path, cross, altar blurred — all on the right side with varied `right-*` depths (18–80) and heights (top-36–92)
+- **<lg (4 icons)**: fire, wave sharp — cross, altar blurred — right-side with compact positions
 - Follows same CSS mask pattern as `DecorativeIcons.astro`
 - Same `animate-float` + `opacity-50 blur-sm` rules for readability
 - Text containers in each section get `relative z-10` so opaque icons don't overlap letters
@@ -177,6 +178,7 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 - Some icon positions (`left-*`) exceed the `size-60` container at wider breakpoints — these use `md:` compressed values that fit within 240px and `lg:` values for the original wide spread
 - The `-rotate-8 / -rotate-15 / -rotate-96 / rotate-24 / rotate-16` angles are preserved on both blocks
 - When duplicating icon markup between layout blocks, remove `shrink-0` from the mobile version (no length-constrained parent)
+- **"More ways to take action"** column uses `grid grid-cols-1 gap-2` (not flex) so all buttons stretch to equal height in the md 3-col grid. SimpleButton's `<a>` uses `flex items-center` to vertically center text within the stretched cell.
 
 ## Hero quirks (`index.astro`)
 
@@ -185,6 +187,12 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 - "For The" is forced to 2 lines on mobile using `<span class="block">` per word — never rely on width constraints (`w-*`) for wrapping since font-size/family changes break them
 - JOY sits beside "For The" as a direct `<img>` (no wrapper) with `w-56 shrink-0` — proportionally wider and taller, extending below the text
 - The pair uses `flex items-start justify-center` — aligned at top, centered as a group, no overflow clipping
+
+## About-us quirks (`index.astro`)
+
+- Section uses `py-16 sm:py-20 md:py-24 lg:py-32` instead of `min-h-screen` — content determines height, no wasted space on desktop or mobile
+- Background image: `bg-[url('/about-us-bg.png')] bg-cover bg-center` with dark overlay for text readability
+- `flex flex-col items-center justify-center` centers content vertically within the padded section
 
 ## Footer quirks
 

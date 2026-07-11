@@ -1,8 +1,6 @@
 ---
-import PostCard from "@/components/shared/PostCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { SITE_NAME } from "@/lib/constants";
-import { getPosts } from "@/lib/services/posts";
 import Hero from "@/components/home/Hero.astro";
 import DecorativeIcons from "@/components/home/DecorativeIcons.astro";
 import { ActionButton } from "@/components/shared/ActionButton";
@@ -11,8 +9,8 @@ import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
 import { ArrowRight } from "lucide-react";
 import homeData from "@/data/home.json";
 
+// const posts = await getPosts(locale);
 const { locale } = Astro.params;
-const posts = await getPosts(locale);
 const { countries, cities, participants, commitments, videoUrl } = homeData;
 ---
 
