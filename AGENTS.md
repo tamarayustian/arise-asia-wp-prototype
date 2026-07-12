@@ -37,29 +37,29 @@ cd cms && docker compose down -v  # stop + delete DB
 - Icon uses `inline size-5 align-middle ml-1` — flows inline with text and wraps naturally on mobile (not flex-separated)
 - Inner `<p>` has no flex; icon is a true inline element after `{children}`
 
-| Prop | Default | Layer it controls |
-|------|---------|-------------------|
-| `outerBg` | `bg-gradient-accent` | Outer wrapper ring background |
-| `textColor` | `text-white` | Button text color |
-| `bg` | `""` | Button body background |
-| `hoverBg` | `hover:bg-white` | Button body hover background |
-| `textHover` | `group-hover:text-gradient-accent` | Text color on hover |
-| `hoverIcon` | `group-hover:text-accent-red` | Icon color on hover |
-| `iconComponent` | `ArrowUpRight` | Lucide icon component to render |
-| `className` | `""` | Additional classes on outer `<a>` |
+| Prop            | Default                            | Layer it controls                 |
+| --------------- | ---------------------------------- | --------------------------------- |
+| `outerBg`       | `bg-gradient-accent`               | Outer wrapper ring background     |
+| `textColor`     | `text-white`                       | Button text color                 |
+| `bg`            | `""`                               | Button body background            |
+| `hoverBg`       | `hover:bg-white`                   | Button body hover background      |
+| `textHover`     | `group-hover:text-gradient-accent` | Text color on hover               |
+| `hoverIcon`     | `group-hover:text-accent-red`      | Icon color on hover               |
+| `iconComponent` | `ArrowUpRight`                     | Lucide icon component to render   |
+| `className`     | `""`                               | Additional classes on outer `<a>` |
 
 ## LinkButton props (`src/components/shared/LinkButton.tsx`)
 
 React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`). Pass visual styling via `className` — no hardcoded colors.
 
-| Prop | Default | Notes |
-|------|---------|-------|
-| `href` | required | Link URL |
-| `size` | `"md"` | `sm` / `md` / `lg` — matches SimpleButton sizing |
-| `target` | `"_blank"` | Pass `"_self"` for internal links |
-| `rel` | `"noopener noreferrer"` | |
-| `className` | `""` | All visual styling (border, color, hover) |
-| `children` | required | |
+| Prop        | Default                 | Notes                                            |
+| ----------- | ----------------------- | ------------------------------------------------ |
+| `href`      | required                | Link URL                                         |
+| `size`      | `"md"`                  | `sm` / `md` / `lg` — matches SimpleButton sizing |
+| `target`    | `"_blank"`              | Pass `"_self"` for internal links                |
+| `rel`       | `"noopener noreferrer"` |                                                  |
+| `className` | `""`                    | All visual styling (border, color, hover)        |
+| `children`  | required                |                                                  |
 
 ## Architecture
 
@@ -80,22 +80,36 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 ## Deployment
 
 Two deployment targets with conditional adapter in `astro.config.mjs`:
+
 - **Vercel**: `@astrojs/vercel@10` (v11+ requires Astro 7). Set env var `VERCEL=1` at build time to activate.
 - **Railway**: `@astrojs/node` standalone. Set `WP_API_URL` (Astro → WP) and `FRONTEND_URL` (WP → Astro redirect) as runtime env vars.
 
 ## Carousel quirks
 
 - Standard Carousel uses Embla (`embla-carousel-react`) via `ui/carousel.tsx`
-- FeaturedCampaignCarousel is a custom stacked-card implementation (not Embla) with `translateX(%)` cascade offsets
-- AllCampaignCarousel uses the Embla-based `Carousel` from `ui/carousel.tsx`
-- AllCampaignCarousel uses `opts={{ align: "start", dragFree: true }}` for smoother free-scroll drag feel
-- AllCampaignCarousel has a `wheel` event listener on the container with a 100px accumulator threshold — fires `scrollNext()`/`scrollPrev()` after accumulating enough delta, making mouse wheel/trackpad scroll one slide per rotation
-- No navigation buttons on AllCampaignCarousel (intentional design — no prev/next or dots)
+- `CarouselItem` default has `basis-auto` (not `basis-[85%]`) — width-based sizing by default. Pass explicit `basis-[XX%]` if percentage sizing is needed.
 - The Embla viewport (`overflow-hidden`) clips box-shadows — fix by adding padding to the viewport div
 - Embla viewport's `overflow-hidden` also clips `pr-*` padding on CarouselContent — to add space after the last card, use `mr-3 md:mr-4` on the **last** `CarouselItem` instead (margin extends past the clip)
-- Featured carousel cards use `aspect-[16/10]` images, responsive widths (`max-w-sm` mobile/md, `max-w-lg` desktop), and responsive `min-h-[28rem]` / `lg:min-h-[32rem]`
-- Both carousels use `client:load` directive (React islands hydrated on the client)
 - If all React islands fail to hydrate with `Failed to fetch dynamically imported module` errors in console, delete `frontend/node_modules/.vite` and restart the dev server — Vite's pre-bundled dep cache is stale/corrupt
+
+### FeaturedCampaignCarousel (`src/components/give/FeaturedCampaignCarousel.tsx`)
+
+- Custom stacked-card implementation (not Embla) with `translateX(%)` cascade offsets
+- Cards use `aspect-[16/10]` images, responsive widths (`max-w-sm` mobile/md, `max-w-lg` desktop), and responsive `min-h-[28rem]` / `lg:min-h-[32rem]`
+- Touch/mouse drag handled via `onTouchStart/Move/End` + `onMouseDown/Move/Up` handlers
+- `handleTouchMove` and `handleMouseMove` call `e.preventDefault()` to prevent browser page-shift during drag
+- Card wrapper has inline `style={{ touchAction: "none" }}` to suppress browser swipe gestures
+- Drag threshold: 80px — above it triggers `goNext()` (right→left) or `goPrev()` (left→right)
+- Both drag handlers share `isDraggingRef` ref to avoid stale closure issues with `isDragging` state
+
+### AllCampaignCarousel (`src/components/give/AllCampaignCarousel.tsx`)
+
+- Uses the Embla-based `Carousel` from `ui/carousel.tsx`
+- `opts={{ align: "start", dragFree: true }}` for smoother free-scroll drag feel
+- `wheel` event listener on the container with 50px accumulator threshold — fires `scrollNext()`/`scrollPrev()` after accumulating enough delta
+- No navigation buttons (intentional — no prev/next or dots)
+- Cards are fixed width `w-80` (320px) with `shrink-0 grow-0` from CarouselItem default — no percentage sizing
+- Last `CarouselItem` gets `mr-3 md:mr-4` for trailing scroll space (margin extends past the Embla viewport clip)
 
 ## Decorative Icons (`src/components/home/DecorativeIcons.astro`)
 
@@ -115,10 +129,10 @@ The user sets `xl:left-*` / `xl:right-*` and `xl:size-*` directly to avoid overl
 
 When xl values change (e.g., to fix overlap), derive md/lg positions and sizes using these scale factors:
 
-| Breakpoint | Position factor | Size factor |
-|------------|----------------|-------------|
-| lg (1024px) | × 0.75 | × 0.75 |
-| md (768px)  | × 0.4  | × 0.57 |
+| Breakpoint  | Position factor | Size factor |
+| ----------- | --------------- | ----------- |
+| lg (1024px) | × 0.75          | × 0.75      |
+| md (768px)  | × 0.4           | × 0.57      |
 
 - Round to nearest standard Tailwind spacing value (list: 0, 0.5, 1, 2, 3, 4, 5, 6, 8, 10, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96)
 - **Always add an explicit `xl:size-*`** — `lg:size-*` cascades upward to xl, so without `xl:size-*` the lg size would bleed into xl
@@ -128,31 +142,31 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 
 **Left side:**
 
-| # | Icon | top | xl:left | xl:size | Blur? |
-|---|------|-----|---------|---------|-------|
-| 1 | fire | 8 | 52 | 36 | |
-| 2 | cross | 48 | 16 | 24 | • |
-| 3 | stone | 80 | 18 | 28 | |
-| 4 | spark | 128 | 26 | 20 | • |
-| 5 | wave | 152 | 48 | 28 | |
-| 6 | altar | 188 | 30 | 24 | • |
-| 7 | path | 224 | 52 | 40 | |
-| 8 | fire² | 270 | 50 | 20 | • |
-| 9 | cross² | 296 | 80 | 24 | • |
+| #   | Icon   | top | xl:left | xl:size | Blur? |
+| --- | ------ | --- | ------- | ------- | ----- |
+| 1   | fire   | 8   | 52      | 36      |       |
+| 2   | cross  | 48  | 16      | 24      | •     |
+| 3   | stone  | 80  | 18      | 28      |       |
+| 4   | spark  | 128 | 26      | 20      | •     |
+| 5   | wave   | 152 | 48      | 28      |       |
+| 6   | altar  | 188 | 30      | 24      | •     |
+| 7   | path   | 224 | 52      | 40      |       |
+| 8   | fire²  | 270 | 50      | 20      | •     |
+| 9   | cross² | 296 | 80      | 24      | •     |
 
 **Right side:**
 
-| # | Icon | top | xl:right | xl:size | Blur? |
-|---|------|-----|----------|---------|-------|
-| 1 | spark | 8 | 64 | 32 | |
-| 2 | wave | 44 | 36 | 24 | • |
-| 3 | path | 80 | 12 | 28 | |
-| 4 | cross | 116 | 20 | 40 | |
-| 5 | stone | 164 | 70 | 20 | • |
-| 6 | fire | 188 | 32 | 36 | |
-| 7 | altar | 228 | 56 | 24 | • |
-| 8 | spark² | 260 | 72 | 30 | |
-| 9 | wave² | 296 | 64 | 24 | • |
+| #   | Icon   | top | xl:right | xl:size | Blur? |
+| --- | ------ | --- | -------- | ------- | ----- |
+| 1   | spark  | 8   | 64       | 32      |       |
+| 2   | wave   | 44  | 36       | 24      | •     |
+| 3   | path   | 80  | 12       | 28      |       |
+| 4   | cross  | 116 | 20       | 40      |       |
+| 5   | stone  | 164 | 70       | 20      | •     |
+| 6   | fire   | 188 | 32       | 36      |       |
+| 7   | altar  | 228 | 56       | 24      | •     |
+| 8   | spark² | 260 | 72       | 30      |       |
+| 9   | wave²  | 296 | 64       | 24      | •     |
 
 ## Give Decorative Icons (`src/components/give/GiveDecorativeIcons.astro`)
 
@@ -163,6 +177,11 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 - Follows same CSS mask pattern as `DecorativeIcons.astro`
 - Same `animate-float` + `opacity-50 blur-sm` rules for readability
 - Text containers in each section get `relative z-10` so opaque icons don't overlap letters
+
+## Featured Campaign section (`give.astro`)
+
+- The `bg-accent-orange-lightest` background is split into two absolute-positioned divs: one for mobile (`lg:hidden`, starts at `top: 10rem` so orange begins below the card), one for lg+ (`hidden lg:block` with `inset-0` for full fill). This keeps the card visually above the orange on mobile while maintaining full-height orange on desktop.
+- Parent wrapper has `overflow-visible relative pb-10 lg:py-20`
 
 ## Countdown timer (`index.astro`)
 
