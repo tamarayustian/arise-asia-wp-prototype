@@ -54,7 +54,7 @@ export function AllCampaignCarousel({ data }: { data: Card[] }) {
           {data.map((card, i) => (
             <CarouselItem
               key={i}
-              className="basis-[77%] pl-3 md:basis-[40%] md:pl-4 lg:basis-[30%] xl:basis-[24%]"
+              className={`pl-3 md:pl-4 w-80 ${i === data.length - 1 ? "mr-3 md:mr-4" : ""}`}
             >
               <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-xl">
                 <img

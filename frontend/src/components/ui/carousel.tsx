@@ -105,7 +105,7 @@ const CarouselItem = React.forwardRef<
       ref={ref}
       role="group"
       aria-roledescription="slide"
-      className={cn("min-w-0 shrink-0 grow-0 basis-[85%] pl-4", className)}
+      className={cn("min-w-0 shrink-0 grow-0 basis-auto pl-4", className)}
       {...props}
     />
   );
