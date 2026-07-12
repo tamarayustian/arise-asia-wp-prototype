@@ -51,9 +51,14 @@ const { featuredCampaigns, allCampaigns, givingOptions } = data;
         Featured Campaign
       </h2>
     </div>
-    <div class="bg-accent-orange-lightest overflow-visible py-10 lg:py-20">
+    <div class="overflow-visible pb-10 lg:py-20 relative">
       <div
-        class="container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pr-0 lg:pl-32 xl:pl-48"
+        class="bg-accent-orange-lightest absolute inset-x-0 bottom-0 lg:hidden"
+        style="top: 10rem"
+      ></div>
+      <div class="bg-accent-orange-lightest absolute inset-0 hidden lg:block"></div>
+      <div
+        class="relative container mx-auto px-8 md:px-16 lg:-mt-32 lg:-mb-36 lg:pr-0 lg:pl-32 xl:pl-48"
       >
         <FeaturedCampaignCarousel client:load data={featuredCampaigns} />
       </div>
