@@ -1,4 +1,13 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Unbounded:wght@400;500;600;700&display=swap");
+@import "@fontsource/montserrat/300.css";
+@import "@fontsource/montserrat/400.css";
+@import "@fontsource/montserrat/500.css";
+@import "@fontsource/montserrat/600.css";
+@import "@fontsource/montserrat/700.css";
+@import "@fontsource/unbounded/300.css";
+@import "@fontsource/unbounded/400.css";
+@import "@fontsource/unbounded/500.css";
+@import "@fontsource/unbounded/600.css";
+@import "@fontsource/unbounded/700.css";
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -71,6 +80,12 @@
   --color-accent-purple-primary: #9d8ae6;
   --color-accent-purple-dark: #6e61a1;
   --color-accent-purple-darker: #4f4573;
+}
+
+@utility container-page {
+  margin-inline: auto;
+  width: 100%;
+  max-width: 1536px;
 }
 
 @utility text-h1 {

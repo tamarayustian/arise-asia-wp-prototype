@@ -1,20 +1,20 @@
 ---
 export interface Props {
-  partners: string[];
+  partners: { name: string; logo: string }[];
 }
 
 const { partners } = Astro.props;
 ---
 
-<div
-  class="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
->
+<div class="flex flex-wrap justify-center gap-6">
   {
     partners.map((partner) => (
-      <div class="border-neutral-cool-lighter flex aspect-square items-center justify-center rounded-xl border bg-white p-4 md:p-6">
-        <p class="font-heading text-neutral-gray-lighter text-center text-sm font-medium uppercase md:text-base">
-          {partner}
-        </p>
+      <div class="flex aspect-[2/1] shrink-0 grow-0 basis-[calc(50%-12px)] items-center justify-center rounded-xl bg-white p-4 sm:basis-[calc(33.333%-16px)] md:basis-[calc(25%-18px)] md:p-6 lg:basis-[calc(20%-19.2px)]">
+        <img
+          src={partner.logo}
+          alt={partner.name}
+          class="max-h-full max-w-full object-contain"
+        />
       </div>
     ))
   }

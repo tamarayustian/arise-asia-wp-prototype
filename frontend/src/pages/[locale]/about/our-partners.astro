@@ -6,19 +6,61 @@ import Layout from "@/layouts/Layout.astro";
 const { locale } = Astro.params;
 
 const endorsingPartners = [
-  "Cru",
-  "Frontiers",
-  "Gather",
-  "Global",
-  "HKACM",
-  "ICMDA",
-  "Every Nation",
-  "Asia Evangelical",
-  "Asia Theological",
-  "China Evangelical",
+  { name: "Lausanne", logo: "/partners/lausanne.png" },
+  { name: "Inter", logo: "/partners/inter.png" },
+  { name: "Reah", logo: "/partners/reah.png" },
+  { name: "Global", logo: "/partners/global.png" },
+  { name: "Cru", logo: "/partners/cru.png" },
+  { name: "SCGM", logo: "/partners/scgm.png" },
+  { name: "A3", logo: "/partners/a3.png" },
+  { name: "IFES", logo: "/partners/ifes.png" },
+  { name: "Asia Theological", logo: "/partners/asia-theological.png" },
+  { name: "Radical", logo: "/partners/radical.png" },
+  { name: "India Missions", logo: "/partners/india-missions.png" },
+  { name: "Gather", logo: "/partners/gather.png" },
+  { name: "Asia Evangelical", logo: "/partners/asia-evangelical.png" },
+  { name: "Perspective", logo: "/partners/perspective.png" },
+  { name: "Thai", logo: "/partners/thai.png" },
+  { name: "Navigators", logo: "/partners/navigators.png" },
+  { name: "HKACM", logo: "/partners/hkacm.png" },
+  { name: "ICMDA", logo: "/partners/icmda.png" },
+  { name: "SEND", logo: "/partners/send.png" },
+  { name: "M", logo: "/partners/m.png" },
+  { name: "WEC", logo: "/partners/wec.png" },
+  { name: "TEAM", logo: "/partners/team.png" },
+  { name: "SIM", logo: "/partners/sim.png" },
+  { name: "WEA", logo: "/partners/wea.png" },
+  { name: "VIA", logo: "/partners/via.png" },
+  { name: "YFC", logo: "/partners/yfc.png" },
+  { name: "YFC", logo: "/partners/yfc-2.png" },
 ];
 
-const sponsoringPartners = ["123Go", "A3"];
+const sponsoringPartners = [
+  { name: "China Evangelical", logo: "/partners/china-evangelis.png" },
+  { name: "OneHope", logo: "/partners/onehope.png" },
+  { name: "Pioneers", logo: "/partners/pioneers.png" },
+  { name: "Every Nation", logo: "/partners/everynation.png" },
+  { name: "Wycliffe Global", logo: "/partners/wyclife-global.png" },
+  { name: "Kids", logo: "/partners/kids.png" },
+  { name: "OM", logo: "/partners/om.png" },
+  { name: "OMF", logo: "/partners/omf.png" },
+  { name: "Interserve", logo: "/partners/interserve.png" },
+  { name: "SIL", logo: "/partners/sil.png" },
+  { name: "WEC", logo: "/partners/wec-2.png" },
+  { name: "Gather", logo: "/partners/gather-2.png" },
+  { name: "Asia Evangelical", logo: "/partners/asia-evangelical-2.png" },
+  { name: "Perspective", logo: "/partners/perspective-2.png" },
+  { name: "Thai", logo: "/partners/thai-2.png" },
+  { name: "Navigators", logo: "/partners/navigators-2.png" },
+  { name: "HKACM", logo: "/partners/hkacm-2.png" },
+  { name: "ICMDA", logo: "/partners/icmda-2.png" },
+  { name: "SEND", logo: "/partners/send-2.png" },
+  { name: "Frontiers", logo: "/partners/frontiers.png" },
+  { name: "WEC", logo: "/partners/wec-3.png" },
+  { name: "TEAM", logo: "/partners/team-2.png" },
+  { name: "SIM", logo: "/partners/sim-2.png" },
+  { name: "WEA", logo: "/partners/wea-2.png" },
+];
 ---
 
 <Layout title="Our Partners — Arise Asia" locale={locale!}>
@@ -28,7 +70,7 @@ const sponsoringPartners = ["123Go", "A3"];
 
   <section
     id="partners"
-    class="container mx-auto flex flex-col gap-14 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page flex flex-col gap-14 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div class="flex flex-col gap-6">
       <h2

@@ -74,40 +74,60 @@ const learnMoreCards = [
 ---
 
 <Layout title="About — Arise Asia" locale={locale!}>
-  <div class="relative overflow-hidden bg-[url('/about-us-bg.png')] bg-cover bg-center">
+  <div class="relative overflow-hidden">
     <div
-      class="from-accent-orange-lightest via-accent-orange-lightest/95 absolute inset-0 bg-linear-to-b to-white"
+      class="relative flex h-64 flex-col justify-end bg-[url('/about-hero-bg.png')] bg-cover bg-top sm:h-80 md:h-96 lg:h-[369px]"
     >
+      <div
+        class="absolute inset-0 bg-linear-to-t from-black/60 via-black/10 to-transparent"
+      >
+      </div>
+      <div
+        class="container-page relative px-8 pb-8 md:px-16 lg:px-32 xl:px-48"
+      >
+        <h1 class="text-h1 text-left text-white uppercase">About</h1>
+      </div>
     </div>
     <div
-      class="container relative mx-auto flex flex-col items-center px-8 pt-40 text-center md:px-16 lg:px-32 lg:pt-48 xl:px-48"
+      class="from-accent-orange-lightest bg-linear-to-b to-white"
     >
-      <h1 class="text-h1 uppercase">About</h1>
-      <p
-        class="font-heading bg-linear-to-r from-[#ff5f5a] to-[#ffa45a] bg-clip-text text-3xl font-semibold text-transparent uppercase sm:text-4xl md:text-5xl"
+      <div
+        class="container-page flex flex-col items-center px-8 py-12 text-center md:px-16 md:py-16 lg:px-32 xl:px-48"
       >
-        Go where there is no gospel
-      </p>
-      <p class="font-heading mt-6 max-w-4xl text-base md:text-lg">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
-      </p>
-      <ActionButton
-        className="mt-8"
-        href="#our-story"
-        outerBg="bg-linear-to-r from-[#ff7a6d] to-[#ffb179]"
-        iconComponent={ArrowRight}
-        textHover=""
-        hoverIcon=""
-      >
-        Our Story
-      </ActionButton>
+        <div class="flex items-center justify-center gap-4 md:gap-8">
+          <div
+            class="size-8 shrink-0 md:size-10"
+            style="background: linear-gradient(135deg, #ffdcda, #ff5f5a); -webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+          />
+          <p
+            class="font-heading bg-linear-to-r from-[#ff5f5a] to-[#ffa45a] bg-clip-text text-3xl font-semibold text-transparent uppercase sm:text-4xl md:text-5xl"
+          >
+            Go where there is no gospel
+          </p>
+          <div
+            class="size-8 shrink-0 scale-x-[-1] md:size-10"
+            style="background: linear-gradient(135deg, #ffdcda, #ff5f5a); -webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+          />
+        </div>
+        <p class="font-heading mt-6 max-w-4xl text-base md:text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
+        <ActionButton
+          className="mt-8"
+          href="#our-story"
+          outerBg="bg-linear-to-r from-[#cc6257] to-[#cc8e61]"
+          iconComponent={ArrowRight}
+        >
+          Our Story
+        </ActionButton>
+      </div>
     </div>
     <section
       id="our-story"
-      class="relative container mx-auto flex justify-center px-8 pt-16 pb-20 md:px-16 lg:px-32 xl:px-48"
+      class="relative container-page flex justify-center px-8 pb-20 md:px-16 lg:px-32 xl:px-48"
     >
       <div
         class="group relative aspect-video w-full max-w-2xl overflow-hidden rounded-2xl bg-[url('/about-us-bg.png')] bg-cover bg-center shadow-xl"
@@ -130,7 +150,7 @@ const learnMoreCards = [
 
   <section
     id="what-we-do"
-    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div
       class="bg-accent-blue-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
@@ -147,8 +167,6 @@ const learnMoreCards = [
           href={`/${locale}/about/what-we-do`}
           outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
           iconComponent={ArrowRight}
-          textHover=""
-          hoverIcon=""
         >
           Learn more
         </ActionButton>
@@ -164,11 +182,35 @@ const learnMoreCards = [
 
   <section
     id="our-impact"
-    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div
-      class="bg-accent-rose-lightest flex flex-col items-center gap-5 rounded-2xl p-6 text-center md:p-10"
+      class="relative flex flex-col items-center gap-5 overflow-hidden rounded-2xl bg-linear-to-br from-[#ffc8c8] to-[#ffefef] p-6 text-center md:p-10"
     >
+      <div
+        class="absolute top-4 right-4 hidden items-start gap-2 opacity-30 sm:flex md:top-6 md:right-6 md:gap-3"
+      >
+        <div
+          class="bg-primary-red mt-2 size-5 md:size-6"
+          style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+        />
+        <div
+          class="bg-primary-red size-7 md:size-8"
+          style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+        />
+        <div
+          class="bg-primary-red mt-3 size-4 md:size-5"
+          style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+        />
+        <div
+          class="bg-primary-red mt-1 size-6 md:size-7"
+          style="-webkit-mask: url('/icons/path.svg') no-repeat center / contain; mask: url('/icons/path.svg') no-repeat center / contain;"
+        />
+        <div
+          class="bg-primary-red mt-4 size-6 md:size-7"
+          style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+        />
+      </div>
       <h2
         class="font-heading from-accent-red-darker to-primary-red bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
       >
@@ -241,8 +283,6 @@ const learnMoreCards = [
         href={`/${locale}/about`}
         outerBg="from-accent-red-darker to-primary-red bg-linear-to-r"
         iconComponent={ArrowRight}
-        textHover=""
-        hoverIcon=""
       >
         Learn more
       </ActionButton>
@@ -251,7 +291,7 @@ const learnMoreCards = [
 
   <section
     id="leadership"
-    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div
       class="bg-accent-blue-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
@@ -268,8 +308,6 @@ const learnMoreCards = [
           href={`/${locale}/about/our-leadership`}
           outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
           iconComponent={ArrowRight}
-          textHover=""
-          hoverIcon=""
         >
           Learn more
         </ActionButton>
@@ -294,7 +332,7 @@ const learnMoreCards = [
 
   <section
     id="press-and-media"
-    class="container mx-auto px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div
       class="bg-accent-orange-lightest flex flex-col gap-5 rounded-2xl p-6 md:p-8"
@@ -311,8 +349,6 @@ const learnMoreCards = [
           href={`/${locale}/about/press-and-media`}
           outerBg="from-accent-orange-dark to-primary-orange bg-linear-to-r"
           iconComponent={ArrowRight}
-          textHover=""
-          hoverIcon=""
         >
           View all
         </ActionButton>
@@ -346,7 +382,7 @@ const learnMoreCards = [
     >
     </div>
     <div
-      class="relative container mx-auto flex flex-col gap-6 px-8 md:px-16 lg:px-32 xl:px-48"
+      class="relative container-page flex flex-col gap-6 px-8 md:px-16 lg:px-32 xl:px-48"
     >
       <h2 class="font-heading text-accent-purple-light text-3xl uppercase md:text-4xl">
         Learn More
@@ -372,7 +408,7 @@ const learnMoreCards = [
     id="subscribe"
     class="bg-accent-blue-lightest relative overflow-hidden px-8 py-16 md:px-16 lg:px-32 xl:px-48"
   >
-    <div class="relative container mx-auto flex flex-col gap-8">
+    <div class="relative container-page flex flex-col gap-8">
       <h2
         class="font-heading from-accent-blue-darker to-primary-blue-lighter bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
       >

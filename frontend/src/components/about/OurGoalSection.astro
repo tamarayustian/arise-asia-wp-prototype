@@ -1,6 +1,6 @@
 ---
 import { ActionButton } from "@/components/shared/ActionButton";
-import { ArrowRight, Sparkles } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export interface Props {
   variant?: "full" | "card";
@@ -13,25 +13,32 @@ const { variant = "full", showHeading = true, learnMoreHref } = Astro.props;
 const wrapperClass =
   variant === "full"
     ? "px-8 py-16 md:px-16 md:py-20 lg:px-32 xl:px-48"
-    : "container mx-auto rounded-2xl px-8 py-12 md:px-16 md:py-16";
+    : "container-page rounded-2xl px-8 py-12 md:px-16 md:py-16";
 ---
 
 <div
   class={`relative flex flex-col items-center overflow-hidden bg-[url('/about-us-bg.png')] bg-cover bg-center text-center ${wrapperClass}`}
 >
   <div
+    class="absolute inset-0 bg-[url('/our-goal-arise-bg.png')] bg-cover bg-center mix-blend-soft-light"
+  >
+  </div>
+  <div
     class="from-accent-orange-darker/70 via-accent-orange-darker/50 absolute inset-0 bg-linear-to-b to-black/60"
   >
   </div>
   <div class="relative z-10 flex max-w-4xl flex-col items-center">
     {showHeading && <h2 class="text-h2 text-white uppercase">Our Goal</h2>}
-    {!showHeading && <Sparkles className="mb-4 size-6 text-white" />}
-    <p class="font-heading text-lg text-white md:text-2xl">
+    <div
+      class="bg-accent-orange-light mb-4 size-8 md:size-10"
+      style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+    />
+    <p class="font-heading mt-6 text-lg text-white sm:mt-0 md:text-2xl">
       By 2033, our goal is that 100,000 young people from 500 cities and 50
       countries in Asia and beyond will receive the challenge to
     </p>
     <p
-      class="font-heading mt-4 text-3xl font-semibold text-white uppercase md:text-5xl"
+      class="font-heading mt-2 text-3xl font-semibold text-white uppercase sm:mt-4 md:text-5xl"
     >
       Go where there is no gospel
     </p>
@@ -44,8 +51,6 @@ const wrapperClass =
           textColor="text-black"
           bg=""
           hoverBg=""
-          textHover=""
-          hoverIcon=""
           iconComponent={ArrowRight}
         >
           Learn more

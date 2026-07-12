@@ -19,9 +19,9 @@ export function ActionButton({
   outerBg = "bg-gradient-accent",
   textColor = "text-white",
   bg = "",
-  hoverBg = "hover:bg-white",
-  textHover = "group-hover:text-gradient-accent",
-  hoverIcon = "group-hover:text-accent-red",
+  hoverBg = "",
+  textHover = "",
+  hoverIcon = "",
   iconComponent: Icon = ArrowUpRight,
   className = "",
   children,
@@ -31,7 +31,7 @@ export function ActionButton({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={`w-fit rounded-full ${outerBg} ${className}`}
+      className={`w-fit rounded-full transition-[filter] duration-200 hover:brightness-90 ${outerBg} ${className}`}
     >
       <div
         className={`group rounded-full px-8 py-2.5 uppercase lg:px-7 lg:py-3.5 ${textColor} ${bg} ${hoverBg}`}

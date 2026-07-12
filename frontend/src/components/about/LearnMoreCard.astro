@@ -37,12 +37,14 @@ const {
       {description}
     </p>
   </div>
-  <div
-    class={`bg-accent-purple-dark absolute right-6 hidden size-16 shrink-0 opacity-40 sm:block md:size-20 ${iconRotate}`}
-    style={`-webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
-  >
+  <div class="relative z-10 flex shrink-0 items-center gap-4 md:gap-6">
+    <div
+      class={`bg-accent-purple-lighter hidden size-12 shrink-0 sm:block md:size-16 ${iconRotate}`}
+      style={`-webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
+    >
+    </div>
+    <ArrowRight
+      className="text-accent-purple-light size-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:size-10"
+    />
   </div>
-  <ArrowRight
-    className="text-accent-purple-light relative z-10 size-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:size-10"
-  />
 </a>
