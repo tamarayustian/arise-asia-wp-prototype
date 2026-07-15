@@ -107,7 +107,7 @@ const menuSecondaryItems: NavItem[] = [
           menuMainItems.map((item) => (
             <a
               href={item.href}
-              class={`font-heading w-fit font-medium text-black text-lg sm:text-xl transition-all uppercase ${isActive(item.href) ? "font-semibold" : ""}`}
+              class={`font-heading w-fit font-medium text-black text-lg sm:text-xl transition-all uppercase hover:text-accent-orange-dark ${isActive(item.href) ? "font-semibold text-accent-orange-dark" : ""}`}
             >
               {item.label}
             </a>
@@ -120,7 +120,7 @@ const menuSecondaryItems: NavItem[] = [
           menuSecondaryItems.map((item) => (
             <a
               href={item.href}
-              class={`font-heading w-fit text-sm sm:text-base font-medium text-accent-orange-darker transition-all hover:opacity-60 ${isActive(item.href) ? "font-semibold text-black" : ""}`}
+              class={`font-heading w-fit text-sm sm:text-base font-medium text-accent-orange-darker transition-all hover:text-accent-blue-dark ${isActive(item.href) ? "font-semibold text-accent-blue-dark" : ""}`}
             >
               {item.label}
             </a>
@@ -131,7 +131,7 @@ const menuSecondaryItems: NavItem[] = [
       <div class="flex items-center gap-4">
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
           aria-label="X (Twitter)"
           target="_blank"
           rel="noopener noreferrer"
@@ -140,7 +140,7 @@ const menuSecondaryItems: NavItem[] = [
         </a>
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
           aria-label="Instagram"
           target="_blank"
           rel="noopener noreferrer"
@@ -149,7 +149,7 @@ const menuSecondaryItems: NavItem[] = [
         </a>
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
           aria-label="YouTube"
           target="_blank"
           rel="noopener noreferrer"
@@ -162,16 +162,14 @@ const menuSecondaryItems: NavItem[] = [
 </div>
 
 <script>
-  const menuBtn = document.getElementById("menu-btn");
-  const hamburger = document.getElementById("menu-hamburger");
-  const closeIcon = document.getElementById("menu-close");
-  const menuOverlay = document.getElementById("mobile-menu-overlay");
-  const menuLinks = menuOverlay?.querySelectorAll("a");
-
   function toggleMenu(open) {
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuContent = document.getElementById("mobile-menu-content");
+    const hamburger = document.getElementById("menu-hamburger");
+    const closeIcon = document.getElementById("menu-close");
+
     const show = open ?? menuOverlay?.classList.contains("invisible");
     if (show) {
-      const menuContent = document.getElementById("mobile-menu-content");
       const nav = document.querySelector("nav");
       const navBottom = nav?.getBoundingClientRect().bottom ?? 0;
       if (menuContent) menuContent.style.paddingTop = (navBottom + 32) + "px";
@@ -197,21 +195,31 @@ const menuSecondaryItems: NavItem[] = [
     }
   }
 
-  menuBtn?.addEventListener("click", () => toggleMenu());
+  function attachMenu() {
+    const menuBtn = document.getElementById("menu-btn");
+    if (menuBtn?.dataset._menuAttached) return;
+    if (menuBtn) menuBtn.dataset._menuAttached = "1";
+    const menuOverlay = document.getElementById("mobile-menu-overlay");
+    const menuLinks = menuOverlay?.querySelectorAll("a");
 
-  menuLinks?.forEach((link) => {
-    link.addEventListener("click", () => toggleMenu(false));
-  });
+    menuBtn?.addEventListener("click", () => toggleMenu());
 
-  menuOverlay?.addEventListener("click", (e) => {
-    if (e.target === menuOverlay) toggleMenu(false);
-  });
+    menuLinks?.forEach((link) => {
+      link.addEventListener("click", () => toggleMenu(false));
+    });
 
+    menuOverlay?.addEventListener("click", (e) => {
+      if (e.target === menuOverlay) toggleMenu(false);
+    });
+  }
+
+  attachMenu();
+  document.addEventListener("astro:page-load", attachMenu);
+
+  // Language panel (no-op if elements don't exist)
   const langBtn = document.getElementById("lang-btn");
   const langBtnMobile = document.getElementById("lang-btn-mobile");
   const langPanelWrapper = document.getElementById("lang-panel-wrapper");
-  const langPanel = document.getElementById("lang-panel");
-  const langOptions = langPanel?.querySelectorAll("button");
 
   function toggleLang(e) {
     e.stopPropagation();
@@ -224,10 +232,6 @@ const menuSecondaryItems: NavItem[] = [
 
   langBtn?.addEventListener("click", toggleLang);
   langBtnMobile?.addEventListener("click", toggleLang);
-
-  langOptions?.forEach((opt) => {
-    opt.addEventListener("click", closeLang);
-  });
 
   document.addEventListener("click", (e) => {
     if (
