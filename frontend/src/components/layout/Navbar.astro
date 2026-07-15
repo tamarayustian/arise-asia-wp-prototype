@@ -13,6 +13,7 @@ const pathname = Astro.url.pathname;
 interface NavItem {
   label: string;
   href: string;
+  className?: string;
 }
 
 const navItems: NavItem[] = [
@@ -35,7 +36,7 @@ const menuMainItems: NavItem[] = [
   { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
   { label: "Take Action", href: `/${locale}/take-action` },
   { label: "Give", href: `/${locale}/give` },
-  { label: "Arise Asia 2026", href: `/${locale}/arise26` },
+  { label: "Arise Asia 2026", href: `/${locale}/arise26`, className: "text-gradient-accent" },
 ];
 
 const menuSecondaryItems: NavItem[] = [
@@ -101,7 +102,7 @@ const menuSecondaryItems: NavItem[] = [
           menuMainItems.map((item) => (
             <a
               href={item.href}
-              class={`font-heading hover:text-accent-orange-dark w-fit text-lg font-medium uppercase transition-all sm:text-xl ${isActive(item.href) ? "text-accent-orange-dark font-semibold" : ""}`}
+              class={`font-heading hover:text-accent-orange-dark w-fit text-lg font-medium uppercase transition-all sm:text-xl ${item.className ?? ""} ${isActive(item.href) ? "text-accent-orange-dark font-semibold" : ""}`}
             >
               {item.label}
             </a>
@@ -239,8 +240,13 @@ const menuSecondaryItems: NavItem[] = [
     document.querySelectorAll("#mobile-menu-content a").forEach((a) => {
       const href = a.getAttribute("href");
       const active = isActive(href);
+      const isGradient = a.classList.contains("text-gradient-accent");
+      if (!isGradient) {
+        a.classList.toggle("text-accent-orange-dark", active);
+      } else {
+        a.style.color = active ? "var(--color-accent-orange-dark)" : "";
+      }
       a.classList.toggle("font-semibold", active);
-      a.classList.toggle("text-accent-orange-dark", active);
     });
   }
 
