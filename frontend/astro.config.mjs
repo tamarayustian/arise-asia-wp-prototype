@@ -16,6 +16,20 @@ export default defineConfig({
   adapter,
   integrations: [icon(), react()],
   vite: {
+    css: {
+      postcss: {
+        plugins: [
+          {
+            postcssPlugin: 'font-display-block',
+            Declaration(decl) {
+              if (decl.prop === 'font-display' && decl.value === 'swap') {
+                decl.value = 'block';
+              }
+            },
+          },
+        ],
+      },
+    },
     plugins: [tailwindcss()],
     resolve: {
       alias: {

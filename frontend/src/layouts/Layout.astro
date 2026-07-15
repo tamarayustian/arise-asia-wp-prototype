@@ -1,9 +1,17 @@
 ---
 import FontSizeAdjuster from "@/components/layout/FontSizeAdjuster.astro";
 import Footer from "@/components/layout/Footer.astro";
-import LanguageSwitcher from "@/components/layout/LanguageSwitcher.astro";
 import Navbar from "@/components/layout/Navbar.astro";
 import "@/styles/global.css";
+import ClientRouter from "astro/components/ClientRouter.astro";
+
+import unbounded500 from "@fontsource/unbounded/files/unbounded-latin-500-normal.woff2";
+import unbounded600 from "@fontsource/unbounded/files/unbounded-latin-600-normal.woff2";
+import unbounded700 from "@fontsource/unbounded/files/unbounded-latin-700-normal.woff2";
+import montserrat400 from "@fontsource/montserrat/files/montserrat-latin-400-normal.woff2";
+import montserrat500 from "@fontsource/montserrat/files/montserrat-latin-500-normal.woff2";
+import montserrat600 from "@fontsource/montserrat/files/montserrat-latin-600-normal.woff2";
+import montserrat700 from "@fontsource/montserrat/files/montserrat-latin-700-normal.woff2";
 
 export interface Props {
   title: string;
@@ -17,14 +25,19 @@ const { title, locale } = Astro.props;
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
+    <ClientRouter />
+    <link rel="preload" href={unbounded500} as="font" type="font/woff2" />
+    <link rel="preload" href={unbounded600} as="font" type="font/woff2" />
+    <link rel="preload" href={unbounded700} as="font" type="font/woff2" />
+    <link rel="preload" href={montserrat400} as="font" type="font/woff2" />
+    <link rel="preload" href={montserrat500} as="font" type="font/woff2" />
+    <link rel="preload" href={montserrat600} as="font" type="font/woff2" />
+    <link rel="preload" href={montserrat700} as="font" type="font/woff2" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
   <body>
     <Navbar locale={locale} />
-    <div class="fixed right-4 z-10">
-      <LanguageSwitcher currentLocale={locale} />
-    </div>
     <main>
       <slot />
     </main>
