@@ -1,0 +1,26 @@
+---
+export interface Props {
+  variant: "outline" | "filled";
+  href: string;
+  target?: string;
+  rel?: string;
+}
+
+const { variant, href, target, rel } = Astro.props;
+
+const base =
+  "font-heading inline-flex items-center gap-2 rounded-full px-5 py-2 text-xs font-bold leading-none transition-colors uppercase";
+
+const outline =
+  "border-2 border-black text-black hover:bg-black hover:text-white";
+const filled = "bg-black text-white hover:bg-accent-orange-dark";
+---
+
+<a
+  href={href}
+  target={target ?? (variant === "outline" ? undefined : "_self")}
+  rel={rel ?? undefined}
+  class={`${base} ${variant === "outline" ? outline : filled}`}
+>
+  <slot />
+</a>

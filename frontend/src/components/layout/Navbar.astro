@@ -1,124 +1,242 @@
 ---
+import { Heart, Menu, X } from "lucide-react";
 import { Icon } from "astro-icon/components";
+import NavbarButton from "./NavbarButton.astro";
 
 export interface Props {
   locale: string;
 }
 
 const { locale } = Astro.props;
+const pathname = Astro.url.pathname;
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const navItems: NavItem[] = [
+  { label: "About Us", href: `/${locale}/about` },
+  { label: "Arise 2026", href: `/${locale}/` },
+  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
+];
+
+function isActive(href: string): boolean {
+  if (href === `/${locale}/`) {
+    return pathname === `/${locale}/` || pathname === `/${locale}`;
+  }
+  return pathname.startsWith(href);
+}
+
+const menuMainItems: NavItem[] = [
+    { label: "Home", href: `/${locale}` },
+  { label: "About Us", href: `/${locale}/about` },
+  { label: "Countries", href: `/${locale}/` },
+  { label: "Upcoming Events", href: `/${locale}/` },
+  { label: "Take Action", href: `/${locale}/` },
+    { label: "Give", href: `/${locale}/give` },
+  { label: "Arise Asia 2026", href: `/${locale}/give` },
+];
+
+const menuSecondaryItems: NavItem[] = [
+  { label: "Contact Us", href: `/${locale}/about/` },
+];
 ---
 
-<div class="fixed z-20 w-full overflow-visible pt-12">
+<div class="fixed top-0 z-20 w-full overflow-visible pt-8 sm:pt-10 md:pt-14">
   <nav
-    class="relative container mx-auto flex w-11/12 max-w-6xl items-center overflow-visible rounded-full bg-black/75 px-6 shadow-2xl"
+    class="relative z-10 bg-accent-orange-lighter/30 container mx-auto flex w-11/12 max-w-93 items-center justify-between rounded-full px-5 py-4 shadow-2xl backdrop-blur-2xl sm:max-w-176 sm:gap-4 sm:rounded-full lg:max-w-330 lg:gap-5 lg:rounded-full lg:px-7.5 lg:py-3"
   >
-    <a href={`/${locale}/`} class="-my-4">
+    <a href={`/${locale}/`} class="shrink-0">
       <img
-        alt="Arise logo"
-        class="my-2 size-16 sm:size-20 lg:hover:size-24"
-        src="/logo.svg"
+        alt="Arise"
+        class="h-10 w-auto lg:h-11"
+        src="/logo-black-font.svg"
       />
     </a>
 
-    <div
-      class="hidden lg:absolute lg:left-1/2 lg:flex lg:-translate-x-1/2 lg:gap-6"
-    >
-      <a href={`/${locale}/`} class="font-heading py-4 text-white">
-        <div class="group relative w-fit">
-          <p>Home</p>
-          <span
-            class="absolute hidden h-0.5 w-full bg-linear-to-r from-yellow-500 to-red-500 group-hover:block"
-          ></span>
-        </div>
-      </a>
-      <a href={`/${locale}/about`} class="font-heading py-4 text-white">
-        <div class="group relative w-fit">
-          <p>About Us</p>
-          <span
-            class="absolute hidden h-0.5 w-full bg-linear-to-r from-yellow-500 to-red-500 group-hover:block"
-          ></span>
-        </div>
-      </a>
-      <a href={`/${locale}/movements`} class="font-heading py-4 text-white">
-        <div class="group relative w-fit">
-          <p>Movements</p>
-          <span
-            class="absolute hidden h-0.5 w-full bg-linear-to-r from-yellow-500 to-red-500 group-hover:block"
-          ></span>
-        </div>
-      </a>
-    </div>
+    <div class="flex items-center gap-6">
+      <div id="desktop-nav-items" class="hidden items-center gap-6 lg:flex">
+        {
+          navItems.map((item) => (
+            <a
+              href={item.href}
+              class="group relative flex flex-col items-center"
+            >
+              <span
+                class={`font-heading text-sm font-medium text-black ${isActive(item.href) ? "font-semibold" : ""}`}
+              >
+                {item.label}
+              </span>
+              {isActive(item.href) && (
+                <span class="bg-gradient-accent absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 rounded-full" />
+              )}
+            </a>
+          ))
+        }
+      </div>
 
-    <div class="hidden lg:ml-auto lg:flex lg:items-center lg:gap-3">
-      <a
-        href="mailto:info@ariseasia.org"
-        class="font-heading inline-flex items-center gap-1.5 rounded-full border border-yellow-500 px-3 py-1 text-sm text-white transition hover:bg-yellow-500/20"
-        >Contact Us<Icon name="lucide:arrow-up-right" class="size-3.5" /></a
-      >
-      <a
-        href="https://www.totalideas.org/projects"
-        rel="noopener noreferrer"
-        target="_blank"
-        class="font-heading inline-flex items-center gap-1.5 rounded-full bg-yellow-500 px-3 py-1 text-sm text-white transition hover:bg-yellow-600"
-        >Donate<Icon name="fa6-solid:heart" class="size-3.5" /></a
-      >
-    </div>
+      <div id="desktop-donate-btn" class="hidden items-center lg:flex">
+        <NavbarButton variant="filled" href={`/${locale}/give`}>
+          Donate
+          <Heart fill="currentColor" className="size-4" />
+        </NavbarButton>
+      </div>
 
-    <div class="my-auto ml-auto flex text-white lg:hidden">
-      <button id="menu-btn" class="size-8" aria-label="Toggle menu">
-        <svg stroke="currentColor" viewBox="0 0 12 12" class="size-8">
-          <path d="M2 3H12M2 6H12M2 9H12"></path>
-        </svg>
+      <button
+        id="menu-btn"
+        class="hover:text-accent-orange-dark flex shrink-0 text-gray-900 transition-opacity"
+        aria-label="Toggle menu"
+      >
+        <span id="menu-hamburger"><Menu className="size-6" /></span>
+        <span id="menu-close" class="hidden"><X className="size-6" /></span>
       </button>
     </div>
   </nav>
 
-  <ul
-    id="mobile-menu"
-    class="container mx-auto mt-2 hidden w-11/12 max-w-4xl list-none rounded-xl bg-black/75 p-4 shadow-2xl lg:hidden"
+  <div
+    id="mobile-menu-overlay"
+    class="fixed inset-0 overflow-y-auto bg-white/30 backdrop-blur-[100px] transition-all duration-300 invisible opacity-0 pointer-events-none"
   >
-    <li class="py-2">
-      <a
-        href={`/${locale}/`}
-        class="font-heading text-white decoration-orange-500 underline-offset-4 hover:underline"
-        >Home</a
-      >
-    </li>
-    <li class="py-2">
-      <a
-        href={`/${locale}/about`}
-        class="font-heading text-white decoration-orange-500 underline-offset-4 hover:underline"
-        >About Us</a
-      >
-    </li>
-    <li class="py-2">
-      <a
-        href={`/${locale}/movements`}
-        class="font-heading text-white decoration-orange-500 underline-offset-4 hover:underline"
-        >Movements</a
-      >
-    </li>
-    <li class="py-2">
-      <a
-        href="mailto:info@ariseasia.org"
-        class="font-heading text-white decoration-orange-500 underline-offset-4 hover:underline"
-        rel="noopener noreferrer"
-        target="_blank">Contact us</a
-      >
-    </li>
-    <li class="py-2">
-      <a
-        href="https://www.totalideas.org/projects"
-        class="font-heading text-white decoration-orange-500 underline-offset-4 hover:underline"
-        rel="noopener noreferrer"
-        target="_blank">Donate</a
-      >
-    </li>
-  </ul>
+    <div
+      id="mobile-menu-content"
+      class="container mx-auto flex w-11/12 max-w-93 flex-col gap-8 pt-8 pb-12 sm:max-w-176 sm:px-7.5 lg:max-w-330 lg:px-10"
+    >
+      <div class="flex flex-col gap-5">
+        {
+          menuMainItems.map((item) => (
+            <a
+              href={item.href}
+              class={`font-heading w-fit font-medium text-black text-lg sm:text-xl transition-all uppercase ${isActive(item.href) ? "font-semibold" : ""}`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="flex flex-col gap-2.5">
+        {
+          menuSecondaryItems.map((item) => (
+            <a
+              href={item.href}
+              class={`font-heading w-fit text-sm sm:text-base font-medium text-accent-orange-darker transition-all hover:opacity-60 ${isActive(item.href) ? "font-semibold text-black" : ""}`}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a
+          href="#"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          aria-label="X (Twitter)"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="fa6-brands:x-twitter" class="size-5" />
+        </a>
+        <a
+          href="#"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          aria-label="Instagram"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="fa6-brands:instagram" class="size-5" />
+        </a>
+        <a
+          href="#"
+          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:opacity-60"
+          aria-label="YouTube"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <Icon name="fa6-brands:youtube" class="size-5" />
+        </a>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script>
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("mobile-menu");
-  btn?.addEventListener("click", () => menu?.classList.toggle("hidden"));
+  const menuBtn = document.getElementById("menu-btn");
+  const hamburger = document.getElementById("menu-hamburger");
+  const closeIcon = document.getElementById("menu-close");
+  const menuOverlay = document.getElementById("mobile-menu-overlay");
+  const menuLinks = menuOverlay?.querySelectorAll("a");
+
+  function toggleMenu(open) {
+    const show = open ?? menuOverlay?.classList.contains("invisible");
+    if (show) {
+      const menuContent = document.getElementById("mobile-menu-content");
+      const nav = document.querySelector("nav");
+      const navBottom = nav?.getBoundingClientRect().bottom ?? 0;
+      if (menuContent) menuContent.style.paddingTop = (navBottom + 32) + "px";
+      menuOverlay?.classList.remove("invisible", "opacity-0", "pointer-events-none");
+      menuOverlay?.classList.add("opacity-100");
+      const desktopNav = document.getElementById("desktop-nav-items");
+      if (desktopNav) desktopNav.style.display = "none";
+      const desktopDonate = document.getElementById("desktop-donate-btn");
+      if (desktopDonate) desktopDonate.style.display = "none";
+      hamburger?.classList.add("hidden");
+      closeIcon?.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    } else {
+      menuOverlay?.classList.remove("opacity-100");
+      menuOverlay?.classList.add("invisible", "opacity-0", "pointer-events-none");
+      const desktopNav = document.getElementById("desktop-nav-items");
+      if (desktopNav) desktopNav.style.display = "";
+      const desktopDonate = document.getElementById("desktop-donate-btn");
+      if (desktopDonate) desktopDonate.style.display = "";
+      hamburger?.classList.remove("hidden");
+      closeIcon?.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+  }
+
+  menuBtn?.addEventListener("click", () => toggleMenu());
+
+  menuLinks?.forEach((link) => {
+    link.addEventListener("click", () => toggleMenu(false));
+  });
+
+  menuOverlay?.addEventListener("click", (e) => {
+    if (e.target === menuOverlay) toggleMenu(false);
+  });
+
+  const langBtn = document.getElementById("lang-btn");
+  const langBtnMobile = document.getElementById("lang-btn-mobile");
+  const langPanelWrapper = document.getElementById("lang-panel-wrapper");
+  const langPanel = document.getElementById("lang-panel");
+  const langOptions = langPanel?.querySelectorAll("button");
+
+  function toggleLang(e) {
+    e.stopPropagation();
+    langPanelWrapper?.classList.toggle("hidden");
+  }
+
+  function closeLang() {
+    langPanelWrapper?.classList.add("hidden");
+  }
+
+  langBtn?.addEventListener("click", toggleLang);
+  langBtnMobile?.addEventListener("click", toggleLang);
+
+  langOptions?.forEach((opt) => {
+    opt.addEventListener("click", closeLang);
+  });
+
+  document.addEventListener("click", (e) => {
+    if (
+      !langPanelWrapper?.classList.contains("hidden") &&
+      !langBtn?.contains(e.target as Node) &&
+      !langBtnMobile?.contains(e.target as Node) &&
+      !langPanelWrapper?.contains(e.target as Node)
+    ) {
+      closeLang();
+    }
+  });
 </script>

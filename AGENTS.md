@@ -64,7 +64,16 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 ## Architecture
 
 - **Two top-level directories**: `cms/` (WordPress) and `frontend/` (Astro)
-- **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page)
+- **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page), `about.astro` + `/about/*` subpages
+- **Layout** (`src/layouts/Layout.astro`): Uses `ClientRouter` from `astro/components/ClientRouter.astro` for client-side view transitions (navbar stays mounted on navigation). Preloads 7 latin-subset `.woff2` font files (Unbounded 500/600/700, Montserrat 400/500/600/700) in `<head>` to eliminate FOUT on page load.
+- **Font display**: PostCSS plugin in `astro.config.mjs` transforms all `font-display: swap` → `font-display: block` in @fontsource CSS at build time. No runtime overhead. Combined with preloads, text appears in the correct font immediately (no fallback flash, no invisible text).
+- **Navbar** (`src/components/layout/Navbar.astro`): Peach glass pill (`bg-accent-orange-lighter/30 backdrop-blur-2xl`), fixed top, rounded-full. Three breakpoints — `lg+` (≥1024px) desktop shows nav items + Donate + hamburger inline; `<lg` (<1024px) shows logo + hamburger only (no globe or language selector). Active page gets `font-semibold` + `w-full` gradient underline indicator. Nav items: About Us, Arise 2026 (home), Upcoming Events.
+  - Wrapper: `fixed top-0 z-20 w-full overflow-visible pt-8 sm:pt-10 md:pt-14`
+  - Nav element: `relative z-10` (sits above mobile overlay within the wrapper)
+  - Mobile overlay: `fixed inset-0 z-40` (full viewport, behind navbar), uses `invisible`/`opacity-0`/`pointer-events-none` classes with `transition-all duration-300` for smooth fade in/out. JS toggles these classes and sets `padding-top` on `#mobile-menu-content` to `nav.getBoundingClientRect().bottom + 32px` so menu items start below the navbar.
+  - Desktop nav items (`#desktop-nav-items`) and Donate button (`#desktop-donate-btn`) get `display: none` via JS when overlay opens to avoid duplication with menu items; restored to `display: ""` on close.
+  - Lucide React icons: `Heart`, `Menu`, `X`. Font Awesome 6 Brands via `astro-icon/components`: `x-twitter`, `instagram`, `youtube`.
+  - Social media accounts placeholder under `/data`.
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
 - **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`, `GiveDecorativeIcons.astro`
 - **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
