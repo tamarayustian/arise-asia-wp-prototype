@@ -17,42 +17,38 @@ interface NavItem {
 
 const navItems: NavItem[] = [
   { label: "About Us", href: `/${locale}/about` },
-  { label: "Arise 2026", href: `/${locale}/` },
+  { label: "Arise 2026", href: `/${locale}/arise26` },
   { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
 ];
 
 function isActive(href: string): boolean {
-  if (href === `/${locale}/`) {
+  if (href === `/${locale}/` || href === `/${locale}`) {
     return pathname === `/${locale}/` || pathname === `/${locale}`;
   }
   return pathname.startsWith(href);
 }
 
 const menuMainItems: NavItem[] = [
-    { label: "Home", href: `/${locale}` },
+  { label: "Home", href: `/${locale}` },
   { label: "About Us", href: `/${locale}/about` },
-  { label: "Countries", href: `/${locale}/` },
-  { label: "Upcoming Events", href: `/${locale}/` },
-  { label: "Take Action", href: `/${locale}/` },
-    { label: "Give", href: `/${locale}/give` },
-  { label: "Arise Asia 2026", href: `/${locale}/give` },
+  { label: "Countries", href: `/${locale}/countries` },
+  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
+  { label: "Take Action", href: `/${locale}/take-action` },
+  { label: "Give", href: `/${locale}/give` },
+  { label: "Arise Asia 2026", href: `/${locale}/arise26` },
 ];
 
 const menuSecondaryItems: NavItem[] = [
-  { label: "Contact Us", href: `/${locale}/about/` },
+  { label: "Contact Us", href: `/${locale}/about/contact-us` },
 ];
 ---
 
 <div class="fixed top-0 z-20 w-full overflow-visible pt-8 sm:pt-10 md:pt-14">
   <nav
-    class="relative z-10 bg-accent-orange-lighter/30 container mx-auto flex w-11/12 max-w-93 items-center justify-between rounded-full px-5 py-4 shadow-2xl backdrop-blur-2xl sm:max-w-176 sm:gap-4 sm:rounded-full lg:max-w-330 lg:gap-5 lg:rounded-full lg:px-7.5 lg:py-3"
+    class="bg-accent-orange-lightest/50 relative z-10 container mx-auto flex w-11/12 max-w-93 items-center justify-between rounded-full px-5 py-4 shadow-2xl backdrop-blur-[200px] sm:max-w-176 sm:gap-4 sm:rounded-full lg:max-w-330 lg:gap-5 lg:rounded-full lg:px-7.5 lg:py-3"
   >
     <a href={`/${locale}/`} class="shrink-0">
-      <img
-        alt="Arise"
-        class="h-10 w-auto lg:h-11"
-        src="/logo-black-font.svg"
-      />
+      <img alt="Arise" class="h-10 w-auto lg:h-11" src="/logo-black-font.svg" />
     </a>
 
     <div class="flex items-center gap-6">
@@ -64,13 +60,11 @@ const menuSecondaryItems: NavItem[] = [
               class="group relative flex flex-col items-center"
             >
               <span
-                class={`font-heading text-sm font-medium text-black ${isActive(item.href) ? "font-semibold" : ""}`}
+                class={`font-heading text-sm font-medium text-black transition-all hover:text-accent-orange-dark ${isActive(item.href) ? "font-semibold" : ""}`}
               >
                 {item.label}
               </span>
-              {isActive(item.href) && (
-                <span class="bg-gradient-accent absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 rounded-full" />
-              )}
+              <span class=`bg-gradient-accent absolute bottom-0 left-1/2 h-0.5 w-full -translate-x-1/2 rounded-full ${isActive(item.href) ? "" : "hidden"}` />
             </a>
           ))
         }
@@ -96,18 +90,18 @@ const menuSecondaryItems: NavItem[] = [
 
   <div
     id="mobile-menu-overlay"
-    class="fixed inset-0 overflow-y-auto bg-white/30 backdrop-blur-[100px] transition-all duration-300 invisible opacity-0 pointer-events-none"
+    class="pointer-events-none invisible fixed inset-0 overflow-y-auto bg-white/60 opacity-0 backdrop-blur-[150px] transition-all duration-300"
   >
     <div
       id="mobile-menu-content"
-      class="container mx-auto flex w-11/12 max-w-93 flex-col gap-8 pt-8 pb-12 sm:max-w-176 sm:px-7.5 lg:max-w-330 lg:px-10"
+      class="container mx-auto flex w-11/12 max-w-93 flex-col gap-8 pt-8 pb-12 text-black sm:max-w-176 sm:px-7.5 lg:max-w-330 lg:px-10"
     >
       <div class="flex flex-col gap-5">
         {
           menuMainItems.map((item) => (
             <a
               href={item.href}
-              class={`font-heading w-fit font-medium text-black text-lg sm:text-xl transition-all uppercase hover:text-accent-orange-dark ${isActive(item.href) ? "font-semibold text-accent-orange-dark" : ""}`}
+              class={`font-heading hover:text-accent-orange-dark w-fit text-lg font-medium uppercase transition-all sm:text-xl ${isActive(item.href) ? "text-accent-orange-dark font-semibold" : ""}`}
             >
               {item.label}
             </a>
@@ -120,7 +114,7 @@ const menuSecondaryItems: NavItem[] = [
           menuSecondaryItems.map((item) => (
             <a
               href={item.href}
-              class={`font-heading w-fit text-sm sm:text-base font-medium text-accent-orange-darker transition-all hover:text-accent-blue-dark ${isActive(item.href) ? "font-semibold text-accent-blue-dark" : ""}`}
+              class={`font-heading text-accent-orange-darker hover:text-accent-blue-dark w-fit text-sm font-medium transition-all sm:text-base ${isActive(item.href) ? "text-accent-blue-dark font-semibold" : ""}`}
             >
               {item.label}
             </a>
@@ -131,7 +125,7 @@ const menuSecondaryItems: NavItem[] = [
       <div class="flex items-center gap-4">
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
+          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
           aria-label="X (Twitter)"
           target="_blank"
           rel="noopener noreferrer"
@@ -140,7 +134,7 @@ const menuSecondaryItems: NavItem[] = [
         </a>
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
+          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
           aria-label="Instagram"
           target="_blank"
           rel="noopener noreferrer"
@@ -149,7 +143,7 @@ const menuSecondaryItems: NavItem[] = [
         </a>
         <a
           href="#"
-          class="flex items-center justify-center text-accent-orange-darker transition-opacity hover:text-accent-blue-dark"
+          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
           aria-label="YouTube"
           target="_blank"
           rel="noopener noreferrer"
@@ -172,8 +166,12 @@ const menuSecondaryItems: NavItem[] = [
     if (show) {
       const nav = document.querySelector("nav");
       const navBottom = nav?.getBoundingClientRect().bottom ?? 0;
-      if (menuContent) menuContent.style.paddingTop = (navBottom + 32) + "px";
-      menuOverlay?.classList.remove("invisible", "opacity-0", "pointer-events-none");
+      if (menuContent) menuContent.style.paddingTop = navBottom + 32 + "px";
+      menuOverlay?.classList.remove(
+        "invisible",
+        "opacity-0",
+        "pointer-events-none",
+      );
       menuOverlay?.classList.add("opacity-100");
       const desktopNav = document.getElementById("desktop-nav-items");
       if (desktopNav) desktopNav.style.display = "none";
@@ -184,7 +182,11 @@ const menuSecondaryItems: NavItem[] = [
       document.body.style.overflow = "hidden";
     } else {
       menuOverlay?.classList.remove("opacity-100");
-      menuOverlay?.classList.add("invisible", "opacity-0", "pointer-events-none");
+      menuOverlay?.classList.add(
+        "invisible",
+        "opacity-0",
+        "pointer-events-none",
+      );
       const desktopNav = document.getElementById("desktop-nav-items");
       if (desktopNav) desktopNav.style.display = "";
       const desktopDonate = document.getElementById("desktop-donate-btn");
@@ -213,8 +215,41 @@ const menuSecondaryItems: NavItem[] = [
     });
   }
 
+  function updateActiveStates() {
+    const path = window.location.pathname;
+
+    function isActive(href) {
+      const locale = path.split("/").filter(Boolean)[0] || "en";
+      if (href.endsWith("/") || href === `/${locale}`) {
+        return path === href || path === href.replace(/\/$/, "");
+      }
+      return path.startsWith(href);
+    }
+
+    document.querySelectorAll("#desktop-nav-items a").forEach((a) => {
+      const href = a.getAttribute("href");
+      const active = isActive(href);
+      const span = a.querySelector("span");
+      const underline = a.querySelector("[class*='bg-gradient-accent']");
+
+      span?.classList.toggle("font-semibold", active);
+      if (underline) underline.classList.toggle("hidden", !active);
+    });
+
+    document.querySelectorAll("#mobile-menu-content a").forEach((a) => {
+      const href = a.getAttribute("href");
+      const active = isActive(href);
+      a.classList.toggle("font-semibold", active);
+      a.classList.toggle("text-accent-orange-dark", active);
+    });
+  }
+
   attachMenu();
-  document.addEventListener("astro:page-load", attachMenu);
+  updateActiveStates();
+  document.addEventListener("astro:page-load", () => {
+    attachMenu();
+    updateActiveStates();
+  });
 
   // Language panel (no-op if elements don't exist)
   const langBtn = document.getElementById("lang-btn");
