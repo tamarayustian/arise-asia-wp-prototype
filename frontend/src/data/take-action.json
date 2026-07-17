@@ -1,0 +1,63 @@
+{
+  "hero": {
+    "title": "Take Action",
+    "description": "Ways to get involved in the mission \u2013 whether by giving, serving or multiplying impact."
+  },
+  "startHere": {
+    "heading": "Not sure where to start?",
+    "subtitle": "Start Here",
+    "cards": [
+      {
+        "title": "Give",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      },
+      {
+        "title": "Volunteer",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      }
+    ]
+  },
+  "learnMore": {
+    "heading": "New to Arise Asia?",
+    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "buttonText": "Learn more"
+  },
+  "joinMovement": {
+    "heading": "Join the Movement",
+    "cards": [
+      {
+        "title": "Prayer Movement",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      },
+      {
+        "title": "Represent Arise Asia",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      },
+      {
+        "title": "Become a Mentor",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      }
+    ]
+  },
+  "multiplyMission": {
+    "heading": "Multiply the Mission",
+    "cards": [
+      {
+        "title": "Bring Arise Asia to your country",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      },
+      {
+        "title": "Become a Sending Partner",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "href": "#"
+      }
+    ]
+  }
+}
+

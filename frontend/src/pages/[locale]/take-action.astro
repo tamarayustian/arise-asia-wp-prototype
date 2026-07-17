@@ -1,0 +1,165 @@
+---
+import { ActionButton } from "@/components/shared/ActionButton";
+import TakeActionCard from "@/components/take-action/TakeActionCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { ArrowRight } from "lucide-react";
+
+const { locale } = Astro.params;
+const data = (await import(`@/data/take-action.json`)).default;
+---
+
+<Layout title="Take Action — Arise Asia" locale={locale!}>
+  <!-- Hero -->
+  <section class="relative flex h-80 items-end overflow-hidden md:h-105">
+    <div
+      class="from-accent-purple-primary to-accent-purple-dark absolute inset-0 bg-linear-to-b"
+    >
+    </div>
+    <div
+      class="absolute inset-0 bg-[url('/take-action-hero-bg.png')] bg-cover bg-center opacity-40"
+    >
+    </div>
+    <div
+      class="container-page relative z-10 px-8 pb-10 md:px-16 md:pb-15 lg:px-32 xl:px-48"
+    >
+      <h1 class="text-h1 text-left text-white uppercase">
+        {data.hero.title}
+      </h1>
+      <p
+        class="font-heading mt-3 text-left text-base font-medium text-white uppercase md:mt-4 md:text-lg lg:text-xl"
+      >
+        {data.hero.description}
+      </p>
+    </div>
+  </section>
+
+  <!-- Start Here -->
+  <section
+    class="container-page px-8 py-12 md:px-16 md:py-16 lg:px-32 xl:px-48"
+  >
+    <div class="flex flex-col gap-2.5">
+      <h2
+        class="font-heading text-2xl font-semibold text-black uppercase md:text-3xl"
+      >
+        {data.startHere.heading}
+      </h2>
+      <div class="flex items-center gap-2.5 md:gap-3.5">
+        <div
+          class="size-5.5 shrink-0 md:size-12"
+          style="background: linear-gradient(135deg, #9d8ae6, #6e61a1); -webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+        >
+        </div>
+        <p
+          class="font-heading from-accent-purple-primary to-accent-purple-dark bg-linear-to-r bg-clip-text text-[28px] leading-[120%] font-semibold tracking-[-2%] text-transparent uppercase md:text-5xl"
+        >
+          {data.startHere.subtitle}
+        </p>
+      </div>
+    </div>
+    <div class="mt-6 flex flex-col gap-4 md:mt-7.5 md:flex-row md:gap-5">
+      {
+        data.startHere.cards.map((card) => (
+          <div class="w-full md:w-1/2">
+            <TakeActionCard
+              title={card.title}
+              description={card.description}
+              href={card.href}
+              titleColorClass="text-accent-purple-lighter"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Learn More -->
+  <section class="container-page px-8 pb-12 md:px-16 lg:px-32 xl:px-48">
+    <div
+      class="bg-accent-purple-lightest flex flex-col gap-4 rounded-2xl p-6 md:gap-5 md:p-8"
+    >
+      <div
+        class="flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between"
+      >
+        <h2
+          class="font-heading from-accent-purple-primary to-accent-purple-dark bg-linear-to-r bg-clip-text text-2xl font-semibold text-transparent uppercase md:text-4xl"
+        >
+          {data.learnMore.heading}
+        </h2>
+        <ActionButton
+          href="#"
+          outerBg="from-accent-purple-primary to-accent-purple-dark bg-linear-to-r"
+          iconComponent={ArrowRight}
+        >
+          {data.learnMore.buttonText}
+        </ActionButton>
+      </div>
+      <p class="text-base md:text-lg">
+        {data.learnMore.body}
+      </p>
+    </div>
+  </section>
+
+  <!-- Join the Movement -->
+  <section
+    class="container-page px-8 pb-12 md:px-16 md:pb-16 lg:px-32 xl:px-48"
+  >
+    <div class="flex items-center gap-2.5 md:gap-3.5">
+      <div
+        class="size-5.5 shrink-0 md:size-12"
+        style="background: linear-gradient(135deg, #ff5f5a, #b3433f); -webkit-mask: url('/icons/path.svg') no-repeat center / contain; mask: url('/icons/path.svg') no-repeat center / contain;"
+      >
+      </div>
+      <h2
+        class="font-heading from-accent-red-darker to-primary-red bg-linear-to-r bg-clip-text text-[28px] leading-[120%] font-semibold tracking-[-2%] text-transparent uppercase md:text-5xl"
+      >
+        {data.joinMovement.heading}
+      </h2>
+    </div>
+    <div class="mt-6 flex flex-col gap-4 md:mt-7.5 md:flex-row md:gap-5">
+      {
+        data.joinMovement.cards.map((card) => (
+          <div class="w-full md:w-1/3">
+            <TakeActionCard
+              title={card.title}
+              description={card.description}
+              href={card.href}
+              titleColorClass="text-accent-red-lighter"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Multiply the Mission -->
+  <section
+    class="container-page px-8 pb-12 md:px-16 md:pb-20 lg:px-32 xl:px-48"
+  >
+    <div class="flex items-center gap-2.5 md:gap-3.5">
+      <div
+        class="size-5.5 shrink-0 md:size-12"
+        style="background: linear-gradient(135deg, #6ba6ff, #1f5ab3); -webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+      >
+      </div>
+      <h2
+        class="font-heading from-accent-blue-darker to-primary-blue-lighter bg-linear-to-r bg-clip-text text-[28px] leading-[120%] font-semibold tracking-[-2%] text-transparent uppercase md:text-5xl"
+      >
+        {data.multiplyMission.heading}
+      </h2>
+    </div>
+    <div class="mt-6 flex flex-col gap-4 md:mt-7.5 md:flex-row md:gap-5">
+      {
+        data.multiplyMission.cards.map((card) => (
+          <div class="w-full md:w-1/2">
+            <TakeActionCard
+              title={card.title}
+              description={card.description}
+              href={card.href}
+              titleColorClass="text-accent-blue-lighter"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </section>
+</Layout>

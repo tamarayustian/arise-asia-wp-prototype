@@ -1,0 +1,52 @@
+---
+import { ArrowRight } from "lucide-react";
+
+export interface Props {
+  title: string;
+  description: string;
+  href: string;
+  titleColorClass: string;
+  bgImage?: string;
+}
+
+const {
+  title,
+  description,
+  href,
+  titleColorClass,
+  bgImage = "/give-bg.png",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class="group relative flex h-full overflow-hidden rounded-2xl bg-cover bg-center transition-all duration-300"
+  style={`background-image: url('${bgImage}')`}
+>
+  <div
+    class="absolute inset-0 bg-linear-to-br from-black to-transparent transition-opacity duration-300 group-hover:opacity-80"
+  >
+  </div>
+  <div
+    class="relative z-10 flex h-full w-full items-center justify-between px-5 py-7 md:px-7 md:py-7.5"
+  >
+    <div class="flex min-w-0 flex-col justify-between gap-3">
+      <p
+        class={`uppercase font-heading text-2xl font-semibold leading-none tracking-tight md:text-4xl ${titleColorClass}`}
+      >
+        {title}
+      </p>
+      {
+        description && (
+          <p class="text-neutral-cream-lightest text-sm leading-tight tracking-tight md:text-base md:leading-[120%]">
+            {description}
+          </p>
+        )
+      }
+    </div>
+    <ArrowRight
+      className={`size-7 shrink-0 transition-transform duration-300 group-hover:scale-110 md:size-10 ${titleColorClass}`}
+      strokeWidth={1.5}
+    />
+  </div>
+</a>
