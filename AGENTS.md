@@ -64,7 +64,7 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 ## Architecture
 
 - **Two top-level directories**: `cms/` (WordPress) and `frontend/` (Astro)
-- **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page), `about.astro` + `/about/*` subpages
+- **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page), `join.astro` (take action), `about.astro` + `/about/*` subpages
 - **Layout** (`src/layouts/Layout.astro`): Uses `ClientRouter` from `astro/components/ClientRouter.astro` for client-side view transitions (navbar stays mounted on navigation). Preloads 7 latin-subset `.woff2` font files (Unbounded 500/600/700, Montserrat 400/500/600/700) in `<head>` to eliminate FOUT on page load.
 - **Font display**: PostCSS plugin in `astro.config.mjs` transforms all `font-display: swap` → `font-display: block` in @fontsource CSS at build time. No runtime overhead. Combined with preloads, text appears in the correct font immediately (no fallback flash, no invisible text).
 - **Navbar** (`src/components/layout/Navbar.astro`): Peach glass pill (`bg-accent-orange-lighter/30 backdrop-blur-2xl`), fixed top, rounded-full. Three breakpoints — `lg+` (≥1024px) desktop shows nav items + Donate + hamburger inline; `<lg` (<1024px) shows logo + hamburger only (no globe or language selector). Active page gets `font-semibold` + `w-full` gradient underline indicator. Nav items: About Us, Arise 2026 (home), Upcoming Events.
@@ -72,12 +72,14 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
   - Nav element: `relative z-10` (sits above mobile overlay within the wrapper)
   - Mobile overlay: `fixed inset-0 z-40` (full viewport, behind navbar), uses `invisible`/`opacity-0`/`pointer-events-none` classes with `transition-all duration-300` for smooth fade in/out. JS toggles these classes and sets `padding-top` on `#mobile-menu-content` to `nav.getBoundingClientRect().bottom + 32px` so menu items start below the navbar.
   - Desktop nav items (`#desktop-nav-items`) and Donate button (`#desktop-donate-btn`) get `display: none` via JS when overlay opens to avoid duplication with menu items; restored to `display: ""` on close.
+  - Both mobile (`<sm`, `logo-black-font.svg`) and desktop (`sm+`, `wordmark.svg`) logos use `scale-[1.275]` — renders at ~51px visual height while keeping the layout box at `h-10` so navbar padding stays unaffected.
   - Lucide React icons: `Heart`, `Menu`, `X`. Font Awesome 6 Brands via `astro-icon/components`: `x-twitter`, `instagram`, `youtube`.
   - Social media accounts placeholder under `/data`.
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
 - **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`, `GiveDecorativeIcons.astro`
 - **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
-- **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`
+- **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`, `StayConnected.astro`
+- **StayConnected** (`src/components/shared/StayConnected.astro`): Newsletter signup + WhatsApp join section extracted from `about.astro`. Rendered in `Layout.astro` between `</main>` and `<Footer>` so it appears on every page. No props — self-contained.
 - **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
 - **lib**: `wordpress.ts` — locale-aware WP REST API client using `?rest_route=/wp/v2` format
 - **`@/` path alias** → `src/`
@@ -227,3 +229,22 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 - **Footer.astro** has a decorative "Arise Asia" background `<p>` with `font-size: clamp(160px,20vw,262px)` and `absolute inset-0`
 - On mobile viewports, the large text is wider than the footer and overflows visibly unless the `<p>` has `overflow-hidden`
 - When adding large decorative text inside an `absolute inset-0` container, always add `overflow-hidden` to prevent text bleed past the component edges
+
+## Index page vision logo (`index.astro`)
+
+- The "vision" section header uses `wordmark.svg` (`/logos/wordmark.svg`) as a single centered image — replaces the old split icon + "rise Asia" text pair.
+- Responsive sizes: `h-14` mobile (~182px wide), `h-20` sm (~260px), `h-24` md+ (~312px), with `w-auto` to preserve natural 3.25:1 aspect ratio of the SVG.
+
+## Public folder structure
+
+```
+public/
+  favicon.ico              # Astro auto-links
+  favicon.svg              # Astro auto-links
+  icons/                   # decorative SVG masks (CSS mask pattern)
+  images/                  # background PNGs + hero assets (joy.svg)
+  logos/                   # brand identity SVGs (wordmark, logo variants)
+  partners/                # partner organization logos (PNGs)
+```
+
+When adding a new public asset, place it in the appropriate subdirectory and update any `src=` or `url()` references to use the new path.
