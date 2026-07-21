@@ -6,6 +6,22 @@ export interface Props {
 }
 
 const { locale } = Astro.props;
+
+interface NavItem {
+  label: string;
+  href: string;
+}
+
+const footerNavItems: NavItem[] = [
+  { label: "Home", href: `/${locale}/` },
+  { label: "About Us", href: `/${locale}/about` },
+  { label: "Arise Asia 2026", href: `/${locale}/arise26` },
+  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
+  { label: "Donate", href: `/${locale}/give` },
+];
+
+const mobileCol1: NavItem[] = [footerNavItems[0], footerNavItems[1], footerNavItems[4]];
+const mobileCol2: NavItem[] = [footerNavItems[2], footerNavItems[3]];
 ---
 
 <footer class="relative overflow-visible bg-blue-50">
@@ -68,51 +84,20 @@ const { locale } = Astro.props;
       <div class="flex flex-col gap-7">
         <div class="flex flex-row gap-17.5 md:hidden">
           <nav class="flex flex-col gap-2.5">
-            <a
-              href={`/${locale}/`}
-              class="uppercase font-semibold hover:text-blue-600">Home</a
-            >
-            <a
-              href={`/${locale}/about`}
-              class="uppercase font-semibold hover:text-blue-600">About Us</a
-            >
-            <a
-              href={`/${locale}/give`}
-              class="uppercase font-semibold hover:text-blue-600">Donate</a
-            >
+            {mobileCol1.map((item) => (
+              <a href={item.href} class="uppercase font-semibold hover:text-blue-600">{item.label}</a>
+            ))}
           </nav>
           <nav class="flex flex-col gap-2.5">
-            <a
-              href={`/${locale}/arise26`}
-              class="uppercase font-semibold hover:text-blue-600">Arise Asia 2026</a
-            >
-            <a
-              href={`/${locale}/upcoming-events`}
-              class="uppercase font-semibold hover:text-blue-600">Upcoming Events</a
-            >
+            {mobileCol2.map((item) => (
+              <a href={item.href} class="uppercase font-semibold hover:text-blue-600">{item.label}</a>
+            ))}
           </nav>
         </div>
         <nav class="hidden gap-4 lg:gap-5 xl:gap-7.5 md:flex">
-          <a
-            href={`/${locale}/`}
-            class="uppercase text-center font-semibold hover:text-blue-600">Home</a
-          >
-          <a
-            href={`/${locale}/about`}
-            class="uppercase text-center font-semibold hover:text-blue-600">About Us</a
-          >
-          <a
-            href={`/${locale}/arise26`}
-            class="uppercase text-center font-semibold hover:text-blue-600">Arise Asia 2026</a
-          >
-          <a
-            href={`/${locale}/upcoming-events`}
-            class="uppercase text-center font-semibold hover:text-blue-600">Upcoming Events</a
-          >
-          <a
-            href={`/${locale}/give`}
-            class="uppercase text-center font-semibold hover:text-blue-600">Donate</a
-          >
+          {footerNavItems.map((item) => (
+            <a href={item.href} class="uppercase text-center font-semibold hover:text-blue-600">{item.label}</a>
+          ))}
         </nav>
 
         <p class="text-xs italic text-[#909090] md:text-right">
