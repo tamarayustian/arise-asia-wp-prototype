@@ -73,6 +73,7 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
   - Mobile overlay: `fixed inset-0 z-40` (full viewport, behind navbar), uses `invisible`/`opacity-0`/`pointer-events-none` classes with `transition-all duration-300` for smooth fade in/out. JS toggles these classes and sets `padding-top` on `#mobile-menu-content` to `nav.getBoundingClientRect().bottom + 32px` so menu items start below the navbar.
   - Desktop nav items (`#desktop-nav-items`) and Donate button (`#desktop-donate-btn`) get `display: none` via JS when overlay opens to avoid duplication with menu items; restored to `display: ""` on close.
   - Both mobile (`<sm`, `logo-black-font.svg`) and desktop (`sm+`, `wordmark.svg`) logos use `scale-[1.275]` — renders at ~51px visual height while keeping the layout box at `h-10` so navbar padding stays unaffected.
+  - Logo `<a>` wrapper has `transition-transform duration-300 hover:scale-[1.06]` for a subtle scale-up on hover.
   - Lucide React icons: `Heart`, `Menu`, `X`. Font Awesome 6 Brands via `astro-icon/components`: `x-twitter`, `instagram`, `youtube`.
   - Social media accounts placeholder under `/data`.
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
