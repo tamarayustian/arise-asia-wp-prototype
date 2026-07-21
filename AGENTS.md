@@ -199,7 +199,13 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 
 - Countdown target date (`2026-07-27T00:00:00+08:00`) is hardcoded as a string literal inside the `<script>` tag.
 - Do NOT pull it from `home.json` or use `define:vars`/DOM data-attributes — the value is used in exactly one place (the countdown script) and hardcoding avoids Astro server→client serialization issues.
-- Four `<span id="countdown-{days,hours,minutes,seconds}">` elements updated by `setInterval(updateCountdown, 1000)`.
+- **Locale** is read from `document.documentElement.lang` (set via `<html lang={locale}>` in Layout.astro) — no `define:vars` needed.
+- Three-phase state machine in `Hero.astro`:
+  - **Countdown** (before Jul 27): Shows Days:Hours:Minutes:Seconds ticking down
+  - **Live** (Jul 27–31): Replaces heading with "is happening now!" and hides the countdown numbers
+  - **Evergreen** (after Jul 31): Replaces heading with "Be part of the movement" and hides the countdown numbers
+- Phase transitions are one-time DOM writes — the `updateCountdown` interval is cleared when leaving countdown phase, so no unnecessary DOM work during Live/Evergreen.
+- Preview via URL query: `/?phase=live` or `/?phase=evergreen` to see each state without changing the target date. Remove the query param to return to the normal countdown.
 
 ## Take Action quirks (`index.astro`)
 

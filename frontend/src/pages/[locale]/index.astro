@@ -359,25 +359,59 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
 </Layout>
 
 <script>
+  const locale = document.documentElement.lang;
   const target = new Date("2026-07-27T00:00:00+08:00").getTime();
+  const eventEnd = target + 5 * 86400 * 1000;
+
+  let currentPhase;
+
+  function getPhase() {
+    const preview = new URLSearchParams(location.search).get("phase");
+    if (preview === "live" || preview === "evergreen") return preview;
+    const now = Date.now();
+    if (now < target) return "countdown";
+    if (now < eventEnd) return "live";
+    return "evergreen";
+  }
+
+  function applyPhase(phase) {
+    const heading = document.getElementById("countdown-heading");
+    const numbers = document.getElementById("countdown-numbers");
+    if (!heading || !numbers) return;
+
+    if (phase === "live") {
+      heading.textContent = "is happening now!";
+      numbers.style.display = "none";
+    } else if (phase === "evergreen") {
+      heading.textContent = "Be part of the movement";
+      numbers.style.display = "none";
+    }
+  }
 
   function updateCountdown() {
-    const diff = Math.max(0, Math.floor((target - Date.now()) / 1000));
+    const phase = getPhase();
 
-    document.getElementById("countdown-days")!.textContent = String(
-      Math.floor(diff / 86400),
-    ).padStart(2, "0");
-    document.getElementById("countdown-hours")!.textContent = String(
-      Math.floor((diff % 86400) / 3600),
-    ).padStart(2, "0");
-    document.getElementById("countdown-minutes")!.textContent = String(
-      Math.floor((diff % 3600) / 60),
-    ).padStart(2, "0");
-    document.getElementById("countdown-seconds")!.textContent = String(
-      diff % 60,
-    ).padStart(2, "0");
+    if (phase !== currentPhase) {
+      currentPhase = phase;
+      applyPhase(phase);
+      if (phase !== "countdown") clearInterval(interval);
+    }
 
-    if (diff <= 0) clearInterval(interval);
+    if (phase === "countdown") {
+      const diff = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      document.getElementById("countdown-days")!.textContent = String(
+        Math.floor(diff / 86400),
+      ).padStart(2, "0");
+      document.getElementById("countdown-hours")!.textContent = String(
+        Math.floor((diff % 86400) / 3600),
+      ).padStart(2, "0");
+      document.getElementById("countdown-minutes")!.textContent = String(
+        Math.floor((diff % 3600) / 60),
+      ).padStart(2, "0");
+      document.getElementById("countdown-seconds")!.textContent = String(
+        diff % 60,
+      ).padStart(2, "0");
+    }
   }
 
   const interval = setInterval(updateCountdown, 1000);

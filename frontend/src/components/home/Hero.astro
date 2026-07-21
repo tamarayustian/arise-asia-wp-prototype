@@ -75,10 +75,16 @@ const { videoUrl } = Astro.props;
     </div>
   </div>
   <div class="mx-auto mt-5 mb-10 flex flex-col items-center xl:mb-12">
-    <p class="font-heading text-h4 mt-2 font-medium text-[#2b2b2b] uppercase">
+    <p
+      id="countdown-heading"
+      class="font-heading text-h4 mt-2 font-medium text-[#2b2b2b] uppercase"
+    >
       is happening in...
     </p>
-    <div class="flex items-center gap-x-2 sm:mt-6 sm:gap-x-6 md:gap-x-10">
+    <div
+      id="countdown-numbers"
+      class="flex items-center gap-x-2 sm:mt-6 sm:gap-x-6 md:gap-x-10"
+    >
       <div class="flex w-18 flex-col items-center md:w-20 lg:w-28 xl:w-32">
         <p id="countdown-days" class="text-h2 lg:text-h1 text-blue-900">00</p>
         <p
