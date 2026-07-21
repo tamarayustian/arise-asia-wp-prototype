@@ -77,11 +77,12 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
   - Lucide React icons: `Heart`, `Menu`, `X`. Font Awesome 6 Brands via `astro-icon/components`: `x-twitter`, `instagram`, `youtube`.
   - Social media accounts placeholder under `/data`.
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
+- **Arise26 page components**: `/src/components/arise26/` — `Arise26Page.tsx` (React island, full-page layout), `ScheduleCarousel.tsx` (horizontal scroll with native snap)
 - **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`, `GiveDecorativeIcons.astro`
 - **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
 - **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`, `StayConnected.astro`
 - **StayConnected** (`src/components/shared/StayConnected.astro`): Newsletter signup + WhatsApp join section extracted from `about.astro`. Rendered in `Layout.astro` between `</main>` and `<Footer>` so it appears on every page. No props — self-contained.
-- **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
+- **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options), `arise2026.json` (speakers, FAQ, nomination criteria). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
 - **lib**: `wordpress.ts` — locale-aware WP REST API client using `?rest_route=/wp/v2` format
 - **`@/` path alias** → `src/`
 - **`cn()`** utility from `clsx` + `tailwind-merge` (in `src/lib/utils.ts`)
@@ -255,3 +256,13 @@ public/
 ```
 
 When adding a new public asset, place it in the appropriate subdirectory and update any `src=` or `url()` references to use the new path.
+
+## /arise26 page
+
+- **Page**: `src/pages/[locale]/arise26.astro` — renders `<Arise26Page client:load />` inside Layout
+- **Arise26Page** (`src/components/arise26/Arise26Page.tsx`): React island with `motion/react` animations (framer-motion v12 via `motion` package). Sections: Hero, About, Speakers, Schedule, FAQ, Nomination Criteria.
+- **ScheduleCarousel** (`src/components/arise26/ScheduleCarousel.tsx`): Native horizontal scroll with `snap-x snap-mandatory`, left/right arrow buttons, inline schedule data. Not Embla-based.
+- **Speaker images**: Expected at `/2026/{name}.jpg` — user must copy these assets into `public/2026/`.
+- **Accordion**: Uses existing `Accordion` + `AccordionTab` from `src/components/ui/accordion.tsx` with `allowMultiple`.
+- **Motion import**: Always use `import { motion } from "motion/react"` (not from `"motion"` directly — the JSX component is in the `/react` subpath).
+- **Default Tailwind colors**: `global.css` `@theme` block includes common Tailwind defaults (indigo, orange, pink, green, violet, lime, red, neutral shades) used by the arise26 page.

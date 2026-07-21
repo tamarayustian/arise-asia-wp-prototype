@@ -1,0 +1,10 @@
+---
+import Arise26Page from "@/components/arise26/Arise26Page";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+---
+
+<Layout title="Arise Asia 2026 — Arise Asia" locale={locale!}>
+  <Arise26Page client:load />
+</Layout>
