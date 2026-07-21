@@ -29,10 +29,10 @@ const articles = [
         Articles about Arise Asia
       </p>
       <p class="font-heading mt-4 max-w-3xl text-sm md:text-base">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-        minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-        aliquip ex ea commodo consequat.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat.
       </p>
     </AboutHero>
   </section>
@@ -46,7 +46,7 @@ const articles = [
         filters.map((filter, index) => (
           <button
             type="button"
-            class="font-heading cursor-pointer rounded-full border px-5 py-2 text-xs font-semibold uppercase transition-colors data-[active=true]:border-transparent data-[active=true]:bg-primary-orange data-[active=true]:text-white data-[active=false]:border-neutral-cool-primary data-[active=false]:text-neutral-gray-light"
+            class="font-heading data-[active=true]:bg-primary-orange data-[active=false]:border-neutral-cool-primary data-[active=false]:text-neutral-gray-light cursor-pointer rounded-full border px-5 py-2 text-xs font-semibold uppercase transition-colors data-[active=true]:border-transparent data-[active=true]:text-white"
             data-active={index === 0 ? "true" : "false"}
             aria-pressed={index === 0 ? "true" : "false"}
           >
