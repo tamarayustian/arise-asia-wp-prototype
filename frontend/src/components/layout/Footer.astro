@@ -20,12 +20,12 @@ const { locale } = Astro.props;
       <span class="block md:inline">Asia</span>
     </span>
   </p>
-  <div class="relative z-10 container p-12 sm:px-20">
+  <div class="relative z-10 container-page px-8 py-12 sm:px-14 lg:px-16">
     <div class="flex flex-col justify-between md:flex-row md:items-center">
-      <div class="flex flex-col gap-3 md:gap-5">
-        <h2 class="text-h4 text-blue-600 uppercase">Arise Asia</h2>
+      <div class="flex flex-col gap-7 items-start">
+        <img alt="Arise Asia" class="h-10 w-auto md:h-14" src="/wordmark-black.svg" />
 
-        <div class="mb-6 flex justify-start gap-x-4">
+        <div class="mb-6 flex items-center gap-x-3 md:gap-x-4">
           <a
             href="https://www.instagram.com/ariseasia.movement"
             rel="noopener noreferrer"
@@ -33,8 +33,7 @@ const { locale } = Astro.props;
           >
             <Icon
               name="fa6-brands:instagram"
-              class="text-neutral-700 hover:text-yellow-500"
-              size={28}
+              class="text-[#595959] hover:text-yellow-500 size-5"
             />
           </a>
           <a
@@ -44,8 +43,7 @@ const { locale } = Astro.props;
           >
             <Icon
               name="fa6-brands:youtube"
-              class="text-neutral-700 hover:text-red-500"
-              size={28}
+              class="text-[#595959] hover:text-red-500 size-5"
             />
           </a>
           <a
@@ -55,39 +53,70 @@ const { locale } = Astro.props;
           >
             <Icon
               name="fa6-brands:facebook"
-              class="text-neutral-700 hover:text-blue-500"
-              size={28}
+              class="text-[#595959] hover:text-blue-500 size-5"
             />
+          </a>
+          <a
+            href={`/${locale}/about/contact-us`}
+            class="font-heading text-sm text-[#595959] hover:text-blue-600"
+          >
+            Contact Us
           </a>
         </div>
       </div>
 
-      <div class="flex flex-col gap-5">
-        <div
-          class="text-p ml-auto flex justify-center gap-5 px-3 md:gap-10 md:px-0"
-        >
+      <div class="flex flex-col gap-7">
+        <div class="flex flex-row gap-17.5 md:hidden">
+          <nav class="flex flex-col gap-2.5">
+            <a
+              href={`/${locale}/`}
+              class="uppercase font-semibold hover:text-blue-600">Home</a
+            >
+            <a
+              href={`/${locale}/about`}
+              class="uppercase font-semibold hover:text-blue-600">About Us</a
+            >
+            <a
+              href={`/${locale}/give`}
+              class="uppercase font-semibold hover:text-blue-600">Donate</a
+            >
+          </nav>
+          <nav class="flex flex-col gap-2.5">
+            <a
+              href={`/${locale}/arise26`}
+              class="uppercase font-semibold hover:text-blue-600">Arise Asia 2026</a
+            >
+            <a
+              href={`/${locale}/upcoming-events`}
+              class="uppercase font-semibold hover:text-blue-600">Upcoming Events</a
+            >
+          </nav>
+        </div>
+        <nav class="hidden gap-4 lg:gap-5 xl:gap-7.5 md:flex">
           <a
             href={`/${locale}/`}
-            class="font-semibold uppercase hover:text-blue-600">Home</a
+            class="uppercase text-center font-semibold hover:text-blue-600">Home</a
           >
           <a
             href={`/${locale}/about`}
-            class="font-semibold uppercase hover:text-blue-600">About Us</a
+            class="uppercase text-center font-semibold hover:text-blue-600">About Us</a
           >
           <a
-            href={`/${locale}/movements`}
-            class="font-semibold uppercase hover:text-blue-600">Movements</a
+            href={`/${locale}/arise26`}
+            class="uppercase text-center font-semibold hover:text-blue-600">Arise Asia 2026</a
           >
           <a
-            class="font-semibold uppercase hover:text-blue-600"
-            href="https://www.totalideas.org/projects"
-            rel="noopener noreferrer"
-            target="_blank">Giving</a
+            href={`/${locale}/upcoming-events`}
+            class="uppercase text-center font-semibold hover:text-blue-600">Upcoming Events</a
           >
-        </div>
+          <a
+            href={`/${locale}/give`}
+            class="uppercase text-center font-semibold hover:text-blue-600">Donate</a
+          >
+        </nav>
 
-        <p class="text-p text-neutral-400 italic md:text-right">
-          Copyright &copy;2022-2026 Arise Asia. All rights reserved.
+        <p class="text-xs italic text-[#909090] md:text-right">
+          Copyright &copy;2026 Arise Asia. All rights reserved.
         </p>
       </div>
     </div>
