@@ -1,23 +1,107 @@
 {
   "speakers": [
-    { "imgSrc": "/2026/wayne.jpg", "title": "Wayne Chen", "subtitle": "Director, Radius Asia, Taiwan" },
-    { "imgSrc": "/2026/peter.jpg", "title": "Peter Tan-Chi", "subtitle": "Founder & Senior Pastor, Christ's Commission Fellowship, Philippines" },
-    { "imgSrc": "/2026/sarah.jpg", "title": "Sarah Breuel", "subtitle": "Missionary Leader and Founder, Revive Europe, Italy" },
-    { "imgSrc": "/2026/lawrence.jpg", "title": "Lawrence Tong", "subtitle": "International Director Emeritus, OM International" },
-    { "imgSrc": "/2026/prabhu.jpg", "title": "Prabhu Singh", "subtitle": "Issachar Global Education Network, India" },
-    { "imgSrc": "/2026/patrick.jpg", "title": "Patrick Fung", "subtitle": "Director Emeritus of OMF, Chair of CCCOWE, Incoming Principal of Singapore Bible College" },
-    { "imgSrc": "/2026/joshua.jpg", "title": "Joshua Bogunjoko", "subtitle": "Global Director for Regions of Lausanne Movement, International Director Emeritus of SIM, Nigeria" },
-    { "imgSrc": "/2026/jemima.jpg", "title": "Jemima Ooi", "subtitle": "Co-Founder, Love in Action Mission Global, Singapore" },
-    { "imgSrc": "/2026/jack.jpg", "title": "Jack Sara", "subtitle": "President of Bethlehem Bible College, General Secretary of the Middle East Evangelical Alliance (MEEA), Israel/Palestine" },
-    { "imgSrc": "/2026/alwyn.jpg", "title": "Alwyn Matthew", "subtitle": "Lead Pastor, Mosaic Church Dubai, Dubai" },
-    { "imgSrc": "/2026/jason.jpg", "title": "Jason Mandryk", "subtitle": "Co-Director, Operation World, USA/South Korea" },
-    { "imgSrc": "/2026/paul.jpg", "title": "Paul Elliott", "subtitle": "Asia Director, VIA" }
+    {
+      "imgSrc": "/2026/peter.jpg",
+      "title": "Peter Tan-Chi",
+      "subtitle": "Founder & Senior Pastor, Christ's Commission Fellowship, Philippines"
+    },
+    {
+      "imgSrc": "/2026/wayne.jpg",
+      "title": "Wayne Chen",
+      "subtitle": "Director, Radius Asia, Taiwan"
+    },
+    {
+      "imgSrc": "/2026/jemima.jpg",
+      "title": "Jemima Ooi",
+      "subtitle": "Co-Founder, Love in Action Mission Global, Singapore"
+    },
+    {
+      "imgSrc": "/2026/david-kim.jpg",
+      "title": "David Kim",
+      "subtitle": "Korea"
+    },
+    { "imgSrc": "/2026/jay.jpg", "title": "Jay Park", "subtitle": "Korea" },
+    {
+      "imgSrc": "/2026/andrew.jpg",
+      "title": "Andrew Brunson",
+      "subtitle": "Founder, WaveStarters"
+    },
+    {
+      "imgSrc": "/2026/lawrence.jpg",
+      "title": "Lawrence Tong",
+      "subtitle": "International Director Emeritus, OM International"
+    },
+    {
+      "imgSrc": "/2026/sarah.jpg",
+      "title": "Sarah Breuel",
+      "subtitle": "Leader and Founder, Revive Europe, Italy"
+    },
+    {
+      "imgSrc": "/2026/david-ro.jpg",
+      "title": "David Ro",
+      "subtitle": "Arise Asia"
+    },
+    {
+      "imgSrc": "/2026/jason.jpg",
+      "title": "Jason Mandryk",
+      "subtitle": "Co-Director, Operation World, USA/South Korea"
+    },
+    {
+      "imgSrc": "/2026/ricky.jpg",
+      "title": "Ricky Kim",
+      "subtitle": "Actor, Korea"
+    },
+    {
+      "imgSrc": "/2026/ladan.jpg",
+      "title": "Ladan Nouri",
+      "subtitle": "Elam Ministry, Iran"
+    },
+    {
+      "imgSrc": "/2026/jack.jpg",
+      "title": "Jack Sara",
+      "subtitle": "President of Bethlehem Bible College, General Secretary of the Middle East Evangelical Alliance (MEEA), Israel/Palestine"
+    },
+    {
+      "imgSrc": "/2026/joshua.jpg",
+      "title": "Joshua Bogunjoko",
+      "subtitle": "Global Director for Regions of Lausanne Movement, International Director Emeritus of SIM, Nigeria"
+    },
+    {
+      "imgSrc": "/2026/allan.jpg",
+      "title": "Allan Matamoros",
+      "subtitle": "COMIBAM International, Latin American"
+    },
+    {
+      "imgSrc": "/2026/paul.jpg",
+      "title": "Paul Elliott",
+      "subtitle": "Asia Director, VIA"
+    },
+    {
+      "imgSrc": "/2026/alwyn.jpg",
+      "title": "Alwyn Matthew",
+      "subtitle": "Lead Pastor, Mosaic Church Dubai, Dubai"
+    },
+    {
+      "imgSrc": "/2026/patrick.jpg",
+      "title": "Patrick Fung",
+      "subtitle": "Director Emeritus of OMF, Chair of CCCOWE, Incoming Principal of Singapore Bible College"
+    },
+    {
+      "imgSrc": "/2026/prabhu.jpg",
+      "title": "Prabhu Singh",
+      "subtitle": "Issachar Global Education Network"
+    },
+    {
+      "imgSrc": "/2026/douglas.jpg",
+      "title": "Douglas Gonçalves",
+      "subtitle": "JesusCopy Movement, Brazil"
+    }
   ],
   "faq": [
     {
       "id": "faq-1",
       "question": "Who should participate?",
-      "answer": "Students and young leaders from 18-35 years old, from across Asia (South, Central, East, South East) and the Middle East who are passionate about their Christian faith, intent on learning more about missions and what God is doing around the world.\n\nIn order to participate in Arise Asia, potential participants must be recommended by a church leader from their country or by a member of a partnering organization listed in the About Us section. Once they have completed their application and provided two character references, their participation will be considered. Upon meeting the criteria, they will be invited to register and join us at the event. See criteria here."
+      "answer": "Students and young leaders from 18-35 years old, from across Asia (South, Central, East, South East) and the Middle East who are passionate about their Christian faith, intent on learning more about what God is doing around the world.\n\nIn order to participate in Arise Asia, potential participants must be recommended by a church leader from their country or by a member of a partnering organization listed in the About Us section. Once they have completed their application and provided two character references, their participation will be considered. Upon meeting the criteria, they will be invited to register and join us at the event. See criteria here."
     },
     {
       "id": "faq-2",
@@ -27,31 +111,99 @@
     {
       "id": "faq-3",
       "question": "Why should people attend?",
-      "answer": "This conference is for younger leaders from across Asia to be inspired about the great commission of what God is doing across Asia and in the world, hear fresh ideas for missions and take the next step to go where there currently is no Gospel.\n\nThey will understand advancements in missions movements and prayerfully consider their own contribution, locally and globally. They will also enjoy incredible ways to interact with others who are as passionate about their faith in God."
+      "answer": "This conference is for younger leaders from across Asia to be inspired about what God is doing across Asia and in the world, hear fresh ideas and take the next step in their faith and discipleship.\n\nThey will prayerfully consider their involvement in serving others and be inspired as they interact with others who are passionate about their faith in God."
     },
     {
       "id": "faq-4",
       "question": "What can people expect?",
-      "answer": "Participants can expect to learn from experienced global missions practitioners from across Asia, with plenty of opportunities to ask questions from our speakers, plus evening cafés to connect with each other.\n\nThe program will maximize participant engagement through innovative lab sessions. Seminars will address critical missions issues that we face in the world, including how to prepare to go into missions, internship opportunities, the persecuted church, discipleship, spiritual and mental health, church planting, unreached people groups, international development, business as mission, justice issues and more."
+      "answer": "Participants can expect to learn from experienced global leaders from across Asia, with plenty of opportunities to ask questions from our speakers, plus evening cafés to connect with each other.\n\nThe program will maximize participant engagement through innovative lab sessions and workshops. Seminars will address critical issues that we face in the world, including discipleship, spiritual and mental health, international development, justice issues and more."
     }
   ],
   "nominationCriteria": [
-    { "id": "criterion-1", "criterion": "Age", "description": "As our Target group is within the age range of 18-35 years, we need our selection criteria for each country to have a young mission-oriented focus. The candidates must be within the age range of 18-35 years old." },
-    { "id": "criterion-2", "criterion": "Character", "description": "As disciples of Jesus, our growing maturity and character should be shaped in the likeness of Christ. The candidate must have a striving character that the Scriptures embody every believer to strive for." },
-    { "id": "criterion-3", "criterion": "Church", "description": "The goal of the conference to empower people towards missions, the candidates elected must be a dedicated member of a local church, committed, serving, and involved. As there will be candidates from various denominations applying, the goal is that the candidates elected must have a good grounding on basic doctrines of the faith and must have a sound understanding of the Bible." },
-    { "id": "criterion-4", "criterion": "Community", "description": "The candidate must be an active member of a local church community, actively involved and striving towards serving the needs of the local community within the body of the church." },
-    { "id": "criterion-5", "criterion": "Conviction", "description": "The candidate must have a strong conviction that the Lord is drawing him/her towards the call of being mobilized within the world and body of Christ to proclaim the Gospel." },
-    { "id": "criterion-6", "criterion": "Faith", "description": "The candidate must be a born-again believer in the saving work of our Lord Jesus, must-have put his trust in the Gospel and is a committed follower of Jesus Christ." },
-    { "id": "criterion-7", "criterion": "Gender", "description": "We aim to achieve a 50/50 balance of men and women at the congress." },
-    { "id": "criterion-8", "criterion": "Influence/Heart for Global Body of Christ", "description": "The selected candidate should be a person with influence in his/her local church, having served their community well, with a heart to influence the global body of Christ." },
-    { "id": "criterion-9", "criterion": "Interpersonal Communication Skills", "description": "Cultural personalities also vary from continent to continent and from country to country. The selected candidate must have the ability to empathetically enter the culture where they will minister, hence the need for good communications skills." },
-    { "id": "criterion-10", "criterion": "Mission Competence", "description": "The candidate must have experience and understanding of cross-cultural missions, and current mission practices and trends, or a strong inclination towards missions." },
-    { "id": "criterion-11", "criterion": "Mission-Oriented/Vision", "description": "The candidate must have a heart for missions, should have some inclination towards seeing the global church mobilized for missions. Leaders of ministries (Evangelism, children, Bible distribution, church planters, hospitality) could all be potential candidates for the mission conference." },
-    { "id": "criterion-12", "criterion": "Physical, Mental, and Emotional", "description": "Prospective missionaries prepare to serve by strengthening their physical, mental, and emotional health. The prospective candidates must have exhibited sound physical, emotional, and spiritual health, before being recommended to the conference." },
-    { "id": "criterion-13", "criterion": "Prayer", "description": "The candidate must be a man/woman of prayer. The selection committee should vitally check the prayer habits of the prospective candidates." },
-    { "id": "criterion-14", "criterion": "Servant Heart", "description": "Mission calls include an assignment to teach the Gospel, support the work of Church departments or units or serve in the local community. The candidate must exhibit a servant heart to be willing to serve the local body under any assignment he/she is mobilized to." },
-    { "id": "criterion-15", "criterion": "Sound Doctrine/Theology", "description": "Missionaries must be effective teachers of the Word of God. Teaching a Christian worldview as revealed by God in scripture is integral to the missionary task. We should, therefore, send missionaries to foreign mission fields who have taught the Gospel to unbelievers in their own culture and have empathetically nurtured new disciples to Christian maturity. The candidate must be an individual who is committed to teaching and proclaiming the Gospel faithfully in their area of influence." },
-    { "id": "criterion-16", "criterion": "Spiritual Gifts", "description": "The candidate must have developed some abilities or giftings in their current area of influence that would be used as they minister in the mission field." },
-    { "id": "criterion-17", "criterion": "Testimony", "description": "The candidate must have a good testimony in his/her local church, with the church supporting the character and moral standing of the selected candidate." }
+    {
+      "id": "criterion-1",
+      "criterion": "Age",
+      "description": "As our Target group is within the age range of 18-35 years, we need our selection criteria for each country to have a young serving-oriented focus. The candidates must be within the age range of 18-35 years old."
+    },
+    {
+      "id": "criterion-2",
+      "criterion": "Character",
+      "description": "As disciples of Jesus, our growing maturity and character should be shaped in the likeness of Christ. The candidate must have a striving character that the Scriptures embody every believer to strive for."
+    },
+    {
+      "id": "criterion-3",
+      "criterion": "Church",
+      "description": "The goal of the conference to empower people towards serving, the candidates elected must be a dedicated member of a local church, committed, serving, and involved. As there will be candidates from various denominations applying, the goal is that the candidates elected must have a good grounding on basic doctrines of the faith and must have a sound understanding of the Bible."
+    },
+    {
+      "id": "criterion-4",
+      "criterion": "Community",
+      "description": "The candidate must be an active member of a local church community, actively involved and striving towards serving the needs of the local community within the body of the church."
+    },
+    {
+      "id": "criterion-5",
+      "criterion": "Conviction",
+      "description": "The candidate must have a strong conviction that the Lord is drawing him/her towards the call of being mobilized within the world and body of Christ to serve."
+    },
+    {
+      "id": "criterion-6",
+      "criterion": "Faith",
+      "description": "The candidate must be a born-again believer in the saving work of our Lord Jesus and a committed follower of Jesus Christ."
+    },
+    {
+      "id": "criterion-7",
+      "criterion": "Gender",
+      "description": "We aim to achieve a 50/50 balance of men and women at the congress."
+    },
+    {
+      "id": "criterion-8",
+      "criterion": "Influence/Heart for Global Body of Christ",
+      "description": "The selected candidate should be a person with influence in his/her local church, having served their community well, with a heart to influence the global body of Christ."
+    },
+    {
+      "id": "criterion-9",
+      "criterion": "Interpersonal Communication Skills",
+      "description": "Cultural personalities also vary from continent to continent and from country to country. The selected candidate must have the ability to empathetically enter the culture where they will minister, hence the need for good communications skills."
+    },
+    {
+      "id": "criterion-10",
+      "criterion": "Competence",
+      "description": "The candidate must have experience and understanding of cross-cultural serving, and current practices and trends, or a strong inclination towards serving."
+    },
+    {
+      "id": "criterion-11",
+      "criterion": "Mission-Oriented/Vision",
+      "description": "The candidate must have a heart for serving, should have some inclination towards seeing the global church mobilized for serving. Leaders of ministries (discipleship, children, Bible distribution, church planters, hospitality) could all be potential candidates for the conference."
+    },
+    {
+      "id": "criterion-12",
+      "criterion": "Physical, Mental, and Emotional",
+      "description": "Prospective servants prepare to serve by strengthening their physical, mental, and emotional health. The prospective candidates must have exhibited sound physical, emotional, and spiritual health, before being recommended to the conference."
+    },
+    {
+      "id": "criterion-13",
+      "criterion": "Prayer",
+      "description": "The candidate must be a man/woman of prayer. The selection committee should vitally check the prayer habits of the prospective candidates."
+    },
+    {
+      "id": "criterion-14",
+      "criterion": "Servant Heart",
+      "description": "Serving calls include an assignment to teach and disciple, support the work of Church departments or units or serve in the local community. The candidate must exhibit a servant heart to be willing to serve the local body under any assignment he/she is mobilized to."
+    },
+    {
+      "id": "criterion-15",
+      "criterion": "Sound Doctrine/Theology",
+      "description": "Servants must be effective teachers of the Word of God. Teaching a Christian worldview as revealed by God in scripture is integral to the task. We should, therefore, send servants who have discipled others in their own culture and have empathetically nurtured new disciples to Christian maturity. The candidate must be an individual who is committed to teaching and discipling faithfully in their area of influence."
+    },
+    {
+      "id": "criterion-16",
+      "criterion": "Spiritual Gifts",
+      "description": "The candidate must have developed some abilities or giftings in their current area of influence that would be used as they minister in the field."
+    },
+    {
+      "id": "criterion-17",
+      "criterion": "Testimony",
+      "description": "The candidate must have a good testimony in his/her local church, with the church supporting the character and moral standing of the selected candidate."
+    }
   ]
 }
