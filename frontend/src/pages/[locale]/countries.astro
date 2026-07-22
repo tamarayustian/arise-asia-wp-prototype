@@ -1,0 +1,44 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import { ActionButton } from "@/components/shared/ActionButton";
+import Layout from "@/layouts/Layout.astro";
+import { ArrowRight } from "lucide-react";
+
+const { locale } = Astro.params;
+---
+
+<Layout title="Countries — Arise Asia" locale={locale!}>
+  <AboutHero breadcrumb="ARISE ASIA/" title="Countries" />
+ 
+  <section
+    class="container-page flex flex-col items-center px-8 text-center md:px-16 md:py-28 lg:px-32 xl:px-48 py-10"
+  >
+    <div
+      class="bg-accent-blue-lightest/50 mb-6 flex size-20 items-center justify-center rounded-full"
+    >
+      <div
+        class="size-10"
+        style="background: linear-gradient(135deg, #7FB5D5, #3B82F6); -webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+      >
+      </div>
+    </div>
+    <h2
+      class="font-heading text-accent-blue-darker mb-4 text-2xl font-semibold uppercase md:text-3xl"
+    >
+      Coming Soon
+    </h2>
+    <p class="font-heading text-gray-500 mb-8 max-w-lg text-base md:text-lg">
+      We're building something great for our countries page. Check back soon for
+      the latest updates on where Arise Asia is active.
+    </p>
+    <ActionButton
+      href={`/${locale}`}
+      outerBg="bg-accent-blue-dark"
+      textHover="group-hover:text-accent-blue-dark"
+      hoverIcon="group-hover:text-accent-blue-dark"
+      iconComponent={ArrowRight}
+    >
+      Back to Home
+    </ActionButton>
+  </section>
+</Layout>

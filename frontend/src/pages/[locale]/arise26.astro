@@ -6,5 +6,5 @@ const { locale } = Astro.params;
 ---
 
 <Layout title="Arise Asia 2026 — Arise Asia" locale={locale!}>
-  <Arise26Page client:load />
+  <Arise26Page client:load locale={locale} />
 </Layout>

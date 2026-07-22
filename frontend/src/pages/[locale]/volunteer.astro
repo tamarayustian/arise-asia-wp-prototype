@@ -1,0 +1,44 @@
+---
+import AboutHero from "@/components/about/AboutHero.astro";
+import { ActionButton } from "@/components/shared/ActionButton";
+import Layout from "@/layouts/Layout.astro";
+import { ArrowRight } from "lucide-react";
+
+const { locale } = Astro.params;
+---
+
+<Layout title="Get Involved — Arise Asia" locale={locale!}>
+  <AboutHero breadcrumb="ABOUT US/" title="Get Involved"/>
+
+  <section
+    class="container-page flex flex-col items-center px-8 py-10 text-center md:px-16 md:py-28 lg:px-32 xl:px-48"
+  >
+    <div
+      class="bg-accent-orange-lightest/50 mb-6 flex size-20 items-center justify-center rounded-full"
+    >
+      <div
+        class="size-10"
+        style="background: linear-gradient(135deg, #ffdcda, #ff5f5a); -webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+      >
+      </div>
+    </div>
+    <h2
+      class="font-heading text-accent-red-dark mb-4 text-2xl font-semibold uppercase md:text-3xl"
+    >
+      Coming Soon
+    </h2>
+    <p class="font-heading text-gray-500 mb-8 max-w-lg text-base md:text-lg">
+      We're preparing volunteer and involvement opportunities. Stay connected
+      and be the first to know when they're available.
+    </p>
+    <ActionButton
+      href={`/${locale}/about`}
+      outerBg="bg-accent-red-dark"
+      textHover="group-hover:text-accent-red-dark"
+      hoverIcon="group-hover:text-accent-red-dark"
+      iconComponent={ArrowRight}
+    >
+      Back to About
+    </ActionButton>
+  </section>
+</Layout>

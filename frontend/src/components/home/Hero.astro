@@ -1,7 +1,7 @@
 ---
 import { ActionButton } from "@/components/shared/ActionButton";
 
-const { videoUrl } = Astro.props;
+const { videoUrl, locale } = Astro.props;
 ---
 
 <div class="relative z-10 container mx-auto px-8 pt-56 sm:pt-64">
@@ -125,7 +125,7 @@ const { videoUrl } = Astro.props;
         </p>
       </div>
     </div>
-    <ActionButton className="mt-10" href="/arise26">Learn more now</ActionButton
+    <ActionButton className="mt-10" href={`/${locale}/arise26`}>Learn more now</ActionButton
     >
     <div class="mx-auto mt-10 w-full max-w-md md:max-w-lg lg:max-w-2xl">
       <div class="aspect-video overflow-hidden rounded-2xl">

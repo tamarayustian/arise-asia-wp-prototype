@@ -39,7 +39,7 @@ const variants = {
   }),
 };
 
-export default function Arise26Page() {
+export default function Arise26Page({ locale }: { locale: string }) {
   const bubbleRef = useRef<HTMLDivElement>(null);
   const isInView = useInView(bubbleRef);
 
@@ -476,7 +476,7 @@ export default function Arise26Page() {
               </p>
               <a
                 className="flex gap-x-0.5 items-center text-sm underline"
-                href="/about"
+                href={`/${locale}/about`}
               >
                 Learn more about Arise Asia
                 <MdArrowRightAlt />

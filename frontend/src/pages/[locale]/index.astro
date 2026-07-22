@@ -16,7 +16,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
 
 <Layout title={SITE_NAME} locale={locale!}>
   <header class="relative overflow-hidden">
-    <Hero videoUrl={videoUrl} />
+    <Hero videoUrl={videoUrl} locale={locale} />
     <DecorativeIcons />
   </header>
 
@@ -97,7 +97,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
         </div>
       </div>
       <ActionButton
-        href="/arise26"
+        href={`/${locale}/arise26`}
         outerBg="bg-accent-red-dark"
         textHover="group-hover:text-accent-red-dark"
         hoverIcon="group-hover:text-accent-red-dark"
@@ -141,7 +141,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
         class="flex flex-col items-center gap-y-6 md:flex-row md:justify-center md:gap-x-5"
       >
         <ActionButton
-          href="/about-us"
+          href={`/${locale}/about`}
           outerBg="bg-black"
           textColor="text-black"
           bg="bg-white"
@@ -151,7 +151,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
           iconComponent={ArrowRight}>Learn About Us</ActionButton
         >
         <ActionButton
-          href="/about-us"
+          href={`/${locale}/about`}
           outerBg="bg-transparent"
           textHover="group-hover:text-black"
           hoverIcon="group-hover:text-black"
@@ -264,7 +264,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
     <!-- Give + Volunteer column (⅔ width) -->
     <div class="grid grid-rows-2 gap-4 md:col-span-2">
       <a
-        href="/give"
+        href={`/${locale}/give`}
         class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-[url('/images/give-bg.png')] bg-cover bg-center px-3.5 py-7 transition-all duration-300 md:p-7"
       >
         <div
@@ -290,7 +290,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
         />
       </a>
       <a
-        href="/volunteer"
+        href={`/${locale}/volunteer`}
         class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-[url('/images/about-us-bg.png')] bg-cover bg-center px-3.5 py-7 transition-all duration-300 md:p-7"
       >
         <div
@@ -326,31 +326,31 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
       </p>
       <SimpleButton
         size="sm"
-        href="/1"
+        href="#"
         className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Represent Arise Asia</SimpleButton
       >
       <SimpleButton
         size="sm"
-        href="/1"
+        href="#"
         className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Prayer Movement</SimpleButton
       >
       <SimpleButton
         size="sm"
-        href="/1"
+        href="#"
         className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Become a Mentor</SimpleButton
       >
       <SimpleButton
         size="sm"
-        href="/1"
+        href="#"
         className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Become a Sending Partner</SimpleButton
       >
       <SimpleButton
         size="sm"
-        href="/1"
+        href="#"
         className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
         >Bring Arise Asia to Your Country</SimpleButton
       >
