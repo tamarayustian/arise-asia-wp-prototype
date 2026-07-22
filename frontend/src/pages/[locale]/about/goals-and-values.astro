@@ -9,26 +9,31 @@ const values = [
   {
     letter: "A",
     title: "Acquiring the Heart of God",
+    description: "We ask God to break our hearts for what breaks His, awakening compassion for the people and places across Asia that have yet to encounter His love.",
     color: "border-accent-blue-light text-accent-blue-dark",
   },
   {
     letter: "R",
     title: "Relinquish our Rights",
+    description: "We surrender our own plans and comforts, trusting God's purposes above our own as we follow Him faithfully today.",
     color: "border-primary-orange text-primary-orange",
   },
   {
     letter: "I",
     title: "Intimacy with God",
+    description: "We pursue a deep, personal relationship with God through prayer and worship, staying rooted in Him above all else.",
     color: "border-accent-red-light text-primary-red",
   },
   {
     letter: "S",
     title: "Sacrificial Living",
+    description: "We choose to live simply and give generously, laying down comfort so others may experience the love of Christ today.",
     color: "border-accent-purple-light text-accent-purple-primary",
   },
   {
     letter: "E",
     title: "Empowering to Boldly Go",
+    description: "We equip and release young leaders with courage, sending them to serve in places where they are needed most.",
     color: "border-primary-blue text-primary-blue",
   },
 ];
@@ -48,10 +53,7 @@ const values = [
     </h2>
     <OurGoalSection variant="card" showHeading={false} />
     <p class="font-heading text-base md:text-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      This goal drives every gathering, every follow-up conversation, and every mentoring relationship we build together, as we equip young leaders across Asia to respond faithfully and serve wherever they are called today.
     </p>
   </section>
 
@@ -65,10 +67,7 @@ const values = [
       The Values
     </h2>
     <p class="font-heading text-base md:text-lg">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-      veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-      commodo consequat.
+      Our values guide how we live, serve, and lead as a movement, shaping the way we walk with young leaders across Asia as they respond to the call to serve wherever God places them today.
     </p>
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-3 lg:grid-cols-5">
       {
@@ -81,8 +80,7 @@ const values = [
             </p>
             <p class="font-heading text-lg font-medium">{value.title}</p>
             <p class="font-heading text-sm text-black">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.
+              {value.description}
             </p>
           </div>
         ))

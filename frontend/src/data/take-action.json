@@ -9,13 +9,13 @@
     "cards": [
       {
         "title": "Give",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Your gift helps send young leaders to the places that need them most, fueling this movement to go where they are needed.",
         "href": "#",
         "bgImage": "/images/give-bg.png"
       },
       {
         "title": "Volunteer",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Volunteers help make Arise Asia possible, serving faithfully through logistics, hospitality, prayer teams, and other practical ways here today.",
         "href": "#",
         "bgImage": "/images/volunteer-bg.png"
       }
@@ -23,7 +23,7 @@
   },
   "learnMore": {
     "heading": "New to Arise Asia?",
-    "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+    "body": "Arise Asia is a leadership movement launched in 2023 to inspire young adults across Asia and beyond to bring their faith and presence where it is needed most. Learn more about who we are today.",
     "buttonText": "Learn more"
   },
   "joinMovement": {
@@ -31,19 +31,19 @@
     "cards": [
       {
         "title": "Prayer Movement",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Join believers across Asia praying faithfully for this generation to rise up and serve wherever God calls them.",
         "href": "#",
         "bgImage": "/images/prayer-movement-bg.jpg"
       },
       {
         "title": "Represent Arise Asia",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Help carry the vision of Arise Asia into your church, campus, or community as a trusted, local voice today.",
         "href": "#",
         "bgImage": "/images/represent-asia-bg.png"
       },
       {
         "title": "Become a Mentor",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Walk alongside a young leader with wisdom, prayer, and encouragement as they discern their calling and next faithful step.",
         "href": "#",
         "bgImage": "/images/become-a-mentor-bg.png"
       }
@@ -54,12 +54,12 @@
     "cards": [
       {
         "title": "Bring Arise Asia to your country",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Help bring an Arise gathering to your nation and mobilise young leaders to serve wherever God is calling them.",
         "href": "#"
       },
       {
         "title": "Become a Sending Partner",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "Partner with Arise Asia to send, support, and commission young leaders into cross-cultural service around the world today, together.",
         "href": "#",
         "bgImage": "/images/become-a-sending-partner-bg.png"
       }
