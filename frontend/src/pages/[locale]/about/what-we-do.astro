@@ -8,30 +8,30 @@ const { locale } = Astro.params;
 const strategicGatherings = [
   {
     title: "Arise Asia Global Event",
-    sublabel: "(Every 3 Years)",
+    subtitle: "(Every 3 Years)",
   },
   {
     title: "Arise National Gatherings",
-    sublabel: "(Organized by Leadership Summit)",
+    subtitle: "(Organized by Leadership Summit)",
   },
   {
     title: "Arise Executive Summit",
-    sublabel: "(Leadership Alignment)",
+    subtitle: "(Leadership Alignment)",
   },
 ];
 
 const missionsPathways = [
   {
     title: "1-Year Internship Pathways",
-    sublabel: "(Arise Asia and partnering organizations)",
+    subtitle: "(Arise Asia and partnering organizations)",
   },
   {
     title: "Short term cross cultural missions",
-    sublabel: "(Both overseas and in-country)",
+    subtitle: "(Both overseas and in-country)",
   },
   {
     title: "Long-term missions",
-    sublabel: "(With various missions agencies)",
+    subtitle: "(With various missions agencies)",
   },
 ];
 ---
@@ -64,7 +64,7 @@ const missionsPathways = [
             <p class="font-heading text-accent-blue-light text-lg font-medium uppercase">
               {item.title}
             </p>
-            <p class="font-heading text-sm">{item.sublabel}</p>
+            <p>{item.subtitle}</p>
           </div>
         ))
       }
@@ -78,11 +78,11 @@ const missionsPathways = [
           <p
             class="font-heading text-center text-lg font-semibold text-white uppercase md:text-2xl"
           >
-            PrayerFUL Commitments
+            Prayerful Commitments
           </p>
         </div>
         <div
-          class="bg-accent-purple-lightest flex flex-col items-center gap-1 rounded-2xl p-6 text-center"
+          class="bg-accent-purple-lightest flex flex-1 flex-col items-center gap-1 rounded-2xl p-6 text-center"
         >
           <Flame className="text-accent-purple-dark mb-1 size-10" />
           <p
@@ -90,7 +90,7 @@ const missionsPathways = [
           >
             123Go
           </p>
-          <p class="font-heading text-sm">(A young person's commitment)</p>
+          <p>(A young person's commitment)</p>
         </div>
       </div>
       <div class="flex flex-col gap-4">
@@ -100,11 +100,11 @@ const missionsPathways = [
           <p
             class="font-heading text-center text-lg font-semibold text-white uppercase md:text-2xl"
           >
-            Dedicated SUPPORT
+            Dedicated Support
           </p>
         </div>
         <div
-          class="bg-accent-red-lightest flex flex-col items-center gap-1 rounded-2xl p-6 text-center"
+          class="bg-accent-red-lightest flex flex-1 flex-col items-center gap-1 rounded-2xl p-6 text-center"
         >
           <Flame className="text-accent-red-dark mb-1 size-10" />
           <p
@@ -133,7 +133,7 @@ const missionsPathways = [
             <p class="font-heading text-accent-orange-dark text-lg font-medium uppercase">
               {item.title}
             </p>
-            <p class="font-heading text-sm">{item.sublabel}</p>
+            <p>{item.subtitle}</p>
           </div>
         ))
       }
