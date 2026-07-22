@@ -12,7 +12,7 @@
 @import "tw-animate-css";
 
 @theme {
-  --font-family-sans: "Montserrat", sans-serif;
+  --font-sans: "Montserrat", sans-serif;
   --font-heading: "Unbounded", sans-serif;
 
   /* Primary */
