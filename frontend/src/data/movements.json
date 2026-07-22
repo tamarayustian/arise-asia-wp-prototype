@@ -1,0 +1,752 @@
+{
+  "movementsSummary": {
+    "lastUpdated": "July 8, 2026",
+    "countries": 12,
+    "cities": 43,
+    "participants": 15789,
+    "commitments": 1961
+  },
+  "upcomingMovementsList": [
+    {
+      "country": "Thailand",
+      "title": "Arise Asia 2026",
+      "subtitle": "July 27-31, 2026",
+      "backgroundSrc": "/events/arise-asia-2026.jpg",
+      "posterSrc": "/events/arise-asia-2026.jpg",
+      "iconSrc": "/icons/orange-arise-icon.svg",
+      "donateTarget": "https://www.totalideas.org/Arise-Asia-Conference-2026",
+      "websiteTarget": "/arise26",
+      "description": "There's a joy that makes sacrifice worth it. A joy that carried Jesus to the cross. A joy that now inspires us to serve others.\n\nHe gave everything for the joy of seeing lives restored, and that same joy now fuels us to go.\n\nThis is our moment. The time is now. Eyes fixed on Jesus.\n\nThe question is...will you join us?"
+    }
+  ],
+  "pastMovementsList": [
+    {
+      "country": "Philippines",
+      "title": "Arise Cebu (Philippines)",
+      "subtitle": "December 2, 2023",
+      "posterSrc": "/events/arise-cebu.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Summary Video", "target": "https://youtu.be/ghUl5HPeNcg" },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1wsxRdBJLDOWkq-LFIWC9XHDKm5t412jb"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-cebu-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference will be kicking things off in Central Visayas\u2014Cebu City, where the fire will first ignite! \ud83d\udd25\n\nThis conference is organized by the Philippine Missions Association (PMA), Haggai Cebu, and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Cagayan de Oro (Philippines)",
+      "subtitle": "March 2, 2024",
+      "posterSrc": "/events/arise-cagayan-de-oro.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Promo Video", "target": "https://fb.watch/t_-3Lbclqq" },
+        { "title": "Summary Video", "target": "https://youtu.be/sT_isdmPg9c" },
+        {
+          "title": "Photos",
+          "target": "https://www.facebook.com/media/set/?set=a.122128685822195667"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-cagayan-de-oro-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference is heading to Northern Mindanao\u2014Cagayan De Oro City! This transformative event will ignite the passion of young people to boldly go and serve. \u27a1\ufe0f\n\nThis conference is organized by the Philippine Missions Association (PMA), Cagayan De Oro City Evangelical Ministers Association (COEMA), OM Philippines, YWAM, and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Butuan (Philippines)",
+      "subtitle": "May 26, 2024",
+      "posterSrc": "/events/arise-butuan.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Promo Video", "target": "https://fb.watch/t-2Z8pVOnz" },
+        { "title": "Summary Video", "target": "https://youtu.be/Eb0c0m6cC-k" },
+        {
+          "title": "Photos",
+          "target": "https://www.facebook.com/media/set/?set=a.122152030592195667"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-butuan-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference is heading to Northern Mindanao! Join us for a day of fellowship, empowerment, and fun-filled activities in Butuan City that will leave you on fire for God and His people. \ud83d\ude4c\n\nThis conference is organized by the Philippine Missions Association (PMA), Butuan Evangelical Ministers Association (BEMA), Free Methodist Church, and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Davao (Philippines)",
+      "subtitle": "June 1, 2024",
+      "posterSrc": "/events/arise-davao.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Promo Video", "target": "https://fb.watch/t-3q-TFqlK" },
+        { "title": "Summary Video", "target": "https://youtu.be/ouXcXbKDwEQ" },
+        {
+          "title": "Photos",
+          "target": "https://www.facebook.com/media/set/?set=a.122153432294195667"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-davao-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference is heading to South Mindanao! Calling all Game Changers in Davao! This transformative event will ignite the passion of young people to boldly go and serve. Join us at Panabo City, Davao Norte! \u270a\n\nThis conference is organized by the Philippine Missions Association (PMA), Panabo Evangelical Ministers Association (PEMA), The International Family Ministries of River of Life, Inc. (TIFMOROLI), and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Bicol (Philippines)",
+      "subtitle": "August 16-17, 2024",
+      "backgroundSrc": "/locations/bicol.jpg",
+      "posterSrc": "/events/arise-bicol.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Promo Video", "target": "https://fb.watch/t-a0cG0NtM" },
+        { "title": "Summary Video", "target": "https://youtu.be/rL9DRZJuT1k" },
+        {
+          "title": "Photos",
+          "target": "https://www.facebook.com/media/set/?set=a.122177892362195667"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-bicol-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference is heading to Pili, Camarines Sur in the Bicol region! This transformative event will ignite the passion of young people to boldly go and serve. \u2764\ufe0f\u200d\ud83d\udd25\n\nThis conference is organized by the Philippine Missions Association (PMA), Bicol Regional Evangelistic Association for Development, GO Movement, Philippine Council of Evangelical Churches, and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Baguio (Philippines)",
+      "subtitle": "September 14, 2024",
+      "backgroundSrc": "/locations/baguio.jpg",
+      "posterSrc": "/events/arise-baguio.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        { "title": "Promo Video", "target": "https://fb.watch/uxqsPHaxs5" },
+        {
+          "title": "Summary Video",
+          "target": "https://www.facebook.com/reel/1177140733362353"
+        },
+        {
+          "title": "Photos",
+          "target": "https://www.facebook.com/media/set/?set=a.122180835770195667"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-baguio-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Youth Conference is heading to the north! Gear up for an electrifying conference at the Philippine Baptist Theological Seminary. This transformative event will ignite the passion of young people to boldly go and serve. \ud83e\udde3\n\nThis conference is organized by the Philippine Missions Association (PMA), Haggai Cordillera, GO Movement, Association of Metro Baguio Christian Ministers, OVRFLW Ministries, UnScene LBC Multimedia Ministry, Philippine Council of Evangelical Churches, and other partners.\n\nWe are excited to feature pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise GenSan (Philippines)",
+      "subtitle": "January 18, 2025",
+      "posterSrc": "/events/arise-gensan.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Promo Video",
+          "target": "https://www.facebook.com/reel/1240306503724050"
+        },
+        { "title": "Summary Video", "target": "https://youtu.be/oGfL2GAGCCY" },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1KapzGokMoqX7Tc1TKNUkNZR9NfLN8iFZ"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-gensan-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Conference made its way to the South-the home of champions, General Santos City!\n\nThe venue was filled with over 590 Game Changers and 22 passionate organizations, resulting in 84 young people committing to long-term cross-cultural involvement.\n\nThis conference was organized by the Philippine Missions Association (PMA), the Philippine Council of Evangelical Churches (PCEC), The Word for Everyone Ministries International Inc., and other partners.\n\nThe one-day event was packed with inspiring guest speakers, including Rev. David Ro, Rev. Seth Kim, Wayne Chen, and Bishop Noel Pantoja. It also featured pre-recorded sessions from two distinguished speakers who were key highlights of the Arise Asia 2023 conference: Tom Lin and Sarah Breuel."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Dumaguete (Philippines)",
+      "subtitle": "March 29, 2025",
+      "posterSrc": "/events/arise-dumaguete.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Promo Video",
+          "target": "https://www.facebook.com/reel/660433949894416"
+        },
+        { "title": "Summary Video", "target": "https://youtu.be/d0vrpzGb_Pg" },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/14UCzzqX3_XQMFiSQ4vq1Yj7VJKN3AA4k"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://ariseevents.my.canva.site/arise-dumaguete-praise-report"
+        }
+      ],
+      "description": "The Arise Philippines Regionwide Conference went to the City of Gentle People - Dumaguete City!\n\nThe venue was filled with 246 Game Changers and 7 passionate organizations, resulting in 89 commitments including 13 young people committing to long-term cross-cultural involvement.\n\nThis conference was organized by the Philippine Missions Association (PMA), the Philippine Council of Evangelical Churches (PCEC), and other partners.\n\nIt featured pre-recorded sessions from three esteemed speakers who were highlights of the Arise Asia 2023 conference:\n\n* Wayne Chen, Director of Radius Asia, with a session titled The Greatest Treasure\n* Tom Lin, President & CEO of InterVarsity Christian Fellowship, presenting The Greatest Pursuit\n* Sarah Bruel, Director of Revive Europe, sharing insights on The Greatest Purpose\n\nOur desire is to activate more intercessors, inspire intentional discipleship, and encourage involvement."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise La Union, Doulos Hope (Philippines)",
+      "subtitle": "May 10, 2025",
+      "posterSrc": "/events/arise-la-union.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1WPas60zKrkYNOEGn76KYp4ExRvJ9OlIF"
+        }
+      ],
+      "description": "From the vibrant shores of La Union to communities across Asia, Arise La Union ignited hearts with a fresh passion for participation\u2014all while uniquely hosted aboard the MV Doulos Hope. This unforgettable gathering marked more than just a conference; it was the spark of a movement.\n\nGod moved powerfully in Northern Luzon as 97 young game changers came together, representing 7 churches with one heart\u2014to say YES to God's call.\n\nOrganized by the Philippine Missions Association (PMA), Philippine Council of Evangelical Churches, OM Philippines, and Doulos Hope."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Manila (Philippines)",
+      "subtitle": "June 4, 2025",
+      "posterSrc": "/events/arise-manila.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        }
+      ],
+      "description": "We're bringing the Arise Asia Movement to **Mega Manila**, and it's going to be \ud83d\udd25!\n\n**3 DAYS. 3 LOCATIONS. ONE PURPOSE:** To challenge the next generation to go and serve.\n\nThe **Arise Philippines Regionwide Conference** is here to ignite your heart for God's calling. It's time to worship, learn, and take action\u2014because the fire to boldly GO will keep burning! Are you ready to rise and answer the call? Join us for back-to-back conferences across Mega Manila!\n\nOrganized by the **Philippine Missions Association (PMA), Philippine Council of Evangelical Churches (PCEC),** and partners.\n\nFor more details, contact us:\n\n\ud83d\udce7 **Email:** [arisephilippines@ariseasia.org](mailto:arisephilippines@ariseasia.org)\n\n\ud83d\udcde **Contacts:**\n- **Ptr. Nono Badoy** (Philippine Missions Association) \u2013 0920 905 4021\n- **Ptr. Jonathan Bocobo** (Every Nation Philippines) \u2013 0917 835 1103\n- **Ptr. Justine Parcasio** (Arise Philippines) \u2013 0908 866 9054"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Alabang (Philippines)",
+      "subtitle": "June 5, 2025",
+      "posterSrc": "/events/arise-alabang.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-ph-mega-mnl"
+        }
+      ],
+      "description": "We're bringing the Arise Asia Movement to **Mega Manila**, and it's going to be \ud83d\udd25!\n\n**3 DAYS. 3 LOCATIONS. ONE PURPOSE:** To challenge the next generation to go and serve.\n\nThe **Arise Philippines Regionwide Conference** is here to ignite your heart for God's calling. It's time to worship, learn, and take action\u2014because the fire to boldly GO will keep burning! Are you ready to rise and answer the call? Join us for back-to-back conferences across Mega Manila!\n\nOrganized by the **Philippine Missions Association (PMA), Philippine Council of Evangelical Churches (PCEC),** and partners.\n\nFor more details, contact us:\n\n\ud83d\udce7 **Email:** [arisephilippines@ariseasia.org](mailto:arisephilippines@ariseasia.org)\n\n\ud83d\udcde **Contacts:**\n- **Ptr. Nono Badoy** (Philippine Missions Association) \u2013 0920 905 4021\n- **Ptr. Jonathan Bocobo** (Every Nation Philippines) \u2013 0917 835 1103\n- **Ptr. Justine Parcasio** (Arise Philippines) \u2013 0908 866 9054"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Bulacan (Philippines)",
+      "subtitle": "June 6, 2025",
+      "posterSrc": "/events/arise-bulacan.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-ph-mega-mnl"
+        }
+      ],
+      "description": "We're bringing the Arise Asia Movement to **Mega Manila**, and it's going to be \ud83d\udd25!\n\n**3 DAYS. 3 LOCATIONS. ONE PURPOSE:** To challenge the next generation to go and serve.\n\nThe **Arise Philippines Regionwide Conference** is here to ignite your heart for God's calling. It's time to worship, learn, and take action\u2014because the fire will keep burning! Are you ready to rise and answer the call? Join us for back-to-back conferences across Mega Manila!\n\nOrganized by the **Philippine Missions Association (PMA), Philippine Council of Evangelical Churches (PCEC),** and partners.\n\nFor more details, contact us:\n\n\ud83d\udce7 **Email:** [arisephilippines@ariseasia.org](mailto:arisephilippines@ariseasia.org)\n\n\ud83d\udcde **Contacts:**\n- **Ptr. Nono Badoy** (Philippine Missions Association) \u2013 0920 905 4021\n- **Ptr. Jonathan Bocobo** (Every Nation Philippines) \u2013 0917 835 1103\n- **Ptr. Justine Parcasio** (Arise Philippines) \u2013 0908 866 9054"
+    },
+    {
+      "country": "Thailand",
+      "title": "Arise Asia 2023",
+      "subtitle": "July 25-29, 2023",
+      "posterSrc": "/events/arise-asia-2023.jpg",
+      "websiteTarget": "https://arise2023.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/ariseasia2023"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/ariseasia.movement"
+        },
+        {
+          "title": "Summary Video",
+          "target": "https://www.youtube.com/watch?v=-V6a5qnJI5Q"
+        }
+      ],
+      "description": "This historic event was organized to unite and equip believers with a shared vision of faith and service throughout Asia. We praise God for the powerful work He accomplished during these five days, as lives were transformed, faith was strengthened, and a renewed passion for cross-cultural involvement was ignited. Check out the summary video for a recap of the conference."
+    },
+    {
+      "country": "Hong Kong",
+      "title": "Arise Hong Kong",
+      "subtitle": "July 20-21, 2024",
+      "backgroundSrc": "/locations/hong-kong.jpg",
+      "posterSrc": "/events/arise-hong-kong.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://hk.ariseasia.org",
+      "links": [
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/hkacm.mission"
+        },
+        {
+          "title": "Promo Video",
+          "target": "https://www.instagram.com/reel/C7UWxt3Pfg2"
+        },
+        {
+          "title": "Summary Video",
+          "target": "https://www.instagram.com/reel/C9rZ9hlPsRp"
+        },
+        {
+          "title": "Photos",
+          "target": "https://www.instagram.com/p/C94jnaUvIlT"
+        }
+      ],
+      "description": "Stay Alive, Go Beyond!\ud83d\udd0b\n\nIn a city grappling with emptiness and despair, how can we continue to pursue our future, our calling, and our mission? This conference calls on us to seek guidance from Jesus as we navigate these challenges.\n\nWe invite believers aged 18-29, including those new to the movement and eager to learn more, to join us in Wu Kai Sha for a time of teaching, mentoring, and transformation.\n\nThe conference will be conducted in Cantonese/Mandarin and aims to equip and inspire participants with the tools, knowledge, and encouragement needed to move beyond their struggles and embrace their mission with renewed passion."
+    },
+    {
+      "country": "Indonesia",
+      "title": "Arise Indonesia",
+      "subtitle": "July 31 - August 3, 2024",
+      "backgroundSrc": "/locations/indonesia.jpg",
+      "posterSrc": "/events/arise-indonesia.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://id.ariseasia.org",
+      "links": [
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/ariseindonesia"
+        },
+        {
+          "title": "Promo Video",
+          "target": "https://www.instagram.com/reel/C6JBoV7Pnqm"
+        },
+        {
+          "title": "Summary Video",
+          "target": "https://www.instagram.com/reel/C-VK4_kvsYj"
+        },
+        {
+          "title": "Photos",
+          "target": "https://www.instagram.com/p/C-rc1hVPkxt"
+        },
+        {
+          "title": "Praise Report",
+          "target": "https://drive.google.com/file/d/167qVzGVDJ33Hw3fY4IbZHksJEVXnBkYU"
+        }
+      ],
+      "description": "The Arise Indonesia conference is a gathering focused on equipping the next generation of young Christian leaders. This conference specifically targets youth, students, and young professionals between the ages of 18 and 35. \ud83e\udd2b\n\nThe conference aims to ignite a passion for Christ in the hearts of its participants by equipping them with the necessary tools, knowledge, and inspiration. It intends to empower and mobilize these young individuals to be catalysts for change in their communities and beyond.\n\nThe conference takes place in Bali, attracting around 1000 participants. It features various sessions, workshops, and talks from experienced speakers and pastors. These sessions cover a wide range of topics, including discipleship, spiritual formation, leadership, and cross-cultural ministry."
+    },
+    {
+      "country": "Myanmar",
+      "title": "Arise Myanmar",
+      "subtitle": "October 15-16, 2024",
+      "backgroundSrc": "/locations/myanmar.jpg",
+      "posterSrc": "/events/arise-myanmar.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://mm.ariseasia.org",
+      "links": [
+        { "title": "Summary Video", "target": "https://youtu.be/8judcmN--3Y" },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1I7ZaPEm9uuZe6RC85QlqeBa_iVJyAipL"
+        }
+      ],
+      "description": "The Arise Myanmar conference represents a significant leap of faith for the local team. In these challenging times, the gathering aims to bring hope and inspire young people to go and serve.\n\nRooted in 2 Corinthians 4:8-9, which states, \"We are afflicted in every way, but not crushed; perplexed, but not driven to despair; persecuted, but not forsaken; struck down, but not destroyed,\" the conference encourages resilience and faith.\n\nThe theme of Arise Myanmar 2024 is \"Beyond the Limits.\" Instead of simply going through the routines of \"Christian Living,\" it aims to inspire participants to live courageously and share boldly, reaching beyond their normal boundaries to bring hope to those who have not yet heard.\n\nThe conference took place in Yangon, Myanmar, on October 15-16, 2024 with over 700 participants. It featured international speakers, breakout sessions, testimonies, and worship time."
+    },
+    {
+      "country": "Nepal",
+      "title": "Arise Nepal",
+      "subtitle": "October 20-23, 2024",
+      "backgroundSrc": "/locations/nepal.jpg",
+      "posterSrc": "/events/arise-nepal.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://np.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61560696147433"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arisenepal_"
+        },
+        { "title": "Summary Video", "target": "https://youtu.be/hdb4EPXa2_A" },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1IKRhCZG4sywJtn-7TudFM8_1Ayry8zgL"
+        }
+      ],
+      "description": "The Arise Nepal 2024 conference marked a significant milestone, evolving from 25 Arise Asia 2023 alumni to hundreds of mobilized volunteers and thousands of next-generation participants.\n\nThe theme for the conference, \"Beyond Barriers,\" encapsulated the spirit of the gathering. This historic event aimed to empower young people to transcend individual barriers and share their faith in areas that had yet to hear it.\n\nWorship sessions were led by the Arise Nepal worship team, the Nepali Isai Mandali worship team, and Awaken Generation from Singapore.\n\nSpanning four days, the conference featured a variety of activities, including plenary sessions, panel discussions, workshops, games, and opportunities for fellowship."
+    },
+    {
+      "country": "Latin America",
+      "title": "Arise Latino 2024",
+      "subtitle": "November 11-14, 2024",
+      "backgroundSrc": "/locations/latino.jpg",
+      "posterSrc": "/events/arise-latino.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://ariselatino.org",
+      "description": "The Arise Latino conference is calling young adults like you! The Arise movement began in Thailand in 2023, when it brought together 1,800 passionate young people from 37 countries, all eager to bring about change where it is needed most. Now it's your turn to take part in this incredible journey. \ud83d\udee3\ufe0f\n\nThis conference is specifically designed for young people aged 18 to 35. It's not just another event \u2013 it's a launchpad for inspiration, training, and connection. Here's what you can look forward to:\n\n* Inspiring Sessions: Hear from leaders who have firsthand experience in serving across diverse contexts.\n* Practical Tools: Gain access to resources that will empower you to make a tangible impact.\n* Collaborative Opportunities: Meet like-minded individuals and form networks that can amplify your efforts.\n* Hands-On Workshops: Participate in interactive sessions that equip you with the skills you need to serve effectively.\n\nThroughout these four days in Orlando, Florida, you'll engage in plenary sessions, workshops, and lectures covering a variety of topics related to serving communities across the world. This is more than just learning; it's about preparing to take action.\n\nDon't Miss Out! Seize this opportunity to be part of a global movement. Connect with others who share your passion and vision for making a difference. We're expecting over 500 energetic and passionate young adults to join us. Your journey starts here."
+    },
+    {
+      "country": "Bangladesh",
+      "title": "Arise Bangladesh",
+      "subtitle": "March 13-15, 2025",
+      "backgroundSrc": "/locations/bangladesh.jpg",
+      "posterSrc": "/events/arise-bangladesh.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://bd.ariseasia.org",
+      "link": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61572410168670"
+        },
+        {
+          "title": "Summary Video",
+          "target": "https://www.youtube.com/watch?v=Lc8UI7nSMzc"
+        },
+        {
+          "title": "Photos",
+          "target": "https://drive.google.com/drive/folders/1Foy5dBBd4V5FK9ED-D0FcsshrU0cNmvV"
+        }
+      ],
+      "description": "Arise Bangladesh 2025 was the first interdenominational youth conference in Bangladesh, held from March 13-15 at BBCF Prayer Garden, bringing together nearly 600 participants from across the country to be inspired and equipped for service.\n\nThemed \"A Call to Serve\", the conference focused on uniting and mobilizing young believers to share their faith widely. Organized by the Board of Youth and Renewal of the National Christian Fellowship of Bangladesh, the event featured renowned national and international speakers who challenged and empowered attendees to step into their calling. With passionate workshops, impactful plenary sessions, engaging workshops, panel discussions, and mentorship opportunities, Arise Bangladesh 2025 strengthened collaboration among 49 denominations and organizations, sparking a movement of young believers committed to answering God's call in Bangladesh and beyond."
+    },
+    {
+      "country": "Sri Lanka",
+      "title": "Arise Sri Lanka",
+      "subtitle": "June 13-14, 2025",
+      "posterSrc": "/events/arise-sri-lanka.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://lk.ariseasia.org",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Indonesia",
+      "title": "Arise Leadership Summit 2025",
+      "subtitle": "July 28-31, 2025",
+      "backgroundSrc": "/events/arise-leadership-summit.jpg",
+      "posterSrc": "/events/arise-leadership-summit.jpg",
+      "iconSrc": "/icons/red-arise-icon.svg",
+      "donateTarget": "https://www.totalideas.org/Arise-Asia-Leadership-Summit-2025",
+      "websiteTarget": "https://summit25.ariseasia.org",
+      "description": "Visit the Arise Leadership Summit website for more details!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Batangas (Philippines)",
+      "subtitle": "October 11, 2025",
+      "posterSrc": "/events/arise-batangas.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Facebook",
+          "target": "https://www.facebook.com/profile.php?id=61555870030732"
+        },
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/arise.philippines"
+        },
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-batangas"
+        }
+      ],
+      "description": "A new City Movement coming up next! More of Luzon are rising to the challenge! Come and Arise with us in the Land of Rolling Hills and Wide Shore Lands! Kita kits tayo sa Bauan, Batangas! The Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\n\nOrganized by the Philippine Missions Association (PMA), Philippine Council of Evangelical Churches, Communities of Bible Christian Fellowship (CBCF), Bauan Bible Christian Fellowship and partners...\n\nFor more info, contact <arisephilippines@ariseasia.org>\n\n**Rev. Arnold G. Bacay** | CBCF District Minister | 0992 492 1737\n\n**Sis. Joy M. Ilagan** | CBCF Missions Chair | 0999 578 6974\n\n**Sis. Eden A. Brucal** | BBCC Church Coordinator | 0921 850 7952\n\n**Ptr Nono Badoy** | Philippine Missions Association | 0920 905 4021"
+    },
+    {
+      "country": "Indonesia",
+      "title": "Arise Sumatra",
+      "subtitle": "October 13-15, 2025",
+      "posterSrc": "/events/arise-sumatra.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "links": [
+        {
+          "title": "Instagram",
+          "target": "https://www.instagram.com/ariseindonesia"
+        }
+      ],
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Mongolia",
+      "title": "Arise Mongolia",
+      "subtitle": "November 22, 2025",
+      "posterSrc": "/events/arise-mongolia.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Latin America",
+      "title": "Arise Latino 2026",
+      "subtitle": "January 7-10, 2026",
+      "backgroundSrc": "/locations/latino.jpg",
+      "posterSrc": "/events/arise-latino.jpg",
+      "websiteTarget": "https://ariselatino.org",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Zamboanga (Philippines)",
+      "subtitle": "March 14, 2026",
+      "posterSrc": "/events/arise-zamboanga.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Bohol (Philippines)",
+      "subtitle": "March 21, 2026",
+      "posterSrc": "/events/arise-bohol.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Malaysia",
+      "title": "Arise Malaysia",
+      "subtitle": "April 30 - May 2, 2026",
+      "posterSrc": "/events/arise-malaysia.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-National-Movements",
+      "websiteTarget": "https://my.ariseasia.org",
+      "description": "More information is coming soon. Stay tuned!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Tagaytay (Philippines)",
+      "subtitle": "May 1, 2026",
+      "backgroundSrc": "/events/arise-tagaytay.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        { "title": "Summary Video", "target": "https://youtu.be/DEqIoAUDRGY" }
+      ],
+      "description": "The Arise Philippines City-wide Youth Conference took place in Laguna last May 2026!\n\nWith churches and partner organizations united, Arise Tagaytay brought together young people from across the province for a day filled with worship, challenge, and vision\u2014awakening many to the call of long-term cross-cultural involvement and a life of being sent.\n\nA special part of the program also featured interactive workshops, where participants were able to go deeper into understanding different cultural contexts and the realities of cross-cultural service."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Imus (Philippines)",
+      "subtitle": "May 2, 2026",
+      "backgroundSrc": "/events/arise-imus.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        { "title": "Summary Video", "target": "https://youtu.be/_jGwqKCdsBk" }
+      ],
+      "description": "Gathering in unity with local churches and partner organizations, Arise Imus became a significant moment for young people across the province\u2014an atmosphere marked by worship, honest reflection, and a deep stirring toward God's global vision.\n\nThroughout the day, many were awakened to the reality of long-term cross-cultural serving and the invitation to be sent with purpose into the nations."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Laguna (Philippines)",
+      "subtitle": "May 9, 2026",
+      "backgroundSrc": "/events/arise-laguna.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "description": "Another Arise Philippines City-wide Youth Conference took place in Laguna last May 2026!\n\nWith local churches and partner organizations coming together, Arise Laguna gathered young people from across the province for a powerful day of worship, challenge, and vision for long-term cross-cultural involvement\u2014stirring many to respond to God's call to go and be sent.\n\nThe gathering also featured impactful updates from key leaders serving in different nations, sharing real stories and insights on what God is doing in their respective fields. These testimonies deeply engaged the youth, stirring greater passion and urgency to be part of what God is doing among the nations"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Bataan (Philippines)",
+      "subtitle": "May 16, 2026",
+      "backgroundSrc": "/events/arise-bataan.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        { "title": "Summary Video", "target": "https://youtu.be/OgmbKUxjktM" }
+      ],
+      "description": "Arise Bataan brought together young people from different churches across the province for a day centered on God's heart for the nations. Held in the middle of May 2026, the gathering created space for worship, learning, and meaningful conversations about serving and long-term involvement in cross-cultural service.\n\nParticipants heard firsthand stories from ministry leaders serving in various parts of the world, offering a glimpse into the opportunities and challenges of cross-cultural ministry. These testimonies inspired many to consider their role in God's global vision, with several taking steps toward deeper commitment, prayer, and future service among the nations."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise La Union, Bauang (Philippines)",
+      "subtitle": "May 18, 2026",
+      "backgroundSrc": "/events/arise-san-fernando.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "description": "Arise Bauang brought together young people from different churches across the province for a day centered on God's heart for the nations. Held in the middle of May 2026, the gathering created space for worship, learning, and meaningful conversations about serving and long-term involvement in cross-cultural service.\n\nParticipants heard firsthand stories from ministry leaders serving in various parts of the world, offering a glimpse into the opportunities and challenges of cross-cultural ministry. These testimonies inspired many to consider their role in God's global vision, with several taking steps toward deeper commitment, prayer, and future service among the nations."
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Surigao del Sur (Philippines)",
+      "subtitle": "June 17, 2026",
+      "backgroundSrc": "/events/arise-surigao-del-sur.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-surigao-del-sur"
+        }
+      ],
+      "description": "A new month, a new move in Northeastern Mindanao...\n**Surigao del Sur\u2014kicking off our June journey!** \ud83d\udd25\nFrom the coastlands to the highlands of Mindanao, God is calling people into new fields of service! \ud83d\udd25\n**Kita-kits, Surigao del Sur!**\n\nThe Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\nThe flame to boldly GO will blaze on!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Trento (Philippines)",
+      "subtitle": "June 17, 2026",
+      "backgroundSrc": "/events/arise-trento.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-trento"
+        }
+      ],
+      "description": "A new journey unfolds in Northeastern Mindanao...\n**Trento, Agusan del Sur\u2014where it all begins!** \ud83d\udd25\nGod is shaking hearts to GO and not stay the same! \ud83c\udf0f\ud83d\udd25\n**Kita-kits, Trento!**\n\nThe Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\nThe flame to boldly GO will blaze on!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Prosperidad (Philippines)",
+      "subtitle": "June 21, 2026",
+      "backgroundSrc": "/events/arise-prosperidad.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-prosperidad"
+        }
+      ],
+      "description": "God is opening the way\u2014we are heading to Northeastern Mindanao...\n**Agusan del Sur, prepare for the movement ahead!** \ud83d\udd25\nProsperidad, a fresh start is here as God moves among us! \ud83c\udf0f\ud83d\udd25\n**Kita-kits, Prosperidad!**\n\nThe Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\nThe flame to boldly GO will blaze on!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Surigao del Norte (Philippines)",
+      "subtitle": "June 27, 2026",
+      "backgroundSrc": "/events/arise-surigao-del-norte.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-surigao-del-norte"
+        }
+      ],
+      "description": "The moment we've been waiting for is here\u2014we're heading to Northeastern Mindanao! \ud83d\udd25\n**Get ready, Surigao \u2014the movement is coming!** \ud83d\udd25\nGod is moving in Mindanao, raising up a generation for the nations!\n**Kita-kits, Surigao del Norte!**\n\nThe Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\nThe flame to boldly GO will blaze on!"
+    },
+    {
+      "country": "Philippines",
+      "title": "Arise Butuan (Philippines)",
+      "subtitle": "June 28, 2026",
+      "backgroundSrc": "/events/arise-butuan.jpg",
+      "donateTarget": "https://www.totalideas.org/Arise-City-Expressions",
+      "websiteTarget": "https://ph.ariseasia.org",
+      "links": [
+        {
+          "title": "Sign Up",
+          "target": "https://ariseasia.regfox.com/arise-butuan"
+        }
+      ],
+      "description": "After much anticipation, we are finally heading to Northeastern Mindanao...\n**We're coming back to Butuan!** \ud83d\udd25\nFrom the cities to the mountains, from every tribe and generation, God is stirring hearts to boldly GO!\n**Kita-kits, Butuan!** \ud83d\udd25\n\nThe Arise Philippines Regionwide Conference is heading your way, and it's about to get lit!\nThe flame to boldly GO will blaze on!"
+    }
+  ],
+  "futureMovementsList": [
+    { "title": "Arise Cambodia" },
+    { "title": "Arise Japan" },
+    { "title": "Arise Macau" },
+    { "title": "Arise Singapore" },
+    { "title": "Arise Vietnam" },
+    { "title": "Arise Bhutan" },
+    { "title": "Arise Laos" },
+    { "title": "Arise Central Asia" },
+    { "title": "Arise MENA" },
+    { "title": "Arise Philippines" }
+  ]
+}

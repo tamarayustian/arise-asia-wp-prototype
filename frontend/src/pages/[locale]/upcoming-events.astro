@@ -1,0 +1,11 @@
+---
+import UpcomingEventsPage from "@/components/upcoming-events/UpcomingEventsPage.tsx";
+import movementsData from "@/data/movements.json";
+import Layout from "@/layouts/Layout.astro";
+
+const { locale } = Astro.params;
+---
+
+<Layout title="Upcoming Events — Arise Asia" locale={locale!}>
+  <UpcomingEventsPage client:load data={movementsData} />
+</Layout>

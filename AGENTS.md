@@ -79,7 +79,7 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 - **Home page components**: `/src/components/home/` — `Hero.astro`, `DecorativeIcons.astro`
 - **Arise26 page components**: `/src/components/arise26/` — `Arise26Page.tsx` (React island, full-page layout), `ScheduleCarousel.tsx` (horizontal scroll with native snap)
 - **Give page components**: `/src/components/give/` — `FeaturedCampaignCarousel`, `AllCampaignCarousel`, `GivingOptionsAccordion`, `GiveDecorativeIcons.astro`
-- **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, `Accordion` wrapper around `@base-ui/react`
+- **UI**: `/src/components/ui/` — custom `Carousel` wrapper around `embla-carousel-react`, custom `Accordion` (React built-in context/state)
 - **Shared**: `/src/components/shared/` — `ActionButton.tsx` (props table below), `LinkButton.tsx` (React `<a>` wrapper for islands, accepts `href`, `size` sm/md/lg, `target`/`rel`, `className`), `SimpleButton.astro`, `AnimatedCounter.astro`, `StayConnected.astro`
 - **StayConnected** (`src/components/shared/StayConnected.astro`): Newsletter signup + WhatsApp join section extracted from `about.astro`. Rendered in `Layout.astro` between `</main>` and `<Footer>` so it appears on every page. No props — self-contained.
 - **Data files**: `/src/data/` — `home.json` (stats, videoUrl), `give.json` (campaigns, giving options), `arise2026.json` (speakers, FAQ, nomination criteria). Imported via `import homeData from "@/data/home.json"` (Astro imports JSON natively)
@@ -266,3 +266,12 @@ When adding a new public asset, place it in the appropriate subdirectory and upd
 - **Accordion**: Uses existing `Accordion` + `AccordionTab` from `src/components/ui/accordion.tsx` with `allowMultiple`.
 - **Motion import**: Always use `import { motion } from "motion/react"` (not from `"motion"` directly — the JSX component is in the `/react` subpath).
 - **Default Tailwind colors**: `global.css` `@theme` block includes common Tailwind defaults (indigo, orange, pink, green, violet, lime, red, neutral shades) used by the arise26 page.
+
+## /upcoming-events page
+
+- **Page**: `src/pages/[locale]/upcoming-events.astro` — renders `<UpcomingEventsPage client:load />` inside Layout
+- **UpcomingEventsPage** (`src/components/upcoming-events/UpcomingEventsPage.tsx`): React island port of the old `MovementsPage` SPA. Features: tabs (Upcoming/Past/Stay Tuned), sidebar with `MovementsDropdown` expandable lists (CSS grid-rows transition), sort by Date/Alphabetical (dropdown), movement cards with poster/description/links.
+- **movements.json** (`src/data/movements.json`): Static data file with `upcomingMovementsList`, `pastMovementsList`, `futureMovementsList` arrays. Each movement has `country`, `title`, `subtitle`, `backgroundSrc`, `posterSrc`, `donateTarget`, `signupTarget`, `websiteTarget`, `category`, `links[]` (with `title`/`target`), `description` (markdown).
+- **Color palette**: Cyan (50/500/700) + orange (50/300/500) scheme. Background: `bg-cyan-50`.
+- **MovementCard**: `rounded-3xl`, `p-6`, column layout (image full-width top, content below), row on `2xl:flex-row`. Action buttons use `RiGift2Line`/`RiFileList3Line`/`RiGlobalLine` from `react-icons/ri`. Links use cyan-50 bg with cyan-500 border. Description via `ReactMarkdown` with custom prose colors.
+- **Fragment/slug**: `getFragmentName(title)` in `src/lib/utils.ts` — lowercase, replace non-alphanumeric with hyphens.
