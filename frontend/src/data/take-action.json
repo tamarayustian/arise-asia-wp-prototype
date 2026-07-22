@@ -10,12 +10,14 @@
       {
         "title": "Give",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/give-bg.png"
       },
       {
         "title": "Volunteer",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/volunteer-bg.png"
       }
     ]
   },
@@ -30,17 +32,20 @@
       {
         "title": "Prayer Movement",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/prayer-movement-bg.jpg"
       },
       {
         "title": "Represent Arise Asia",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/represent-asia-bg.png"
       },
       {
         "title": "Become a Mentor",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/become-a-mentor-bg.png"
       }
     ]
   },
@@ -55,9 +60,9 @@
       {
         "title": "Become a Sending Partner",
         "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        "href": "#"
+        "href": "#",
+        "bgImage": "/images/become-a-sending-partner-bg.png"
       }
     ]
   }
 }
-
