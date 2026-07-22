@@ -22,11 +22,11 @@ const {
 
 <a
   href={href}
-  class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-cover bg-center px-5 py-6 transition-all duration-300 md:px-7"
+  class="group relative flex items-center justify-between overflow-visible rounded-xl bg-cover bg-center px-5 py-6 transition-all duration-300 md:px-7"
   style={`background-image: url('${bgImage}')`}
 >
   <div
-    class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-80"
+    class="absolute inset-0 rounded-xl bg-linear-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-80"
   >
   </div>
   <div class="relative z-10 flex flex-col gap-y-2">
@@ -41,12 +41,12 @@ const {
       {description}
     </p>
   </div>
-  <div class="relative z-10 flex shrink-0 items-center gap-4 md:gap-6">
-    <div
-      class={`bg-accent-purple-lighter hidden size-12 shrink-0 sm:block md:size-16 ${iconRotate}`}
-      style={`-webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
-    >
-    </div>
+  <div
+    class={`absolute right-36 top-1/2 hidden -translate-y-1/2 size-44 sm:block ${iconRotate}`}
+    style={`background-image: linear-gradient(275deg, #D9D0F5 3.4%, #EBE6FF 48.25%); -webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
+  >
+  </div>
+  <div class="relative z-10 flex shrink-0 items-center">
     <ArrowRight
       className="text-accent-purple-light size-8 shrink-0 transition-transform duration-300 group-hover:scale-110 md:size-10"
     />
