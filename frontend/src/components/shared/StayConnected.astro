@@ -12,11 +12,15 @@
     >
       Stay up to date with Arise!
     </h2>
-    <form class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-8">
+    <form
+      id="subscribe-form"
+      class="grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-x-8"
+    >
       <div class="flex flex-col gap-1">
         <label for="first-name" class="text-sm font-medium">First Name</label>
         <input
           id="first-name"
+          name="firstName"
           type="text"
           placeholder="Enter your first name"
           class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
@@ -26,6 +30,7 @@
         <label for="last-name" class="text-sm font-medium">Last Name</label>
         <input
           id="last-name"
+          name="lastName"
           type="text"
           placeholder="Enter your last name"
           class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
@@ -35,23 +40,55 @@
         <label for="country" class="text-sm font-medium">Country</label>
         <select
           id="country"
+          name="country"
           class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
         >
           <option value="">Select your country</option>
+          <option value="AF">Afghanistan</option>
+          <option value="AU">Australia</option>
+          <option value="BN">Brunei</option>
+          <option value="KH">Cambodia</option>
+          <option value="CN">China</option>
+          <option value="HK">Hong Kong</option>
+          <option value="IN">India</option>
+          <option value="ID">Indonesia</option>
+          <option value="JP">Japan</option>
+          <option value="KR">South Korea</option>
+          <option value="LA">Laos</option>
+          <option value="MO">Macau</option>
+          <option value="MY">Malaysia</option>
+          <option value="MM">Myanmar</option>
+          <option value="NZ">New Zealand</option>
+          <option value="PH">Philippines</option>
+          <option value="SG">Singapore</option>
+          <option value="TW">Taiwan</option>
+          <option value="TH">Thailand</option>
+          <option value="TL">Timor-Leste</option>
+          <option value="VN">Vietnam</option>
+          <option value="US">United States</option>
+          <option value="GB">United Kingdom</option>
+          <option value="CA">Canada</option>
+          <option value="DE">Germany</option>
+          <option value="FR">France</option>
+          <option value="NL">Netherlands</option>
+          <option value="other">Other</option>
         </select>
       </div>
       <div class="flex flex-col gap-1">
         <label for="email" class="text-sm font-medium">Email</label>
         <input
           id="email"
+          name="email"
           type="email"
           placeholder="Enter your email"
+          required
           class="border-neutral-cool-primary rounded-lg border px-4 py-2.5 text-sm"
         />
       </div>
       <div class="flex flex-col gap-4 sm:flex-row md:col-span-2">
         <button
           type="submit"
+          id="subscribe-btn"
           class="bg-primary-blue font-heading rounded-full px-6 py-3 text-xs font-bold text-white uppercase"
         >
           Subscribe to our newsletter
@@ -65,6 +102,59 @@
           Join on Whatsapp
         </a>
       </div>
+      <p
+        id="subscribe-message"
+        class="md:col-span-2 text-sm empty:hidden"
+        aria-live="polite"
+      ></p>
     </form>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById("subscribe-form")
+  const btn = document.getElementById("subscribe-btn")
+  const msg = document.getElementById("subscribe-message")
+
+  form?.addEventListener("submit", async (e) => {
+    e.preventDefault()
+    if (!btn || !msg) return
+
+    const firstName = document.getElementById("first-name").value
+    const lastName = document.getElementById("last-name").value
+    const country = document.getElementById("country").value
+    const email = document.getElementById("email").value
+
+    btn.disabled = true
+    btn.textContent = "Subscribing..."
+    msg.textContent = ""
+    msg.className = "md:col-span-2 text-sm empty:hidden"
+
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ firstName, lastName, country, email }),
+      })
+
+      const data = await res.json()
+
+      if (!res.ok) {
+        throw new Error(data.error ?? "Something went wrong")
+      }
+
+      msg.textContent = "You're subscribed! Check your inbox for updates."
+      msg.className = "md:col-span-2 text-sm text-green-700 font-medium"
+      form.reset()
+    } catch (err) {
+      msg.textContent =
+        err.message === "Failed to subscribe"
+          ? "Something went wrong. Please try again later."
+          : err.message
+      msg.className = "md:col-span-2 text-sm text-red-600 font-medium"
+    } finally {
+      btn.disabled = false
+      btn.textContent = "Subscribe to our newsletter"
+    }
+  })
+</script>

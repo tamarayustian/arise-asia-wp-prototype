@@ -90,6 +90,20 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 - **Prettier quirk**: `prettier-plugin-astro` does not support the `htmlSelfClosing` option — empty non-void elements like `<div />` are always expanded to `<div></div>` on format. No config workaround.
 - **ACF**: Custom fields exposed as top-level `acf` object on WP REST post responses
 
+## Newsletter / Google Sheets
+
+- **API endpoint**: `POST /api/subscribe` (server route at `src/pages/api/subscribe.ts`) accepts `{ firstName, lastName, country, email }` and appends to Google Sheets via a service account.
+- Requires 3 env vars — set on Railway/Vercel (Vercel = `vercel env add`, Railway = dashboard):
+
+  | Variable                      | Description                                       |
+  | ----------------------------- | ------------------------------------------------- |
+  | `GOOGLE_SHEET_ID`             | Spreadsheet ID from the sheet URL                 |
+  | `GOOGLE_SERVICE_ACCOUNT_EMAIL` | Email of the Google Cloud service account         |
+  | `GOOGLE_PRIVATE_KEY`          | Private key from the service account JSON (with `\n` escaped) |
+
+- Sheet header row (Row 1): `Timestamp`, `First Name`, `Last Name`, `Country`, `Email`
+- Service account needs Viewer or Editor access to the sheet (share the sheet with the service account email).
+
 ## Deployment
 
 Two deployment targets with conditional adapter in `astro.config.mjs`:
