@@ -165,3 +165,7 @@
 @utility animate-float {
   animation: float 3s ease-in-out infinite;
 }
+
+@utility text-shadow-dark {
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.7);
+}

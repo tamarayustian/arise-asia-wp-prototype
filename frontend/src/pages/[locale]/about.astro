@@ -40,7 +40,7 @@ const learnMoreCards = [
     href: `/${locale}/arise26`,
     bgImage: "/images/about-where-is-arise-bg.png",
     icon: "/icons/cross.svg",
-    iconRotate: "-rotate-8",
+    iconClassName: "right-28 size-40 -rotate-15",
   },
   {
     title: "Our Partners",
@@ -48,8 +48,8 @@ const learnMoreCards = [
       "Meet the organizations and ministries partnering with us to reach the unreached across Asia.",
     href: `/${locale}/about/our-partners`,
     bgImage: "/images/about-our-partners-bg.png",
-    icon: "/icons/path.svg",
-    iconRotate: "rotate-12",
+    icon: "/icons/wave.svg",
+    iconClassName: "right-60 size-40 rotate-15",
   },
   {
     title: "Financials",
@@ -58,7 +58,7 @@ const learnMoreCards = [
     href: `/${locale}/give`,
     bgImage: "/images/about-financials-bg.png",
     icon: "/icons/spark.svg",
-    iconRotate: "rotate-6",
+    iconClassName: "right-28 size-40 rotate-12",
   },
   {
     title: "Get Involved",
@@ -66,8 +66,8 @@ const learnMoreCards = [
       "Discover practical ways to give, serve, and join this movement right where you are.",
     href: `/${locale}/volunteer`,
     bgImage: "/images/about-get-involved-bg.png",
-    icon: "/icons/wave.svg",
-    iconRotate: "-rotate-6",
+    icon: "/icons/path.svg",
+    iconClassName: "right-60 size-40 rotate-14",
   },
 ];
 ---
@@ -391,7 +391,7 @@ const learnMoreCards = [
       >
         Learn More
       </h2>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-5">
         {
           learnMoreCards.map((card) => (
             <LearnMoreCard
@@ -400,7 +400,7 @@ const learnMoreCards = [
               description={card.description}
               bgImage={card.bgImage}
               icon={card.icon}
-              iconRotate={card.iconRotate}
+              iconClassName={card.iconClassName}
             />
           ))
         }

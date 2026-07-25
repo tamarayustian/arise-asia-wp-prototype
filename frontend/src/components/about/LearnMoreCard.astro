@@ -7,7 +7,7 @@ export interface Props {
   description: string;
   bgImage: string;
   icon: string;
-  iconRotate?: string;
+  iconClassName?: string;
 }
 
 const {
@@ -16,7 +16,7 @@ const {
   description,
   bgImage,
   icon,
-  iconRotate = "-rotate-12",
+  iconClassName = "right-36 top-1/2 -translate-y-1/2 size-44 -rotate-12",
 } = Astro.props;
 ---
 
@@ -31,18 +31,18 @@ const {
   </div>
   <div class="relative z-10 flex flex-col gap-y-2">
     <p
-      class="text-accent-purple-light font-heading text-xl uppercase md:text-2xl"
+      class="text-accent-purple-light font-heading text-xl uppercase text-shadow-dark md:text-2xl"
     >
       {title}
     </p>
     <p
-      class="text-neutral-cool-lightest max-w-xl text-sm tracking-wide md:text-base"
+      class="text-neutral-cool-lightest max-w-xl text-sm tracking-wide text-shadow-dark md:text-base"
     >
       {description}
     </p>
   </div>
   <div
-    class={`absolute right-36 top-1/2 hidden -translate-y-1/2 size-44 sm:block ${iconRotate}`}
+    class={`absolute hidden sm:block ${iconClassName}`}
     style={`background-image: linear-gradient(275deg, #D9D0F5 3.4%, #EBE6FF 48.25%); -webkit-mask: url('${icon}') no-repeat center / contain; mask: url('${icon}') no-repeat center / contain;`}
   >
   </div>
