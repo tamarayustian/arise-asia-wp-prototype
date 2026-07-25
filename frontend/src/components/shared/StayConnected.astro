@@ -104,57 +104,58 @@
       </div>
       <p
         id="subscribe-message"
-        class="md:col-span-2 text-sm empty:hidden"
+        class="text-sm empty:hidden md:col-span-2"
         aria-live="polite"
-      ></p>
+      >
+      </p>
     </form>
   </div>
 </section>
 
 <script>
-  const form = document.getElementById("subscribe-form")
-  const btn = document.getElementById("subscribe-btn")
-  const msg = document.getElementById("subscribe-message")
+  const form = document.getElementById("subscribe-form");
+  const btn = document.getElementById("subscribe-btn");
+  const msg = document.getElementById("subscribe-message");
 
   form?.addEventListener("submit", async (e) => {
-    e.preventDefault()
-    if (!btn || !msg) return
+    e.preventDefault();
+    if (!btn || !msg) return;
 
-    const firstName = document.getElementById("first-name").value
-    const lastName = document.getElementById("last-name").value
-    const country = document.getElementById("country").value
-    const email = document.getElementById("email").value
+    const firstName = document.getElementById("first-name").value;
+    const lastName = document.getElementById("last-name").value;
+    const country = document.getElementById("country").value;
+    const email = document.getElementById("email").value;
 
-    btn.disabled = true
-    btn.textContent = "Subscribing..."
-    msg.textContent = ""
-    msg.className = "md:col-span-2 text-sm empty:hidden"
+    btn.disabled = true;
+    btn.textContent = "Subscribing...";
+    msg.textContent = "";
+    msg.className = "md:col-span-2 text-sm empty:hidden";
 
     try {
       const res = await fetch("/api/subscribe", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ firstName, lastName, country, email }),
-      })
+      });
 
-      const data = await res.json()
+      const data = await res.json();
 
       if (!res.ok) {
-        throw new Error(data.error ?? "Something went wrong")
+        throw new Error(data.error ?? "Something went wrong");
       }
 
-      msg.textContent = "You're subscribed! Check your inbox for updates."
-      msg.className = "md:col-span-2 text-sm text-green-700 font-medium"
-      form.reset()
+      msg.textContent = "You're subscribed! Check your inbox for updates.";
+      msg.className = "md:col-span-2 text-sm text-green-700 font-medium";
+      form.reset();
     } catch (err) {
       msg.textContent =
         err.message === "Failed to subscribe"
           ? "Something went wrong. Please try again later."
-          : err.message
-      msg.className = "md:col-span-2 text-sm text-red-600 font-medium"
+          : err.message;
+      msg.className = "md:col-span-2 text-sm text-red-600 font-medium";
     } finally {
-      btn.disabled = false
-      btn.textContent = "Subscribe to our newsletter"
+      btn.disabled = false;
+      btn.textContent = "Subscribe to our newsletter";
     }
-  })
+  });
 </script>
