@@ -85,11 +85,15 @@
       "title": "Ladan Nouri",
       "subtitle": "Elam Ministry, Iran"
     },
-    { "imgSrc": "/2026/jay.jpg", "title": "Jay Park", "subtitle": "Korea" },
+    {
+      "imgSrc": "/2026/jay.jpg",
+      "title": "Jay Park",
+      "subtitle": "Marketplace Leader, Korea/Middle East"
+    },
     {
       "imgSrc": "/2026/david-kim.jpg",
       "title": "David Kim",
-      "subtitle": "Korea"
+      "subtitle": "Founder and Executive Director, Kingdom Movement, Korea"
     }
   ],
   "faq": [
