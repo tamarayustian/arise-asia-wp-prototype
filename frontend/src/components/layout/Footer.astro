@@ -1,23 +1,17 @@
 ---
 import { Icon } from "astro-icon/components";
 
-export interface Props {
-  locale: string;
-}
-
-const { locale } = Astro.props;
-
 interface NavItem {
   label: string;
   href: string;
 }
 
 const footerNavItems: NavItem[] = [
-  { label: "Home", href: `/${locale}/` },
-  { label: "About Us", href: `/${locale}/about` },
-  { label: "Arise Asia 2026", href: `/${locale}/arise26` },
-  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
-  { label: "Donate", href: `/${locale}/give` },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Arise Asia 2026", href: "/arise26" },
+  { label: "Upcoming Events", href: "/upcoming-events" },
+  { label: "Donate", href: "/give" },
 ];
 
 const mobileCol1: NavItem[] = [

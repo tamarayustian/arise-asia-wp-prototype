@@ -2,13 +2,14 @@
 import Layout from "@/layouts/Layout.astro";
 import { getPost } from "@/lib/services/posts";
 
-const { locale, slug } = Astro.params;
+const slug = Astro.params.slug;
+const locale = "en";
 const post = await getPost(slug!, locale);
 const acf = post.acf || {};
 ---
 
 <Layout title={post.title.rendered} locale={locale!}>
-  <a href={`/${locale}/`}>&larr; Back</a>
+  <a href="/">&larr; Back</a>
   <article>
     <h1>{post.title.rendered}</h1>
     {

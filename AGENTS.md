@@ -5,8 +5,7 @@
 - **CMS**: WordPress (Docker local, Dockerfile on Railway), serves headless REST API
 - **Frontend**: Astro SSR (`output: 'server'`, `@astrojs/node` standalone), React islands, Tailwind v4
 - **Package manager**: pnpm (v9.11.0), Node >= 22.12.0
-- **i18n**: Astro built-in — locales `en`, `id`, `zh-TW` with `routing: { prefixDefaultLocale: true }`
-- **Polylang**: WordPress plugin used for i18n content filtering via `&lang=` query param on WP REST API
+- **i18n**: English-only for now — pages at `src/pages/` root, no locale prefix. WP API uses `&lang=en` via Polylang for content filtering.
 
 ## Commands (run from `frontend/`)
 
@@ -64,7 +63,7 @@ React `<a>` wrapper for use inside islands (replaces deprecated `OutlineButton`)
 ## Architecture
 
 - **Two top-level directories**: `cms/` (WordPress) and `frontend/` (Astro)
-- **Pages**: `/src/pages/[locale]/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page), `join.astro` (take action), `about.astro` + `/about/*` subpages
+- **Pages**: `/src/pages/` — `index.astro` (landing page), `posts/[slug].astro` (single + ACF), `give.astro` (giving page), `join.astro` (take action), `about.astro` + `/about/*` subpages
 - **Layout** (`src/layouts/Layout.astro`): Uses `ClientRouter` from `astro/components/ClientRouter.astro` for client-side view transitions (navbar stays mounted on navigation). Preloads 7 latin-subset `.woff2` font files (Unbounded 500/600/700, Montserrat 400/500/600/700) in `<head>` to eliminate FOUT on page load.
 - **Font display**: PostCSS plugin in `astro.config.mjs` transforms all `font-display: swap` → `font-display: block` in @fontsource CSS at build time. No runtime overhead. Combined with preloads, text appears in the correct font immediately (no fallback flash, no invisible text).
 - **Navbar** (`src/components/layout/Navbar.astro`): Peach glass pill (`bg-accent-orange-lighter/30 backdrop-blur-2xl`), fixed top, rounded-full. Three breakpoints — `lg+` (≥1024px) desktop shows nav items + Donate + hamburger inline; `<lg` (<1024px) shows logo + hamburger only (no globe or language selector). Active page gets `font-semibold` + `w-full` gradient underline indicator. Nav items: About Us, Arise 2026 (home), Upcoming Events.
@@ -214,7 +213,7 @@ When xl values change (e.g., to fix overlap), derive md/lg positions and sizes u
 
 - Countdown target date (`2026-07-27T00:00:00+08:00`) is hardcoded as a string literal inside the `<script>` tag.
 - Do NOT pull it from `home.json` or use `define:vars`/DOM data-attributes — the value is used in exactly one place (the countdown script) and hardcoding avoids Astro server→client serialization issues.
-- **Locale** is read from `document.documentElement.lang` (set via `<html lang={locale}>` in Layout.astro) — no `define:vars` needed.
+- **Locale** is read from `document.documentElement.lang` (set to `"en"` in Layout.astro) — no `define:vars` needed.
 - Three-phase state machine in `Hero.astro`:
   - **Countdown** (before Jul 27): Shows Days:Hours:Minutes:Seconds ticking down
   - **Live** (Jul 27–31): Replaces heading with "is happening now!" and hides the countdown numbers

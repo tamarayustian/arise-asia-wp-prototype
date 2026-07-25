@@ -4,7 +4,7 @@ import { ActionButton } from "@/components/shared/ActionButton";
 import Layout from "@/layouts/Layout.astro";
 import { ArrowRight } from "lucide-react";
 
-const { locale } = Astro.params;
+const locale = "en";
 ---
 
 <Layout title="Countries — Arise Asia" locale={locale!}>
@@ -32,7 +32,7 @@ const { locale } = Astro.params;
       the latest updates on where Arise Asia is active.
     </p>
     <ActionButton
-      href={`/${locale}`}
+      href="/"
       outerBg="bg-accent-blue-dark"
       textHover="group-hover:text-accent-blue-dark"
       hoverIcon="group-hover:text-accent-blue-dark"

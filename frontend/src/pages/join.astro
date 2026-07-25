@@ -4,7 +4,7 @@ import TakeActionCard from "@/components/take-action/TakeActionCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { ArrowRight } from "lucide-react";
 
-const { locale } = Astro.params;
+const locale = "en";
 const data = (await import(`@/data/take-action.json`)).default;
 ---
 

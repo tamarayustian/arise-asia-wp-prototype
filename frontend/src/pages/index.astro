@@ -1,3 +1,407 @@
 ---
-return Astro.redirect("/en/", 301);
+import Layout from "@/layouts/Layout.astro";
+import { SITE_NAME } from "@/lib/constants";
+import Hero from "@/components/home/Hero.astro";
+import DecorativeIcons from "@/components/home/DecorativeIcons.astro";
+import { ActionButton } from "@/components/shared/ActionButton";
+import SimpleButton from "@/components/shared/SimpleButton.astro";
+import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
+import { ArrowRight } from "lucide-react";
+import homeData from "@/data/home.json";
+
+const locale = "en";
+const { countries, cities, participants, commitments, videoUrl } = homeData;
 ---
+
+<Layout title={SITE_NAME} locale={locale}>
+  <header class="relative overflow-hidden">
+    <Hero videoUrl={videoUrl} />
+    <DecorativeIcons />
+  </header>
+
+  <div
+    class="from-accent-orange-lightest bg-linear-to-b to-white px-8 md:px-16 lg:px-48"
+  >
+    <section id="vision" class="flex flex-col items-center gap-5 pt-10">
+      <img
+        alt="Arise Asia"
+        class="h-14 w-auto sm:h-20 md:h-24"
+        src="/logos/wordmark.svg"
+      />
+      <p class="font-heading pb-2 text-center text-xl md:text-3xl">
+        By 2033, our goal is that 100,000 young people from 500 cities and 50
+        countries in Asia and beyond will receive the challenge to
+      </p>
+      <p
+        class="font-heading bg-[linear-gradient(90deg,#FE5F5B_0%,#FFA45B_100%)] bg-clip-text text-center text-3xl font-semibold text-transparent uppercase sm:text-4xl md:text-5xl lg:text-6xl"
+      >
+        Go where there is no Gospel
+      </p>
+    </section>
+
+    <section id="impact" class="flex flex-col items-center pt-20">
+      <h2 class="text-h3 font-heading text-center font-normal uppercase">
+        Our Impact To-Date
+      </h2>
+      <div class="flex justify-center">
+        <div
+          class="grid grid-cols-[11rem_11rem] gap-y-5 py-5 uppercase sm:py-10 md:grid-cols-[13rem_13rem] lg:grid-cols-[15rem_15rem_15rem_15rem] lg:gap-y-0 xl:grid-cols-[18rem_18rem_18rem_18rem]"
+        >
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-r-2 border-neutral-300 px-5 text-center lg:px-6 xl:px-6"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:mb-5 lg:text-4xl xl:text-5xl"
+            >
+              <AnimatedCounter target={countries} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              countries
+            </p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-neutral-300 px-5 text-center lg:border-r-2 lg:px-6 xl:px-6"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:mb-5 lg:text-4xl xl:text-5xl"
+            >
+              <AnimatedCounter target={cities} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">cities</p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center border-r-2 border-neutral-300 px-5 text-center lg:px-6 xl:px-6"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:mb-5 lg:text-4xl xl:text-5xl"
+            >
+              <AnimatedCounter target={participants} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              participants
+            </p>
+          </div>
+          <div
+            class="relative flex w-full flex-col items-center justify-center px-5 text-center lg:px-6 xl:px-6"
+          >
+            <p
+              class="font-heading text-accent-red-dark text-2xl font-bold md:text-3xl lg:mb-5 lg:text-4xl xl:text-5xl"
+            >
+              <AnimatedCounter target={commitments} />
+            </p>
+            <p class="font-heading text-xs font-medium md:text-base">
+              commitments
+            </p>
+          </div>
+        </div>
+      </div>
+      <ActionButton
+        href="/arise26"
+        outerBg="bg-accent-red-dark"
+        textHover="group-hover:text-accent-red-dark"
+        hoverIcon="group-hover:text-accent-red-dark"
+        >Learn more about our impact</ActionButton
+      >
+    </section>
+  </div>
+
+  <section
+    id="about-us"
+    class="relative mt-20 flex flex-col items-center justify-center bg-[url('/images/about-us-bg.png')] bg-cover bg-center py-16 sm:py-20 md:py-24 lg:py-32"
+  >
+    <div class="absolute inset-0 bg-linear-to-b from-transparent to-black">
+    </div>
+    <div
+      class="relative z-10 container mx-auto flex flex-col px-8 text-center text-white md:px-16 lg:px-48"
+    >
+      <p
+        class="mb-8 text-lg font-bold tracking-wider uppercase underline md:text-xl lg:text-2xl"
+      >
+        About Us
+      </p>
+      <h2
+        class="font-heading mb-10 text-4xl font-semibold tracking-wider uppercase sm:text-5xl md:text-6xl lg:text-7xl"
+      >
+        What is <span class="text-primary-orange text-nowrap">Arise Asia</span>?
+      </h2>
+      <p class="mb-8 text-base md:mb-12 md:text-lg lg:mb-16 lg:text-xl">
+        Arise Asia is a missions movement launched in 2023 to inspire young
+        adults across Asia and beyond to take the gospel where it has never been
+        heard.
+      </p>
+      <div
+        class="flex flex-col items-center gap-y-6 md:flex-row md:justify-center md:gap-x-5"
+      >
+        <ActionButton
+          href="/about"
+          outerBg="bg-black"
+          textColor="text-black"
+          bg="bg-white"
+          hoverBg="hover:bg-black"
+          textHover="group-hover:text-white"
+          hoverIcon="group-hover:text-white"
+          iconComponent={ArrowRight}>Learn About Us</ActionButton
+        >
+        <ActionButton
+          href="/about"
+          outerBg="bg-transparent"
+          textHover="group-hover:text-black"
+          hoverIcon="group-hover:text-black"
+          iconComponent={ArrowRight}>Our Partners</ActionButton
+        >
+      </div>
+    </div>
+  </section>
+
+  <section
+    id="take-action"
+    class="mx-auto mt-4 mb-5 grid grid-cols-1 gap-4 px-4 md:mt-8 md:mb-10 md:grid-cols-3 md:px-8"
+  >
+    <!-- Take Action — mobile (icons as background) -->
+    <div
+      class="from-accent-purple-dark to-accent-purple-primary relative flex min-h-96 flex-col items-center justify-center overflow-hidden rounded-xl bg-linear-to-r p-7 text-center md:hidden"
+    >
+      <div class="absolute top-0 left-1/2 h-full w-[384px] -translate-x-1/2">
+        <div
+          class="bg-accent-purple-dark absolute bottom-4 left-8 size-48 -rotate-8"
+          style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-10 left-72 size-24 -rotate-15"
+          style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute bottom-8 left-64 size-12 -rotate-96"
+          style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-4 left-52 size-12 rotate-24"
+          style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-5 size-16 rotate-16"
+          style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+        >
+        </div>
+      </div>
+      <div class="relative z-10 max-w-lg space-y-4">
+        <h2
+          class="font-heading text-4xl font-semibold text-white uppercase md:text-5xl lg:text-6xl"
+        >
+          Take Action
+        </h2>
+        <p class="text-white">
+          Arise Asia is a movement, not a moment. Every gift given, every hour
+          served, and every prayer prayed helps raise up a generation of young
+          leaders who will go where they are needed most. Whatever season you
+          are in right now, there is a place for you to take part in this work.
+        </p>
+      </div>
+    </div>
+
+    <!-- Take Action — desktop/md (icons side by side) -->
+    <div
+      class="from-accent-purple-dark to-accent-purple-primary hidden flex-row items-center gap-x-10 overflow-hidden rounded-xl bg-linear-to-r p-3.5 md:col-span-3 md:flex md:p-7"
+    >
+      <div class="space-y-5 md:max-w-3xl lg:max-w-5xl">
+        <h2
+          class="font-heading text-4xl font-semibold text-white uppercase md:text-5xl lg:text-6xl"
+        >
+          Take Action
+        </h2>
+        <p class="text-white">
+          Arise Asia is a movement, not a moment. Every gift given, every hour
+          served, and every prayer prayed helps raise up a generation of young
+          leaders who will go where they are needed most. Whatever season you
+          are in right now, there is a place for you to take part in this work.
+        </p>
+      </div>
+      <div class="relative flex size-60 shrink-0 items-center">
+        <div
+          class="bg-accent-purple-dark absolute shrink-0 -rotate-8 md:bottom-2 md:left-2 md:size-40 lg:bottom-4 lg:left-8 lg:size-48"
+          style="-webkit-mask: url('/icons/fire.svg') no-repeat center / contain; mask: url('/icons/fire.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-10 shrink-0 -rotate-15 md:top-20 md:left-40 md:size-16 lg:top-10 lg:left-72 lg:size-24"
+          style="-webkit-mask: url('/icons/cross.svg') no-repeat center / contain; mask: url('/icons/cross.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute bottom-8 shrink-0 -rotate-96 md:left-44 md:size-10 lg:left-64 lg:size-12"
+          style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-4 size-12 shrink-0 rotate-24 md:left-32 lg:left-52"
+          style="-webkit-mask: url('/icons/wave.svg') no-repeat center / contain; mask: url('/icons/wave.svg') no-repeat center / contain;"
+        >
+        </div>
+        <div
+          class="bg-accent-purple-dark absolute top-5 size-16 shrink-0 rotate-16"
+          style="-webkit-mask: url('/icons/spark.svg') no-repeat center / contain; mask: url('/icons/spark.svg') no-repeat center / contain;"
+        >
+        </div>
+      </div>
+    </div>
+
+    <!-- Give + Volunteer column (⅔ width) -->
+    <div class="grid grid-rows-2 gap-4 md:col-span-2">
+      <a
+        href="/give"
+        class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-[url('/images/home-give-bg.png')] bg-cover bg-center px-3.5 py-7 transition-all duration-300 md:p-7"
+      >
+        <div
+          class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-80 active:opacity-80"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col gap-y-2">
+          <p
+            class="text-accent-purple-light font-heading text-2xl uppercase md:text-3xl"
+          >
+            Give
+          </p>
+          <p
+            class="text-neutral-cool-lightest text-sm tracking-wide md:text-base"
+          >
+            Your gift equips and sends young Christian leaders to places where
+            their presence and faith can make a lasting difference.
+          </p>
+        </div>
+        <div class="hidden md:flex-1"></div>
+        <ArrowRight
+          className="text-accent-purple-light relative z-10 size-10 transition-transform duration-300 group-hover:scale-110 active:scale-110"
+        />
+      </a>
+      <a
+        href="/volunteer"
+        class="group relative flex items-center justify-between overflow-hidden rounded-xl bg-[url('/images/volunteer-bg.png')] bg-cover bg-center px-3.5 py-7 transition-all duration-300 md:p-7"
+      >
+        <div
+          class="absolute inset-0 bg-linear-to-t from-black via-black/40 to-transparent transition-opacity duration-300 group-hover:opacity-80 active:opacity-80"
+        >
+        </div>
+        <div class="relative z-10 flex flex-col gap-y-2">
+          <p
+            class="text-accent-purple-light font-heading text-2xl uppercase md:text-3xl"
+          >
+            Volunteer
+          </p>
+          <p
+            class="text-neutral-cool-lightest text-sm tracking-wide md:text-base"
+          >
+            From logistics to hospitality to prayer, volunteers help make Arise
+            Asia 2026 truly possible.
+          </p>
+        </div>
+        <div class="hidden md:flex-1"></div>
+        <ArrowRight
+          className="text-accent-purple-light relative z-10 size-10 transition-transform duration-300 group-hover:scale-110 active:scale-110"
+        />
+      </a>
+    </div>
+
+    <!-- More ways to take action (⅓ width) -->
+    <div class="grid grid-cols-1 gap-2 rounded-xl md:col-span-1">
+      <p
+        class="font-heading text-accent-purple-darker text-lg font-medium uppercase md:text-xl"
+      >
+        More ways to take action:
+      </p>
+      <SimpleButton
+        size="sm"
+        href="#"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
+        >Represent Arise Asia</SimpleButton
+      >
+      <SimpleButton
+        size="sm"
+        href="#"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
+        >Prayer Movement</SimpleButton
+      >
+      <SimpleButton
+        size="sm"
+        href="#"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
+        >Become a Mentor</SimpleButton
+      >
+      <SimpleButton
+        size="sm"
+        href="#"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
+        >Become a Sending Partner</SimpleButton
+      >
+      <SimpleButton
+        size="sm"
+        href="#"
+        className="text-accent-purple-dark border-accent-purple-light hover:bg-accent-purple-light border-2 bg-transparent font-medium hover:text-white"
+        >Bring Arise Asia to Your Country</SimpleButton
+      >
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const locale = document.documentElement.lang;
+  const target = new Date("2026-07-27T00:00:00+08:00").getTime();
+  const eventEnd = target + 5 * 86400 * 1000;
+
+  let currentPhase;
+
+  function getPhase() {
+    const preview = new URLSearchParams(location.search).get("phase");
+    if (preview === "live" || preview === "evergreen") return preview;
+    const now = Date.now();
+    if (now < target) return "countdown";
+    if (now < eventEnd) return "live";
+    return "evergreen";
+  }
+
+  function applyPhase(phase) {
+    const heading = document.getElementById("countdown-heading");
+    const numbers = document.getElementById("countdown-numbers");
+    if (!heading || !numbers) return;
+
+    if (phase === "live") {
+      heading.textContent = "is happening now!";
+      numbers.style.display = "none";
+    } else if (phase === "evergreen") {
+      heading.textContent = "Be part of the movement";
+      numbers.style.display = "none";
+    }
+  }
+
+  function updateCountdown() {
+    const phase = getPhase();
+
+    if (phase !== currentPhase) {
+      currentPhase = phase;
+      applyPhase(phase);
+      if (phase !== "countdown") clearInterval(interval);
+    }
+
+    if (phase === "countdown") {
+      const diff = Math.max(0, Math.floor((target - Date.now()) / 1000));
+      document.getElementById("countdown-days")!.textContent = String(
+        Math.floor(diff / 86400),
+      ).padStart(2, "0");
+      document.getElementById("countdown-hours")!.textContent = String(
+        Math.floor((diff % 86400) / 3600),
+      ).padStart(2, "0");
+      document.getElementById("countdown-minutes")!.textContent = String(
+        Math.floor((diff % 3600) / 60),
+      ).padStart(2, "0");
+      document.getElementById("countdown-seconds")!.textContent = String(
+        diff % 60,
+      ).padStart(2, "0");
+    }
+  }
+
+  const interval = setInterval(updateCountdown, 1000);
+  updateCountdown();
+</script>

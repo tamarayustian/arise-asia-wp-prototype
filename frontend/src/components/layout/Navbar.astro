@@ -3,11 +3,6 @@ import { Heart, Menu, X } from "lucide-react";
 import { Icon } from "astro-icon/components";
 import NavbarButton from "./NavbarButton.astro";
 
-export interface Props {
-  locale: string;
-}
-
-const { locale } = Astro.props;
 const pathname = Astro.url.pathname;
 
 interface NavItem {
@@ -17,26 +12,26 @@ interface NavItem {
 }
 
 const navItems: NavItem[] = [
-  { label: "About Us", href: `/${locale}/about` },
-  { label: "Arise 2026", href: `/${locale}/arise26` },
-  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
+  { label: "About Us", href: "/about" },
+  { label: "Arise 2026", href: "/arise26" },
+  { label: "Upcoming Events", href: "/upcoming-events" },
 ];
 
 function isActive(href: string): boolean {
-  if (href === `/${locale}/` || href === `/${locale}`) {
-    return pathname === `/${locale}/` || pathname === `/${locale}`;
+  if (href === "/") {
+    return pathname === "/";
   }
   return pathname.startsWith(href);
 }
 
 const menuMainItems: NavItem[] = [
-  { label: "Home", href: `/${locale}` },
-  { label: "About Us", href: `/${locale}/about` },
-  { label: "Countries", href: `/${locale}/countries` },
-  { label: "Upcoming Events", href: `/${locale}/upcoming-events` },
-  { label: "Take Action", href: `/${locale}/join` },
-  { label: "Give", href: `/${locale}/give` },
-  { label: "Arise Asia 2026", href: `/${locale}/arise26`, className: "text-gradient-accent" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about" },
+  { label: "Countries", href: "/countries" },
+  { label: "Upcoming Events", href: "/upcoming-events" },
+  { label: "Take Action", href: "/join" },
+  { label: "Give", href: "/give" },
+  { label: "Arise Asia 2026", href: "/arise26", className: "text-gradient-accent" },
 ];
 
 const menuSecondaryItems: NavItem[] = [
@@ -48,7 +43,7 @@ const menuSecondaryItems: NavItem[] = [
   <nav
     class="bg-accent-orange-lighter/50 relative z-10 container mx-auto flex w-11/12 max-w-93 items-center justify-between rounded-full px-5 py-4 shadow-2xl backdrop-blur-[200px] sm:max-w-176 sm:gap-4 sm:rounded-full lg:max-w-330 lg:gap-5 lg:rounded-full lg:px-7.5 lg:py-3"
   >
-    <a href={`/${locale}/`} class="relative shrink-0 overflow-visible transition-transform duration-300 hover:scale-[1.06]">
+    <a href="/" class="relative shrink-0 overflow-visible transition-transform duration-300 hover:scale-[1.06]">
       <img alt="Arise Asia" class="pl-1 h-10 w-auto -translate-y-1/3 scale-150 sm:hidden" src="/logos/logo-black-font.svg" />
       <img alt="Arise Asia" class="pl-7 lg:pl-4 xl:pl-2 h-10 w-auto -translate-y-1/3 scale-150 lg:h-11 lg:scale-125 hidden sm:block" src="/logos/wordmark.svg" />
     </a>
@@ -73,7 +68,7 @@ const menuSecondaryItems: NavItem[] = [
       </div>
 
       <div id="desktop-donate-btn" class="hidden items-center lg:flex">
-        <NavbarButton variant="filled" href={`/${locale}/give`}>
+        <NavbarButton variant="filled" href="/give">
           Donate
           <Heart fill="currentColor" className="size-4" />
         </NavbarButton>
@@ -221,9 +216,8 @@ const menuSecondaryItems: NavItem[] = [
     const path = window.location.pathname;
 
     function isActive(href) {
-      const locale = path.split("/").filter(Boolean)[0] || "en";
-      if (href.endsWith("/") || href === `/${locale}`) {
-        return path === href || path === href.replace(/\/$/, "");
+      if (href === "/") {
+        return path === "/";
       }
       return path.startsWith(href);
     }

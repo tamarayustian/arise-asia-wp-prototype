@@ -7,7 +7,7 @@ import AnimatedCounter from "@/components/shared/AnimatedCounter.astro";
 import Layout from "@/layouts/Layout.astro";
 import { ArrowRight, Play } from "lucide-react";
 
-const { locale } = Astro.params;
+const locale = "en";
 
 const articles = [
   {
@@ -37,7 +37,7 @@ const learnMoreCards = [
     title: "Where is Arise",
     description:
       "See where Arise Asia movements are currently active across Asia and beyond right now.",
-    href: `/${locale}/arise26`,
+    href: "/arise26",
     bgImage: "/images/about-where-is-arise-bg.png",
     icon: "/icons/cross.svg",
     iconClassName: "right-28 size-40 -rotate-15",
@@ -46,7 +46,7 @@ const learnMoreCards = [
     title: "Our Partners",
     description:
       "Meet the organizations and ministries partnering with us to reach the unreached across Asia.",
-    href: `/${locale}/about/our-partners`,
+    href: "/about/our-partners",
     bgImage: "/images/about-our-partners-bg.png",
     icon: "/icons/wave.svg",
     iconClassName: "right-60 size-40 rotate-15",
@@ -55,7 +55,7 @@ const learnMoreCards = [
     title: "Financials",
     description:
       "See how your gifts are stewarded to fuel this movement across Asia and beyond.",
-    href: `/${locale}/give`,
+    href: "/give",
     bgImage: "/images/about-financials-bg.png",
     icon: "/icons/spark.svg",
     iconClassName: "right-28 size-40 rotate-12",
@@ -64,7 +64,7 @@ const learnMoreCards = [
     title: "Get Involved",
     description:
       "Discover practical ways to give, serve, and join this movement right where you are.",
-    href: `/${locale}/volunteer`,
+    href: "/volunteer",
     bgImage: "/images/about-get-involved-bg.png",
     icon: "/icons/path.svg",
     iconClassName: "right-60 size-40 rotate-14",
@@ -141,7 +141,7 @@ const learnMoreCards = [
   </div>
 
   <section id="our-goal">
-    <OurGoalSection learnMoreHref={`/${locale}/about/goals-and-values`} />
+    <OurGoalSection learnMoreHref="/about/goals-and-values" />
   </section>
 
   <section
@@ -160,7 +160,7 @@ const learnMoreCards = [
           What We Do
         </h2>
         <ActionButton
-          href={`/${locale}/about/what-we-do`}
+          href="/about/what-we-do"
           outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
           iconComponent={ArrowRight}
         >
@@ -280,7 +280,7 @@ const learnMoreCards = [
         </div>
       </div>
       <ActionButton
-        href={`/${locale}/about`}
+        href="/about"
         outerBg="from-accent-red-darker to-primary-red bg-linear-to-r"
         iconComponent={ArrowRight}
       >
@@ -305,7 +305,7 @@ const learnMoreCards = [
           Leadership
         </h2>
         <ActionButton
-          href={`/${locale}/about/our-leadership`}
+          href="/about/our-leadership"
           outerBg="from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r"
           iconComponent={ArrowRight}
         >
@@ -346,7 +346,7 @@ const learnMoreCards = [
           Press and Media
         </h2>
         <ActionButton
-          href={`/${locale}/about/press-and-media`}
+          href="/about/press-and-media"
           outerBg="from-accent-orange-dark to-primary-orange bg-linear-to-r"
           iconComponent={ArrowRight}
         >

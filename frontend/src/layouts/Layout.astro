@@ -17,13 +17,13 @@ import montserrat700 from "@fontsource/montserrat/files/montserrat-latin-700-nor
 
 export interface Props {
   title: string;
-  locale: string;
+  locale?: string;
 }
 
-const { title, locale } = Astro.props;
+const { title } = Astro.props;
 ---
 
-<html lang={locale}>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -40,12 +40,12 @@ const { title, locale } = Astro.props;
     <Analytics />
   </head>
   <body>
-    <Navbar locale={locale} />
+    <Navbar />
     <main>
       <slot />
     </main>
     <StayConnected />
-    <Footer locale={locale} />
+    <Footer />
     <FontSizeAdjuster />
   </body>
 </html>
