@@ -6,60 +6,14 @@
       "subtitle": "Founder & Senior Pastor, Christ's Commission Fellowship, Philippines"
     },
     {
-      "imgSrc": "/2026/wayne.jpg",
-      "title": "Wayne Chen",
-      "subtitle": "Director, Radius Asia, Taiwan"
-    },
-    {
-      "imgSrc": "/2026/jemima.jpg",
-      "title": "Jemima Ooi",
-      "subtitle": "Co-Founder, Love in Action Mission Global, Singapore"
-    },
-    {
-      "imgSrc": "/2026/david-kim.jpg",
-      "title": "David Kim",
-      "subtitle": "Korea"
-    },
-    { "imgSrc": "/2026/jay.jpg", "title": "Jay Park", "subtitle": "Korea" },
-    {
-      "imgSrc": "/2026/andrew.jpg",
-      "title": "Andrew Brunson",
-      "subtitle": "Founder, WaveStarters"
-    },
-    {
-      "imgSrc": "/2026/lawrence.jpg",
-      "title": "Lawrence Tong",
-      "subtitle": "International Director Emeritus, OM International"
-    },
-    {
-      "imgSrc": "/2026/sarah.jpg",
-      "title": "Sarah Breuel",
-      "subtitle": "Leader and Founder, Revive Europe, Italy"
+      "imgSrc": "/2026/patrick.jpg",
+      "title": "Patrick Fung",
+      "subtitle": "Director Emeritus of OMF, Chair of CCCOWE, Incoming Principal of Singapore Bible College"
     },
     {
       "imgSrc": "/2026/david-ro.jpg",
       "title": "David Ro",
       "subtitle": "Arise Asia"
-    },
-    {
-      "imgSrc": "/2026/jason.jpg",
-      "title": "Jason Mandryk",
-      "subtitle": "Co-Director, Operation World, USA/South Korea"
-    },
-    {
-      "imgSrc": "/2026/ricky.jpg",
-      "title": "Ricky Kim",
-      "subtitle": "Actor, Korea"
-    },
-    {
-      "imgSrc": "/2026/ladan.jpg",
-      "title": "Ladan Nouri",
-      "subtitle": "Elam Ministry, Iran"
-    },
-    {
-      "imgSrc": "/2026/jack.jpg",
-      "title": "Jack Sara",
-      "subtitle": "President of Bethlehem Bible College, General Secretary of the Middle East Evangelical Alliance (MEEA), Israel/Palestine"
     },
     {
       "imgSrc": "/2026/joshua.jpg",
@@ -72,9 +26,54 @@
       "subtitle": "COMIBAM International, Latin American"
     },
     {
+      "imgSrc": "/2026/jack.jpg",
+      "title": "Jack Sara",
+      "subtitle": "President of Bethlehem Bible College, General Secretary of the Middle East Evangelical Alliance (MEEA), Israel/Palestine"
+    },
+    {
+      "imgSrc": "/2026/wayne.jpg",
+      "title": "Wayne Chen",
+      "subtitle": "Director, Radius Asia, Taiwan"
+    },
+    {
+      "imgSrc": "/2026/lawrence.jpg",
+      "title": "Lawrence Tong",
+      "subtitle": "International Director Emeritus, OM International"
+    },
+    {
+      "imgSrc": "/2026/jason.jpg",
+      "title": "Jason Mandryk",
+      "subtitle": "Co-Director, Operation World, USA/South Korea"
+    },
+    {
+      "imgSrc": "/2026/douglas.jpg",
+      "title": "Douglas Gonçalves",
+      "subtitle": "JesusCopy Movement, Brazil"
+    },
+    {
+      "imgSrc": "/2026/sarah.jpg",
+      "title": "Sarah Breuel",
+      "subtitle": "Leader and Founder, Revive Europe, Italy"
+    },
+    {
+      "imgSrc": "/2026/andrew.jpg",
+      "title": "Andrew Brunson",
+      "subtitle": "Founder, WaveStarters"
+    },
+    {
+      "imgSrc": "/2026/jemima.jpg",
+      "title": "Jemima Ooi",
+      "subtitle": "Co-Founder, Love in Action Mission Global, Singapore"
+    },
+    {
       "imgSrc": "/2026/paul.jpg",
       "title": "Paul Elliott",
       "subtitle": "Asia Director, VIA"
+    },
+    {
+      "imgSrc": "/2026/ricky.jpg",
+      "title": "Ricky Kim",
+      "subtitle": "Actor, Korea"
     },
     {
       "imgSrc": "/2026/alwyn.jpg",
@@ -82,19 +81,15 @@
       "subtitle": "Lead Pastor, Mosaic Church Dubai, Dubai"
     },
     {
-      "imgSrc": "/2026/patrick.jpg",
-      "title": "Patrick Fung",
-      "subtitle": "Director Emeritus of OMF, Chair of CCCOWE, Incoming Principal of Singapore Bible College"
+      "imgSrc": "/2026/ladan.jpg",
+      "title": "Ladan Nouri",
+      "subtitle": "Elam Ministry, Iran"
     },
+    { "imgSrc": "/2026/jay.jpg", "title": "Jay Park", "subtitle": "Korea" },
     {
-      "imgSrc": "/2026/prabhu.jpg",
-      "title": "Prabhu Singh",
-      "subtitle": "Issachar Global Education Network"
-    },
-    {
-      "imgSrc": "/2026/douglas.jpg",
-      "title": "Douglas Gonçalves",
-      "subtitle": "JesusCopy Movement, Brazil"
+      "imgSrc": "/2026/david-kim.jpg",
+      "title": "David Kim",
+      "subtitle": "Korea"
     }
   ],
   "faq": [
