@@ -29,13 +29,17 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
         src="/logos/wordmark.svg"
       />
       <p class="font-heading pb-2 text-center text-xl md:text-3xl">
-        By 2033, our goal is that 100,000 young people from 500 cities and 50
-        countries in Asia and beyond will receive the challenge to
+        By 2033, our goal is that 100,000 young people from 500 cities and 50 countries in Asia and beyond will be trained in Christian ministry and cross-cultural work.
       </p>
       <p
-        class="font-heading bg-[linear-gradient(90deg,#FE5F5B_0%,#FFA45B_100%)] bg-clip-text text-center text-3xl font-semibold text-transparent uppercase sm:text-4xl md:text-5xl lg:text-6xl"
+        class="bg-[linear-gradient(90deg,#FE5F5B_0%,#FFA45B_100%)] bg-clip-text text-center text-lg font-medium text-transparent sm:text-xl md:text-2xl lg:text-3xl"
       >
-        Go where there is no Gospel
+        "Behold, a great multitude that no one could number, from every nation, from all tribes and peoples and languages."
+      </p>
+      <p
+        class="font-heading bg-[linear-gradient(90deg,#FE5F5B_0%,#FFA45B_100%)] bg-clip-text text-center text-base font-semibold text-transparent uppercase md:text-lg"
+      >
+        Revelations 7:9b
       </p>
     </section>
 
@@ -348,7 +352,7 @@ const { countries, cities, participants, commitments, videoUrl } = homeData;
 
 <script>
   const locale = document.documentElement.lang;
-  const target = new Date("2026-07-27T00:00:00+08:00").getTime();
+  const target = new Date("2026-07-27T18:45:00+08:00").getTime();
   const eventEnd = target + 5 * 86400 * 1000;
 
   let currentPhase;
