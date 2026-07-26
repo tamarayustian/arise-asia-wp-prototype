@@ -3,11 +3,7 @@ import { google } from "googleapis";
 
 const SHEET_ID = process.env.GOOGLE_SHEET_ID;
 const SERVICE_ACCOUNT_EMAIL = process.env.GOOGLE_SERVICE_ACCOUNT_EMAIL;
-const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY?.replace(/\\n/g, "\n");
-
-console.log(SHEET_ID);
-console.log(SERVICE_ACCOUNT_EMAIL);
-console.log(PRIVATE_KEY);
+const PRIVATE_KEY = process.env.GOOGLE_PRIVATE_KEY.replace(/\\n/g, "\n");
 
 let sheets: ReturnType<typeof google.sheets> | null = null;
 
