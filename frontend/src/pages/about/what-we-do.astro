@@ -1,7 +1,5 @@
 ---
-import AboutHero from "@/components/about/AboutHero.astro";
 import Layout from "@/layouts/Layout.astro";
-import { Flame } from "lucide-react";
 
 const locale = "en";
 
@@ -9,14 +7,17 @@ const strategicGatherings = [
   {
     title: "Arise Asia Global Event",
     subtitle: "(Every 3 Years)",
+    icon: "/icons/fire.svg",
   },
   {
     title: "Arise National Gatherings",
     subtitle: "(Organized by Leadership Summit)",
+    icon: "/icons/altar.svg",
   },
   {
     title: "Arise Executive Summit",
     subtitle: "(Leadership Alignment)",
+    icon: "/icons/stone.svg",
   },
 ];
 
@@ -24,31 +25,56 @@ const missionsPathways = [
   {
     title: "1-Year Internship Pathways",
     subtitle: "(Arise Asia and partnering organizations)",
+    icon: "/icons/cross.svg",
   },
   {
     title: "Short term cross cultural missions",
     subtitle: "(Both overseas and in-country)",
+    icon: "/icons/spark.svg",
   },
   {
     title: "Long-term missions",
     subtitle: "(With various missions agencies)",
+    icon: "/icons/altar.svg",
   },
 ];
 ---
 
 <Layout title="What We Do — Arise Asia" locale={locale!}>
-  <AboutHero breadcrumb="ABOUT US/" title="What We Do">
-    <p class="font-heading max-w-3xl text-base md:text-lg">
+  <section id="hero" class="relative overflow-hidden">
+    <div
+      class="relative flex h-64 flex-col justify-end pb-10 sm:h-80 md:h-96 lg:h-92.25"
+      style="background: radial-gradient(circle at 70% 40%, #e6b6b9 0%, #fe5f5b 24%, #000000 58%);"
+    >
+      <div
+        class="container-page relative flex flex-col px-8 pt-24 md:px-16 lg:px-32 lg:pt-28 xl:px-48"
+      >
+        <p
+          class="font-heading mb-2 text-xl font-semibold tracking-wide text-white uppercase md:text-2xl"
+        >
+          ABOUT US/
+        </p>
+        <h1
+          class="font-heading text-5xl font-semibold tracking-tight text-white uppercase md:text-[60px]"
+        >
+          What We Do
+        </h1>
+      </div>
+    </div>
+  </section>
+
+  <div class="container-page px-8 py-12 md:px-16 lg:px-32 xl:px-48">
+    <p class="text-base md:text-lg">
       Arise Asia trains the next generation in Christian discipleship and
       cross-cultural service through strategic gatherings, prayerful
       commitments, dedicated mentoring, and leadership pathways, equipping young
       leaders across Asia and beyond to serve wherever God calls them.
     </p>
-  </AboutHero>
+  </div>
 
   <section
     id="pathways"
-    class="container-page flex flex-col gap-4 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page flex flex-col gap-5 px-8 pb-10 md:px-16 lg:px-32 xl:px-48"
   >
     <div
       class="bg-accent-blue-dark flex items-center justify-center rounded-2xl p-5 md:p-6"
@@ -59,24 +85,27 @@ const missionsPathways = [
         3 Strategic Gatherings
       </p>
     </div>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
       {
         strategicGatherings.map((item) => (
-          <div class="bg-accent-blue-lightest flex flex-col items-center gap-1 rounded-2xl p-6 text-center">
-            <Flame className="text-accent-blue-light mb-1 size-10" />
-            <p class="font-heading text-accent-blue-light text-lg font-medium uppercase">
+          <div class="bg-accent-blue-lightest flex flex-col items-center rounded-2xl p-5 text-center">
+            <div
+              class="bg-accent-blue-dark mb-3 size-7"
+              style={`-webkit-mask: url('${item.icon}') no-repeat center / contain; mask: url('${item.icon}') no-repeat center / contain;`}
+            ></div>
+            <p class="font-heading text-accent-blue-dark text-xl font-medium uppercase">
               {item.title}
             </p>
-            <p>{item.subtitle}</p>
+            <p class="text-lg">{item.subtitle}</p>
           </div>
         ))
       }
     </div>
 
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2">
-      <div class="flex flex-col gap-4">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-2">
+      <div class="flex flex-col gap-5">
         <div
-          class="bg-accent-purple-primary flex items-center justify-center rounded-2xl p-5 md:p-6"
+          class="bg-accent-purple-dark flex items-center justify-center rounded-2xl p-5 md:p-6"
         >
           <p
             class="font-heading text-center text-lg font-semibold text-white uppercase md:text-2xl"
@@ -85,18 +114,22 @@ const missionsPathways = [
           </p>
         </div>
         <div
-          class="bg-accent-purple-lightest flex flex-1 flex-col items-center gap-1 rounded-2xl p-6 text-center"
+          class="bg-accent-purple-lightest flex flex-1 flex-col items-center rounded-2xl p-5 text-center"
         >
-          <Flame className="text-accent-purple-dark mb-1 size-10" />
+          <div
+            class="bg-accent-purple-dark mb-3 size-7"
+            style="-webkit-mask: url('/icons/stone.svg') no-repeat center / contain; mask: url('/icons/stone.svg') no-repeat center / contain;"
+          >
+          </div>
           <p
-            class="font-heading text-accent-purple-dark text-lg font-medium uppercase"
+            class="font-heading text-accent-purple-dark text-xl font-medium uppercase"
           >
             123Go
           </p>
-          <p>(A young person's commitment)</p>
+          <p class="text-lg">(A young person's commitment)</p>
         </div>
       </div>
-      <div class="flex flex-col gap-4">
+      <div class="flex flex-col gap-5">
         <div
           class="bg-accent-red-dark flex items-center justify-center rounded-2xl p-5 md:p-6"
         >
@@ -107,11 +140,15 @@ const missionsPathways = [
           </p>
         </div>
         <div
-          class="bg-accent-red-lightest flex flex-1 flex-col items-center gap-1 rounded-2xl p-6 text-center"
+          class="bg-accent-red-lightest flex flex-1 flex-col items-center rounded-2xl p-5 text-center"
         >
-          <Flame className="text-accent-red-dark mb-1 size-10" />
+          <div
+            class="bg-accent-red-dark mb-3 size-7"
+            style="-webkit-mask: url('/icons/path.svg') no-repeat center / contain; mask: url('/icons/path.svg') no-repeat center / contain;"
+          >
+          </div>
           <p
-            class="font-heading text-accent-red-dark text-lg font-medium uppercase"
+            class="font-heading text-accent-red-dark text-xl font-medium uppercase"
           >
             Mentoring and Follow-up
           </p>
@@ -128,15 +165,18 @@ const missionsPathways = [
         Missions Pathways
       </p>
     </div>
-    <div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
+    <div class="grid grid-cols-1 gap-5 sm:grid-cols-3">
       {
         missionsPathways.map((item) => (
-          <div class="bg-accent-orange-lightest flex flex-col items-center gap-1 rounded-2xl p-6 text-center">
-            <Flame className="text-accent-orange-dark mb-1 size-10" />
-            <p class="font-heading text-accent-orange-dark text-lg font-medium uppercase">
+          <div class="bg-accent-orange-lightest flex flex-col items-center rounded-2xl p-5 text-center">
+            <div
+              class="bg-accent-orange-dark mb-3 size-7"
+              style={`-webkit-mask: url('${item.icon}') no-repeat center / contain; mask: url('${item.icon}') no-repeat center / contain;`}
+            ></div>
+            <p class="font-heading text-accent-orange-dark text-xl font-medium uppercase">
               {item.title}
             </p>
-            <p>{item.subtitle}</p>
+            <p class="text-lg">{item.subtitle}</p>
           </div>
         ))
       }
