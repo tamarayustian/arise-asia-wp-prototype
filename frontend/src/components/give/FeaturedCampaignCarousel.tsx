@@ -186,16 +186,22 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
             aria-roledescription="card"
             aria-label={`Card ${i + 1} of ${total}`}
           >
-            <div className="mx-auto flex h-full max-w-sm flex-col overflow-hidden rounded-2xl bg-white shadow-2xl md:rounded-3xl lg:max-w-lg">
+            <div className="mx-auto flex h-full max-w-[292px] flex-col overflow-hidden rounded-2xl bg-white shadow-2xl md:rounded-3xl lg:max-w-[426px]">
               <img
                 src={card.image}
                 alt={card.title}
-                className="h-full w-full object-cover"
+                className="aspect-[426/241] w-full object-cover"
                 loading={i === 0 ? "eager" : "lazy"}
               />
               <div className="flex flex-1 flex-col gap-3 p-4 sm:p-6">
                 <div className="flex flex-wrap gap-2">
-                  <span className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase">
+                  <span
+                    className={`rounded-md border-2 px-3 py-2 leading-none font-medium uppercase ${
+                      card.region === "Global"
+                        ? "border-[#155dfc] text-[#155dfc]"
+                        : "border-accent-red-dark text-accent-red-dark"
+                    }`}
+                  >
                     {card.region}
                   </span>
                 </div>
@@ -240,15 +246,15 @@ export function FeaturedCampaignCarousel({ data }: { data: Card[] }) {
       </div>
 
       <div className="order-4 flex flex-col gap-4 lg:order-1 lg:grow lg:basis-0">
-        <h3 className="font-heading text-2xl leading-tight font-bold text-blue-900 uppercase md:text-3xl lg:text-4xl xl:text-5xl">
+        <h3 className="font-heading text-2xl leading-tight font-bold text-[#1c398e] uppercase md:text-3xl lg:text-4xl xl:text-5xl">
           {card.title}
         </h3>
-        <p className="text-lg font-light text-blue-900 md:text-xl lg:text-2xl">
+        <p className="text-sm text-[#1c398e] md:text-base lg:text-lg">
           {card.description}
         </p>
         <LinkButton
           href={card.donationUrl}
-          className="border-accent-blue-dark text-accent-blue-dark hover:bg-accent-blue-dark border-2 uppercase hover:text-white"
+          className="rounded-full border-2 border-[#1e3a8a] px-8 py-2 text-[#1c398e] hover:bg-[#1c398e] hover:text-white"
         >
           Give Now
         </LinkButton>

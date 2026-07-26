@@ -54,9 +54,9 @@ export function AllCampaignCarousel({ data }: { data: Card[] }) {
           {data.map((card, i) => (
             <CarouselItem
               key={i}
-              className={`pl-3 md:pl-4 w-80 ${i === data.length - 1 ? "mr-3 md:mr-4" : ""}`}
+              className={`pl-3 md:pl-4 w-[283px] ${i === data.length - 1 ? "mr-3 md:mr-4" : ""}`}
             >
-              <div className="flex h-full flex-col overflow-hidden rounded-xl bg-white shadow-xl">
+              <div className="flex h-full flex-col overflow-hidden rounded-2xl bg-white" style={{ boxShadow: "2px 4px 20px rgba(131, 131, 131, 0.25)" }}>
                 <img
                   src={card.image}
                   alt={card.title}
@@ -68,13 +68,17 @@ export function AllCampaignCarousel({ data }: { data: Card[] }) {
                     {card.tags.map((tag) => (
                       <span
                         key={tag}
-                        className="text-accent-red-dark border-accent-red-dark rounded-md border-2 px-3 py-2 leading-none font-medium uppercase"
+                        className={`rounded-md border-2 px-3 py-2 leading-none font-medium uppercase ${
+                          tag === "Global"
+                            ? "border-[#155dfc] text-[#155dfc]"
+                            : "border-accent-red-dark text-accent-red-dark"
+                        }`}
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  <h3 className="font-heading text-lg font-bold text-blue-900 uppercase">
+                  <h3 className="font-heading text-xs font-bold text-blue-900 uppercase">
                     {card.title}
                   </h3>
                   <p className="text-sm font-light text-blue-900 sm:text-base">
