@@ -2,6 +2,7 @@
 import { Heart, Menu, X } from "lucide-react";
 import { Icon } from "astro-icon/components";
 import NavbarButton from "./NavbarButton.astro";
+import socialLinks from "@/data/social-links.json";
 
 const pathname = Astro.url.pathname;
 
@@ -120,33 +121,17 @@ const menuSecondaryItems: NavItem[] = [
       </div>
 
       <div class="flex items-center gap-4">
-        <a
-          href="#"
-          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
-          aria-label="X (Twitter)"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="fa6-brands:x-twitter" class="size-5" />
-        </a>
-        <a
-          href="#"
-          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
-          aria-label="Instagram"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="fa6-brands:instagram" class="size-5" />
-        </a>
-        <a
-          href="#"
-          class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
-          aria-label="YouTube"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Icon name="fa6-brands:youtube" class="size-5" />
-        </a>
+        {socialLinks.map((link) => (
+          <a
+            href={link.href}
+            class="text-accent-orange-darker hover:text-accent-blue-dark flex items-center justify-center transition-opacity"
+            aria-label={link.label}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Icon name={link.icon} class="size-5" />
+          </a>
+        ))}
       </div>
     </div>
   </div>

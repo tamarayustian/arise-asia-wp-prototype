@@ -1,5 +1,6 @@
 ---
 import { Icon } from "astro-icon/components";
+import socialLinks from "@/data/social-links.json";
 
 interface NavItem {
   label: string;
@@ -44,36 +45,14 @@ const mobileCol2: NavItem[] = [footerNavItems[2], footerNavItems[3]];
         />
 
         <div class="mb-6 flex items-center gap-x-3 md:gap-x-4">
-          <a
-            href="https://www.instagram.com/ariseasiamovement"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Icon
-              name="fa6-brands:instagram"
-              class="size-5 text-[#595959] hover:text-yellow-500"
-            />
-          </a>
-          <a
-            href="https://www.youtube.com/@AriseAsiaMovement"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Icon
-              name="fa6-brands:youtube"
-              class="size-5 text-[#595959] hover:text-red-500"
-            />
-          </a>
-          <a
-            href="https://www.facebook.com/ariseasia2023"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <Icon
-              name="fa6-brands:facebook"
-              class="size-5 text-[#595959] hover:text-blue-500"
-            />
-          </a>
+          {socialLinks.map((link) => (
+            <a href={link.href} rel="noopener noreferrer" target="_blank">
+              <Icon
+                name={link.icon}
+                class="size-5 text-[#595959] hover:text-accent-orange-dark"
+              />
+            </a>
+          ))}
           <a
             href="mailto:info@ariseasia.org"
             class="font-heading text-sm text-[#595959] hover:text-blue-600"
