@@ -67,9 +67,9 @@ const menuSecondaryItems: NavItem[] = [
         }
       </div>
 
-      <div id="desktop-donate-btn" class="hidden items-center lg:flex">
+      <div id="desktop-give-btn" class="hidden items-center lg:flex">
         <NavbarButton variant="filled" href="/give">
-          Donate
+          Give
           <Heart fill="currentColor" className="size-4" />
         </NavbarButton>
       </div>
@@ -172,8 +172,8 @@ const menuSecondaryItems: NavItem[] = [
       menuOverlay?.classList.add("opacity-100");
       const desktopNav = document.getElementById("desktop-nav-items");
       if (desktopNav) desktopNav.style.display = "none";
-      const desktopDonate = document.getElementById("desktop-donate-btn");
-      if (desktopDonate) desktopDonate.style.display = "none";
+      const desktopGive = document.getElementById("desktop-give-btn");
+      if (desktopGive) desktopGive.style.display = "none";
       hamburger?.classList.add("hidden");
       closeIcon?.classList.remove("hidden");
       document.body.style.overflow = "hidden";
@@ -186,8 +186,8 @@ const menuSecondaryItems: NavItem[] = [
       );
       const desktopNav = document.getElementById("desktop-nav-items");
       if (desktopNav) desktopNav.style.display = "";
-      const desktopDonate = document.getElementById("desktop-donate-btn");
-      if (desktopDonate) desktopDonate.style.display = "";
+      const desktopGive = document.getElementById("desktop-give-btn");
+      if (desktopGive) desktopGive.style.display = "";
       hamburger?.classList.remove("hidden");
       closeIcon?.classList.add("hidden");
       document.body.style.overflow = "";
