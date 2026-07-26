@@ -1,60 +1,298 @@
 {
   "globalBoard": [
-    { "imgSrc": "/leadership/david.jpg", "name": "David Ro", "role": "Executive Director" },
-    { "imgSrc": "/leadership/patrick.jpg", "name": "Patrick Fung", "role": "Chairman" },
-    { "imgSrc": "/leadership/gordon.jpg", "name": "Gordon Wang", "role": "Chief Financial Officer" },
-    { "imgSrc": "/leadership/dick.jpg", "name": "Dick Yue", "role": "Board Secretary" },
-    { "imgSrc": "/leadership/paul.jpg", "name": "Paul Borthwick", "role": "Board Member" },
-    { "imgSrc": "/leadership/lawrence.jpg", "name": "Lawrence Tong", "role": "Board Member" }
+    {
+      "imgSrc": "/leadership/david.jpg",
+      "name": "David Ro",
+      "role": "Executive Director"
+    },
+    {
+      "imgSrc": "/leadership/patrick.jpg",
+      "name": "Patrick Fung",
+      "role": "Chairman"
+    },
+    {
+      "imgSrc": "/leadership/gordon.jpg",
+      "name": "Gordon Wang",
+      "role": "Chief Financial Officer"
+    },
+    {
+      "imgSrc": "/leadership/dick.jpg",
+      "name": "Dick Yue",
+      "role": "Board Secretary"
+    },
+    {
+      "imgSrc": "/leadership/paul.jpg",
+      "name": "Paul Borthwick",
+      "role": "Board Member"
+    },
+    {
+      "imgSrc": "/leadership/lawrence.jpg",
+      "name": "Lawrence Tong",
+      "role": "Board Member"
+    }
   ],
   "steeringCommittee": [
-    { "imgSrc": "/leadership/david.jpg", "name": "David Ro", "role": "Executive Director", "country": "Thailand" },
-    { "imgSrc": "/leadership/patrick.jpg", "name": "Patrick Fung", "role": "Chairman of the Board", "country": "Singapore" },
-    { "imgSrc": "/leadership/philip-chang.jpg", "name": "Philip Chang", "role": "Head of Selection Committee", "country": "Malaysia" },
-    { "imgSrc": "/leadership/jackie.jpg", "name": "Jackie Ro", "role": "Arise Follow-Up Lead", "country": "Thailand" },
-    { "imgSrc": "/leadership/joanna.jpg", "name": "Joanna", "role": "Director of Events", "country": "Hong Kong" },
-    { "imgSrc": "/leadership/priscilla.jpg", "name": "Priscilla Mageropoulos", "role": "Marketing and Communications Manager", "country": "Thailand" },
-    { "imgSrc": "/leadership/yoseph.jpg", "name": "Yoseph Tandian", "role": "Arise Follow-Up Strategist & Development Director", "country": "Indonesia" },
-    { "imgSrc": "/leadership/mitchelle.jpg", "name": "Mitchelle Rajapakse", "role": "Arise Follow-Up Engagement Director", "country": "Sri Lanka" },
-    { "imgSrc": "/leadership/carmen.jpg", "name": "Carmen Tam", "role": "Arise Internship Lead and Mentorship Coordinator", "country": "Thailand" },
-    { "imgSrc": "/leadership/lalano.jpg", "name": "Lalano Badoy", "role": "Prayer Movement Coordinator and Arise Philippines Chair", "country": "Philippines" },
-    { "imgSrc": "/leadership/arthur.jpg", "name": "Arthur Medina", "role": "Operations and Logistics Director", "country": "Philippines" },
-    { "imgSrc": "/leadership/vivian.jpg", "name": "Vivian Lacanilao", "role": "Partnership Engagement and Development Director", "country": "Philippines" },
-    { "imgSrc": "/leadership/michael.jpg", "name": "Michael William", "role": "International Registration and Workshop Coordinator", "country": "Malaysia" },
-    { "imgSrc": "/leadership/harrel.jpg", "name": "Harrel Merlan", "role": "Registration Administrative Associate", "country": "Philippines" },
-    { "imgSrc": "/leadership/brenda.jpg", "name": "Brenda Santos-Olasiman", "role": "Executive Assistant", "country": "Philippines" },
-    { "imgSrc": "/leadership/lei.jpg", "name": "Leinel Tiglao", "role": "Administrative Associate", "country": "Philippines" },
-    { "imgSrc": "/leadership/claire.jpg", "name": "Claire Balagot", "role": "Administrative Associate", "country": "Philippines" }
+    {
+      "imgSrc": "/leadership/david.jpg",
+      "name": "David Ro",
+      "role": "Executive Director",
+      "country": "Thailand"
+    },
+    {
+      "imgSrc": "/leadership/patrick.jpg",
+      "name": "Patrick Fung",
+      "role": "Chairman of the Board",
+      "country": "Singapore"
+    },
+    {
+      "imgSrc": "/leadership/philip-chang.jpg",
+      "name": "Philip Chang",
+      "role": "Head of Selection Committee",
+      "country": "Malaysia"
+    },
+    {
+      "imgSrc": "/leadership/jackie.jpg",
+      "name": "Jackie Ro",
+      "role": "Arise Follow-Up Lead",
+      "country": "Thailand"
+    },
+    {
+      "imgSrc": "/leadership/joanna.jpg",
+      "name": "Joanna",
+      "role": "Director of Events",
+      "country": "Hong Kong"
+    },
+    {
+      "imgSrc": "/leadership/priscilla.jpg",
+      "name": "Priscilla Mageropoulos",
+      "role": "Marketing and Communications Manager",
+      "country": "Thailand"
+    },
+    {
+      "imgSrc": "/leadership/yoseph.jpg",
+      "name": "Yoseph Tandian",
+      "role": "Arise Follow-Up Strategist & Development Director",
+      "country": "Indonesia"
+    },
+    {
+      "imgSrc": "/leadership/mitchelle.jpg",
+      "name": "Mitchelle Rajapakse",
+      "role": "Arise Follow-Up Engagement Director",
+      "country": "Sri Lanka"
+    },
+    {
+      "imgSrc": "/leadership/carmen.jpg",
+      "name": "Carmen Tam",
+      "role": "Arise Internship Lead and Mentorship Coordinator",
+      "country": "Thailand"
+    },
+    {
+      "imgSrc": "/leadership/lalano.jpg",
+      "name": "Lalano Badoy",
+      "role": "Prayer Movement Coordinator and Arise Philippines Chair",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/arthur.jpg",
+      "name": "Arthur Medina",
+      "role": "Operations and Logistics Director",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/vivian.jpg",
+      "name": "Vivian Lacanilao",
+      "role": "Partnership Engagement and Development Director",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/michael.jpg",
+      "name": "Michael William",
+      "role": "International Registration and Workshop Coordinator",
+      "country": "Malaysia"
+    },
+    {
+      "imgSrc": "/leadership/harrel.jpg",
+      "name": "Harrel Merlan",
+      "role": "Registration Administrative Associate",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/brenda.jpg",
+      "name": "Brenda Santos-Olasiman",
+      "role": "Executive Assistant",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/lei.jpg",
+      "name": "Leinel Tiglao",
+      "role": "Administrative Associate",
+      "country": "Philippines"
+    },
+    {
+      "imgSrc": "/leadership/claire.jpg",
+      "name": "Claire Balagot",
+      "role": "Administrative Associate",
+      "country": "Philippines"
+    }
   ],
   "philippinesBoard": [
-    { "imgSrc": "/leadership/noel.jpg", "name": "Noel Pantoja", "role": "Chairman" },
-    { "imgSrc": "/leadership/lalano.jpg", "name": "Lalano Badoy", "role": "Vice Chairman" },
-    { "imgSrc": "/leadership/jojo.jpg", "name": "Jojo Lacanilao", "role": "Corporate Secretary" },
-    { "imgSrc": "/leadership/cesar.jpg", "name": "Cesar Flores", "role": "Treasurer" },
-    { "imgSrc": "/leadership/david.jpg", "name": "David Ro", "role": "Board Member" },
-    { "imgSrc": "/leadership/carol.jpg", "name": "Carol Roa", "role": "Board Member" }
+    {
+      "imgSrc": "/leadership/noel.jpg",
+      "name": "Noel Pantoja",
+      "role": "Chairman"
+    },
+    {
+      "imgSrc": "/leadership/lalano.jpg",
+      "name": "Lalano Badoy",
+      "role": "Vice Chairman"
+    },
+    {
+      "imgSrc": "/leadership/jojo.jpg",
+      "name": "Jojo Lacanilao",
+      "role": "Corporate Secretary"
+    },
+    {
+      "imgSrc": "/leadership/cesar.jpg",
+      "name": "Cesar Flores",
+      "role": "Treasurer"
+    },
+    {
+      "imgSrc": "/leadership/david.jpg",
+      "name": "David Ro",
+      "role": "Board Member"
+    },
+    {
+      "imgSrc": "/leadership/carol.jpg",
+      "name": "Carol Roa",
+      "role": "Board Member"
+    }
   ],
   "nationalLeaders": [
-    { "imgSrc": "/leadership/anton.jpg", "name": "Anton Tarigan", "role": "Chair", "country": "Arise Indonesia" },
-    { "imgSrc": "/leadership/yoseph.jpg", "name": "Yoseph Tandian", "role": "Follow-Up Director", "country": "Arise Indonesia" },
-    { "imgSrc": "/leadership/ricky.jpg", "name": "Ricky Santoso", "role": "National Coordinator", "country": "Arise Indonesia" },
-    { "imgSrc": "/leadership/lalano.jpg", "name": "Lalano Badoy Jr.", "role": "Chair", "country": "Arise Philippines" },
-    { "imgSrc": "/leadership/jonathan.jpg", "name": "Jonathan Bocobo", "role": "Co-Chair", "country": "Arise Philippines" },
-    { "imgSrc": "/leadership/lohan.jpg", "name": "Lohan Bibile", "role": "Chair", "country": "Arise Sri Lanka" },
-    { "imgSrc": "/leadership/asiri.jpg", "name": "Asiri Fernando", "role": "Co-Chair", "country": "Arise Sri Lanka" },
-    { "imgSrc": "/leadership/mitchelle.jpg", "name": "Mitchelle Rajapakse", "role": "National Coordinator", "country": "Arise Sri Lanka" },
-    { "imgSrc": "/leadership/hanok.jpg", "name": "Hanok Tamang", "role": "Chair", "country": "Arise Nepal" },
-    { "imgSrc": "/leadership/dilli.jpg", "name": "Dilli Ram Paudel", "role": "National Coordinator", "country": "Arise Nepal" },
-    { "imgSrc": "/leadership/adnan.jpg", "name": "Adnan S.", "role": "Global Ambassador", "country": "Arise Pakistan" },
-    { "imgSrc": "/leadership/adeel.jpg", "name": "Adeel S.", "role": "National Coordinator", "country": "Arise Pakistan" },
-    { "imgSrc": "/leadership/martha.jpg", "name": "Martha Das", "role": "General Secretary, National Christian Fellowship of Bangladesh", "country": "Arise Bangladesh" },
-    { "imgSrc": "/leadership/john.jpg", "name": "John Mridha", "role": "National Coordinator", "country": "Arise Bangladesh" },
-    { "imgSrc": "/leadership/hang.jpg", "name": "Hang Tung Mung", "role": "Chair", "country": "Arise Myanmar" },
-    { "imgSrc": "/leadership/purevdorj.jpg", "name": "Purevdorj Jamsran", "role": "Chair", "country": "Arise Mongolia" },
-    { "imgSrc": "/leadership/batbold.jpg", "name": "Batbold Lkhamsuren", "role": "Co-Chair", "country": "Arise Mongolia" },
-    { "imgSrc": "/leadership/philip-lok.jpg", "name": "Philip Lok", "role": "Chair", "country": "Arise Malaysia" },
-    { "imgSrc": "/leadership/kelvin.jpg", "name": "Kelvin Yong", "role": "National Coordinator", "country": "Arise Malaysia" },
-    { "imgSrc": "/leadership/mariko.jpg", "name": "Mariko Ichiba", "role": "Co-National Coordinator", "country": "Arise Japan" },
-    { "imgSrc": "/leadership/takanori.jpg", "name": "Takanori Oba", "role": "Co-National Coordinator", "country": "Arise Japan" }
+    {
+      "imgSrc": "/leadership/anton.jpg",
+      "name": "Anton Tarigan",
+      "role": "Chair",
+      "country": "Arise Indonesia"
+    },
+    {
+      "imgSrc": "/leadership/yoseph.jpg",
+      "name": "Yoseph Tandian",
+      "role": "Follow-Up Director",
+      "country": "Arise Indonesia"
+    },
+    {
+      "imgSrc": "/leadership/ricky.jpg",
+      "name": "Ricky Santoso",
+      "role": "National Coordinator",
+      "country": "Arise Indonesia"
+    },
+    {
+      "imgSrc": "/leadership/lalano.jpg",
+      "name": "Lalano Badoy",
+      "role": "Chair",
+      "country": "Arise Philippines"
+    },
+    {
+      "imgSrc": "/leadership/jonathan.jpg",
+      "name": "Jonathan Bocobo",
+      "role": "Co-Chair",
+      "country": "Arise Philippines"
+    },
+    {
+      "imgSrc": "/leadership/lohan.jpg",
+      "name": "Lohan Bibile",
+      "role": "Chair",
+      "country": "Arise Sri Lanka"
+    },
+    {
+      "imgSrc": "/leadership/asiri.jpg",
+      "name": "Asiri Fernando",
+      "role": "Co-Chair",
+      "country": "Arise Sri Lanka"
+    },
+    {
+      "imgSrc": "/leadership/mitchelle.jpg",
+      "name": "Mitchelle Rajapakse",
+      "role": "National Coordinator",
+      "country": "Arise Sri Lanka"
+    },
+    {
+      "imgSrc": "/leadership/hanok.jpg",
+      "name": "Hanok Tamang",
+      "role": "Chair",
+      "country": "Arise Nepal"
+    },
+    {
+      "imgSrc": "/leadership/dilli.jpg",
+      "name": "Dilli Ram Paudel",
+      "role": "National Coordinator",
+      "country": "Arise Nepal"
+    },
+    {
+      "imgSrc": "/leadership/adnan.jpg",
+      "name": "Adnan S.",
+      "role": "Global Ambassador",
+      "country": "Arise Pakistan"
+    },
+    {
+      "imgSrc": "/leadership/adeel.jpg",
+      "name": "Adeel S.",
+      "role": "National Coordinator",
+      "country": "Arise Pakistan"
+    },
+    {
+      "imgSrc": "/leadership/martha.jpg",
+      "name": "Martha Das",
+      "role": "General Secretary, National Christian Fellowship of Bangladesh",
+      "country": "Arise Bangladesh"
+    },
+    {
+      "imgSrc": "/leadership/john.jpg",
+      "name": "John Mridha",
+      "role": "National Coordinator",
+      "country": "Arise Bangladesh"
+    },
+    {
+      "imgSrc": "/leadership/hang.jpg",
+      "name": "Hang Tung Mung",
+      "role": "Chair",
+      "country": "Arise Myanmar"
+    },
+    {
+      "imgSrc": "/leadership/purevdorj.jpg",
+      "name": "Purevdorj Jamsran",
+      "role": "Chair",
+      "country": "Arise Mongolia"
+    },
+    {
+      "imgSrc": "/leadership/batbold.jpg",
+      "name": "Batbold Lkhamsuren",
+      "role": "Co-Chair",
+      "country": "Arise Mongolia"
+    },
+    {
+      "imgSrc": "/leadership/philip-lok.jpg",
+      "name": "Philip Lok",
+      "role": "Chair",
+      "country": "Arise Malaysia"
+    },
+    {
+      "imgSrc": "/leadership/kelvin.jpg",
+      "name": "Kelvin Yong",
+      "role": "National Coordinator",
+      "country": "Arise Malaysia"
+    },
+    {
+      "imgSrc": "/leadership/mariko.jpg",
+      "name": "Mariko Ichiba",
+      "role": "Co-National Coordinator",
+      "country": "Arise Japan"
+    },
+    {
+      "imgSrc": "/leadership/takanori.jpg",
+      "name": "Takanori Oba",
+      "role": "Co-National Coordinator",
+      "country": "Arise Japan"
+    }
   ]
 }

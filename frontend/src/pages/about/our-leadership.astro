@@ -1,9 +1,7 @@
 ---
-import AboutHero from "@/components/about/AboutHero.astro";
 import LeaderCard from "@/components/about/LeaderCard.astro";
-import Layout from "@/layouts/Layout.astro";
-import { UserRound } from "lucide-react";
 import leadershipData from "@/data/leadership.json";
+import Layout from "@/layouts/Layout.astro";
 
 const locale = "en";
 
@@ -14,71 +12,102 @@ const categories = [
   {
     name: "Arise Global Board of Directors",
     leaders: globalBoard,
+    nameGradient: "from-[#1e3a8a] to-[#2c80ff]",
   },
   {
     name: "Arise Asia 2026 Steering Committee and Staff",
     leaders: steeringCommittee,
+    nameGradient: "from-[#80302d] to-[#ff5f5a]",
   },
   {
     name: "Arise Philippines | Arise Asia Board",
     leaders: philippinesBoard,
+    nameGradient: "from-[#1e3a8a] to-[#2c80ff]",
   },
   {
     name: "Arise National Leaders",
     leaders: nationalLeaders,
+    nameGradient: "from-[#b3733f] to-[#ffa45a]",
   },
 ];
 ---
 
 <Layout title="Our Leadership — Arise Asia" locale={locale!}>
-  <section id="hero">
-    <AboutHero breadcrumb="ABOUT US/" title="Leadership">
-      <div class="flex flex-col items-center gap-8 md:flex-row md:items-center">
-        <div
-          class="border-accent-blue-lighter bg-accent-blue-lightest/60 flex aspect-square w-full max-w-56 shrink-0 items-center justify-center overflow-hidden rounded-full border-2"
+  <section id="hero" class="relative overflow-hidden">
+    <div
+      class="relative flex h-64 flex-col justify-end pb-10 sm:h-80 md:h-96 lg:h-92.25"
+      style="background: radial-gradient(circle at 70% 40%, #aaccff 0%, #2d80ff 30%, #000000 70%);"
+    >
+      <div
+        class="container-page relative flex flex-col px-8 pt-24 md:px-16 lg:px-32 lg:pt-28 xl:px-48"
+      >
+        <p
+          class="font-heading mb-2 text-xl font-semibold tracking-wide text-white uppercase md:text-2xl"
         >
-          <UserRound
-            className="text-accent-blue-dark size-1/2"
-            strokeWidth={1.5}
-          />
-        </div>
-        <div class="flex flex-col gap-2">
-          <p class="font-heading text-xl font-bold uppercase md:text-2xl">
-            David Ro
-          </p>
-          <p
-            class="font-heading text-accent-blue-dark text-xs font-semibold uppercase md:text-sm"
-          >
-            Executive Director
-          </p>
-          <p class="font-heading mt-2 text-base md:text-lg">
-            My challenge to this generation: You have one life. The one
-            challenge, find a people "where Christ is not known" and boldly go
-            to "where there is no gospel" and lay down your life for another
-            people in the footsteps of our Lord Jesus Christ.
-          </p>
-        </div>
+          ABOUT US/
+        </p>
+        <h1
+          class="font-heading text-5xl font-semibold tracking-tight text-white uppercase md:text-[60px]"
+        >
+          Leadership
+        </h1>
       </div>
-    </AboutHero>
+    </div>
+  </section>
+
+  <section
+    class="container-page flex flex-col items-center gap-8 px-8 py-12 md:flex-row md:items-center md:px-16 lg:px-32 xl:px-48"
+  >
+    <div
+      class="flex aspect-square w-full max-w-56 shrink-0 items-center justify-center overflow-hidden rounded-2xl md:max-w-55"
+    >
+      <img
+        src="/leadership/david-full.jpg"
+        alt="David Ro"
+        class="size-full object-cover"
+      />
+    </div>
+    <div class="flex flex-col gap-3">
+      <p
+        class="font-heading to-primary-blue-lighter bg-linear-to-r from-[#1e3a8a] bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-4xl"
+      >
+        David Ro
+      </p>
+      <span
+        class="font-heading inline-block w-fit rounded-full bg-[#e9f2ff] px-5 py-1 text-sm text-black"
+      >
+        Executive Director
+      </span>
+      <p class="font-heading mt-2 text-lg text-black md:text-xl">
+        My challenge to this generation: You have one life. Use it for God's
+        purposes and lay down your life in service to our Lord Jesus Christ.
+      </p>
+    </div>
   </section>
 
   <section
     id="leaders"
-    class="container-page flex flex-col gap-16 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
+    class="container-page flex flex-col gap-5 px-8 py-10 md:px-16 lg:px-32 xl:px-48"
   >
     {
       categories.map((category) => (
         <div class="flex flex-col gap-6">
-          <h2 class="font-heading from-accent-blue-dark to-primary-blue-lighter bg-linear-to-r bg-clip-text text-2xl font-semibold text-transparent uppercase md:text-4xl">
+          <h2
+            class:list={[
+              "font-heading bg-linear-to-r bg-clip-text text-3xl font-semibold text-transparent uppercase md:text-[36px]",
+              category.nameGradient,
+            ]}
+          >
             {category.name}
           </h2>
-          <div class="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4">
+          <div class="grid grid-cols-2 gap-x-2.5 gap-y-6 sm:grid-cols-3 lg:grid-cols-4">
             {category.leaders.map((leader) => (
               <LeaderCard
                 name={leader.name}
                 role={leader.role}
                 country={leader.country}
                 imgSrc={leader.imgSrc}
+                nameGradient={category.nameGradient}
               />
             ))}
           </div>
