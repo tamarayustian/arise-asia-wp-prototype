@@ -17,7 +17,7 @@ const wrapperClass =
 ---
 
 <div
-  class={`relative flex flex-col items-center overflow-hidden bg-[url('/images/about-us-bg.png')] bg-cover bg-center text-center ${wrapperClass}`}
+  class={`relative flex flex-col items-center overflow-hidden bg-[url('/images/our-goal-bg.png')] bg-cover bg-center sm:bg-position-[center_33rem] lg:bg-position-[center_55rem] text-center ${wrapperClass}`}
 >
   <div
     class="absolute inset-0 bg-[url('/images/our-goal-arise-bg.png')] bg-cover bg-center mix-blend-soft-light"
@@ -27,7 +27,7 @@ const wrapperClass =
     class="from-accent-orange-darker/70 via-accent-orange-darker/50 absolute inset-0 bg-linear-to-b to-black/60"
   >
   </div>
-  <div class="relative z-10 flex max-w-4xl flex-col items-center">
+  <div class="relative z-10 flex flex-col items-center px-10">
     {showHeading && <h2 class="text-h2 text-white uppercase">Our Goal</h2>}
     <div
       class="bg-accent-orange-light mb-4 size-8 md:size-10"
