@@ -3,6 +3,7 @@ import type { ComponentType, ReactNode } from "react";
 
 interface Props {
   href: string;
+  target?: string;
   outerBg?: string;
   textColor?: string;
   bg?: string;
@@ -16,6 +17,7 @@ interface Props {
 
 export function ActionButton({
   href,
+  target = "_self",
   outerBg = "bg-gradient-accent",
   textColor = "text-white",
   bg = "",
@@ -29,7 +31,7 @@ export function ActionButton({
   return (
     <a
       href={href}
-      target="_blank"
+      target={target}
       rel="noopener noreferrer"
       className={`w-fit rounded-full transition-[filter] duration-200 hover:brightness-90 ${outerBg} ${className}`}
     >
