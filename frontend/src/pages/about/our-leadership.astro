@@ -3,82 +3,29 @@ import AboutHero from "@/components/about/AboutHero.astro";
 import LeaderCard from "@/components/about/LeaderCard.astro";
 import Layout from "@/layouts/Layout.astro";
 import { UserRound } from "lucide-react";
+import leadershipData from "@/data/leadership.json";
 
 const locale = "en";
 
-const steeringCommittee = [
-  { name: "David Ro", country: "Thailand", role: "Executive Director" },
-  { name: "Patrick Fung", country: "Singapore", role: "Chairman of the Board" },
-  {
-    name: "Philip Chang",
-    country: "Malaysia",
-    role: "Head of Selection Committee",
-  },
-  { name: "JackiE Ro", country: "Thailand", role: "Arise Follow-Up Lead" },
-  { name: "Joanna", country: "Hong Kong", role: "Director of Events" },
-  { name: "AH", role: "Director of Church Engagement" },
-  { name: "Prabhu Singh", country: "India", role: "Arise India Chair" },
-  {
-    name: "Priscilla Mageropoulos",
-    country: "Thailand",
-    role: "Marketing and Communications Manager",
-  },
-  {
-    name: "Yoseph Tandian",
-    country: "Indonesia",
-    role: "Arise Follow-Up Strategist & Development Director",
-  },
-  {
-    name: "Mitchelle Rajapakse",
-    country: "Sri Lanka",
-    role: "Arise Follow-Up Engagement Director",
-  },
-  {
-    name: "CarmeN Tam",
-    country: "Thailand",
-    role: "Arise Internship Lead and Mentorship Coordinator",
-  },
-  ...Array.from({ length: 5 }, () => ({
-    name: "Lalano Badoy",
-    country: "Philippines",
-    role: "Prayer Movement Coordinator and Arise Philippines Chair",
-  })),
-];
+const { globalBoard, steeringCommittee, philippinesBoard, nationalLeaders } =
+  leadershipData;
 
 const categories = [
   {
     name: "Arise Global Board of Directors",
-    leaders: [
-      { name: "David Ro", role: "Executive Director" },
-      { name: "Patrick Fung", role: "Chairman" },
-      { name: "Philip Chang", role: "Chief Financial Officer" },
-      { name: "Dick Yue", role: "Board Secretary" },
-      { name: "Paul Borthwick", role: "Board Member" },
-      { name: "Lawrence Tong", role: "Board Member" },
-    ],
+    leaders: globalBoard,
   },
   {
     name: "Arise Asia 2026 Steering Committee and Staff",
     leaders: steeringCommittee,
   },
   {
-    name: "Arise National Leaders",
-    leaders: steeringCommittee,
+    name: "Arise Philippines | Arise Asia Board",
+    leaders: philippinesBoard,
   },
   {
-    name: "Arise Philippines | Arise Asia Board",
-    leaders: [
-      {
-        name: "CarmeN Tam",
-        country: "Thailand",
-        role: "Arise Internship Lead and Mentorship Coordinator",
-      },
-      ...Array.from({ length: 5 }, () => ({
-        name: "Lalano Badoy",
-        country: "Philippines",
-        role: "Prayer Movement Coordinator and Arise Philippines Chair",
-      })),
-    ],
+    name: "Arise National Leaders",
+    leaders: nationalLeaders,
   },
 ];
 ---
@@ -131,6 +78,7 @@ const categories = [
                 name={leader.name}
                 role={leader.role}
                 country={leader.country}
+                imgSrc={leader.imgSrc}
               />
             ))}
           </div>
