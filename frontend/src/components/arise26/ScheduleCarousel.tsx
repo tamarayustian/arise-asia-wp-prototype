@@ -153,11 +153,11 @@ export default function ScheduleCarousel() {
       >
         {scheduleData.map(({ day, date, title, periods }) => (
           <div
-            className="flex flex-col flex-none gap-y-6 p-4 w-72 from-orange-100 to-orange-50 rounded-xl sm:w-88 bg-linear-to-b"
+            className="flex flex-col flex-none gap-y-6 p-4 w-72 bg-[#abccff] border border-[#2c80ff] rounded-xl sm:w-88"
             key={date}
           >
             <div className="flex justify-between uppercase sm:text-lg md:text-xl">
-              <p className="px-2 font-bold bg-orange-300 rounded text-neutral-950">
+              <p className="px-2 font-bold bg-[#2c80ff] text-white rounded">
                 {day}
               </p>
               <p className="font-semibold tracking-wide">{date}</p>

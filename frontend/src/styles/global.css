@@ -162,6 +162,16 @@
   }
 }
 
+@utility bg-gradient-arise {
+  background-image: linear-gradient(
+    100deg,
+    #2c80ff -8.62%,
+    #6ba7ff 20%,
+    #f9a35f 60%,
+    #ff4c5a 105.43%
+  );
+}
+
 @utility animate-float {
   animation: float 3s ease-in-out infinite;
 }
