@@ -1,4 +1,4 @@
-export const SITE_NAME = "My Blog";
+export const SITE_NAME = "Arise Asia";
 
 export const LOCALES: Record<string, string> = {
   en: "English",
