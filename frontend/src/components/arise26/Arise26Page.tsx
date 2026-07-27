@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { FaExternalLinkAlt } from "react-icons/fa";
-import { ImArrowUpRight2 } from "react-icons/im";
 import { IoMdArrowBack, IoMdArrowForward } from "react-icons/io";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { MdArrowRightAlt } from "react-icons/md";
@@ -47,48 +46,41 @@ export default function Arise26Page() {
 
   return (
     <div className="relative bg-white">
-      <DecorativeIcons />
       {/* Hero */}
       <section className="relative overflow-x-clip">
-        <div className="container mx-auto px-4 pt-40 sm:px-10 sm:pt-48">
-          <div className="relative flex flex-col items-center justify-center gap-x-10 lg:flex-row lg:items-start">
-            <div className="w-fit">
-              <p className="font-heading w-fit bg-linear-to-r from-blue-600 to-blue-500 bg-clip-text font-semibold tracking-wider text-transparent uppercase sm:text-3xl md:text-4xl">
-                Arise Asia 2026
-              </p>
-              <h1 className="font-heading bg-linear-to-r from-blue-600 to-blue-500 bg-clip-text text-6xl font-bold text-nowrap text-transparent uppercase sm:text-8xl md:text-9xl lg:text-8xl xl:text-9xl">
-                For The
+        <DecorativeIcons />
+        <div className="container mx-auto px-4 py-40 sm:px-10 sm:pt-48">
+          <div className="flex max-w-3xl flex-col">
+            <p className="font-heading w-fit bg-linear-to-r from-blue-600 to-blue-500 bg-clip-text text-3xl font-semibold tracking-wider text-nowrap text-transparent uppercase sm:text-4xl">
+              Arise Asia 2026
+            </p>
+            <div className="flex items-start justify-center">
+              <h1 className="font-heading bg-linear-to-r from-blue-600 to-blue-500 bg-clip-text text-5xl font-bold text-transparent uppercase sm:text-7xl md:text-8xl">
+                <span className="block">For</span>
+                <span className="block">The</span>
               </h1>
-              <div className="font-heading flex justify-between text-xs font-bold text-[#0062ff] uppercase sm:text-base md:text-xl">
-                <p>27-31 July</p>
-                <p>Manila, Philippines</p>
-              </div>
-            </div>
-            <div className="relative">
               <img
                 alt="Joy"
-                className="-mt-4 w-40 sm:w-60 md:w-80 lg:mt-10 xl:w-96"
+                className="w-48 shrink-0 sm:w-72 lg:w-108"
                 src="/images/joy.svg"
               />
             </div>
+            <div className="font-heading text-md -mt-4 flex gap-x-4 font-bold uppercase sm:-mt-10 sm:gap-x-8 sm:text-xl md:gap-x-28">
+              <p className="bg-linear-to-r from-[#2563eb] to-[#3172f0] bg-clip-text text-nowrap text-transparent">
+                27-31 July
+              </p>
+              <p className="bg-linear-to-r from-[#3172f0] to-[#3b82f6] bg-clip-text text-nowrap text-transparent">
+                Manila, Philippines
+              </p>
+            </div>
           </div>
         </div>
-        <section className="mt-40 bg-[#0062ff] py-6 text-center">
-          <p className="font-heading px-4 text-sm font-semibold text-white uppercase md:text-xl lg:text-2xl xl:text-3xl">
-            God is awakening Asia for His purpose,
-            <br /> and a new generation is rising to answer the call.
-          </p>
-        </section>
-        <div className="flex justify-center pt-4 sm:pt-8">
-          <a
-            className="text-h6 mx-auto flex w-60 items-center justify-center gap-2 rounded-full border-2 border-[#b3433f] bg-[#b3433f] px-6 py-4 text-white uppercase hover:bg-white hover:text-[#b3433f] sm:mx-0"
-            href="https://forms.ariseasia.org/arise-asia-2026-application"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            Participate <ImArrowUpRight2 />
-          </a>
-        </div>
+      </section>
+      <section className="bg-primary-blue py-6 text-center">
+        <p className="font-heading px-4 text-sm font-semibold text-white uppercase md:text-xl lg:text-2xl xl:text-3xl">
+          God is awakening Asia for His purpose,
+          <br /> and a new generation is rising to answer the call.
+        </p>
       </section>
 
       <div className="container mx-auto flex flex-col gap-y-4 p-4 sm:p-10">
